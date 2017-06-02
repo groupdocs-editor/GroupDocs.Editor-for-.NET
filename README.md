@@ -1,6 +1,6 @@
 ##GroupDocs.Editor for .NET
 
-GroupDocs.Editor is a lightweight library that allows you to merge and diff two versions of a document. Supported file formats include: PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, ODT, TXT, HTML.
+GroupDocs.Editor for .NET is a lightweight component that allows to edit multiple document formats in form of HTML. The editor can both translate source document into html and save edited html into source document format. Supported file formats include: Microsoft Word, Microsoft Excel, Microsoft PowerPoint, PDFs and more.
 
 ##GroupDocs.Editor Structure
 
