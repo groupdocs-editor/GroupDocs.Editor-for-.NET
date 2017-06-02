@@ -1,8 +1,8 @@
-##GroupDocs.Editor for .NET
+#GroupDocs.Editor for .NET
 
 GroupDocs.Editor for .NET is a lightweight component that allows to edit multiple document formats in form of HTML. The editor can both translate source document into html and save edited html into source document format. Supported file formats include: Microsoft Word, Microsoft Excel, Microsoft PowerPoint, PDFs and more.
 
-##GroupDocs.Editor Structure
+#GroupDocs.Editor Structure
 
 
 This package contains [Examples](https://github.com/groupdocsEditor/GroupDocs_Editor_NET/tree/master/Examples) for [GroupDocs.Editor for .NET](#) that will help you understand API's working and write your own applications.
@@ -20,7 +20,7 @@ Directory | Description
 [Showcases](https://github.com/groupdocs-Editor/GroupDocs.Editor-for-.NET/tree/master/Showcases)  | Contains the Frontend Examples to help you learn how to Implement product features in a Web-UI based application.
 [Plugins](https://github.com/groupdocs-Editor/GroupDocs.Editor-for-.NET/tree/master/Plugins)  | Contains the Visual Studio Plugins which will download examples and GroupDocs.Editor Library without any efforts.
 
-## Resources
+# Resources
 
 + **Website:** [www.groupdocs.com](http://www.groupdocs.com)
 + **Product Home:** [GroupDocs.Editor for .NET](https://www.groupdocs.com/products/Editor/net)
