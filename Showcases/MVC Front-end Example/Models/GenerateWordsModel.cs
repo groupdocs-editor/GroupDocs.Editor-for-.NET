@@ -94,7 +94,10 @@ namespace TinyMce.MvcSample.Models
             if (!this._isNewArticle)
             {
                 string originalResourceFolderPath = System.IO.Path.Combine(itemFolderPath, Constants.OriginalFolderName, Constants.HtmlResourceFolderName);
-                Repository.Copy(originalResourceFolderPath, editedResourceFolderPath);
+                if (System.IO.Directory.Exists(originalResourceFolderPath))
+                {
+                    Repository.Copy(originalResourceFolderPath, editedResourceFolderPath);
+                }
             }
             else //if (this._isNewArticle)
             {

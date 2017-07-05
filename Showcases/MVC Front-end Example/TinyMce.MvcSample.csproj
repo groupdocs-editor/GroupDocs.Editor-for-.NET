@@ -42,7 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GroupDocs.Editor">
-      <HintPath>C:\Users\gena\Downloads\GroupDocs.Editor_17.5.0-NET\bin\GroupDocs.Editor.dll</HintPath>
+      <HintPath>TempAPIDll\GroupDocs.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">

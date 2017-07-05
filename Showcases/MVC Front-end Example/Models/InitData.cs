@@ -24,12 +24,12 @@ namespace TinyMce.MvcSample.Models
 
         public bool HasSampleFolder
         {
-            get { return !string.IsNullOrWhiteSpace(this._sampleDocumentsFolderPath); }
+            get { return !string.IsNullOrWhiteSpace(this._sampleDocumentsFolderPath) && System.IO.Directory.Exists(this._sampleDocumentsFolderPath); }
         }
 
         public bool HasLicenseFile
         {
-            get { return !string.IsNullOrWhiteSpace(this._licenseFilePath); }
+            get { return !string.IsNullOrWhiteSpace(this._licenseFilePath) && System.IO.File.Exists(this._licenseFilePath); }
         }
 
         public string LicenseFilePath
