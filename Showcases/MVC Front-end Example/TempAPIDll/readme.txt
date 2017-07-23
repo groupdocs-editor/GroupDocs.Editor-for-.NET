@@ -1,1 +1,0 @@
-Note: This folder and files will be removed after API reference from NuGet.

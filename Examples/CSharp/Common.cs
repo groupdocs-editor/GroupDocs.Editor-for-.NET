@@ -38,7 +38,7 @@ namespace GroupDocs.Editor.Examples.CSharp
         public static string sourceFilePassword = "SomePassword";
 
         // targetFile property to set input target file
-        public static string resultFile = "result.docx";+
+        public static string resultFile = "result.docx";
 
         //ExEnd:CommonProperties
 
