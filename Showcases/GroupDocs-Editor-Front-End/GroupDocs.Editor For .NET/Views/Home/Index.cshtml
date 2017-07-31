@@ -1,0 +1,191 @@
+﻿@model List<GroupDocs.Editor_For.NET.Models.Document>
+
+<!DOCTYPE html>
+<html lang="en">
+<head ng-app="GroupDocsViewer">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/2.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.css" />
+
+
+    @*<link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="/css/colorpicker.css" />
+    <link rel="stylesheet" href="/css/datepicker.css" />
+    <link rel="stylesheet" href="/css/uniform.css" />
+    <link rel="stylesheet" href="/css/select2.css" />*@
+
+
+    <!--Froala Editor-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.6.0/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.6.0/css/froala_style.min.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="/css/maruti-style.css" />
+    <link rel="stylesheet" href="/css/maruti-media.css" class="skin-color" />
+</head>
+<body ng-controller="HomeController">
+    <!--Header-part-->
+    <div id="header">
+        <h1><a href="/home">GroupDocs.Editor for .NET</a></h1>
+    </div>
+    <!--close-Header-part-->
+    <!--top-Header-menu-->
+    <div id="user-nav" class="navbar navbar-inverse">
+        <ul class="nav">
+            <li class=""><a title="" href="#"><i class="icon icon-user"></i> <span class="text">Profile</span></a></li>
+            <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
+            <li class=""><a title="" href="login.html"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
+        </ul>
+    </div>
+    <!--close-top-Header-menu-->
+
+    <div id="sidebar">
+        <a href="#" class="visible-phone"><i class="icon icon-home"></i> Home </a><ul>
+            <li class="active"><a href="/Home"><i class="icon icon-home"></i> <span>Documents List</span></a> </li>
+        </ul>
+    </div>
+
+
+    <div id="content">
+        <div id="content-header">
+            <div id="breadcrumb"> <a href="#" title="Home" class="tip-bottom"><i class="icon-home"></i> Home</a> </div>
+            <h1>List of HTMLs</h1>
+        </div>
+        <div class="container-fluid">
+           @if (ViewBag.MyDocument == null)
+           { <div class="row-fluid">
+                <div class="span12">
+                    <div class="widget-box">
+                        <div class="widget-title">
+                            <span class="icon"><i class="icon-th"></i></span>
+                            <h5>List of Available Documents</h5>
+                        </div>
+                        <div class="widget-content nopadding">
+                            <table class="table table-bordered data-table">
+                                <thead>
+                                    <tr>
+                                        <th width="50">Sr #</th>
+                                        <th>Document Name</th>
+                                        <th>Size</th>
+                                        <th>Last Updated</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var m in ViewData.Model)
+                                    {
+                                        <tr>
+                                            <td>@m.SrNo</td>
+                                            <td>
+                                                @m.Name
+                                            </td>
+                                            <td>@m.Size</td>
+                                            <td>@m.LastUpdated</td>
+                                            <td>
+                                                <a class="btn btn-primary btn-mini" href="/Home/Index/@m.SrNo">Details</a>
+                                                <div class="btn-group">
+                                                    <button data-toggle="dropdown" class="btn btn-success dropdown-toggle btn-mini">Download <span class="caret"></span></button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="/Home/Download/@m.SrNo/txt">Text</a></li>
+                                                        <li><a href="/Home/Download/@m.SrNo/doc">Doc</a></li>
+                                                        <li><a href="/Home/Download/@m.SrNo/docx">Docx</a></li>
+                                                        <li><a href="/Home/Download/@m.SrNo/dotx">Dotx</a></li>
+                                                        <li><a href="/Home/Download/@m.SrNo/rtf">RTF</a></li>
+                                                        <li class="divider"></li>
+                                                        <li><a href="/Home/Index/@m.SrNo">View Details for more</a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+           }
+            else
+            {
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="widget-box">
+                        <div class="widget-title">
+                            <span class="icon"> <i class="icon-align-justify"></i> </span>
+                            <h5>@ViewBag.MyDocument.Name</h5>
+                        </div>
+                        <div class="widget-content nopadding">
+                            @using (Html.BeginForm("Update", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+                            {
+                                <div class="control-group">
+                                    <label class = "control-label" >Name</label>
+                                    <div class="controls">
+                                        <input type="text" class = "span11" name="Name" value="@ViewBag.MyDocument.Name" />
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">HTML</label>
+                                    <div class="controls">
+                                        <textarea id='editor' class="span11" name="HTML">
+                                            @ViewBag.MyDocument.HTML
+                                        </textarea>
+
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <input type="hidden" name="id" value="@ViewBag.MyDocument.SrNo" />
+                                    <button type="submit" class="btn btn-primary">Update</button>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div id="footer" class="span12"> 2017 &copy; GroupDocs. All Rights Reserved. </div>
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Uniform.js/4.2.0/js/jquery.uniform.bundled.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
+
+    @*<script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.ui.custom.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap-colorpicker.js"></script>
+    <script src="/js/bootstrap-datepicker.js"></script>
+    <script src="/js/jquery.uniform.js"></script>
+    <script src="/js/select2.min.js"></script>
+    <script src="/js/maruti.js"></script>
+    <script src="/js/maruti.form_common.js"></script>*@
+
+    <script src="/js/maruti.js"></script>
+    @*<script src="/js/maruti.tables.js"></script>*@
+    
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=2b6imoxlu265gckwllvsblpa6vvov8eodzck3x04dleq2g2m"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.6.0//js/froala_editor.pkgd.min.js"></script>
+    <script>
+        $(function () {
+            //$('#editor').froalaEditor();
+        });
+    </script>
+</body>
+</html>
+
