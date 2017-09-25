@@ -7,7 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using GroupDocs.Editor;
 using GroupDocs.Editor.HtmlCss.Resources.Fonts;
-using GroupDocs.Editor.HtmlCss.Resources.Images;
+using GroupDocs.Editor.HtmlCss.Resources.Images.Raster;
+using GroupDocs.Editor.HtmlCss.Resources.Images.Vector;
 using GroupDocs.Editor.HtmlCss.Resources.Textual;
 
 namespace GroupDocs.Editor.Examples.CSharp
@@ -213,7 +214,7 @@ namespace GroupDocs.Editor.Examples.CSharp
             Stream sourceStream = File.Open(Path.Combine(Common.sourcePath, Common.sourceFile), FileMode.Open, FileAccess.Read);
             using (InputHtmlDocument htmlDoc = EditorHandler.ToHtml(sourceStream))
             {
-                foreach (IFontResource fontResource in htmlDoc.FontResources)
+                foreach (FontResourceBase fontResource in htmlDoc.FontResources)
                 {
                     Console.WriteLine(fontResource.FilenameWithExtension);
                     Console.WriteLine(fontResource.Name);
