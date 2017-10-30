@@ -16,7 +16,7 @@ This package contains [Examples](https://github.com/groupdocsEditor/GroupDocs_Ed
 
 Directory | Description
 --------- | -----------
-[Examples](https://github.com/groupdocsEditor/GroupDocs_Editor_NET/tree/master/Examples)  | Contains the package of all .NET examples (C# & VB) and sample files that will help you learn how to use product features.
+[Examples](https://github.com/groupdocsEditor/GroupDocs_Editor_NET/tree/master/Examples)  | Contains the package of all .NET examples (C#) and sample files that will help you learn how to use product features.
 [Showcases](https://github.com/groupdocs-Editor/GroupDocs.Editor-for-.NET/tree/master/Showcases)  | Contains the Frontend Examples to help you learn how to Implement product features in a Web-UI based application.
 [Plugins](https://github.com/groupdocs-Editor/GroupDocs.Editor-for-.NET/tree/master/Plugins)  | Contains the Visual Studio Plugins which will download examples and GroupDocs.Editor Library without any efforts.
 
