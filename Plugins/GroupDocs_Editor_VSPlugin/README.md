@@ -7,7 +7,7 @@ GroupDocs.Editor for .NET plugin is providing an ease to compile GroupDocs.Edito
 Following are the key features of the plugin
 + Appears in *File* menu in Visual Studio.
 + Downloads source code automatically.
-+ Downloads \*GroupDocs.Editor * API automatically.
++ Downloads *GroupDocs.Editor * API automatically.
 + Adds GroupDocs.Editor reference automatically.
 + Provides both *C#* examples.
 + Supports *Visual Studio 2010*, *2012* and *2013.*
@@ -24,4 +24,4 @@ Visual Studio must be installed before installing the plugin. It supports follow
 + Visual Studio 2012
 + Visual Studio 2013
 
-for more details please click [here](http://www.groupdocs.com/docs/display/Editornet/Visual+Studio+Plugin+to+Explore+GroupDocs.Editor+Examples)
+for more details please click [here](https://docs.groupdocs.com/display/editornet/Visual+Studio+Plugin+to+Explore+GroupDocs.Editor+Examples)

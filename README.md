@@ -25,9 +25,9 @@ Directory | Description
 + **Website:** [www.groupdocs.com](http://www.groupdocs.com)
 + **Product Home:** [GroupDocs.Editor for .NET](https://www.groupdocs.com/products/Editor/net)
 + **Download:** [Download GroupDocs.Editor for .NET](https://downloads.groupdocs.com/Editor/net)
-+ **Documentation:** [GroupDocs.Editor for .NET Documentation](s)
++ **Documentation:** [GroupDocs.Editor for .NET Documentation](https://docs.groupdocs.com/display/editornet/Home)
 + **API Reference:** [GroupDocs.Editor for .NET API Reference](https://apireference.groupdocs.com/net/Editor)
-+ **Forum:** [GroupDocs.Editor for .NET Forum](#)
-+ **Blog:** [GroupDocs.Editor for .NET Blog](#)
++ **Forum:** [GroupDocs.Editor for .NET Forum](https://forum.groupdocs.com/c/editor)
++ **Blog:** [GroupDocs.Editor for .NET Blog](https://blog.groupdocs.com/category/groupdocs-editor-product-family/)
 
 
