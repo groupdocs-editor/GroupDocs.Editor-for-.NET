@@ -23,7 +23,7 @@ Directory | Description
 # Resources
 
 + **Website:** [www.groupdocs.com](http://www.groupdocs.com)
-+ **Product Home:** [GroupDocs.Editor for .NET](https://www.groupdocs.com/products/Editor/net)
++ **Product Home:** [GroupDocs.Editor for .NET](https://products.groupdocs.com/editor/net)
 + **Download:** [Download GroupDocs.Editor for .NET](https://downloads.groupdocs.com/Editor/net)
 + **Documentation:** [GroupDocs.Editor for .NET Documentation](https://docs.groupdocs.com/display/editornet/Home)
 + **API Reference:** [GroupDocs.Editor for .NET API Reference](https://apireference.groupdocs.com/net/editor)

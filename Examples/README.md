@@ -1,6 +1,6 @@
 # GroupDocs.Editor for .NET Examples
 
-This package contains C# Example Projects for [GroupDocs.Editor for .NET](https://www.groupdocs.com/products/editor/net) and sample input templates used in the examples.
+This package contains C# Example Projects for [GroupDocs.Editor for .NET](https://products.groupdocs.com/editor/net) and sample input templates used in the examples.
 
 <p align="center">
   <a title="Download complete GroupDocs.Editor for .NET Example source code" href="https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/archive/master.zip">
