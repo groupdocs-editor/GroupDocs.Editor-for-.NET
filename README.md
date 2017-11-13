@@ -5,7 +5,7 @@ GroupDocs.Editor for .NET is a lightweight component that allows to edit multipl
 # GroupDocs.Editor Structure
 
 
-This package contains [Examples](https://github.com/groupdocsEditor/GroupDocs_Editor_NET/tree/master/Examples) for [GroupDocs.Editor for .NET](#) that will help you understand API's working and write your own applications.
+This package contains [Examples](https://github.com/groupdocsEditor/GroupDocs_Editor_NET/tree/master/Examples) for [GroupDocs.Editor for .NET](https://products.groupdocs.com/editor/net) that will help you understand API's working and write your own applications.
 
 <p align="center">
 
