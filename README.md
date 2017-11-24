@@ -9,7 +9,7 @@ This package contains [Examples](https://github.com/groupdocsEditor/GroupDocs_Ed
 
 <p align="center">
 
-  <a title="Download complete GroupDocs.Editor for .NET source code" href="https://github.com/groupdocsEditor/GroupDocs_Editor_NET/archive/master.zip">
+  <a title="Download complete GroupDocs.Editor for .NET source code" href="https://github.com/groupdocs-Editor/GroupDocs_Editor_NET/archive/master.zip">
 	<img src="https://raw.github.com/AsposeExamples/java-examples-dashboard/master/images/downloadZip-Button-Large.png" />
   </a>
 </p>
