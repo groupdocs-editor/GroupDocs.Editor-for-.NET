@@ -22,12 +22,13 @@ Directory | Description
 
 # Resources
 
-+ **Website:** [www.groupdocs.com](http://www.groupdocs.com)
-+ **Product Home:** [GroupDocs.Editor for .NET](https://products.groupdocs.com/editor/net)
-+ **Download:** [Download GroupDocs.Editor for .NET](https://downloads.groupdocs.com/Editor/net)
-+ **Documentation:** [GroupDocs.Editor for .NET Documentation](https://docs.groupdocs.com/display/editornet/Home)
++ **Website:** [www.groupdocs.com](https://www.groupdocs.com/)
++ **Product Home:** [GroupDocs.Editor for .NET](https://products.groupdocs.com/editor) 
 + **API Reference:** [GroupDocs.Editor for .NET API Reference](https://apireference.groupdocs.com/net/editor)
-+ **Forum:** [GroupDocs.Editor for .NET Forum](https://forum.groupdocs.com/c/editor)
++ **Documentation:** [GroupDocs.Editor for .NET Documentation](https://docs.groupdocs.com/display/editornet/Home)
++ **Installation:** [GroupDocs.Editor for .NET NuGet Package](https://www.nuget.org/packages/GroupDocs.Editor/)
++ **Free Support:** [GroupDocs.Editor for .NET Free Support Forum](https://forum.groupdocs.com/c/editor)
++ **Paid Support:** [GroupDocs.Editor for .NET Paid Support Helpdesk](https://helpdesk.groupdocs.com/)
 + **Blog:** [GroupDocs.Editor for .NET Blog](https://blog.groupdocs.com/category/groupdocs-editor-product-family/)
 
 
