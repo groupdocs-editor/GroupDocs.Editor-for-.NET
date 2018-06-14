@@ -1,0 +1,7 @@
+E:\Work Sami\Repos\GroupDocs.Editor-for-.NET\Examples\CSharp\bin\Debug\GroupDocs.Editor.Examples.CSharp.exe.config
+E:\Work Sami\Repos\GroupDocs.Editor-for-.NET\Examples\CSharp\bin\Debug\GroupDocs.Editor.Examples.CSharp.exe
+E:\Work Sami\Repos\GroupDocs.Editor-for-.NET\Examples\CSharp\bin\Debug\GroupDocs.Editor.Examples.CSharp.pdb
+E:\Work Sami\Repos\GroupDocs.Editor-for-.NET\Examples\CSharp\bin\Debug\GroupDocs.Editor.dll
+E:\Work Sami\Repos\GroupDocs.Editor-for-.NET\Examples\CSharp\bin\Debug\GroupDocs.Editor.xml
+E:\Work Sami\Repos\GroupDocs.Editor-for-.NET\Examples\CSharp\obj\Debug\GroupDocs.Editor.Examples.CSharp.exe
+E:\Work Sami\Repos\GroupDocs.Editor-for-.NET\Examples\CSharp\obj\Debug\GroupDocs.Editor.Examples.CSharp.pdb

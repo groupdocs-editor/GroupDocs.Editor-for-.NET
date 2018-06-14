@@ -135,9 +135,11 @@ namespace GroupDocs.Editor.Examples.CSharp
             using (InputHtmlDocument htmlDoc = EditorHandler.ToHtml(sourceStream))
             {
                 //  Obtain CSS content
-                string cssContent = htmlDoc.GetCssContent();
-
-                Console.WriteLine(cssContent);
+                List<string> cssContentList = htmlDoc.GetCssContent();
+                foreach (string cssContent in cssContentList)
+                {
+                    Console.WriteLine(cssContent);
+                }
             }
 
             // close stream object to release file for other methods.
@@ -157,9 +159,11 @@ namespace GroupDocs.Editor.Examples.CSharp
             {
                 string externalResourcePrefix = "GetResource?htmlDocumentFolderName=" + Common.sourceResourcesFolder + "&resourceFilename=Picture 3.png";
                 //  Obtain CSS content
-                string cssContent = htmlDoc.GetCssContent(externalResourcePrefix);
-
-                Console.WriteLine(cssContent);
+                List<string> cssContentList = htmlDoc.GetCssContent(externalResourcePrefix);
+                foreach(string cssContent in cssContentList)
+                {
+                    Console.WriteLine(cssContent);
+                }                
             }
 
             // close stream object to release file for other methods.
@@ -238,19 +242,23 @@ namespace GroupDocs.Editor.Examples.CSharp
                     string pathToResource = string.Format(Path.Combine(Common.resultPath, Common.resultResourcesFolder) + "\\{0}", imageResource.FilenameWithExtension);
                     imageResource.Save(pathToResource);
                 }
+                 
+                List<CssText> cssList = htmlDoc.Css;
+                foreach(CssText css in cssList)
+                {
+                    Console.WriteLine(css.FilenameWithExtension);
+                    Console.WriteLine(css.ByteContent);
+                    Console.WriteLine(css.Name);
+                    Console.WriteLine(css.TextContent);
+                    Console.WriteLine(css.Encoding);
 
-                CssText css = htmlDoc.Css;
-                Console.WriteLine(css.FilenameWithExtension);
-                Console.WriteLine(css.ByteContent);
-                Console.WriteLine(css.Name);
-                Console.WriteLine(css.TextContent);
-                Console.WriteLine(css.Encoding);
+                    string pathToCss = string.Format(Path.Combine(Common.resultPath, Common.resultResourcesFolder) + "\\{0}", css.FilenameWithExtension);
+                    css.Save(pathToCss);
 
-                string pathToCss = string.Format(Path.Combine(Common.resultPath, Common.resultResourcesFolder) + "\\{0}", css.FilenameWithExtension);
-                css.Save(pathToCss);
-
-                // saving output html file.
-                htmlDoc.Save(Path.Combine(Common.resultPath, Common.resultFile), Path.Combine(Common.resultPath, Common.resultResourcesFolder));
+                    // saving output html file.
+                    htmlDoc.Save(Path.Combine(Common.resultPath, Common.resultFile), Path.Combine(Common.resultPath, Common.resultResourcesFolder));
+                }
+                
             }
 
             // close stream object to release file for other methods.

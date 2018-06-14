@@ -30,7 +30,7 @@ namespace GroupDocs.Editor.Examples.CSharp
             #region Set GroupDocs License File
 
             // Uncomment following lines and specify the licence file to embed product licence using file path.
-            //Common.licensePath = Path.Combine(Environment.CurrentDirectory, @"GroupDocs.Editor.lic"); //"D:/License/GroupDocs.Editor.lic";
+            //Common.licensePath = (@"E://GroupDocs.Total.lic");
             //Common.ApplyLicense(Common.licensePath);
 
             // Uncomment following lines and specify the licence file to embed product licence using stream.
@@ -45,73 +45,69 @@ namespace GroupDocs.Editor.Examples.CSharp
             #region Here are the sample methods call, how to convert document to HTML DOM.
 
             // Get HTML document content.
-            Common.sourceFile = "source.html";
-            ConvertDocumentToHTMLDOM.GetHTMLContents();
+            //Common.sourceFile = "source.html";
+            //ConvertDocumentToHTMLDOM.GetHTMLContents();
 
             // Get HTML document content with external resource prefix.
-            Common.sourceFile = "source.html";
-            ConvertDocumentToHTMLDOM.GetHTMLContentsWithExternalResources();
+            //Common.sourceFile = "source.html";
+            //ConvertDocumentToHTMLDOM.GetHTMLContentsWithExternalResources();
 
             // Get HTML document with embedded resources.
-            Common.sourceFile = "source.html";
-            ConvertDocumentToHTMLDOM.GetHTMLContentsWithEmbeddedResources();
+            //Common.sourceFile = "source.html";
+            //ConvertDocumentToHTMLDOM.GetHTMLContentsWithEmbeddedResources();
 
             // Get HTML document BODY tag content.
-            Common.sourceFile = "source.html";
-            ConvertDocumentToHTMLDOM.GetHTMLBodyTagContents();
+            //Common.sourceFile = "source.html";
+            //ConvertDocumentToHTMLDOM.GetHTMLBodyTagContents();
 
             // Get HTML document BODY tag content with external resource prefix.
-            Common.sourceFile = "source.html";
-            ConvertDocumentToHTMLDOM.GetHTMLBodyTagContentsWithExternalResources();
+            //Common.sourceFile = "source.html";
+            //ConvertDocumentToHTMLDOM.GetHTMLBodyTagContentsWithExternalResources();
 
             // Get HTML document external CSS content.
-            Common.sourceFile = "source.html";
-            ConvertDocumentToHTMLDOM.GetHTMLExternalCSSContents();
+            //Common.sourceFile = "source.html";
+            //ConvertDocumentToHTMLDOM.GetHTMLExternalCSSContents();
 
             // Get HTML document external CSS content with external resource prefix.
-            Common.sourceFile = "source.html";
-            ConvertDocumentToHTMLDOM.GetHTMLExternalCSSContentsWithExternalResources();
+            //Common.sourceFile = "source.html";
+            //ConvertDocumentToHTMLDOM.GetHTMLExternalCSSContentsWithExternalResources();
 
             // Save HTML document specifying resource folder name.
-            Common.sourceFile = "source.html";
-            Common.resultFile = "result-SaveHTMLDocumentWithResourcesFolder.html";
-            ConvertDocumentToHTMLDOM.SaveHTMLDocumentWithResourcesFolder();
+            //Common.sourceFile = "source.html";
+            //Common.resultFile = "result-SaveHTMLDocumentWithResourcesFolder.html";
+            //ConvertDocumentToHTMLDOM.SaveHTMLDocumentWithResourcesFolder();
 
             // Traverse HTML document and save resources by specifying resource folder name.
-            Common.sourceFile = "source.html";
-            Common.resultFile = "result-TraverseHTMLResourcesAndCSS.html";
-            ConvertDocumentToHTMLDOM.TraverseHTMLResourcesAndCSS();
+            //Common.sourceFile = "source.html";
+            //Common.resultFile = "result-TraverseHTMLResourcesAndCSS.html";
+            //ConvertDocumentToHTMLDOM.TraverseHTMLResourcesAndCSS();
 
             #endregion
 
             #region Here are the sample methods call, how to convert HTML DOM to document.
 
             // Get HTML DOM from string content with resources and save to document.
-            Common.sourceFile = "source.html";
-            Common.resultFile = "result-GetHTMLDOMContentsToDocument.docx";
-            ConvertHTMLDOMToDocument.GetHTMLDOMContentsToDocument();
+            //Common.sourceFile = "source.html";
+            //Common.resultFile = "result-GetHTMLDOMContentsToDocument.docx";
+            //ConvertHTMLDOMToDocument.GetHTMLDOMContentsToDocument();
 
             #endregion
 
             #region Here are the sample methods call, how to convert HTML DOM to Word document.
 
             // Save to Words document.
-            Common.sourceFile = "source.html";
-            Common.resultFile = "result-SaveToWordsDocument.docx";
-            WorkingWithWordDocuments.SaveToWordsDocument();
+            //Common.sourceFile = "source.html";
+            //Common.resultFile = "result-SaveToWordsDocument.docx";
+           // WorkingWithWordDocuments.SaveToWordsDocument();
 
             // Save to Words document with options.
-            Common.sourceFile = "source.html";
+            //Common.sourceFile = "source.html";
             // using this propert to set password for output file.
-            Common.sourceFilePassword = "password";
-            Common.resultFile = "result-SaveToWordsDocumentWithOptions.docx";
-            WorkingWithWordDocuments.SaveToWordsDocumentWithOptions();
+            //Common.sourceFilePassword = "password";
+            //Common.resultFile = "result-SaveToWordsDocumentWithOptions.docx";
+           // WorkingWithWordDocuments.SaveToWordsDocumentWithOptions();
 
             #endregion
-
-            Console.WriteLine("*** All Methods Executed (Press any key to exit). ***");
-            // On consol hit enter to exit.
-            Console.ReadKey();
         }
     }
 }
