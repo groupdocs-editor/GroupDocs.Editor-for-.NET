@@ -108,6 +108,8 @@ namespace GroupDocs.Editor.Examples.CSharp
            // WorkingWithWordDocuments.SaveToWordsDocumentWithOptions();
 
             #endregion
+             
+            Console.ReadKey();
         }
     }
 }
