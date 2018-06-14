@@ -1,0 +1,2573 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>GroupDocs.Editor</name>
+  </assembly>
+  <members>
+    <member name="T:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions">
+      <summary>
+            Allows to specify custom options for loading documents of all supportable Cells (Excel-compatible) formats
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.TextLoadOptions">
+      <summary>
+            Subclass for loading text-based Cells documents (CSV, Tab-based etc.)
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.TextLoadOptions.#ctor">
+      <summary>
+            Empty constructor - you also need to specify a separator too
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.TextLoadOptions.#ctor(System.String)">
+      <summary>
+            Initializes TextLoadOptions with specified separator
+            </summary>
+      <param name="separator">
+      </param>
+    </member>
+    <member name="P:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.TextLoadOptions.Separator">
+      <summary>
+            Allows to specify a string separator for text-based Cells documents
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.WorksheetIndex">
+      <summary>
+            Allows to specify the 0-based index of the worksheet (tab) of the input Cells document, which should be converted to the HTML (see remarks).
+            </summary>
+      <remarks>
+            Most of Cells documents support a concept of tabs, i.e. they can be multitabbed. On the other hand, HTML format doesn't support such structure.
+            Because of this GroupDocs.Editor can convert to the HTML only one specific tab of the input document, and this option allows to specify it.
+            Tab index is 0-based, negative values are prohibited. If specified index exceeds the number of all tabs, the exception will be thrown.
+            If input Cells document contains only one tab, this option will be ignored. Default value is 0 (first tab).
+            </remarks>
+    </member>
+    <member name="P:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.Password">
+      <summary>
+            Allows to specify, modify and obtain the password, which will be used for opening the Cells document, if it is encoded. 
+            Set to NULL or empty string in order to remove the password.
+            Useless for text-based Cells documents like CSV.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.TextOptions">
+      <summary>
+            Allows to specify options for loading text-based Cells documents
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Cells.CellsToHtml.NamespaceDoc">
+      <summary>
+            The <b>GroupDocs.Cells.CellsToHtml</b> namespace provides classes for Cells to HTML (forward) document processing.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Cells.HtmlToCells.CellFormats">
+      <summary>
+            Indicates the format of the Excel-compatible document in which the workbook, opened from HTML, is saved.
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.CellFormats.Xlsx">
+      <summary>
+            XLSX
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.CellFormats.Xls">
+      <summary>
+            Excel97-2003 XLS
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.CellFormats.Xlsm">
+      <summary>
+            XLSM format which enable macros
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.CellFormats.Xltx">
+      <summary>
+            XLTX
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.CellFormats.Xltm">
+      <summary>
+            XLTM format which enable macros
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.CellFormats.Csv">
+      <summary>
+            CSV (Comma Separated Value) format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.CellFormats.TabDelimited">
+      <summary>
+            Tab delimited text file
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.CellFormats.Ods">
+      <summary>
+            ODS (OpenDocument Spreadsheet)
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.CellFormats.SpreadsheetML">
+      <summary>
+            Excel 2003 XML format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.CellFormats.Xlsb">
+      <summary>
+            XLSB (binary)
+            </summary>
+      <remarks>XLSB format differs from standard Open XML format (.XLSX) spreadsheets since it stores the spreadsheet using a binary format (BIFF12).</remarks>
+    </member>
+    <member name="T:GroupDocs.Editor.Cells.HtmlToCells.CellsSaveOptions">
+      <summary>
+            Allows to specify custom options for generating and saving MS Excel-compliant documents
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Cells.HtmlToCells.CellsSaveOptions.Password">
+      <summary>
+            Allows to specify, modify, obtain, or remove a password, which will be used to encode the generated Cells document, 
+            if tis document fornat supports password protection. 
+            Specify NULL or empty string for removing (cleaning) the password.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Cells.HtmlToCells.CellsSaveOptions.OutputFormat">
+      <summary>
+            Allows to specify a Cells format, which will be used for saving the document
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Cells.HtmlToCells.NamespaceDoc">
+      <summary>
+            The <b>GroupDocs.Cells.HtmlToCells</b> namespace provides classes for HTML to Cells (backward) document processing.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Cells.NamespaceGroupDoc">
+      <summary>
+            The <b>GroupDocs.Editor.Cells</b> namespace provides classes for Cells to HTML (forward) and HTML to Cells (backward) document processing.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio">
+      <summary>
+            Represents a "ratio" CSS data type, which is used for describing aspect ratios in media queries and for raster images 
+            by denoting the proportion between two unitless values called "numerator" and "denominator". Immutable struct.
+            </summary>
+      <remarks>https://developer.mozilla.org/en-US/docs/Web/CSS/ratio</remarks>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Numerator">
+      <summary>
+            Returns a numerator of this ratio
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Denominator">
+      <summary>
+            Returns a denominator of this ratio
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Calculate">
+      <summary>
+            Calculates and returns this ratio as a single floating point number
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.GetInverseRatio">
+      <summary>
+            Generates and returns an inversed (reciprocal) ratio for this ratio
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.SerializeDefault">
+      <summary>
+            Serializes this ratio to the string and returns it
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.ToString">
+      <summary>
+            Returns a string representation of this ratio; same as "SerializeDefault()"
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.IsDefault">
+      <summary>
+            Determines whether this ratio has default value or is a "1/1" (Single)
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Clone">
+      <summary>
+            Returns a full copy of this ratio
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Equals(GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio)">
+      <summary>
+            Determines whether this instance is equal with specified "Ratio" instance
+            </summary>
+      <param name="other">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Equals(System.Object)">
+      <summary>
+            Determines whether this instance is equal with specified uncasted object, which presumably is another "Ratio" instance
+            </summary>
+      <param name="other">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.op_Equality(GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio,GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio)">
+      <summary>
+            Compares two ratios and returns a boolean indicating if the two do match.
+            </summary>
+      <param name="left">The first ratio to use.</param>
+      <param name="right">The second ratio to use.</param>
+      <returns>True if both ratios are equal, otherwise false.</returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.op_Inequality(GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio,GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio)">
+      <summary>
+            Compares two ratios and returns a boolean indicating if the two do not match.
+            </summary>
+      <param name="left">The first ratio to use.</param>
+      <param name="right">The second ratio to use.</param>
+      <returns>True if both ratios are not equal, otherwise false.</returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.GetHashCode">
+      <summary>
+            Returns a hashcode for this instance, which cannot be changed during its lifetime
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Create(System.UInt16,System.UInt16)">
+      <summary>
+            Creates and returns one Ratio instance from specified numerator and denominator
+            </summary>
+      <param name="numerator">Numerator for the ratio. Should be a strictly positive integer number.</param>
+      <param name="denominator">Denominator for the ratio. Should be a strictly positive integer number.</param>
+      <returns>
+      </returns>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Single">
+      <summary>
+            Single default ratio 1/1
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Css.DataTypes.NamespaceDoc">
+      <summary>
+            The <b>GroupDocs.Editor.HtmlCss.Css.DataTypes</b> namespace provides classes that represent CSS data types. 
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase">
+      <summary>
+            Base class for any supported font type as a resource for the HTML document with all its properties
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase._name">
+      <summary>
+            Name of the font resource, which serves as its unique identifier. Should not be changed (readonly) after creating an instance of the class.
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase._streamOrigPosition">
+      <summary>
+            Original position in the stream, which indicates the beginning of the font content
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase._binaryContent">
+      <summary>
+            Content of the font in the stream
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase._base64TextContent">
+      <summary>
+            Content of the font in base64-encoded form, stored in the string
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.Name">
+      <summary>
+            Returns name of this font resource. Usually doesn't contain filename extension and theoretically can differ from filename.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.FilenameWithExtension">
+      <summary>
+            Returns correct filename of this font resource, which consists of name and extension. Theoretically can differ from the name.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.ByteContent">
+      <summary>
+            Returns content of this font as byte stream
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.TextContent">
+      <summary>
+            Returns content of this font as base64-encoded string. This value is cached after first invoke.
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.Save(System.String)">
+      <summary>
+            Saves this font to the specified file
+            </summary>
+      <param name="fullPathToFile">Full path to the file, which will be created or rewrited</param>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.Equals(GroupDocs.Editor.HtmlCss.Resources.IHtmlResource)">
+      <summary>
+            Checks this instance with specified HTML resource on reference equality
+            </summary>
+      <param name="other">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.Equals(GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase)">
+      <summary>
+            Checks this instance with specified font resource on reference equality
+            </summary>
+      <param name="other">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.Dispose">
+      <summary>
+            Disposes this font resource, disposing its content and making most methods and properties non-working
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.IsDisposed">
+      <summary>
+            Determines whether this font is disposed or not
+            </summary>
+    </member>
+    <member name="E:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.Disposed">
+      <summary>
+            Event, which occurs when this font is disposed
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.Type">
+      <summary>
+            In implementing type should return information about type of specific font resource
+            as an instance of specific FontType type, which encapsulates all type-specific info
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Fonts.EotFont">
+      <summary>
+            Represents one font in the EOT (Embedded OpenType) format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.EotFont.RequiredHeaderSize">
+      <summary>
+            EOT header size (in bytes), which is required for its validation
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.EotFont.IsValid(System.IO.Stream)">
+      <summary>
+            Checks whether specified stream is a valid EOT font
+            </summary>
+      <param name="binaryContent">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.EotFont.IsValid(System.String)">
+      <summary>
+            Checks whether specified base64-encoded string is a valid EOT font
+            </summary>
+      <param name="contentInBase64">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.EotFont.#ctor(System.String,System.String)">
+      <summary>
+            Creates new EotFont class from content, represented as base64-encoded string, and with specified name
+            </summary>
+      <param name="name">Name of the EOT font. Cannot be null, empty or whitespaces.</param>
+      <param name="contentInBase64">Content as base64-encoded string. Cannot be null, empty or whitespaces. 
+            If it is not a EOT content, exception will be thrown.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.EotFont.#ctor(System.String,System.IO.Stream)">
+      <summary>
+            Creates new EotFont class from content, represented as byte stream, and with specified name
+            </summary>
+      <param name="name">Name of the EOT font. Cannot be null, empty or whitespaces.</param>
+      <param name="binaryContent">Content as byte stream. Reading begins from original position. Cannot be null. 
+            Should be readable and seakable. If this instance will be disposed, this stream will be disposed too.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.EotFont.Type">
+      <summary>
+            Returns FontType.Eot
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType">
+      <summary>
+            Represents one supportable font type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.Undefined">
+      <summary>
+            Special value, which marks undefined, unknown or unsupported font resource
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.Woff">
+      <summary>
+            Represents a WOFF (Web Open Font Format) font type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.Woff2">
+      <summary>
+            Represents a WOFF2 (Web Open Font Format version 2) font type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.Ttf">
+      <summary>
+            Represents a TTF (TrueType Font) font type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.Eot">
+      <summary>
+            Represents a EOT (Embedded OpenType) font type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.CssName">
+      <summary>
+            Returns CSS-compatible name of this font type, which is used in the @font-face at-rule
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.FormalName">
+      <summary>
+            Returns a formal name of this font type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.FileExtension">
+      <summary>
+            Filename extension (without dot character) for this font type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.FontFormat">
+      <summary>
+            Font format for @font-face format
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.MimeCode">
+      <summary>
+            MIME code of a particular font type
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.ParseFromCssName(System.String)">
+      <summary>
+            Returns FontType value, which is equivalent of specified CSS-compatible name of the font type
+            </summary>
+      <param name="name">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.ParseFromFilenameWithExtension(System.String)">
+      <summary>
+            Returns FontType value, which is equivalent of filename extension, which is extracted from specified filename
+            </summary>
+      <param name="filename">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.ParseFromMime(System.String)">
+      <summary>
+            Returns FontType value, which is equivalent of specified MIME code
+            </summary>
+      <param name="mimeCode">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.GetFirstDefined(GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType[])">
+      <summary>
+            Returns a first font type from specified set, which is not an "Undefined" value, or "Undefined" font type otherwise (when all items are "Undefined")
+            </summary>
+      <param name="fonts">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.Equals(GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType)">
+      <summary>
+            Determines whether this instance is equal with specified "FontType" instance
+            </summary>
+      <param name="other">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.Equals(System.Object)">
+      <summary>
+            Determines whether this instance is equal with specified uncasted object, which presumably is another "FontType" instance
+            </summary>
+      <param name="obj">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.op_Equality(GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType,GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType)">
+      <summary>
+            Checks whether two "FontType" values are equal
+            </summary>
+      <param name="first">
+      </param>
+      <param name="second">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.op_Inequality(GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType,GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType)">
+      <summary>
+            Checks whether two "FontType" values are not equal
+            </summary>
+      <param name="first">
+      </param>
+      <param name="second">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.GetHashCode">
+      <summary>
+            Returns a hash-code, which is a constant number for this specific value type
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Fonts.TtfFont">
+      <summary>
+            Represents one font in the TTF (TrueType Font) format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.TtfFont.RequiredHeaderSize">
+      <summary>
+            TTF header size (in bytes), which is required for its validation
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.TtfFont.IsValid(System.IO.Stream)">
+      <summary>
+            Checks whether specified stream is a valid TTF font
+            </summary>
+      <param name="binaryContent">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.TtfFont.IsValid(System.String)">
+      <summary>
+            Checks whether specified base64-encoded string is a valid TTF font
+            </summary>
+      <param name="contentInBase64">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.TtfFont.#ctor(System.String,System.String)">
+      <summary>
+            Creates new TtfFont class from content, represented as base64-encoded string, and with specified name
+            </summary>
+      <param name="name">Name of the TTF font. Cannot be null, empty or whitespaces.</param>
+      <param name="contentInBase64">Content as base64-encoded string. Cannot be null, empty or whitespaces. 
+            If it is not a TTF content, exception will be thrown.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.TtfFont.#ctor(System.String,System.IO.Stream)">
+      <summary>
+            Creates new TtfFont class from content, represented as byte stream, and with specified name
+            </summary>
+      <param name="name">Name of the TTF font. Cannot be null, empty or whitespaces.</param>
+      <param name="binaryContent">Content as byte stream. Reading begins from original position. Cannot be null. 
+            Should be readable and seakable. If this instance will be disposed, this stream will be disposed too.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.TtfFont.Type">
+      <summary>
+            Returns FontType.Ttf
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Fonts.Woff2Font">
+      <summary>
+            Represents one font in the WOFF2 (Web Open Font Format) format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.Woff2Font.RequiredHeaderSize">
+      <summary>
+            WOFF2 header size (in bytes), which is required for its validation
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.Woff2Font.IsValid(System.IO.Stream)">
+      <summary>
+            Checks whether specified stream is a valid WOFF2 font
+            </summary>
+      <param name="binaryContent">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.Woff2Font.IsValid(System.String)">
+      <summary>
+            Checks whether specified base64-encoded string is a valid WOFF2 font
+            </summary>
+      <param name="contentInBase64">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.Woff2Font.#ctor(System.String,System.String)">
+      <summary>
+            Creates new Woff2Font class from content, represented as base64-encoded string, and with specified name
+            </summary>
+      <param name="name">Name of the WOFF2 font. Cannot be null, empty or whitespaces.</param>
+      <param name="contentInBase64">Content as base64-encoded string. Cannot be null, empty or whitespaces. 
+            If it is not a WOFF2 content, exception will be thrown.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.Woff2Font.#ctor(System.String,System.IO.Stream)">
+      <summary>
+            Creates new Woff2Font class from content, represented as byte stream, and with specified name
+            </summary>
+      <param name="name">Name of the WOFF2 font. Cannot be null, empty or whitespaces.</param>
+      <param name="binaryContent">Content as byte stream. Reading begins from original position. Cannot be null. 
+            Should be readable and seakable. If this instance will be disposed, this stream will be disposed too.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.Woff2Font.Type">
+      <summary>
+            Returns FontType.Woff2
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Fonts.WoffFont">
+      <summary>
+            Represents one font in the WOFF (Web Open Font Format) format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.WoffFont.RequiredHeaderSize">
+      <summary>
+            WOFF header size (in bytes), which is required for its validation
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.WoffFont.IsValid(System.IO.Stream)">
+      <summary>
+            Checks whether specified stream is a valid WOFF font
+            </summary>
+      <param name="binaryContent">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.WoffFont.IsValid(System.String)">
+      <summary>
+            Checks whether specified base64-encoded string is a valid WOFF font
+            </summary>
+      <param name="contentInBase64">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.WoffFont.#ctor(System.String,System.String)">
+      <summary>
+            Creates new WoffFont class from content, represented as base64-encoded string, and with specified name
+            </summary>
+      <param name="name">Name of the WOFF font. Cannot be null, empty or whitespaces.</param>
+      <param name="contentInBase64">Content as base64-encoded string. Cannot be null, empty or whitespaces. 
+            If it is not a WOFF content, exception will be thrown.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.WoffFont.#ctor(System.String,System.IO.Stream)">
+      <summary>
+            Creates new WoffFont class from content, represented as byte stream, and with specified name
+            </summary>
+      <param name="name">Name of the WOFF font. Cannot be null, empty or whitespaces.</param>
+      <param name="binaryContent">Content as byte stream. Reading begins from original position. Cannot be null. 
+            Should be readable and seakable. If this instance will be disposed, this stream will be disposed too.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.WoffFont.Type">
+      <summary>
+            Returns FontType.Woff
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Fonts.NamespaceDoc">
+      <summary>
+            The <b>GroupDocs.Editor.HtmlCss.Resources.Fonts</b> namespace provides classes that represent font resources. 
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Images.IImageResource">
+      <summary>
+            Represents image resource of any type, raster or vector
+            </summary>
+      <see cref="!:https://developer.mozilla.org/en-US/docs/Web/CSS/image" />
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.IImageResource.Type">
+      <summary>
+            In implementing type should return a type of specific image as an instance of specific ImageType, which encapsulates all type-specific info
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.IImageResource.AspectRatio">
+      <summary>
+            In implementing type should return an aspect ratio of particular image regardless of its type. 
+            Both vector and raster images have intrinsic aspect ratio between its width and height.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.IImageResource.LinearDimensions">
+      <summary>
+            In implementing type should return linear dimensions of the image. For raster images they are intrinsic dimensions in pixels.
+            Vector images, in counterpart, have no fixed dimensions, but their metadata can contain some basic dimenstions in different measurement units.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.SvgImage">
+      <summary>
+            Represents one vector image in SVG (Scalable Vector Graphics) format with its metadata and additional methods
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.SvgImage.IsValid(System.String)">
+      <summary>
+            Performs a surface check whether specified textual content represents a SVG image
+            </summary>
+      <param name="content">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.SvgImage.#ctor(System.String,System.String)">
+      <summary>
+            Creates new SvgImage instance from content, represented as usual string, and with specified name
+            </summary>
+      <param name="name">Name of the SVG image. Cannot be null, empty or whitespaces.</param>
+      <param name="content">Content as a usual string. Cannot be null, empty or whitespaces. 
+            If it is not a SVG content, exception will be thrown.</param>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.SvgImage.#ctor(System.String,System.IO.Stream)">
+      <summary>
+            Creates new SvgImage instance from content, represented as byte stream, and with specified name
+            </summary>
+      <param name="name">Name of the SVG image. Cannot be null, empty or whitespaces.</param>
+      <param name="binaryContent">Content as byte stream. Reading begins from original position. Cannot be null. 
+            Should be readable and seakable. If this instance will be disposed, this stream will be disposed too.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.SvgImage.Name">
+      <summary>
+            Returns name of this SVG image. Usually doesn't contain filename extension and theoretically can differ from filename.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.SvgImage.FilenameWithExtension">
+      <summary>
+            Returns correct filename of this SVG image, which consists of name and extension. Theoretically can differ from the name.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.SvgImage.Type">
+      <summary>
+            Returns ImageType.Svg
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.SvgImage.AspectRatio">
+      <summary>
+            Returns aspect ratio of this SVG image
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.SvgImage.LinearDimensions">
+      <summary>
+            Returns linear dimensions of this SVG image (width and height), if they are present, or empty default Dimensions instance otherwise
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.SvgImage.ByteContent">
+      <summary>
+            Returns a content of this SVG image as a binary stream
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.SvgImage.TextContent">
+      <summary>
+            Returns a content of this SVG image as a plain text (in XML format)
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.SvgImage.Save(System.String)">
+      <summary>
+            Saves this SVG image to the file
+            </summary>
+      <param name="fullPathToFile">Full path to the file, which will be created (if it doesn't exist) or overwritten (if exists) with the content of this SVG image</param>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.SvgImage.Equals(GroupDocs.Editor.HtmlCss.Resources.IHtmlResource)">
+      <summary>
+            Checks this instance with specified on reference equality.
+            </summary>
+      <param name="other">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.SvgImage.Dispose">
+      <summary>
+            Disposes this raster image, disposing its content and making most methods and properties non-working
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.SvgImage.IsDisposed">
+      <summary>
+            Determines whether this SVG image is disposed or not
+            </summary>
+    </member>
+    <member name="E:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.SvgImage.Disposed">
+      <summary>
+            Event, which occurs right after when this SVG image is disposed
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.NamespaceDoc">
+      <summary>
+            The <b>GroupDocs.Editor.HtmlCss.Resources.Images.Vector</b> namespace provides classes that represent only vector image resources. 
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.BmpImage">
+      <summary>
+            Represents one image in BMP (BitMap Picture) format with its metadata and additional methods
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.BmpImage.IsValid(System.IO.Stream)">
+      <summary>
+            Checks whether specified stream is a valid BMP image
+            </summary>
+      <param name="binaryContent">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.BmpImage.IsValid(System.String)">
+      <summary>
+            Checks whether specified base64-encoded string is a valid BMP image
+            </summary>
+      <param name="contentInBase64">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.BmpImage.#ctor(System.String,System.String)">
+      <summary>
+            Creates new BmpImage instance from content, represented as base64-encoded string, and with specified name
+            </summary>
+      <param name="name">Name of the BMP image. Cannot be null, empty or whitespaces.</param>
+      <param name="contentInBase64">Content as base64-encoded string. Cannot be null, empty or whitespaces. 
+            If it is not a BMP content, exception will be thrown.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.BmpImage.#ctor(System.String,System.IO.Stream)">
+      <summary>
+            Creates new BmpImage instance from content, represented as byte stream, and with specified name
+            </summary>
+      <param name="name">Name of the BMP image. Cannot be null, empty or whitespaces.</param>
+      <param name="binaryContent">Content as byte stream. Reading begins from original position. Cannot be null. 
+            Should be readable and seakable. If this instance will be disposed, this stream will be disposed too.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.BmpImage.Type">
+      <summary>
+            Returns ImageType.Bmp
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.BmpImage.ReduceToNewHeight(System.UInt16)">
+      <summary>
+            Creates and returns a new reduced BMP image, but with specified new reduced height and proportionally reduced width.
+            </summary>
+      <param name="targetHeightInPixels">Height of the desired BMP image in pixels. Should be strictly lesser than original height.</param>
+      <returns>
+      </returns>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.GifImage">
+      <summary>
+            Represents one image in GIF (Graphics Interchange Format) format with its metadata and additional methods
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.GifImage.IsValid(System.IO.Stream)">
+      <summary>
+            Checks whether specified stream is a valid GIF image
+            </summary>
+      <param name="binaryContent">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.GifImage.IsValid(System.String)">
+      <summary>
+            Checks whether specified base64-encoded string is a valid GIF image
+            </summary>
+      <param name="contentInBase64">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.GifImage.#ctor(System.String,System.String)">
+      <summary>
+            Creates new GifImage instance from content, represented as base64-encoded string, and with specified name
+            </summary>
+      <param name="name">Name of the GIF image. Cannot be null, empty or whitespaces.</param>
+      <param name="contentInBase64">Content as base64-encoded string. Cannot be null, empty or whitespaces. 
+            If it is not a GIF content, exception will be thrown.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.GifImage.#ctor(System.String,System.IO.Stream)">
+      <summary>
+            Creates new GifImage instance from content, represented as byte stream, and with specified name
+            </summary>
+      <param name="name">Name of the GIF image. Cannot be null, empty or whitespaces.</param>
+      <param name="binaryContent">Content as byte stream. Reading begins from original position. Cannot be null. 
+            Should be readable and seakable. If this instance will be disposed, this stream will be disposed too.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.GifImage.Type">
+      <summary>
+            Returns ImageType.Gif
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.GifImage.ReduceToNewHeight(System.UInt16)">
+      <summary>
+            Creates and returns a new reduced GIF image, but with specified new reduced height and proportionally reduced width.
+            </summary>
+      <param name="targetHeightInPixels">Height of the desired GIF image in pixels. Should be strictly lesser than original height.</param>
+      <returns>
+      </returns>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.GifImage.Version">
+      <summary>
+            Returns internal version of this GIF image (version is extracted from header)
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.IconImage">
+      <summary>
+            Represents one image in ICON format with its metadata and additional methods
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.IconImage.IsValid(System.IO.Stream)">
+      <summary>
+            Checks whether specified stream is a valid ICON image
+            </summary>
+      <param name="binaryContent">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.IconImage.IsValid(System.String)">
+      <summary>
+            Checks whether specified base64-encoded string is a valid ICON image
+            </summary>
+      <param name="contentInBase64">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.IconImage.#ctor(System.String,System.String)">
+      <summary>
+            Creates new IconImage instance from content, represented as base64-encoded string, and with specified name
+            </summary>
+      <param name="name">Name of the ICON image. Cannot be null, empty or whitespaces.</param>
+      <param name="contentInBase64">Content as base64-encoded string. Cannot be null, empty or whitespaces. 
+            If it is not a ICON content, exception will be thrown.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.IconImage.#ctor(System.String,System.IO.Stream)">
+      <summary>
+            Creates new IconImage instance from content, represented as byte stream, and with specified name
+            </summary>
+      <param name="name">Name of the ICON image. Cannot be null, empty or whitespaces.</param>
+      <param name="binaryContent">Content as byte stream. Reading begins from original position. Cannot be null. 
+            Should be readable and seakable. If this instance will be disposed, this stream will be disposed too.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.IconImage.Type">
+      <summary>
+            Returns ImageType.Icon
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.IconImage.ReduceToNewHeight(System.UInt16)">
+      <summary>
+            Creates and returns a new reduced Icon image, but with specified new reduced height and proportionally reduced width.
+            </summary>
+      <param name="targetHeightInPixels">Height of the desired Icon image in pixels. Should be strictly lesser than original height.</param>
+      <returns>
+      </returns>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.IconImage.NumberOfImages">
+      <summary>
+            Returns number of images, which are present in this ICON file
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.JpegImage">
+      <summary>
+            Represents one image in JPEG (Joint Photographic Experts Group) format with its metadata and additional methods
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.JpegImage.IsValid(System.IO.Stream)">
+      <summary>
+            Checks whether specified stream is a valid JPEG image
+            </summary>
+      <param name="binaryContent">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.JpegImage.IsValid(System.String)">
+      <summary>
+            Checks whether specified base64-encoded string is a valid BMP image
+            </summary>
+      <param name="contentInBase64">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.JpegImage.#ctor(System.String,System.String)">
+      <summary>
+            Creates new JpegImage instance from content, represented as base64-encoded string, and with specified name
+            </summary>
+      <param name="name">Name of the JPEG image. Cannot be null, empty or whitespaces.</param>
+      <param name="contentInBase64">Content as base64-encoded string. Cannot be null, empty or whitespaces. 
+            If it is not a JPEG content, exception will be thrown.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.JpegImage.#ctor(System.String,System.IO.Stream)">
+      <summary>
+            Creates new JpegImage instance from content, represented as byte stream, and with specified name
+            </summary>
+      <param name="name">Name of the JPEG image. Cannot be null, empty or whitespaces.</param>
+      <param name="binaryContent">Content as byte stream. Reading begins from original position. Cannot be null. 
+            Should be readable and seakable. If this instance will be disposed, this stream will be disposed too.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.JpegImage.Type">
+      <summary>
+            Returns ImageType.Jpeg
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.JpegImage.ReduceToNewHeight(System.UInt16)">
+      <summary>
+            Creates and returns a new reduced JPEG image, but with specified new reduced height and proportionally reduced width.
+            </summary>
+      <param name="targetHeightInPixels">Height of the desired JPEG image in pixels. Should be strictly lesser than original height.</param>
+      <returns>
+      </returns>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.PngImage">
+      <summary>
+            Represents one image in PNG (Portable Network Graphics) format with its metadata and additional methods
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.PngImage.IsValid(System.IO.Stream)">
+      <summary>
+            Checks whether specified stream is a valid PNG image
+            </summary>
+      <param name="binaryContent">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.PngImage.IsValid(System.String)">
+      <summary>
+            Checks whether specified base64-encoded string is a valid PNG image
+            </summary>
+      <param name="contentInBase64">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.PngImage.#ctor(System.String,System.String)">
+      <summary>
+            Creates new PngImage instance from content, represented as base64-encoded string, and with specified name
+            </summary>
+      <param name="name">Name of the PNG image. Cannot be null, empty or whitespaces.</param>
+      <param name="contentInBase64">Content as base64-encoded string. Cannot be null, empty or whitespaces. 
+            If it is not a PNG content, exception will be thrown.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.PngImage.#ctor(System.String,System.IO.Stream)">
+      <summary>
+            Creates new PngImage instance from content, represented as byte stream, and with specified name
+            </summary>
+      <param name="name">Name of the PNG image. Cannot be null, empty or whitespaces.</param>
+      <param name="binaryContent">Content as byte stream. Reading begins from original position. Cannot be null. 
+            Should be readable and seakable. If this instance will be disposed, this stream will be disposed too.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.PngImage.Type">
+      <summary>
+            Returns ImageType.Png
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.PngImage.ReduceToNewHeight(System.UInt16)">
+      <summary>
+            Creates and returns a new reduced PNG image, but with specified new reduced height and proportionally reduced width.
+            </summary>
+      <param name="targetHeightInPixels">Height of the desired PNG image in pixels. Should be strictly lesser than original height.</param>
+      <returns>
+      </returns>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.RasterImageResourceBase">
+      <summary>
+            Base class for any supported raster image with fixed name, dimensions, aspect ratio, type, size, and content.
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.RasterImageResourceBase._name">
+      <summary>
+            Name of the raster image, which serves as its unique identifier. Should not be changed (readonly) after creating an instance of the class.
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.RasterImageResourceBase._streamOrigPosition">
+      <summary>
+            Original position in the stream, which indicates the beginning of the image content
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.RasterImageResourceBase._binaryContent">
+      <summary>
+            Content of the image in the stream
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.RasterImageResourceBase._base64TextContent">
+      <summary>
+            Content of the image in base64-encoded form, stored in the string
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.RasterImageResourceBase._isDisposed">
+      <summary>
+            Flag, which indicates, whether this image is disposed
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.RasterImageResourceBase._linearDimensions">
+      <summary>
+            Linear dimensions of the image
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.RasterImageResourceBase.Name">
+      <summary>
+            Returns name of this raster image. Usually doesn't contain filename extension and theoretically can differ from filename.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.RasterImageResourceBase.FilenameWithExtension">
+      <summary>
+            Returns correct filename of this raster image, which consists of name and extension. Theoretically can differ from the name.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.RasterImageResourceBase.LinearDimensions">
+      <summary>
+            Returns linear dimensions of this raster image (width and height)
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.RasterImageResourceBase.AspectRatio">
+      <summary>
+            Returns an aspect ratio of this image as the width-to-height relation
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.RasterImageResourceBase.Length">
+      <summary>
+            Returns the length of this raster image file in bytes
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.RasterImageResourceBase.ByteContent">
+      <summary>
+            Returns content of this raster image as byte stream
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.RasterImageResourceBase.TextContent">
+      <summary>
+            Returns content of this raster image as base64-encoded string
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.RasterImageResourceBase.Save(System.String)">
+      <summary>
+            Saves this raster image to the specified file
+            </summary>
+      <param name="fullPathToFile">Full path to the file, which will be created or rewrited</param>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.RasterImageResourceBase.GenerateBitmap">
+      <summary>
+            Generates and returns a new instance of the 'System.Drawing.Bitmap' from this raster image.
+            </summary>
+      <remarks>'System.Drawing.Bitmap' is not cached and thus will be generated every time this method will be called</remarks>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.RasterImageResourceBase.ReduceToNewHeight(System.UInt16)">
+      <summary>
+            Creates and returns a new reduced image resource of the same type, but with specified new reduced height and proportionally reduced width.
+            </summary>
+      <param name="targetHeightInPixels">Height of the desired image in pixels. Should be strictly lesser than original height.</param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.RasterImageResourceBase.Equals(GroupDocs.Editor.HtmlCss.Resources.IHtmlResource)">
+      <summary>
+            Checks this instance with specified on reference equality.
+            </summary>
+      <param name="other">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.RasterImageResourceBase.Dispose">
+      <summary>
+            Disposes this raster image, disposing its content and making most methods and properties non-working
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.RasterImageResourceBase.IsDisposed">
+      <summary>
+            Determines whether this raster image is disposed or not
+            </summary>
+    </member>
+    <member name="E:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.RasterImageResourceBase.Disposed">
+      <summary>
+            Event, which occurs when this raster image is disposed
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.RasterImageResourceBase.Type">
+      <summary>
+            In implementing type should return information about type of the raster image
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.NamespaceDoc">
+      <summary>
+            The <b>GroupDocs.Editor.HtmlCss.Resources.Images.Raster</b> namespace provides classes that represent only raster image resources. 
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions">
+      <summary>
+            Represents the linear dimensions (width and height) of one raster image in arbitrary unit. Immutable struct.
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions.#ctor(System.UInt16,System.UInt16)">
+      <summary>
+            Creates a new instance from specified width and height
+            </summary>
+      <param name="width">
+      </param>
+      <param name="height">
+      </param>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions.Width">
+      <summary>
+            Width of the image
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions.Height">
+      <summary>
+            Height of the image
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions.IsSquare">
+      <summary>
+            Determines whether specified 'Dimensions' represents square, i.e. if width is equal to height
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions.Area">
+      <summary>
+            Returns an area (Width x Height)
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions.IsEmpty">
+      <summary>
+            Determines whether this "Dimensions" instance is empty and default, i.e. it doesn't store correct width and height
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions.AspectRatio">
+      <summary>
+            Aspect ratio of this dimensions as width/height
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions.ProportionallyResizeForNewWidth(System.UInt16)">
+      <summary>
+            Creates and returns new "Dimensions" instance, which is proportionally resized from current, based on specified width
+            </summary>
+      <param name="targetWidth">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions.ProportionallyResizeForNewHeight(System.UInt16)">
+      <summary>
+            Creates and returns new "Dimensions" instance, which is proportionally resized from current, based on specified height
+            </summary>
+      <param name="targetHeight">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions.Equals(GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions)">
+      <summary>
+            Determines whether this instance is equal with specified "Dimensions" instance
+            </summary>
+      <param name="other">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions.Equals(System.Object)">
+      <summary>
+            Determines whether this instance is equal with specified uncasted object, which presumably is another "Dimensions" instance
+            </summary>
+      <param name="obj">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions.GetHashCode">
+      <summary>
+            Returns a hashcode for this instance, which cannot be changed during its lifetime
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions.op_Equality(GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions,GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions)">
+      <summary>
+            Checks whether two "Dimensions" values are equal, i.e. they have equal width and height, or both are empty
+            </summary>
+      <param name="first">
+      </param>
+      <param name="second">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions.op_Inequality(GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions,GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions)">
+      <summary>
+            Checks whether two "Dimensions" values are not equal, i.e. their corresponding width and/or height are different
+            </summary>
+      <param name="first">
+      </param>
+      <param name="second">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions.ToString">
+      <summary>
+            Returns a string representation of this "Dimensions"
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions.Clone">
+      <summary>
+            Returns a full copy of this instance
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions.Empty">
+      <summary>
+            Returns an empty Dimensions instance
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Dimensions.FromSize(System.Drawing.Size)">
+      <summary>
+            Generates and returns a new instance from specified System.Drawing.Size instance
+            </summary>
+      <param name="size">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Images.ImageType">
+      <summary>
+            Represents one supportable image type, supports both raster and vector types
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.ImageType.Undefined">
+      <summary>
+            Undefined image type - special value, which should not normally occur
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.ImageType.Jpeg">
+      <summary>
+            JPEG image type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.ImageType.Png">
+      <summary>
+            PNG image type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.ImageType.Bmp">
+      <summary>
+            BMP image type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.ImageType.Gif">
+      <summary>
+            GIF image type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.ImageType.Icon">
+      <summary>
+            ICON image type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.ImageType.Svg">
+      <summary>
+            SVG vector image type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.ImageType.FormalName">
+      <summary>
+            Returns a formal name of this raster image type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.ImageType.FileExtension">
+      <summary>
+            File extension (without dot character) of a particular image type in lower case
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.ImageType.MimeCode">
+      <summary>
+            MIME code of a particular image type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.ImageType.Format">
+      <summary>
+            .NET-standard image format description of a particular image type, if it is a raster image format
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.ImageType.Equals(GroupDocs.Editor.HtmlCss.Resources.Images.ImageType)">
+      <summary>
+            Determines whether this instance is equal with specified "ImageType" instance
+            </summary>
+      <param name="other">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.ImageType.Equals(System.Object)">
+      <summary>
+            Determines whether this instance is equal with specified uncasted object, which presumably is another "ImageType" instance
+            </summary>
+      <param name="obj">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.ImageType.op_Equality(GroupDocs.Editor.HtmlCss.Resources.Images.ImageType,GroupDocs.Editor.HtmlCss.Resources.Images.ImageType)">
+      <summary>
+            Defines whether two specific ImageType instances are equal
+            </summary>
+      <param name="first">
+      </param>
+      <param name="second">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.ImageType.op_Inequality(GroupDocs.Editor.HtmlCss.Resources.Images.ImageType,GroupDocs.Editor.HtmlCss.Resources.Images.ImageType)">
+      <summary>
+            Defines whether two specific ImageType instances are not equal
+            </summary>
+      <param name="first">
+      </param>
+      <param name="second">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.ImageType.GetHashCode">
+      <summary>
+            Returns a hash-code, which is a constant number for this specific value type
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.ImageType.ParseFromFilenameWithExtension(System.String)">
+      <summary>
+            Returns ImageType value, which is equivalent of filename extension, which is extracted from specified filename
+            </summary>
+      <param name="filename">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.ImageType.ParseFromMime(System.String)">
+      <summary>
+            Returns ImageType value, which is equivalent of specified MIME code
+            </summary>
+      <param name="mimeCode">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Images.NamespaceGroupDoc">
+      <summary>
+            The <b>GroupDocs.Editor.HtmlCss.Resources.Images</b> namespace provides classes that represent image resources of all types in general. 
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.IAuxDisposable">
+      <summary>
+            Expands the standard System.IDisposable interface, allows to obtain a current state of an object and subscribe to disposing event
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.IAuxDisposable.IsDisposed">
+      <summary>
+            Determines whether a resource is closed or not
+            </summary>
+    </member>
+    <member name="E:GroupDocs.Editor.HtmlCss.Resources.IAuxDisposable.Disposed">
+      <summary>
+            Occurs when object is disposed
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.IHtmlResource">
+      <summary>
+            Represents one instance of the unknown HTML resource (image, style sheet or font)
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.IHtmlResource.Name">
+      <summary>
+            Name of the HTML resource
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.IHtmlResource.FilenameWithExtension">
+      <summary>
+            Correct filename of the specified resource with appropriate file extension
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.IHtmlResource.Type">
+      <summary>
+            Type of the HTML resource
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.IHtmlResource.ByteContent">
+      <summary>
+            Content of the HTML resource in a form of a byte stream
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.IHtmlResource.TextContent">
+      <summary>
+            Content of the HTML resource in a form of a base64-encoded text string for binary resources or a simple text for textual resources
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.IHtmlResource.Save(System.String)">
+      <summary>
+            Saves a current resource to the specified file
+            </summary>
+      <param name="fullPathToFile">Full path to the file, which will be created or rewritten with the content of a current resource</param>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.IResourceType">
+      <summary>
+            Represents one instance of the unknown resource type (image, font, text)
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.IResourceType.FormalName">
+      <summary>
+            Formal name of the resource type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.IResourceType.FileExtension">
+      <summary>
+            File extension for the specified resource type without dot divider
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.IResourceType.MimeCode">
+      <summary>
+            MIME code for the specific resource type
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.ResourceTypeDetector">
+      <summary>
+            Utility static methods for detecting resource types
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.ResourceTypeDetector.DetectTypeFromFilename(System.String)">
+      <summary>
+            Detects a type from specified filename and returns an instance of respective IResourceType
+            </summary>
+      <param name="filename">Input filename, from which this method will try to extract the resultant IResourceType implementation</param>
+      <returns>IResourceType implementation on success or NULL on failure</returns>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Textual.CssText">
+      <summary>
+            Represents one textual resource, which is a CSS. Does not support generating a HtmlCss.Css.CssOm class from this type.
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Textual.CssText.#ctor(System.String,System.String,System.Text.Encoding)">
+      <summary>
+            Creates new CSS resource from specified textual content with encoding
+            </summary>
+      <param name="name">
+      </param>
+      <param name="textualContent">
+      </param>
+      <param name="originalEncoding">
+      </param>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Textual.CssText.#ctor(System.String,System.IO.Stream,System.Text.Encoding)">
+      <summary>
+            Creates new CSS resource from specified byte stream and encoding
+            </summary>
+      <param name="name">
+      </param>
+      <param name="binaryContent">
+      </param>
+      <param name="originalEncoding">
+      </param>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Textual.CssText.Name">
+      <summary>
+            Returns name of this CSS resource without file extension
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Textual.CssText.FilenameWithExtension">
+      <summary>
+            Returns correct filename of this CSS resource, which consists of name and extension
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Textual.CssText.ByteContent">
+      <summary>
+            Returns content of this CSS resource as byte stream with original encoding
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Textual.CssText.TextContent">
+      <summary>
+            Returns content of this CSS resource as a standard string
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Textual.CssText.Save(System.String)">
+      <summary>
+            Saves this CSS resource to the specified file
+            </summary>
+      <param name="fullPathToFile">Full path to the file, which will be created or rewrited</param>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Textual.CssText.Dispose">
+      <summary>
+            Disposes this CSS resource, disposing its content and making most methods and properties non-working
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Textual.CssText.IsDisposed">
+      <summary>
+            Determines whether this CSS resource is disposed or not
+            </summary>
+    </member>
+    <member name="E:GroupDocs.Editor.HtmlCss.Resources.Textual.CssText.Disposed">
+      <summary>
+            Event, which occurs when this CSS resource is disposed
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Textual.CssText.Equals(GroupDocs.Editor.HtmlCss.Resources.IHtmlResource)">
+      <summary>
+            Checks this instance with specified on equality.
+            </summary>
+      <param name="other">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Textual.CssText.Type">
+      <summary>
+            Returns TextType.Css
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Textual.CssText.Encoding">
+      <summary>
+            Returns encoding of this CSS resource. Usually returns UTF-8.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Textual.ITextResource">
+      <summary>
+            Represents any supported textual resource like CSS and XML
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Textual.ITextResource.Type">
+      <summary>
+            In implementing type should return an object, which describes a type of that specific resource
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Textual.ITextResource.Encoding">
+      <summary>
+            In implementing type should return an encoding of the textual resource, 
+            which was used during its opening and should be used during its saving
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Textual.TextType">
+      <summary>
+            Represents one supportable textual resource type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Textual.TextType.Undefined">
+      <summary>
+            Special value, which marks undefined, unknown or unsupported textual resource
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Textual.TextType.Css">
+      <summary>
+            CSS type of the textual resource
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Textual.TextType.Xml">
+      <summary>
+            XML type of the textual resource
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Textual.TextType.FormalName">
+      <summary>
+            Returns a formal name of this textual resource type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Textual.TextType.FileExtension">
+      <summary>
+            File extension (without dot character) of a particular textual resource
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Textual.TextType.MimeCode">
+      <summary>
+            MIME code of a particular textual resource type
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Textual.TextType.Equals(GroupDocs.Editor.HtmlCss.Resources.Textual.TextType)">
+      <summary>
+            Determines whether this instance is equal with specified "TextType" instance
+            </summary>
+      <param name="other">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Textual.TextType.Equals(System.Object)">
+      <summary>
+            Determines whether this instance is equal with specified uncasted object, which presumably is another "TextType" instance
+            </summary>
+      <param name="obj">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Textual.TextType.op_Equality(GroupDocs.Editor.HtmlCss.Resources.Textual.TextType,GroupDocs.Editor.HtmlCss.Resources.Textual.TextType)">
+      <summary>
+            Defines whether two specific "TextType" instances are equal
+            </summary>
+      <param name="first">
+      </param>
+      <param name="second">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Textual.TextType.op_Inequality(GroupDocs.Editor.HtmlCss.Resources.Textual.TextType,GroupDocs.Editor.HtmlCss.Resources.Textual.TextType)">
+      <summary>
+            Defines whether two specific "TextType" instances are not equal
+            </summary>
+      <param name="first">
+      </param>
+      <param name="second">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Textual.TextType.GetHashCode">
+      <summary>
+            Returns a hash-code, which is a constant number for this specific value type
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Textual.TextType.ParseFromFilenameWithExtension(System.String)">
+      <summary>
+            Returns TextType value, which is equivalent of filename extension, which is extracted from specified filename
+            </summary>
+      <param name="filename">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Textual.XmlText">
+      <summary>
+            Represents one textual resource, which is a XML.
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Textual.XmlText.#ctor(System.String,System.String,System.Text.Encoding)">
+      <summary>
+            Creates new XML resource from specified textual content with encoding
+            </summary>
+      <param name="name">
+      </param>
+      <param name="textualContent">
+      </param>
+      <param name="originalEncoding">
+      </param>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Textual.XmlText.#ctor(System.String,System.IO.Stream,System.Text.Encoding)">
+      <summary>
+            Creates new XML resource from specified byte stream and encoding
+            </summary>
+      <param name="name">
+      </param>
+      <param name="binaryContent">
+      </param>
+      <param name="originalEncoding">
+      </param>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Textual.XmlText.ParsedDocument">
+      <summary>
+            Returns an "XmlDocument" from this XML resource
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Textual.XmlText.Name">
+      <summary>
+            Returns name of this XML resource without file extension
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Textual.XmlText.FilenameWithExtension">
+      <summary>
+            Returns correct filename of this XML resource, which consists of name and extension
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Textual.XmlText.ByteContent">
+      <summary>
+            Returns content of this XML resource as byte stream with original encoding
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Textual.XmlText.TextContent">
+      <summary>
+            Returns content of this XML resource as a standard string
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Textual.XmlText.Save(System.String)">
+      <summary>
+            Saves this XML resource to the specified file
+            </summary>
+      <param name="fullPathToFile">Full path to the file, which will be created or rewrited</param>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Textual.XmlText.Dispose">
+      <summary>
+            Disposes this XML resource, disposing its content and making most methods and properties non-working
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Textual.XmlText.IsDisposed">
+      <summary>
+            Determines whether this XML resource is disposed or not
+            </summary>
+    </member>
+    <member name="E:GroupDocs.Editor.HtmlCss.Resources.Textual.XmlText.Disposed">
+      <summary>
+            Event, which occurs when this XML resource is disposed
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Textual.XmlText.Equals(GroupDocs.Editor.HtmlCss.Resources.IHtmlResource)">
+      <summary>
+            Checks this instance with specified on equality.
+            </summary>
+      <param name="other">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Textual.XmlText.Type">
+      <summary>
+            Returns TextType.Xml
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Textual.XmlText.Encoding">
+      <summary>
+            Returns encoding of this XML resource. Usually returns UTF-8.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Textual.NamespaceDoc">
+      <summary>
+            The <b>GroupDocs.Editor.HtmlCss.Resources.Textual</b> namespace provides classes that represent text resources.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.NamespaceGroupDoc">
+      <summary>
+            The <b>GroupDocs.Editor.HtmlCss.Resources</b> namespace provides classes that represent all kinds of the HTML resources. 
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.NamespaceGroupDoc">
+      <summary>
+            The <b>GroupDocs.Editor.HtmlCss</b> namespace provides classes that are responsible for all HTML- and CSS-related work.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Metered">
+      <summary>
+            Provides methods to set metered key.
+            </summary>
+      <example>
+            In this example, an attempt will be made to set metered public and private key
+            
+            <ms><code>
+            [C#]
+            
+            Metered matered = new Metered();
+            matered.SetMeteredKey("PublicKey", "PrivateKey");
+            
+            
+            [Visual Basic]
+            
+            Dim matered As Metered = New Metered
+            matered.SetMeteredKey("PublicKey", "PrivateKey")
+            </code></ms><java>
+            the component jar file:
+            <code>
+            Metered matered = new Metered();
+            matered.setMeteredKey("PublicKey", "PrivateKey");
+            </code></java></example>
+    </member>
+    <member name="M:GroupDocs.Editor.Metered.#ctor">
+      <summary>
+            Initializes a new instance of this class.
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.Metered.SetMeteredKey(System.String,System.String)">
+      <summary>
+            Sets metered public and private key
+            </summary>
+      <param name="publicKey">public key</param>
+      <param name="privateKey">private key</param>
+    </member>
+    <member name="M:GroupDocs.Editor.Metered.GetConsumptionQuantity">
+      <summary>
+            Gets consumption quantity
+            </summary>
+      <returns>consumption quantity</returns>
+    </member>
+    <member name="T:GroupDocs.Editor.InputHtmlDocument">
+      <summary>
+            Encapsulates one HTML document, which is obtained from Document-&gt;HTML conversion 
+            and contains HTML markup and all related resources like CSS, images and fonts.
+            </summary>
+      <remarks>The instances of this class are returned to the user during forward conversion (from document of any supported type to HTML). 
+            This class contains a set of useful methods and properties, which are required to "fill" the WYSIWYG HTML-editor.</remarks>
+    </member>
+    <member name="P:GroupDocs.Editor.InputHtmlDocument.ImageResources">
+      <summary>
+            Allows to obtain or specify external image resources (raster images), which are used by this HTML document
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.InputHtmlDocument.FontResources">
+      <summary>
+            Allows to obtain or specify external font resources, which are used by this HTML document
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.InputHtmlDocument.Css">
+      <summary>
+            Returns a list of CSS resources
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.InputHtmlDocument.GetBodyContent">
+      <summary>
+            Returns a body of the HTML document (content between opening and closing BODY tags without these tags) as a string. 
+            </summary>
+      <remarks>
+            WYSIWYG editors operate with the body of the document and cannot correctly process its meta information from the HEAD block. 
+            This method is designed for such cases.
+            </remarks>
+      <returns>String, which contains the body of the HTML document</returns>
+    </member>
+    <member name="M:GroupDocs.Editor.InputHtmlDocument.GetBodyContent(System.String)">
+      <summary>
+            Returns a body of the HTML document (content between opening and closing BODY tags without these tags) as a string, 
+            where links to the external resources contain specified prefix. 
+            </summary>
+      <remarks>
+            WYSIWYG editors operate with the body of the document and cannot correctly process its meta information from the HEAD block. 
+            This method is designed for such cases.
+            </remarks>
+      <param name="externalResourcePrefix">Through this parameter used can specify a prefix, which will be added to the links 
+            to all external resources (images, fonts, CSS), which will be present in the resultant HTML string. If NULL or empty, prefixes will not be added.</param>
+      <returns>String, which contains the body of the HTML document with links, adjusted to the external resources</returns>
+    </member>
+    <member name="M:GroupDocs.Editor.InputHtmlDocument.GetContent">
+      <summary>
+            Returns overall content of the HTML document as a string.
+            </summary>
+      <returns>String, which contains the content of the HTML document</returns>
+    </member>
+    <member name="M:GroupDocs.Editor.InputHtmlDocument.GetContent(System.String)">
+      <summary>
+            Returns overall content of the HTML document as a string, where links to the external resources contain specified prefix.
+            </summary>
+      <param name="externalResourcePrefix">Through this parameter used can specify a prefix, which will be added to the links 
+            to all external resources (images, fonts, CSS), which will be present in the resultant HTML string. If NULL or empty, prefixes will not be added.</param>
+      <returns>String, which contains the content of the HTML document with links, adjusted to the external resources</returns>
+    </member>
+    <member name="M:GroupDocs.Editor.InputHtmlDocument.GetCssContent">
+      <summary>
+            Returns content of all external stylesheets as a list of strings, where one string represents one stylesheet.
+            Returns empty list, if there is no CSS for this document.
+            </summary>
+      <returns>A list of strings, where each string holds a content of one CSS document</returns>
+    </member>
+    <member name="M:GroupDocs.Editor.InputHtmlDocument.GetCssContent(System.String)">
+      <summary>
+            Returns content of all external stylesheets as a list of strings, where one string represents one stylesheet.
+            Specified prefix will be applied to every link to the external resource in every resultant stylesheet.
+            Returns empty list, if there is no CSS for this document.
+            </summary>
+      <param name="externalResourcePrefix">Through this parameter used can specify a prefix, which will be added to the links
+            to all external resources (images and fonts), which will be present in the resultant CSS strings. If NULL or empty, prefixes will not be added.</param>
+      <returns>A list of strings, where each string holds a content of one CSS document</returns>
+    </member>
+    <member name="M:GroupDocs.Editor.InputHtmlDocument.GetEmbeddedHtml">
+      <summary>
+            Returns all content of this HTML document with all related resources in a form of a single string, where all resources are embedded inside the 
+            HTML markup in a base64-encoded form.
+            </summary>
+      <returns>String, which is not NULL or empty in any case</returns>
+    </member>
+    <member name="M:GroupDocs.Editor.InputHtmlDocument.Save(System.String)">
+      <summary>
+            Saves this HTML document to the file on specified path, where HTML markup will be stored, and to the accompanying folder with resources.
+            It is allowed to disable saving of stylesheets.
+            </summary>
+      <param name="htmlFilePath">Full path to the file, where HTML markup will be stored. File will be created or overwritten, if exists. 
+            Accompanying resource folder will be created in the same folder, where HTML file exist.</param>
+    </member>
+    <member name="M:GroupDocs.Editor.InputHtmlDocument.Save(System.String,System.Boolean)">
+      <summary>
+            Saves this HTML document to the file on specified path, where HTML markup will be stored, and to the accompanying folder with resources.
+            It is allowed to disable saving of stylesheets.
+            </summary>
+      <param name="htmlFilePath">Full path to the file, where HTML markup will be stored. File will be created or overwritten, if exists. 
+            Accompanying resource folder will be created in the same folder, where HTML file exist.</param>
+      <param name="saveStylesheets">Boolean flag, which determines whether it is required to save all external stylesheets to files or not</param>
+    </member>
+    <member name="M:GroupDocs.Editor.InputHtmlDocument.Save(System.String,System.String)">
+      <summary>
+            Saves this HTML document to the file on specified path, where HTML markup will be stored, and to the accompanying folder with resources, 
+            which is located on specified path.
+            </summary>
+      <param name="htmlFilePath">Full path to the file, where HTML markup will be stored. Cannot be NULL or empty. 
+            File will be created or overwritten, if exists.</param>
+      <param name="resourcesFolderPath">Full path to the accompanying folder, where all related resources will be stored. Cannot be NULL or empty. 
+            Folder will be created, if not exists.</param>
+    </member>
+    <member name="M:GroupDocs.Editor.InputHtmlDocument.Save(System.String,System.String,System.Boolean)">
+      <summary>
+            Saves this HTML document to the file on specified path, where HTML markup will be stored, and to the accompanying folder with resources, 
+            which is located on specified path. It is allowed to disable saving of stylesheets.
+            </summary>
+      <param name="htmlFilePath">Full path to the file, where HTML markup will be stored. Cannot be NULL or empty. 
+            File will be created or overwritten, if exists.</param>
+      <param name="resourcesFolderPath">Full path to the accompanying folder, where all related resources will be stored. Cannot be NULL or empty. 
+            Folder will be created, if not exists.</param>
+      <param name="saveStylesheets">Boolean flag, which determines whether it is required to save all external stylesheets to files or not</param>
+    </member>
+    <member name="M:GroupDocs.Editor.InputHtmlDocument.Dispose">
+      <summary>
+            Disposes this HTML document instance, disposing its content and making its methods and properties non-working
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.InputHtmlDocument.IsDisposed">
+      <summary>
+            Determines whether this HTML document is already disposed or not
+            </summary>
+    </member>
+    <member name="E:GroupDocs.Editor.InputHtmlDocument.Disposed">
+      <summary>
+            Event, which occurs when this HTML document is disposed, right after finishing the disposing process
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.FontExtractionOptions">
+      <summary>
+            Font extraction options control which fonts should be extracted and from where
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.FontExtractionOptions.NotExtract">
+      <summary>
+            Does not extract any font resource neither from document not from the system. Default value.
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.FontExtractionOptions.ExtractAllEmbedded">
+      <summary>
+            Extracts all font resources, which are embedded into the input Word document, regardless of what they are: custom or system.
+            </summary>
+      <remarks>Converter finds and extracts all 100% font resources, which are embedded into the input Word document, 
+            but it doesn't determine whether they are system or custom; it doesn't touch Windows Registry or system folders at all.</remarks>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.FontExtractionOptions.ExtractEmbeddedWithoutSystem">
+      <summary>
+            Extracts only those embedded font resources, which are custom (not system)
+            </summary>
+      <remarks>Converter finds and extracts all embedded font resources, and then tries to determine which of these fonts are system, 
+            and which - not. In order to achieve this, converter tries to obtain a list of all system fonts by using Windows Registry and system folders, 
+            and then compares this list with a set of embedded fonts. As a result, only subset of those embedded fonts, 
+            which were not found in system, will be returned.</remarks>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.FontExtractionOptions.ExtractAll">
+      <summary>
+            Tries to extract all fonts, which are used in the input Words document, inclusing system fonts.
+            </summary>
+      <remarks>Converter analysis an input Word document and finds all fonts, which are used there. 
+            If all of these fonts are embedded into the input document, converter extracts and returns them. 
+            Otherwise, if a collection of embedded fonts doesn't cover all used fonts in the document, or is empty, 
+            converter tries to extract these font resources from system, by using Windows Registry and system folders.</remarks>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.IDocumentLoadOptions">
+      <summary>
+            Common interface for all options, which are responsible for document-to-HTML convertations.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.IDocumentSaveOptions">
+      <summary>
+            Interface for all saving options for all documents types
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.IDocumentSaveOptions.Password">
+      <summary>
+            Should allow to specify or obtain a saving password, which will be used for protecting the resultant document. 
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.PdfSaveOptions">
+      <summary>
+            Allows to specify custom options for generating and saving PDF (Portable Document Format) documents
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.PdfSaveOptions.Password">
+      <summary>
+            Password, which will be applied to the generated PDF document as user password, required for opening. 
+            If NULL or empty, no password will be applied to the document. Otherwise, document will be encrypted with RC4 (key length of 128 bit).
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.TextToHtmlOptions">
+      <summary>
+            Allows to specify custom options for loading plain text (TXT) documents
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.TextToHtmlOptions.Encoding">
+      <summary>
+            Character encoding of the text document, which will be applied for its opening
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.NamespaceDoc">
+      <summary>
+            The <b>GroupDocs.Editor.Options</b> namespace provides interfaces for load and save options. 
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.EditorHandler">
+      <summary>
+            Main class, which encapsulates conversion methods
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.EditorHandler.ToHtml(System.IO.Stream)">
+      <summary>
+            Converts a document of supported type to the HTML format, automatically detects the type of the input document and performs a conversion 
+            in accordance to the default options for this format
+            </summary>
+      <param name="inputDocumentContent">Content of the input document. Stream should not be NULL and should support reading.</param>
+      <returns>Instance of the 'InputHtmlDocument' class, which encapsulates overall HTML document with all its resources.</returns>
+    </member>
+    <member name="M:GroupDocs.Editor.EditorHandler.ToHtml(System.IO.Stream,GroupDocs.Editor.Options.IDocumentLoadOptions)">
+      <summary>
+            Converts document of supported type to the HTML format using specified format-specific options.
+            </summary>
+      <param name="inputDocumentContent">Content of the input document. Stream should not be NULL and should support reading.</param>
+      <param name="loadOptions">Format-specific document options, which allows to tune-up conversion process.</param>
+      <returns>Instance of the 'InputHtmlDocument' class, which encapsulates overall HTML document with all its resources.</returns>
+    </member>
+    <member name="M:GroupDocs.Editor.EditorHandler.ToDocument(GroupDocs.Editor.OutputHtmlDocument,System.IO.Stream,GroupDocs.Editor.Options.IDocumentSaveOptions)">
+      <summary>
+            Converts specified HTML document to the resultant document of specified type and saves its content to specified stream
+            </summary>
+      <param name="inputHtml">Input HTML document, which should be converted to some document format</param>
+      <param name="outputDocumentContent">Output stream, in which the content of the resultant document will be recorded. Should support writing.</param>
+      <param name="saveOptions">Document saving options, which define the format of the resultant document, 
+            and also general and format-specific saving options.</param>
+    </member>
+    <member name="M:GroupDocs.Editor.EditorHandler.DetectOptionsFromExtension(System.String)">
+      <summary>
+            Returns a default instance of specific document load options class by analyzing the specified filename extension 
+            </summary>
+      <param name="filename">Filename with extension or sole extension</param>
+      <returns>Instance of a class, which inherits IDocumentLoadOptions, with default parameters, or NULL, if extension cannot be recognized</returns>
+    </member>
+    <member name="T:GroupDocs.Editor.OutputHtmlDocument">
+      <summary>
+            Encapsulates one HTML document, which is obtained from HTML-&gt;Document conversion
+            and contains HTML markup and all related resources like CSS, images and fonts.
+            </summary>
+      <remarks>The instances of this class should be created by users and passed into the EditorHandler.ToDocument method 
+            in order to perform backward conversion (from HTML to document of any supported type).</remarks>
+    </member>
+    <member name="T:GroupDocs.Editor.OutputHtmlDocument.LinkToResourceMapperDelegate">
+      <summary>
+            Delegate, which allows to obtain a local resource for specified link, extracted from HTML markup
+            </summary>
+      <param name="linkToResource">
+      </param>
+      <param name="allAvailableResources">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="P:GroupDocs.Editor.OutputHtmlDocument.LinkToResourceMapper">
+      <summary>
+            Allows to obtain or specify a delegate, which is responsible for mapping links to local resources with these resources
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.OutputHtmlDocument.#ctor(System.String)">
+      <summary>
+            Creates a new instance of the OutputHtmlDocument with specified HTML markup
+            </summary>
+      <param name="htmlMarkup">HTML markup in a form of string. Should not be NULL or empty. Should be a valid HTML.</param>
+    </member>
+    <member name="M:GroupDocs.Editor.OutputHtmlDocument.#ctor(System.String,System.Collections.Generic.List{GroupDocs.Editor.HtmlCss.Resources.IHtmlResource})">
+      <summary>
+            Creates a new instance of the OutputHtmlDocument with specified HTML markup and list of resources
+            </summary>
+      <param name="htmlMarkup">
+      </param>
+      <param name="resources">List of external resources, which are used by specified HTML document. If there are no resources, can be NULL or empty.</param>
+    </member>
+    <member name="P:GroupDocs.Editor.OutputHtmlDocument.Resources">
+      <summary>
+            Allows to obtain or specify external resources, which are used by this HTML document: CSS, images and fonts.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.OutputHtmlDocument.HtmlMarkup">
+      <summary>
+            Returns HTML markup of this HTML document instance
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.OutputHtmlDocument.FromMarkup(System.String,System.String)">
+      <summary>
+            Helper factory method, which creates and returns an instance of the OutputHtmlDocument, 
+            which is created from specified HTML markup and a set of resources, which are located in the specified folder. 
+            </summary>
+      <param name="htmlDocumentMarkup">HTML markup in a form of the string</param>
+      <param name="resourcesFolderPath">Full path to the folder, where related resources are located.</param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.OutputHtmlDocument.FromFile(System.String)">
+      <summary>
+            Helper factory method, which creates and returns an instance of the OutputHtmlDocument, 
+            which is created from specified file with HTML markup. 
+            Automatically tries to find and process the accompanying folder with related resources.
+            </summary>
+      <param name="htmlFilePath">Full path to the file with HTML markup.</param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.OutputHtmlDocument.FromFile(System.String,System.String)">
+      <summary>
+            Helper factory method, which creates and returns an instance of the OutputHtmlDocument, which is created from specified file with HTML markup 
+            and from specified accompanying folder with related resources.
+            </summary>
+      <param name="htmlFilePath">Full path to the file with HTML markup.</param>
+      <param name="resourcesFolderPath">Full path to the accompanying folder with related resources.</param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.OutputHtmlDocument.Dispose">
+      <summary>
+            Disposes this HTML document instance, disposing its resources
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.OutputHtmlDocument.IsDisposed">
+      <summary>
+            Determines whether this HTML document is already disposed or not
+            </summary>
+    </member>
+    <member name="E:GroupDocs.Editor.OutputHtmlDocument.Disposed">
+      <summary>
+            Event, which occurs when this HTML document is disposed, right after finishing the disposing process
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.PasswordNotSpecifiedException">
+      <summary>
+            Exception for informing about the situations, when user tries to open a password-protected encrypted document of some format and doesn't provide a password for this document.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Words.HtmlToWords.WordFormats">
+      <summary>
+            Indicates the format of the Word-compatible document that is to be loaded.
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Auto">
+      <summary>
+            Represents any of the supported (but not exactly known) Word format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Doc">
+      <summary>
+            Microsoft Word 97 - 2007 Document
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Dot">
+      <summary>
+            Microsoft Word 97 - 2007 Template format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Docx">
+      <summary>
+            Office Open XML WordprocessingML Document (macro-free)
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Docm">
+      <summary>
+            Office Open XML WordprocessingML Macro-Enabled Document
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Dotx">
+      <summary>
+            Office Open XML WordprocessingML Template (macro-free)
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Dotm">
+      <summary>
+            Office Open XML WordprocessingML Macro-Enabled Template
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.FlatOpc">
+      <summary>
+             Office Open XML WordprocessingML stored in a flat XML file instead of a ZIP package
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Rtf">
+      <summary>
+            Rich Text Format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Odt">
+      <summary>
+            Open Document Format Text Document
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Ott">
+      <summary>
+            Open Document Format Text Document Template
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Text">
+      <summary>
+            Text Format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Html">
+      <summary>
+            HTML format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Mhtml">
+      <summary>
+            MHTML (Web archive) format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.WordML">
+      <summary>
+            Microsoft Word 2003 WordprocessingML format.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Words.HtmlToWords.WordsSaveOptions">
+      <summary>
+            Allows to specify custom options for generating and saving MS Word-compliant documents
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.Words.HtmlToWords.WordsSaveOptions.#ctor">
+      <summary>
+            Creates a new instance of WordsSaveOptions with default Word format and absence password
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.Words.HtmlToWords.WordsSaveOptions.#ctor(GroupDocs.Editor.Words.HtmlToWords.WordFormats)">
+      <summary>
+            Creates a new instance of WordsSaveOptions with specified Word format and absence password
+            </summary>
+      <param name="outputFormat">
+      </param>
+    </member>
+    <member name="M:GroupDocs.Editor.Words.HtmlToWords.WordsSaveOptions.#ctor(GroupDocs.Editor.Words.HtmlToWords.WordFormats,System.String)">
+      <summary>
+            Creates a new instance of WordsSaveOptions with specified Word format and password
+            </summary>
+      <param name="outputFormat">
+      </param>
+      <param name="password">
+      </param>
+    </member>
+    <member name="P:GroupDocs.Editor.Words.HtmlToWords.WordsSaveOptions.Password">
+      <summary>
+            Allows to specify, modify, obtain, or remove a password, which will be used to encode the generated Words document. 
+            Specify NULL or empty string for removing (cleaning) the password.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Words.HtmlToWords.WordsSaveOptions.OutputFormat">
+      <summary>
+            Allows to specify a Word format, which will be used for saving the document. The default 'Auto' value implies DOCX.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Words.HtmlToWords.WordsSaveOptions.Locale">
+      <summary>
+            Allows to set override default locale (language) for the Word document, which will be applied during its creation. 
+            When is not specified (default value), MS Word (or other program) will detect (or choose) the document locale 
+            according to its own settings or other factors.
+            </summary>
+      <remarks>This option forcibly applies the specified locale to overall text in the document. 
+            Do not use it, if document contains different parts of text, which are written on different languages.</remarks>
+    </member>
+    <member name="P:GroupDocs.Editor.Words.HtmlToWords.WordsSaveOptions.LocaleBi">
+      <summary>
+            Allows to set override locale (language) for the Word document for the RTL (right-to-left) text, which will be applied during its creation. 
+            When is not specified (default value), MS Word (or other program) will detect (or choose) the document RTL locale 
+            according to its own settings or other factors.
+            </summary>
+      <remarks>This option forcibly applies the specified locale to overall RTL text in the document. 
+            Do not use it, if document contains different parts of text, which are written on different languages.</remarks>
+    </member>
+    <member name="P:GroupDocs.Editor.Words.HtmlToWords.WordsSaveOptions.LocaleFarEast">
+      <summary>
+            Allows to override the locale (language) for the Word document for the East-Asian text, which will be applied during its creation. 
+            When is not specified (default value), MS Word (or other program) will detect (or choose) the document East-Asian locale 
+            according to its own settings or other factors.
+            </summary>
+      <remarks>This option forcibly applies the specified locale to overall East-Asian text in the document. 
+            Do not use it, if document contains different parts of text, which are written on different languages.</remarks>
+    </member>
+    <member name="T:GroupDocs.Editor.Words.HtmlToWords.NamespaceDoc">
+      <summary>
+            The <b>GroupDocs.Words.HtmlToWords</b> namespace provides classes for HTML to Words document processing. 
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Words.WordsToHtml.WordToHtmlOptions">
+      <inheritdoc />
+      <summary>
+            Allows to specify custom options for loading Words-compliant documents
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.Words.WordsToHtml.WordToHtmlOptions.#ctor">
+      <summary>
+            Creates and returns a new instance of the WordToHtmlOptions class, where all options are set to their default values
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.Words.WordsToHtml.WordToHtmlOptions.#ctor(System.String)">
+      <summary>
+            Creates and returns a new instance of the WordToHtmlOptions class with specified password and <see cref="T:GroupDocs.Editor.Options.FontExtractionOptions" /> is default
+            </summary>
+      <param name="openingPassword">Password, which will be applied for opening the document in case it is encrypted</param>
+    </member>
+    <member name="M:GroupDocs.Editor.Words.WordsToHtml.WordToHtmlOptions.#ctor(GroupDocs.Editor.Options.FontExtractionOptions)">
+      <summary>
+            Creates and returns a new instance of the WordToHtmlOptions class with <see cref="T:GroupDocs.Editor.Options.FontExtractionOptions" /></summary>
+      <param name="option">Options, which defines font extraction policy</param>
+    </member>
+    <member name="M:GroupDocs.Editor.Words.WordsToHtml.WordToHtmlOptions.#ctor(System.String,GroupDocs.Editor.Options.FontExtractionOptions)">
+      <summary>
+            Creates and returns a new instance of the WordToHtmlOptions class with password and <see cref="T:GroupDocs.Editor.Options.FontExtractionOptions" /></summary>
+      <param name="openingPassword">Password, which will be applied for opening the document in case it is encrypted</param>
+      <param name="option">Options, which defines font extraction policy</param>
+    </member>
+    <member name="P:GroupDocs.Editor.Words.WordsToHtml.WordToHtmlOptions.ExportLanguageInformation">
+      <summary>
+            Specifies whether language information is exported to the HTML markup in a form of 'lang' HTML attributes. 
+            This option may be useful for roundtrip conversion of the multi-language documents. By default it is disabled (false).
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Words.WordsToHtml.WordToHtmlOptions.Password">
+      <summary>
+            Allows to specify, modify and obtain the password, which will be used for opening Words document, if it is encoded. 
+            Set to NULL or empty string in order to remove the password.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Words.WordsToHtml.WordToHtmlOptions.ExtractFontOption">
+      <summary>
+            Enables or disables ability to extract font resources, which are used in the input Words document. By default doesn't extract any fonts (NotExtract).
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Words.WordsToHtml.NamespaceDoc">
+      <summary>
+            The <b>GroupDocs.Words.WordsToHtml</b> namespace provides classes for Words to HTML document processing.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Words.NamespaceGroupDoc">
+      <summary>
+            The <b>GroupDocs.Editor.Words</b> namespace provides classes for Words to HTML (forward) and HTML to Words (backward) document processing.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.License">
+      <summary>
+            Provides methods to license the component.
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.License.SetLicense(System.IO.Stream)">
+      <summary>
+            Licenses the component.
+            </summary>
+      <param name="licenseStream">The license stream.</param>
+      <example>
+            The following example demonstrates how to set a license
+            passing Stream of the license file.
+            <code lang="C#">
+            using (FileStream licenseStream = new FileStream("LicenseFile.lic", FileMode.Open))
+            {
+                GroupDocs.Editor.License lic = new GroupDocs.Editor.License();
+                lic.SetLicense(licenseStream);
+            }
+            </code></example>
+    </member>
+    <member name="M:GroupDocs.Editor.License.SetLicense(System.String)">
+      <summary>
+            Licenses the component.
+            </summary>
+      <param name="licensePath">The license path.</param>
+      <example>
+            The following example demonstrates how to set a license 
+            passing a path to the license file.
+            <code lang="C#">
+            string licensePath = "GroupDocs.Editor.lic";
+            GroupDocs.Editor.License lic = new GroupDocs.Editor.License();
+            lic.SetLicense(licensePath);
+            </code></example>
+    </member>
+    <member name="T:GroupDocs.Editor.NamespaceDoc">
+      <summary>
+            The <b>GroupDocs.Editor</b> namespace is a root namespace, which provides classes for editing multiple document formats in your .NET applications. 
+            </summary>
+    </member>
+  </members>
+</doc>
