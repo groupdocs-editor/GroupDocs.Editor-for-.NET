@@ -67,6 +67,18 @@ namespace GroupDocs.Editor.Examples.CSharp
             license.SetLicense(licenseStream);
         }
         //ExEnd:ApplyLicense
+
+        /// <summary>
+        /// Set Metered License
+        /// </summary>
+        public static void SetMeteredLicense()
+        {
+            string PublicKey = ""; // Your public license key
+            string PrivateKey = ""; // Your private license key
+            GroupDocs.Editor.Metered metered = new GroupDocs.Editor.Metered();
+            metered.SetMeteredKey(PublicKey, PrivateKey);
+        }
+        //ExEnd:SetMeteredLicense
     }
 }
 //ExEnd:CommonClass
