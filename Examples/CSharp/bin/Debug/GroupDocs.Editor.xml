@@ -31,6 +31,16 @@
             Allows to specify a string separator for text-based Cells documents
             </summary>
     </member>
+    <member name="P:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.TextLoadOptions.ConvertDateTimeData">
+      <summary>
+            Gets or sets a value that indicates whether the string in text-based document is converted to the date data. Default is false.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.TextLoadOptions.ConvertNumericData">
+      <summary>
+            Gets or sets a value that indicates whether the string in text-based document is converted to numeric data. Default is false.
+            </summary>
+    </member>
     <member name="P:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.WorksheetIndex">
       <summary>
             Allows to specify the 0-based index of the worksheet (tab) of the input Cells document, which should be converted to the HTML (see remarks).
@@ -53,6 +63,26 @@
       <summary>
             Allows to specify options for loading text-based Cells documents
             </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.OptimizeMemoryUsage">
+      <summary>
+            Enables memory optimization mechanisms during input document processing, which may degrade performance in some special cases, 
+            but on the other hand decrease memory usage. Useful when processing huge documents and facing OutOfMemoryException. 
+            Default is false (memory optimization is disabled for the sake of better performance).
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.ExcludeHiddenWorksheets">
+      <summary>
+            Allows to exclude hidden worksheets in the input Cells document, so they will be totally ignored. 
+            Default is false - hidden worksheets are available and processed as normal.
+            </summary>
+      <remarks>
+            Several binary Cells formats (like XLSX) support hidden worksheets (tabs) concept. 
+            Document of such format, if it has more then one worksheet, may contain additional hidden worksheets. 
+            By default such hidden worksheets are available for processing, but with this option it is able to ignore them, 
+            like these hidden worksheets are absent and don't exist. When this option is enabled, you cannot select hidden workseet with the 
+            '<see cref="P:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.WorksheetIndex" />' property.
+            </remarks>
     </member>
     <member name="T:GroupDocs.Editor.Cells.CellsToHtml.NamespaceDoc">
       <summary>
@@ -130,6 +160,69 @@
     <member name="P:GroupDocs.Editor.Cells.HtmlToCells.CellsSaveOptions.OutputFormat">
       <summary>
             Allows to specify a Cells format, which will be used for saving the document
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Cells.HtmlToCells.CellsSaveOptions.WorksheetProtection">
+      <summary>
+            Allows to enable a worksheet protection for the output document. By default is NULL - protection is not applied.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Cells.HtmlToCells.WorksheetProtection">
+      <summary>
+            Encapsulates worksheet protection options, which allow to protect a worksheet in the output Cells document from modification of specified type 
+            with a specified password.
+            </summary>
+      <remarks>Most of Cells formats like XLSX allows to protect a worksheet from editing with password. 
+            This class allows to enable such protection and specify its options.</remarks>
+    </member>
+    <member name="P:GroupDocs.Editor.Cells.HtmlToCells.WorksheetProtection.ProtectionType">
+      <summary>
+            Allows to specify a type of worksheet protection. By default is 'None' - protection is not applied.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Cells.HtmlToCells.WorksheetProtection.Password">
+      <summary>
+            Password, which is used for protecting a worksheet. If NULL or empty string, the protection will not be applied.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Cells.HtmlToCells.WorksheetProtectionType">
+      <summary>
+            Represents Cell worksheet (tab) protection types
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.WorksheetProtectionType.None">
+      <summary>
+            Protection is not applied (default value)
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.WorksheetProtectionType.All">
+      <summary>
+            User cannot modify anything on the worksheet
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.WorksheetProtectionType.Contents">
+      <summary>
+            User cannot enter data in the worksheet
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.WorksheetProtectionType.Objects">
+      <summary>
+            User cannot modify drawing objects
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.WorksheetProtectionType.Scenarios">
+      <summary>
+            User cannot modify saved scenarios
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.WorksheetProtectionType.Structure">
+      <summary>
+            User cannot modify the structure
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.WorksheetProtectionType.Window">
+      <summary>
+            User cannot modify the window
             </summary>
     </member>
     <member name="T:GroupDocs.Editor.Cells.HtmlToCells.NamespaceDoc">
@@ -1936,46 +2029,41 @@
     </member>
     <member name="T:GroupDocs.Editor.Metered">
       <summary>
-            Provides methods to set metered key.
-            </summary>
-      <example>
-            In this example, an attempt will be made to set metered public and private key
-            
-            <ms><code>
-            [C#]
-            
-            Metered matered = new Metered();
-            matered.SetMeteredKey("PublicKey", "PrivateKey");
-            
-            
-            [Visual Basic]
-            
-            Dim matered As Metered = New Metered
-            matered.SetMeteredKey("PublicKey", "PrivateKey")
-            </code></ms><java>
-            the component jar file:
-            <code>
-            Metered matered = new Metered();
-            matered.setMeteredKey("PublicKey", "PrivateKey");
-            </code></java></example>
-    </member>
-    <member name="M:GroupDocs.Editor.Metered.#ctor">
-      <summary>
-            Initializes a new instance of this class.
+            Provides methods which allow to activate product with Metered license and retrieve amount of MBs processed.
+            Learn more about Metered licenses <a href="https://purchase.groupdocs.com/faqs/licensing/metered">here</a>.
             </summary>
     </member>
     <member name="M:GroupDocs.Editor.Metered.SetMeteredKey(System.String,System.String)">
       <summary>
-            Sets metered public and private key
+            Activates product with Metered keys.
             </summary>
-      <param name="publicKey">public key</param>
-      <param name="privateKey">private key</param>
+      <param name="publicKey">The public key.</param>
+      <param name="privateKey">The private key.</param>
+      <example>
+            Following example demonstrates how to activate product with Metered keys.
+            <code lang="C#">
+            string publicKey = "Public Key";
+            string privateKey = "Private Key";
+            
+            Metered metered = new Metered();
+            metered.SetMeteredKey(publicKey, privateKey);
+            </code></example>
     </member>
     <member name="M:GroupDocs.Editor.Metered.GetConsumptionQuantity">
       <summary>
-            Gets consumption quantity
-            </summary>
-      <returns>consumption quantity</returns>
+             Retrieves amount of MBs processed.
+             </summary>
+      <example>
+             Following example demonstrates how to retrieve amount of MBs processed.
+             <code lang="C#">
+             string publicKey = "Public Key";
+             string privateKey = "Private Key";
+             
+             Metered metered = new Metered();
+             metered.SetMeteredKey(publicKey, privateKey);
+            
+             decimal mbProcessed = Metered.GetConsumptionQuantity();
+             </code></example>
     </member>
     <member name="T:GroupDocs.Editor.InputHtmlDocument">
       <summary>
@@ -2164,6 +2252,28 @@
             Should allow to specify or obtain a saving password, which will be used for protecting the resultant document. 
             </summary>
     </member>
+    <member name="T:GroupDocs.Editor.Options.PdfCompliance">
+      <summary>
+            Specifies the PDF standards compliance level
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.PdfCompliance.Pdf15">
+      <summary>
+            PDF 1.5 standard
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.PdfCompliance.PdfA1a">
+      <summary>
+            PDF/A-1a standard. This level includes all the requirements of PDF/A-1b and additionally requires that document structure be included 
+            (also known as being "tagged"), with the objective of ensuring that document content can be searched and repurposed.
+            </summary>
+      <remarks>Note that exporting the document structure significantly increases the memory consumption, especially for the large documents.</remarks>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.PdfCompliance.PdfA1b">
+      <summary>
+            PDF/A-1b standard. PDF/A-1b has the objective of ensuring reliable reproduction of the visual appearance of the document.
+            </summary>
+    </member>
     <member name="T:GroupDocs.Editor.Options.PdfSaveOptions">
       <summary>
             Allows to specify custom options for generating and saving PDF (Portable Document Format) documents
@@ -2173,6 +2283,11 @@
       <summary>
             Password, which will be applied to the generated PDF document as user password, required for opening. 
             If NULL or empty, no password will be applied to the document. Otherwise, document will be encrypted with RC4 (key length of 128 bit).
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.PdfSaveOptions.Compliance">
+      <summary>
+            Specifies the PDF standards compliance level for output documents. Default is PdfCompliance.Pdf15.
             </summary>
     </member>
     <member name="T:GroupDocs.Editor.Options.TextToHtmlOptions">
@@ -2325,6 +2440,63 @@
             Exception for informing about the situations, when user tries to open a password-protected encrypted document of some format and doesn't provide a password for this document.
             </summary>
     </member>
+    <member name="T:GroupDocs.Editor.Words.HtmlToWords.DocumentProtection">
+      <summary>
+            Encapsulates document protection options for the Words document, which is generated from HTML
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.Words.HtmlToWords.DocumentProtection.#ctor">
+      <summary>
+            Parameterless constructor - all parameters have default values
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.Words.HtmlToWords.DocumentProtection.#ctor(GroupDocs.Editor.Words.HtmlToWords.DocumentProtectionType,System.String)">
+      <summary>
+            Allows to set all parameters during class instantiation
+            </summary>
+      <param name="protectionType">Set the protection type of the document</param>
+      <param name="password">Set the protection password</param>
+    </member>
+    <member name="P:GroupDocs.Editor.Words.HtmlToWords.DocumentProtection.ProtectionType">
+      <summary>
+            Allows to set a protection type of the document. By default is set to not protect the document at all.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Words.HtmlToWords.DocumentProtection.Password">
+      <summary>
+            The password to protect the document with. If null or empty string - the protection will not be applied to the document.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Words.HtmlToWords.DocumentProtectionType">
+      <summary>
+            Represents all available protection typers of the Words document
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Words.HtmlToWords.DocumentProtectionType.NoProtection">
+      <summary>
+            The document is not protected. Default value.
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Words.HtmlToWords.DocumentProtectionType.AllowOnlyRevisions">
+      <summary>
+            User can only add revision marks to the document
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Words.HtmlToWords.DocumentProtectionType.AllowOnlyComments">
+      <summary>
+            User can only modify comments in the document
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Words.HtmlToWords.DocumentProtectionType.AllowOnlyFormFields">
+      <summary>
+            User can only enter data in the form fields in the document
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Words.HtmlToWords.DocumentProtectionType.ReadOnly">
+      <summary>
+            No changes are allowed to the document
+            </summary>
+    </member>
     <member name="T:GroupDocs.Editor.Words.HtmlToWords.WordFormats">
       <summary>
             Indicates the format of the Word-compatible document that is to be loaded.
@@ -2424,10 +2596,9 @@
     </member>
     <member name="M:GroupDocs.Editor.Words.HtmlToWords.WordsSaveOptions.#ctor(GroupDocs.Editor.Words.HtmlToWords.WordFormats,System.String)">
       <summary>
-            Creates a new instance of WordsSaveOptions with specified Word format and password
+            Creates a new instance of WordsSaveOptions with specified Word format and encryption password
             </summary>
-      <param name="outputFormat">
-      </param>
+      <param name="outputFormat">Output format of the Word document</param>
       <param name="password">
       </param>
     </member>
@@ -2468,6 +2639,19 @@
             </summary>
       <remarks>This option forcibly applies the specified locale to overall East-Asian text in the document. 
             Do not use it, if document contains different parts of text, which are written on different languages.</remarks>
+    </member>
+    <member name="P:GroupDocs.Editor.Words.HtmlToWords.WordsSaveOptions.OptimizeMemoryUsage">
+      <summary>
+            Enables memory optimization mechanisms during document generation from HTML, which degrades performance in as a cost of decreasing memory usage. 
+            Setting this option to true can significantly decrease memory consumption while generating large documents at the cost of slower saving time.
+            Default is false (memory optimization is disabled for the sake of better performance).
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Words.HtmlToWords.WordsSaveOptions.Protection">
+      <summary>
+            Allows to control and apply the document protection options for the Words document of any format, which supports document protection. 
+            By default is NULL - document protection will not be used.
+            </summary>
     </member>
     <member name="T:GroupDocs.Editor.Words.HtmlToWords.NamespaceDoc">
       <summary>
@@ -2567,6 +2751,16 @@
     <member name="T:GroupDocs.Editor.NamespaceDoc">
       <summary>
             The <b>GroupDocs.Editor</b> namespace is a root namespace, which provides classes for editing multiple document formats in your .NET applications. 
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Pdf.NamespaceGroupDoc">
+      <summary>
+            The <b>GroupDocs.Pdf</b> namespace provides classes for PDF to HTML (forward) and HTML to PDF (backward) document processing.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Pdf.PdfToHtml.NamespaceDoc">
+      <summary>
+            The <b>GroupDocs.Pdf.PdfToHtml</b> namespace provides classes for PDF to HTML document processing.
             </summary>
     </member>
   </members>
