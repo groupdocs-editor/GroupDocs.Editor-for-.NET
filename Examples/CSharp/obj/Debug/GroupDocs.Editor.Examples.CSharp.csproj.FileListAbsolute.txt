@@ -5,3 +5,4 @@ E:\Work Sami\Repos\GroupDocs.Editor-for-.NET\Examples\CSharp\bin\Debug\GroupDocs
 E:\Work Sami\Repos\GroupDocs.Editor-for-.NET\Examples\CSharp\bin\Debug\GroupDocs.Editor.xml
 E:\Work Sami\Repos\GroupDocs.Editor-for-.NET\Examples\CSharp\obj\Debug\GroupDocs.Editor.Examples.CSharp.exe
 E:\Work Sami\Repos\GroupDocs.Editor-for-.NET\Examples\CSharp\obj\Debug\GroupDocs.Editor.Examples.CSharp.pdb
+E:\Work Sami\Repos\GroupDocs.Editor-for-.NET\Examples\CSharp\obj\Debug\GroupDocs.Editor.Examples.CSharp.csprojResolveAssemblyReference.cache
