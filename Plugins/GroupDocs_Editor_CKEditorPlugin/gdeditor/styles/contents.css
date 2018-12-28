@@ -1,0 +1,378 @@
+﻿
+/*div ~ .footnote > hr {
+    display: block;
+}*/
+.footnote > hr:only-child {
+    display: none;
+}
+
+.endNotes > hr:only-child {
+    display: none;
+}
+
+.section {
+    margin: 10pt auto 0 auto;
+    border: 1pt solid #d3d3d3;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+}
+
+.header, .footer, .footnote {
+    flex: none;
+}
+
+.content {
+    overflow: hidden;
+    flex: 0 1 100%;
+    word-wrap: break-word;
+}
+
+div[data-page-type=A3_Portrait] {
+    width: 842pt;
+    min-height: 1190pt;
+    max-height: 1190pt;
+}
+
+div[data-page-type=A4_Portrait] {
+    width: 595pt;
+    min-height: 842pt;
+    max-height: 842pt;
+}
+
+div[data-page-type=A5_Portrait] {
+    width: 420pt;
+    min-height: 595pt;
+    max-height: 595pt;
+}
+
+div[data-page-type=A6_Portrait] {
+    width: 298pt;
+    min-height: 420pt;
+    max-height: 420pt;
+}
+
+div[data-page-type=A7_Portrait] {
+    width: 209pt;
+    min-height: 298pt;
+    max-height: 298pt;
+}
+
+div[data-page-type=A3_Landscape] {
+    width: 1190pt;
+    min-height: 842pt;
+    max-height: 842pt;
+}
+
+div[data-page-type=A4_Landscape] {
+    width: 842pt;
+    min-height: 595pt;
+    max-height: 595pt;
+}
+
+div[data-page-type=A5_Landscape] {
+    width: 595pt;
+    min-height: 420pt;
+    max-height: 420pt;
+}
+
+div[data-page-type=A6_Landscape] {
+    width: 420pt;
+    min-height: 298pt;
+    max-height: 298pt;
+}
+
+div[data-page-type=A7_Landscape] {
+    width: 298pt;
+    min-height: 209pt;
+    max-height: 209pt;
+}
+
+div[data-page-type=B4_Portrait] {
+    width: 709pt;
+    min-height: 1001pt;
+    max-height: 1001pt;
+}
+
+div[data-page-type=B5_Portrait] {
+    width: 499pt;
+    min-height: 709pt;
+    max-height: 709pt;
+}
+
+div[data-page-type=B4_Landscape] {
+    width: 1001pt;
+    min-height: 709pt;
+    max-height: 709pt;
+}
+
+div[data-page-type=B5_Landscape] {
+    width: 709pt;
+    min-height: 499pt;
+    max-height: 499pt;
+}
+
+div[data-page-type=Executive_Portrait] {
+    width: 522pt;
+    min-height: 755pt;
+    max-height: 755pt;
+}
+
+div[data-page-type=Folio_Portrait] {
+    width: 576pt;
+    min-height: 935pt;
+    max-height: 935pt;
+}
+
+div[data-page-type=Ledger_Portrait] {
+    width: 791pt;
+    min-height: 1223pt;
+    max-height: 1223pt;
+}
+
+div[data-page-type=Legal_Portrait] {
+    width: 612pt;
+    min-height: 1007pt;
+    max-height: 1007pt;
+}
+
+div[data-page-type=Letter_Portrait] {
+    width: 612pt;
+    min-height: 791pt;
+    max-height: 791pt;
+}
+
+div[data-page-type=EnvelopeDL_Portrait] {
+    width: 312pt;
+    min-height: 624pt;
+    max-height: 642pt;
+}
+
+div[data-page-type=Quarto_Portrait] {
+    width: 576pt;
+    min-height: 720pt;
+    max-height: 720pt;
+}
+
+div[data-page-type=Statement_Portrait] {
+    width: 612pt;
+    min-height: 396pt;
+    max-height: 396pt;
+}
+
+div[data-page-type=Tabloid_Portrait] {
+    width: 791pt;
+    min-height: 1223pt;
+    max-height: 1223pt;
+}
+
+div[data-page-type=Paper10x14_Portrait] {
+    width: 720pt;
+    min-height: 1007pt;
+    max-height: 1007pt;
+}
+
+div[data-page-type=Paper11x17_Portrait] {
+    width: 791pt;
+    min-height: 1223pt;
+    max-height: 1223pt;
+}
+
+div[data-page-type=Executive_Landscape] {
+    width: 755pt;
+    min-height: 522pt;
+    max-height: 522pt;
+}
+
+div[data-page-type=Folio_Landscape] {
+    width: 935pt;
+    min-height: 576pt;
+    max-height: 576pt;
+}
+
+div[data-page-type=Ledger_Landscape] {
+    width: 1223pt;
+    min-height: 791pt;
+    max-height: 791pt;
+}
+
+div[data-page-type=Legal_Landscape] {
+    width: 1007pt;
+    min-height: 612pt;
+    max-height: 612pt;
+}
+
+div[data-page-type=Letter_Landscape] {
+    width: 791pt;
+    min-height: 612pt;
+    max-height: 612pt;
+}
+
+div[data-page-type=EnvelopeDL_Landscape] {
+    width: 624pt;
+    min-height: 312pt;
+    max-height: 312pt;
+}
+
+div[data-page-type=Quarto_Landscape] {
+    width: 720pt;
+    min-height: 576pt;
+    max-height: 576pt;
+}
+
+div[data-page-type=Statement_Landscape] {
+    width: 396pt;
+    min-height: 612pt;
+    max-height: 612pt;
+}
+
+div[data-page-type=Tabloid_Landscape] {
+    width: 1223pt;
+    min-height: 791pt;
+    max-height: 791pt;
+}
+
+div[data-page-type=Paper10x14_Landscape] {
+    width: 1007pt;
+    min-height: 720pt;
+    max-height: 720pt;
+}
+
+div[data-page-type=Paper11x17_Landscape] {
+    width: 1223pt;
+    min-height: 791pt;
+    max-height: 791pt;
+}
+
+.splitedList {
+    list-style-type: none;
+}
+
+.splitedListBefore::before {
+    display: none;
+}
+
+/*.sectionSeparator {
+    display: none;
+}*/
+
+.splitedFirst {
+    margin-bottom: 0 !important;
+    border-bottom: medium none currentColor !important;
+    padding-bottom: 0 !important;
+}
+
+.splitedMiddle {
+    text-indent: 0 !important;
+    margin-bottom: 0 !important;
+    border-top: medium none currentColor !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    border-bottom: medium none currentColor !important;
+    padding-top: 0 !important;
+}
+
+.splitedEnd {
+    text-indent: 0 !important;
+    border-top: medium none currentColor !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.documentMainContent div.section.FirstHeader:nth-of-type(1) div.header div.HeaderEven {
+    display: none;
+}
+
+.documentMainContent div.section.FirstHeader:nth-of-type(1) div.header div.HeaderFirst {
+    display: block !important;
+}
+
+.documentMainContent div.section.FirstHeader:nth-of-type(1) div.header div.HeaderPrimary {
+    display: none;
+}
+
+.documentMainContent div.section.FirstHeader:nth-of-type(1) div.footer div.FooterFirst {
+    display: block !important;
+}
+
+.documentMainContent div.section.FirstHeader:nth-of-type(1) div.footer div.FooterEven {
+    display: none;
+}
+
+.documentMainContent div.section.FirstHeader:nth-of-type(1) div.footer div.FooterPrimary {
+    display: none;
+}
+
+.sectionSeparator + div.section.FirstHeader div.header div.HeaderEven {
+    display: none;
+}
+
+.sectionSeparator + div.section.FirstHeader div.header div.HeaderFirst {
+    display: block !important;
+}
+
+.sectionSeparator + div.section.FirstHeader div.header div.HeaderPrimary {
+    display: none;
+}
+
+.sectionSeparator + div.section.FirstHeader div.footer div.FooterFirst {
+    display: block !important;
+}
+
+.sectionSeparator + div.section.FirstHeader div.footer div.FooterEven {
+    display: none;
+}
+
+.sectionSeparator + div.section.FirstHeader div.footer div.FooterPrimary {
+    display: none;
+}
+
+.documentMainContent div.section.EvenHeader:nth-of-type(2n) div.header div.HeaderFirst {
+    display: none;
+}
+
+.documentMainContent div.section.EvenHeader:nth-of-type(2n) div.header div.HeaderPrimary {
+    display: none;
+}
+
+.documentMainContent div.section.EvenHeader:nth-of-type(2n+1) div.header div.HeaderFirst {
+    display: none;
+}
+
+.documentMainContent div.section.EvenHeader:nth-of-type(2n+1) div.header div.HeaderEven {
+    display: none;
+}
+
+.documentMainContent div.section.EvenHeader:nth-of-type(2n) div.footer div.FooterFirst {
+    display: none;
+}
+
+.documentMainContent div.section.EvenHeader:nth-of-type(2n) div.footer div.FooterPrimary {
+    display: none;
+}
+
+.documentMainContent div.section.EvenHeader:nth-of-type(2n+1) div.footer div.FooterFirst {
+    display: none;
+}
+
+.documentMainContent div.section.EvenHeader:nth-of-type(2n+1) div.footer div.FooterEven {
+    display: none;
+}
+
+.documentMainContent div.section.PrimaryHeader div.header div.HeaderFirst {
+    display: none;
+}
+
+.documentMainContent div.section.PrimaryHeader div.header div.HeaderEven {
+    display: none;
+}
+
+.documentMainContent div.section.PrimaryHeader div.footer div.FooterFirst {
+    display: none;
+}
+
+.documentMainContent div.section.PrimaryHeader div.footer div.FooterEven {
+    display: none;
+}
