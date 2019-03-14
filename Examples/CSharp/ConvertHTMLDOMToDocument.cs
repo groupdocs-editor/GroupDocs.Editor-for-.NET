@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GroupDocs.Editor;
-using GroupDocs.Editor.Words.HtmlToWords;
+using GroupDocs.Editor.Options;
 
 namespace GroupDocs.Editor.Examples.CSharp
 {
@@ -32,7 +32,7 @@ namespace GroupDocs.Editor.Examples.CSharp
                 {
                     using (System.IO.FileStream outputStream = System.IO.File.Create(Path.Combine(Common.resultPath, Common.resultFile)))
                     {
-                        WordsSaveOptions saveOptions = new WordsSaveOptions();
+                        WordProcessingSaveOptions saveOptions = new WordProcessingSaveOptions();
                         EditorHandler.ToDocument(editedHtmlDoc, outputStream, saveOptions);
                     }
                 }

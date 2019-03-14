@@ -4,489 +4,46 @@
     <name>GroupDocs.Editor</name>
   </assembly>
   <members>
-    <member name="T:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions">
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.WmfImage">
       <summary>
-            Allows to specify custom options for loading documents of all supportable Cells (Excel-compatible) formats
+            Represents one vector image in WMF (Windows MetaFile) format with its metadata and additional methods
             </summary>
     </member>
-    <member name="T:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.TextLoadOptions">
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.WmfImage.IsValid(System.IO.Stream)">
       <summary>
-            Subclass for loading text-based Cells documents (CSV, Tab-based etc.)
-            </summary>
-    </member>
-    <member name="M:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.TextLoadOptions.#ctor">
-      <summary>
-            Empty constructor - you also need to specify a separator too
-            </summary>
-    </member>
-    <member name="M:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.TextLoadOptions.#ctor(System.String)">
-      <summary>
-            Initializes TextLoadOptions with specified separator
-            </summary>
-      <param name="separator">
-      </param>
-    </member>
-    <member name="P:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.TextLoadOptions.Separator">
-      <summary>
-            Allows to specify a string separator for text-based Cells documents
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.TextLoadOptions.ConvertDateTimeData">
-      <summary>
-            Gets or sets a value that indicates whether the string in text-based document is converted to the date data. Default is false.
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.TextLoadOptions.ConvertNumericData">
-      <summary>
-            Gets or sets a value that indicates whether the string in text-based document is converted to numeric data. Default is false.
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.WorksheetIndex">
-      <summary>
-            Allows to specify the 0-based index of the worksheet (tab) of the input Cells document, which should be converted to the HTML (see remarks).
-            </summary>
-      <remarks>
-            Most of Cells documents support a concept of tabs, i.e. they can be multitabbed. On the other hand, HTML format doesn't support such structure.
-            Because of this GroupDocs.Editor can convert to the HTML only one specific tab of the input document, and this option allows to specify it.
-            Tab index is 0-based, negative values are prohibited. If specified index exceeds the number of all tabs, the exception will be thrown.
-            If input Cells document contains only one tab, this option will be ignored. Default value is 0 (first tab).
-            </remarks>
-    </member>
-    <member name="P:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.Password">
-      <summary>
-            Allows to specify, modify and obtain the password, which will be used for opening the Cells document, if it is encoded. 
-            Set to NULL or empty string in order to remove the password.
-            Useless for text-based Cells documents like CSV.
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.TextOptions">
-      <summary>
-            Allows to specify options for loading text-based Cells documents
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.OptimizeMemoryUsage">
-      <summary>
-            Enables memory optimization mechanisms during input document processing, which may degrade performance in some special cases, 
-            but on the other hand decrease memory usage. Useful when processing huge documents and facing OutOfMemoryException. 
-            Default is false (memory optimization is disabled for the sake of better performance).
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.ExcludeHiddenWorksheets">
-      <summary>
-            Allows to exclude hidden worksheets in the input Cells document, so they will be totally ignored. 
-            Default is false - hidden worksheets are available and processed as normal.
-            </summary>
-      <remarks>
-            Several binary Cells formats (like XLSX) support hidden worksheets (tabs) concept. 
-            Document of such format, if it has more then one worksheet, may contain additional hidden worksheets. 
-            By default such hidden worksheets are available for processing, but with this option it is able to ignore them, 
-            like these hidden worksheets are absent and don't exist. When this option is enabled, you cannot select hidden workseet with the 
-            '<see cref="P:GroupDocs.Editor.Cells.CellsToHtml.CellsToHtmlOptions.WorksheetIndex" />' property.
-            </remarks>
-    </member>
-    <member name="T:GroupDocs.Editor.Cells.CellsToHtml.NamespaceDoc">
-      <summary>
-            The <b>GroupDocs.Cells.CellsToHtml</b> namespace provides classes for Cells to HTML (forward) document processing.
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.Cells.HtmlToCells.CellFormats">
-      <summary>
-            Indicates the format of the Excel-compatible document in which the workbook, opened from HTML, is saved.
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.CellFormats.Xlsx">
-      <summary>
-            XLSX
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.CellFormats.Xls">
-      <summary>
-            Excel97-2003 XLS
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.CellFormats.Xlsm">
-      <summary>
-            XLSM format which enable macros
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.CellFormats.Xltx">
-      <summary>
-            XLTX
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.CellFormats.Xltm">
-      <summary>
-            XLTM format which enable macros
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.CellFormats.Csv">
-      <summary>
-            CSV (Comma Separated Value) format
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.CellFormats.TabDelimited">
-      <summary>
-            Tab delimited text file
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.CellFormats.Ods">
-      <summary>
-            ODS (OpenDocument Spreadsheet)
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.CellFormats.SpreadsheetML">
-      <summary>
-            Excel 2003 XML format
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.CellFormats.Xlsb">
-      <summary>
-            XLSB (binary)
-            </summary>
-      <remarks>XLSB format differs from standard Open XML format (.XLSX) spreadsheets since it stores the spreadsheet using a binary format (BIFF12).</remarks>
-    </member>
-    <member name="T:GroupDocs.Editor.Cells.HtmlToCells.CellsSaveOptions">
-      <summary>
-            Allows to specify custom options for generating and saving MS Excel-compliant documents
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.Cells.HtmlToCells.CellsSaveOptions.Password">
-      <summary>
-            Allows to specify, modify, obtain, or remove a password, which will be used to encode the generated Cells document, 
-            if tis document fornat supports password protection. 
-            Specify NULL or empty string for removing (cleaning) the password.
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.Cells.HtmlToCells.CellsSaveOptions.OutputFormat">
-      <summary>
-            Allows to specify a Cells format, which will be used for saving the document
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.Cells.HtmlToCells.CellsSaveOptions.WorksheetProtection">
-      <summary>
-            Allows to enable a worksheet protection for the output document. By default is NULL - protection is not applied.
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.Cells.HtmlToCells.WorksheetProtection">
-      <summary>
-            Encapsulates worksheet protection options, which allow to protect a worksheet in the output Cells document from modification of specified type 
-            with a specified password.
-            </summary>
-      <remarks>Most of Cells formats like XLSX allows to protect a worksheet from editing with password. 
-            This class allows to enable such protection and specify its options.</remarks>
-    </member>
-    <member name="P:GroupDocs.Editor.Cells.HtmlToCells.WorksheetProtection.ProtectionType">
-      <summary>
-            Allows to specify a type of worksheet protection. By default is 'None' - protection is not applied.
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.Cells.HtmlToCells.WorksheetProtection.Password">
-      <summary>
-            Password, which is used for protecting a worksheet. If NULL or empty string, the protection will not be applied.
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.Cells.HtmlToCells.WorksheetProtectionType">
-      <summary>
-            Represents Cell worksheet (tab) protection types
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.WorksheetProtectionType.None">
-      <summary>
-            Protection is not applied (default value)
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.WorksheetProtectionType.All">
-      <summary>
-            User cannot modify anything on the worksheet
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.WorksheetProtectionType.Contents">
-      <summary>
-            User cannot enter data in the worksheet
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.WorksheetProtectionType.Objects">
-      <summary>
-            User cannot modify drawing objects
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.WorksheetProtectionType.Scenarios">
-      <summary>
-            User cannot modify saved scenarios
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.WorksheetProtectionType.Structure">
-      <summary>
-            User cannot modify the structure
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Cells.HtmlToCells.WorksheetProtectionType.Window">
-      <summary>
-            User cannot modify the window
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.Cells.HtmlToCells.NamespaceDoc">
-      <summary>
-            The <b>GroupDocs.Cells.HtmlToCells</b> namespace provides classes for HTML to Cells (backward) document processing.
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.Cells.NamespaceGroupDoc">
-      <summary>
-            The <b>GroupDocs.Editor.Cells</b> namespace provides classes for Cells to HTML (forward) and HTML to Cells (backward) document processing.
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio">
-      <summary>
-            Represents a "ratio" CSS data type, which is used for describing aspect ratios in media queries and for raster images 
-            by denoting the proportion between two unitless values called "numerator" and "denominator". Immutable struct.
-            </summary>
-      <remarks>https://developer.mozilla.org/en-US/docs/Web/CSS/ratio</remarks>
-    </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Numerator">
-      <summary>
-            Returns a numerator of this ratio
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Denominator">
-      <summary>
-            Returns a denominator of this ratio
-            </summary>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Calculate">
-      <summary>
-            Calculates and returns this ratio as a single floating point number
-            </summary>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.GetInverseRatio">
-      <summary>
-            Generates and returns an inversed (reciprocal) ratio for this ratio
-            </summary>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.SerializeDefault">
-      <summary>
-            Serializes this ratio to the string and returns it
-            </summary>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.ToString">
-      <summary>
-            Returns a string representation of this ratio; same as "SerializeDefault()"
-            </summary>
-      <returns>
-      </returns>
-    </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.IsDefault">
-      <summary>
-            Determines whether this ratio has default value or is a "1/1" (Single)
-            </summary>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Clone">
-      <summary>
-            Returns a full copy of this ratio
-            </summary>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Equals(GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio)">
-      <summary>
-            Determines whether this instance is equal with specified "Ratio" instance
-            </summary>
-      <param name="other">
-      </param>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Equals(System.Object)">
-      <summary>
-            Determines whether this instance is equal with specified uncasted object, which presumably is another "Ratio" instance
-            </summary>
-      <param name="other">
-      </param>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.op_Equality(GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio,GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio)">
-      <summary>
-            Compares two ratios and returns a boolean indicating if the two do match.
-            </summary>
-      <param name="left">The first ratio to use.</param>
-      <param name="right">The second ratio to use.</param>
-      <returns>True if both ratios are equal, otherwise false.</returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.op_Inequality(GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio,GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio)">
-      <summary>
-            Compares two ratios and returns a boolean indicating if the two do not match.
-            </summary>
-      <param name="left">The first ratio to use.</param>
-      <param name="right">The second ratio to use.</param>
-      <returns>True if both ratios are not equal, otherwise false.</returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.GetHashCode">
-      <summary>
-            Returns a hashcode for this instance, which cannot be changed during its lifetime
-            </summary>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Create(System.UInt16,System.UInt16)">
-      <summary>
-            Creates and returns one Ratio instance from specified numerator and denominator
-            </summary>
-      <param name="numerator">Numerator for the ratio. Should be a strictly positive integer number.</param>
-      <param name="denominator">Denominator for the ratio. Should be a strictly positive integer number.</param>
-      <returns>
-      </returns>
-    </member>
-    <member name="F:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Single">
-      <summary>
-            Single default ratio 1/1
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.HtmlCss.Css.DataTypes.NamespaceDoc">
-      <summary>
-            The <b>GroupDocs.Editor.HtmlCss.Css.DataTypes</b> namespace provides classes that represent CSS data types. 
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase">
-      <summary>
-            Base class for any supported font type as a resource for the HTML document with all its properties
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase._name">
-      <summary>
-            Name of the font resource, which serves as its unique identifier. Should not be changed (readonly) after creating an instance of the class.
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase._streamOrigPosition">
-      <summary>
-            Original position in the stream, which indicates the beginning of the font content
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase._binaryContent">
-      <summary>
-            Content of the font in the stream
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase._base64TextContent">
-      <summary>
-            Content of the font in base64-encoded form, stored in the string
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.Name">
-      <summary>
-            Returns name of this font resource. Usually doesn't contain filename extension and theoretically can differ from filename.
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.FilenameWithExtension">
-      <summary>
-            Returns correct filename of this font resource, which consists of name and extension. Theoretically can differ from the name.
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.ByteContent">
-      <summary>
-            Returns content of this font as byte stream
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.TextContent">
-      <summary>
-            Returns content of this font as base64-encoded string. This value is cached after first invoke.
-            </summary>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.Save(System.String)">
-      <summary>
-            Saves this font to the specified file
-            </summary>
-      <param name="fullPathToFile">Full path to the file, which will be created or rewrited</param>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.Equals(GroupDocs.Editor.HtmlCss.Resources.IHtmlResource)">
-      <summary>
-            Checks this instance with specified HTML resource on reference equality
-            </summary>
-      <param name="other">
-      </param>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.Equals(GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase)">
-      <summary>
-            Checks this instance with specified font resource on reference equality
-            </summary>
-      <param name="other">
-      </param>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.Dispose">
-      <summary>
-            Disposes this font resource, disposing its content and making most methods and properties non-working
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.IsDisposed">
-      <summary>
-            Determines whether this font is disposed or not
-            </summary>
-    </member>
-    <member name="E:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.Disposed">
-      <summary>
-            Event, which occurs when this font is disposed
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.Type">
-      <summary>
-            In implementing type should return information about type of specific font resource
-            as an instance of specific FontType type, which encapsulates all type-specific info
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Fonts.EotFont">
-      <summary>
-            Represents one font in the EOT (Embedded OpenType) format
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.EotFont.RequiredHeaderSize">
-      <summary>
-            EOT header size (in bytes), which is required for its validation
-            </summary>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.EotFont.IsValid(System.IO.Stream)">
-      <summary>
-            Checks whether specified stream is a valid EOT font
+            Checks whether specified stream is a valid WMF image
             </summary>
       <param name="binaryContent">
       </param>
       <returns>
       </returns>
     </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.EotFont.IsValid(System.String)">
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.WmfImage.IsValid(System.String)">
       <summary>
-            Checks whether specified base64-encoded string is a valid EOT font
+            Checks whether specified base64-encoded string is a valid WMF image
             </summary>
       <param name="contentInBase64">
       </param>
       <returns>
       </returns>
     </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.EotFont.#ctor(System.String,System.String)">
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.WmfImage.#ctor(System.String,System.String)">
       <summary>
-            Creates new EotFont class from content, represented as base64-encoded string, and with specified name
+            Creates new WmfImage instance from content, represented as base64-encoded string, and with specified name
             </summary>
-      <param name="name">Name of the EOT font. Cannot be null, empty or whitespaces.</param>
+      <param name="name">Name of the WMF image. Cannot be null, empty or whitespaces.</param>
       <param name="contentInBase64">Content as base64-encoded string. Cannot be null, empty or whitespaces. 
-            If it is not a EOT content, exception will be thrown.</param>
+            If it is not a WMF content, exception will be thrown.</param>
       <exception cref="T:System.ArgumentException">
       </exception>
       <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
       </exception>
     </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.EotFont.#ctor(System.String,System.IO.Stream)">
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.WmfImage.#ctor(System.String,System.IO.Stream)">
       <summary>
-            Creates new EotFont class from content, represented as byte stream, and with specified name
+            Creates new WmfImage instance from content, represented as byte stream, and with specified name
             </summary>
-      <param name="name">Name of the EOT font. Cannot be null, empty or whitespaces.</param>
+      <param name="name">Name of the WMF image. Cannot be null, empty or whitespaces.</param>
       <param name="binaryContent">Content as byte stream. Reading begins from original position. Cannot be null. 
             Should be readable and seakable. If this instance will be disposed, this stream will be disposed too.</param>
       <exception cref="T:System.ArgumentException">
@@ -494,347 +51,83 @@
       <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
       </exception>
     </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.EotFont.Type">
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.WmfImage.Name">
       <summary>
-            Returns FontType.Eot
+            Returns name of this WMF image. Usually doesn't contain filename extension and theoretically can differ from filename.
             </summary>
     </member>
-    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType">
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.WmfImage.FilenameWithExtension">
       <summary>
-            Represents one supportable font type
+            Returns correct filename of this WMF image, which consists of name and extension. Theoretically can differ from the name.
             </summary>
     </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.Undefined">
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.WmfImage.Type">
       <summary>
-            Special value, which marks undefined, unknown or unsupported font resource
+            Returns ImageType.Wmf
             </summary>
     </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.Woff">
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.WmfImage.AspectRatio">
       <summary>
-            Represents a WOFF (Web Open Font Format) font type
+            Returns aspect ratio of this WMF image
             </summary>
     </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.Woff2">
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.WmfImage.LinearDimensions">
       <summary>
-            Represents a WOFF2 (Web Open Font Format version 2) font type
+            Returns linear dimensions of this WMF image (width and height)
             </summary>
     </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.Ttf">
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.WmfImage.ByteContent">
       <summary>
-            Represents a TTF (TrueType Font) font type
+            Returns a content of this WMF image as a binary stream
             </summary>
     </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.Eot">
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.WmfImage.TextContent">
       <summary>
-            Represents a EOT (Embedded OpenType) font type
+            Returns a content of this SVG image as a plain text (in XML format)
             </summary>
     </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.CssName">
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.WmfImage.Save(System.String)">
       <summary>
-            Returns CSS-compatible name of this font type, which is used in the @font-face at-rule
+            Saves this WMF image to the file
             </summary>
+      <param name="fullPathToFile">Full path to the file, which will be created (if it doesn't exist) or overwritten (if exists) 
+            with the content of this WMF image</param>
     </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.FormalName">
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.WmfImage.Equals(GroupDocs.Editor.HtmlCss.Resources.IHtmlResource)">
       <summary>
-            Returns a formal name of this font type
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.FileExtension">
-      <summary>
-            Filename extension (without dot character) for this font type
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.FontFormat">
-      <summary>
-            Font format for @font-face format
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.MimeCode">
-      <summary>
-            MIME code of a particular font type
-            </summary>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.ParseFromCssName(System.String)">
-      <summary>
-            Returns FontType value, which is equivalent of specified CSS-compatible name of the font type
-            </summary>
-      <param name="name">
-      </param>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.ParseFromFilenameWithExtension(System.String)">
-      <summary>
-            Returns FontType value, which is equivalent of filename extension, which is extracted from specified filename
-            </summary>
-      <param name="filename">
-      </param>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.ParseFromMime(System.String)">
-      <summary>
-            Returns FontType value, which is equivalent of specified MIME code
-            </summary>
-      <param name="mimeCode">
-      </param>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.GetFirstDefined(GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType[])">
-      <summary>
-            Returns a first font type from specified set, which is not an "Undefined" value, or "Undefined" font type otherwise (when all items are "Undefined")
-            </summary>
-      <param name="fonts">
-      </param>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.Equals(GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType)">
-      <summary>
-            Determines whether this instance is equal with specified "FontType" instance
+            Checks this instance with specified on reference equality.
             </summary>
       <param name="other">
       </param>
       <returns>
       </returns>
     </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.Equals(System.Object)">
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.WmfImage.Dispose">
       <summary>
-            Determines whether this instance is equal with specified uncasted object, which presumably is another "FontType" instance
-            </summary>
-      <param name="obj">
-      </param>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.op_Equality(GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType,GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType)">
-      <summary>
-            Checks whether two "FontType" values are equal
-            </summary>
-      <param name="first">
-      </param>
-      <param name="second">
-      </param>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.op_Inequality(GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType,GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType)">
-      <summary>
-            Checks whether two "FontType" values are not equal
-            </summary>
-      <param name="first">
-      </param>
-      <param name="second">
-      </param>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.GetHashCode">
-      <summary>
-            Returns a hash-code, which is a constant number for this specific value type
-            </summary>
-      <returns>
-      </returns>
-    </member>
-    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Fonts.TtfFont">
-      <summary>
-            Represents one font in the TTF (TrueType Font) format
+            Disposes this raster image, disposing its content and making most methods and properties non-working
             </summary>
     </member>
-    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.TtfFont.RequiredHeaderSize">
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.WmfImage.IsDisposed">
       <summary>
-            TTF header size (in bytes), which is required for its validation
+            Determines whether this SVG image is disposed or not
             </summary>
     </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.TtfFont.IsValid(System.IO.Stream)">
+    <member name="E:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.WmfImage.Disposed">
       <summary>
-            Checks whether specified stream is a valid TTF font
-            </summary>
-      <param name="binaryContent">
-      </param>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.TtfFont.IsValid(System.String)">
-      <summary>
-            Checks whether specified base64-encoded string is a valid TTF font
-            </summary>
-      <param name="contentInBase64">
-      </param>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.TtfFont.#ctor(System.String,System.String)">
-      <summary>
-            Creates new TtfFont class from content, represented as base64-encoded string, and with specified name
-            </summary>
-      <param name="name">Name of the TTF font. Cannot be null, empty or whitespaces.</param>
-      <param name="contentInBase64">Content as base64-encoded string. Cannot be null, empty or whitespaces. 
-            If it is not a TTF content, exception will be thrown.</param>
-      <exception cref="T:System.ArgumentException">
-      </exception>
-      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
-      </exception>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.TtfFont.#ctor(System.String,System.IO.Stream)">
-      <summary>
-            Creates new TtfFont class from content, represented as byte stream, and with specified name
-            </summary>
-      <param name="name">Name of the TTF font. Cannot be null, empty or whitespaces.</param>
-      <param name="binaryContent">Content as byte stream. Reading begins from original position. Cannot be null. 
-            Should be readable and seakable. If this instance will be disposed, this stream will be disposed too.</param>
-      <exception cref="T:System.ArgumentException">
-      </exception>
-      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
-      </exception>
-    </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.TtfFont.Type">
-      <summary>
-            Returns FontType.Ttf
+            Event, which occurs right after when this SVG image is disposed
             </summary>
     </member>
-    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Fonts.Woff2Font">
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.WmfImage.SaveToPng(System.IO.Stream)">
       <summary>
-            Represents one font in the WOFF2 (Web Open Font Format) format
+            Saves this vector WMF image into raster PNG image
             </summary>
+      <param name="outputPngContent">Output stream, into which the content of PNG image will be written. Cannot be NULL and should be writeable.</param>
     </member>
-    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.Woff2Font.RequiredHeaderSize">
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.WmfImage.SaveToSvg(System.IO.Stream)">
       <summary>
-            WOFF2 header size (in bytes), which is required for its validation
+            Saves this vector WMF image into vector SVG image
             </summary>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.Woff2Font.IsValid(System.IO.Stream)">
-      <summary>
-            Checks whether specified stream is a valid WOFF2 font
-            </summary>
-      <param name="binaryContent">
-      </param>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.Woff2Font.IsValid(System.String)">
-      <summary>
-            Checks whether specified base64-encoded string is a valid WOFF2 font
-            </summary>
-      <param name="contentInBase64">
-      </param>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.Woff2Font.#ctor(System.String,System.String)">
-      <summary>
-            Creates new Woff2Font class from content, represented as base64-encoded string, and with specified name
-            </summary>
-      <param name="name">Name of the WOFF2 font. Cannot be null, empty or whitespaces.</param>
-      <param name="contentInBase64">Content as base64-encoded string. Cannot be null, empty or whitespaces. 
-            If it is not a WOFF2 content, exception will be thrown.</param>
-      <exception cref="T:System.ArgumentException">
-      </exception>
-      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
-      </exception>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.Woff2Font.#ctor(System.String,System.IO.Stream)">
-      <summary>
-            Creates new Woff2Font class from content, represented as byte stream, and with specified name
-            </summary>
-      <param name="name">Name of the WOFF2 font. Cannot be null, empty or whitespaces.</param>
-      <param name="binaryContent">Content as byte stream. Reading begins from original position. Cannot be null. 
-            Should be readable and seakable. If this instance will be disposed, this stream will be disposed too.</param>
-      <exception cref="T:System.ArgumentException">
-      </exception>
-      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
-      </exception>
-    </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.Woff2Font.Type">
-      <summary>
-            Returns FontType.Woff2
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Fonts.WoffFont">
-      <summary>
-            Represents one font in the WOFF (Web Open Font Format) format
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.WoffFont.RequiredHeaderSize">
-      <summary>
-            WOFF header size (in bytes), which is required for its validation
-            </summary>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.WoffFont.IsValid(System.IO.Stream)">
-      <summary>
-            Checks whether specified stream is a valid WOFF font
-            </summary>
-      <param name="binaryContent">
-      </param>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.WoffFont.IsValid(System.String)">
-      <summary>
-            Checks whether specified base64-encoded string is a valid WOFF font
-            </summary>
-      <param name="contentInBase64">
-      </param>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.WoffFont.#ctor(System.String,System.String)">
-      <summary>
-            Creates new WoffFont class from content, represented as base64-encoded string, and with specified name
-            </summary>
-      <param name="name">Name of the WOFF font. Cannot be null, empty or whitespaces.</param>
-      <param name="contentInBase64">Content as base64-encoded string. Cannot be null, empty or whitespaces. 
-            If it is not a WOFF content, exception will be thrown.</param>
-      <exception cref="T:System.ArgumentException">
-      </exception>
-      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
-      </exception>
-    </member>
-    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.WoffFont.#ctor(System.String,System.IO.Stream)">
-      <summary>
-            Creates new WoffFont class from content, represented as byte stream, and with specified name
-            </summary>
-      <param name="name">Name of the WOFF font. Cannot be null, empty or whitespaces.</param>
-      <param name="binaryContent">Content as byte stream. Reading begins from original position. Cannot be null. 
-            Should be readable and seakable. If this instance will be disposed, this stream will be disposed too.</param>
-      <exception cref="T:System.ArgumentException">
-      </exception>
-      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
-      </exception>
-    </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.WoffFont.Type">
-      <summary>
-            Returns FontType.Woff
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Fonts.NamespaceDoc">
-      <summary>
-            The <b>GroupDocs.Editor.HtmlCss.Resources.Fonts</b> namespace provides classes that represent font resources. 
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Images.IImageResource">
-      <summary>
-            Represents image resource of any type, raster or vector
-            </summary>
-      <see cref="!:https://developer.mozilla.org/en-US/docs/Web/CSS/image" />
-    </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.IImageResource.Type">
-      <summary>
-            In implementing type should return a type of specific image as an instance of specific ImageType, which encapsulates all type-specific info
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.IImageResource.AspectRatio">
-      <summary>
-            In implementing type should return an aspect ratio of particular image regardless of its type. 
-            Both vector and raster images have intrinsic aspect ratio between its width and height.
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.IImageResource.LinearDimensions">
-      <summary>
-            In implementing type should return linear dimensions of the image. For raster images they are intrinsic dimensions in pixels.
-            Vector images, in counterpart, have no fixed dimensions, but their metadata can contain some basic dimenstions in different measurement units.
-            </summary>
+      <param name="outputSvgContent">Output stream, into which the content of SVG image will be written. Cannot be NULL and should be writeable.</param>
     </member>
     <member name="T:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.SvgImage">
       <summary>
@@ -938,6 +231,29 @@
     <member name="T:GroupDocs.Editor.HtmlCss.Resources.Images.Vector.NamespaceDoc">
       <summary>
             The <b>GroupDocs.Editor.HtmlCss.Resources.Images.Vector</b> namespace provides classes that represent only vector image resources. 
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Images.IImageResource">
+      <summary>
+            Represents image resource of any type, raster or vector
+            </summary>
+      <see cref="!:https://developer.mozilla.org/en-US/docs/Web/CSS/image" />
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.IImageResource.Type">
+      <summary>
+            In implementing type should return a type of specific image as an instance of specific ImageType, which encapsulates all type-specific info
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.IImageResource.AspectRatio">
+      <summary>
+            In implementing type should return an aspect ratio of particular image regardless of its type. 
+            Both vector and raster images have intrinsic aspect ratio between its width and height.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.IImageResource.LinearDimensions">
+      <summary>
+            In implementing type should return linear dimensions of the image. For raster images they are intrinsic dimensions in pixels.
+            Vector images, in counterpart, have no fixed dimensions, but their metadata can contain some basic dimenstions in different measurement units.
             </summary>
     </member>
     <member name="T:GroupDocs.Editor.HtmlCss.Resources.Images.Raster.BmpImage">
@@ -1553,6 +869,11 @@
             SVG vector image type
             </summary>
     </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.ImageType.Wmf">
+      <summary>
+            WMF (Windows MetaFile) vector image type
+            </summary>
+    </member>
     <member name="P:GroupDocs.Editor.HtmlCss.Resources.Images.ImageType.FormalName">
       <summary>
             Returns a formal name of this raster image type
@@ -1641,6 +962,467 @@
     <member name="T:GroupDocs.Editor.HtmlCss.Resources.Images.NamespaceGroupDoc">
       <summary>
             The <b>GroupDocs.Editor.HtmlCss.Resources.Images</b> namespace provides classes that represent image resources of all types in general. 
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase">
+      <summary>
+            Base class for any supported font type as a resource for the HTML document with all its properties
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase._name">
+      <summary>
+            Name of the font resource, which serves as its unique identifier. Should not be changed (readonly) after creating an instance of the class.
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase._streamOrigPosition">
+      <summary>
+            Original position in the stream, which indicates the beginning of the font content
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase._binaryContent">
+      <summary>
+            Content of the font in the stream
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase._base64TextContent">
+      <summary>
+            Content of the font in base64-encoded form, stored in the string
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.Name">
+      <summary>
+            Returns name of this font resource. Usually doesn't contain filename extension and theoretically can differ from filename.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.FilenameWithExtension">
+      <summary>
+            Returns correct filename of this font resource, which consists of name and extension. Theoretically can differ from the name.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.ByteContent">
+      <summary>
+            Returns content of this font as byte stream
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.TextContent">
+      <summary>
+            Returns content of this font as base64-encoded string. This value is cached after first invoke.
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.Save(System.String)">
+      <summary>
+            Saves this font to the specified file
+            </summary>
+      <param name="fullPathToFile">Full path to the file, which will be created or rewrited</param>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.Equals(GroupDocs.Editor.HtmlCss.Resources.IHtmlResource)">
+      <summary>
+            Checks this instance with specified HTML resource on reference equality
+            </summary>
+      <param name="other">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.Equals(GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase)">
+      <summary>
+            Checks this instance with specified font resource on reference equality
+            </summary>
+      <param name="other">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.Dispose">
+      <summary>
+            Disposes this font resource, disposing its content and making most methods and properties non-working
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.IsDisposed">
+      <summary>
+            Determines whether this font is disposed or not
+            </summary>
+    </member>
+    <member name="E:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.Disposed">
+      <summary>
+            Event, which occurs when this font is disposed
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontResourceBase.Type">
+      <summary>
+            In implementing type should return information about type of specific font resource
+            as an instance of specific FontType type, which encapsulates all type-specific info
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Fonts.EotFont">
+      <summary>
+            Represents one font in the EOT (Embedded OpenType) format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.EotFont.RequiredHeaderSize">
+      <summary>
+            EOT header size (in bytes), which is required for its validation
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.EotFont.IsValid(System.IO.Stream)">
+      <summary>
+            Checks whether specified stream is a valid EOT font
+            </summary>
+      <param name="binaryContent">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.EotFont.IsValid(System.String)">
+      <summary>
+            Checks whether specified base64-encoded string is a valid EOT font
+            </summary>
+      <param name="contentInBase64">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.EotFont.#ctor(System.String,System.String)">
+      <summary>
+            Creates new EotFont class from content, represented as base64-encoded string, and with specified name
+            </summary>
+      <param name="name">Name of the EOT font. Cannot be null, empty or whitespaces.</param>
+      <param name="contentInBase64">Content as base64-encoded string. Cannot be null, empty or whitespaces. 
+            If it is not a EOT content, exception will be thrown.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.EotFont.#ctor(System.String,System.IO.Stream)">
+      <summary>
+            Creates new EotFont class from content, represented as byte stream, and with specified name
+            </summary>
+      <param name="name">Name of the EOT font. Cannot be null, empty or whitespaces.</param>
+      <param name="binaryContent">Content as byte stream. Reading begins from original position. Cannot be null. 
+            Should be readable and seakable. If this instance will be disposed, this stream will be disposed too.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.EotFont.Type">
+      <summary>
+            Returns FontType.Eot
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType">
+      <summary>
+            Represents one supportable font type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.Undefined">
+      <summary>
+            Special value, which marks undefined, unknown or unsupported font resource
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.Woff">
+      <summary>
+            Represents a WOFF (Web Open Font Format) font type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.Woff2">
+      <summary>
+            Represents a WOFF2 (Web Open Font Format version 2) font type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.Ttf">
+      <summary>
+            Represents a TTF (TrueType Font) font type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.Eot">
+      <summary>
+            Represents a EOT (Embedded OpenType) font type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.CssName">
+      <summary>
+            Returns CSS-compatible name of this font type, which is used in the @font-face at-rule
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.FormalName">
+      <summary>
+            Returns a formal name of this font type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.FileExtension">
+      <summary>
+            Filename extension (without dot character) for this font type
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.FontFormat">
+      <summary>
+            Font format for @font-face format
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.MimeCode">
+      <summary>
+            MIME code of a particular font type
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.ParseFromCssName(System.String)">
+      <summary>
+            Returns FontType value, which is equivalent of specified CSS-compatible name of the font type
+            </summary>
+      <param name="name">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.ParseFromFilenameWithExtension(System.String)">
+      <summary>
+            Returns FontType value, which is equivalent of filename extension, which is extracted from specified filename
+            </summary>
+      <param name="filename">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.ParseFromMime(System.String)">
+      <summary>
+            Returns FontType value, which is equivalent of specified MIME code
+            </summary>
+      <param name="mimeCode">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.GetFirstDefined(GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType[])">
+      <summary>
+            Returns a first font type from specified set, which is not an "Undefined" value, or "Undefined" font type otherwise (when all items are "Undefined")
+            </summary>
+      <param name="fonts">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.Equals(GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType)">
+      <summary>
+            Determines whether this instance is equal with specified "FontType" instance
+            </summary>
+      <param name="other">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.Equals(System.Object)">
+      <summary>
+            Determines whether this instance is equal with specified uncasted object, which presumably is another "FontType" instance
+            </summary>
+      <param name="obj">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.op_Equality(GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType,GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType)">
+      <summary>
+            Checks whether two "FontType" values are equal
+            </summary>
+      <param name="first">
+      </param>
+      <param name="second">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.op_Inequality(GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType,GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType)">
+      <summary>
+            Checks whether two "FontType" values are not equal
+            </summary>
+      <param name="first">
+      </param>
+      <param name="second">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.FontType.GetHashCode">
+      <summary>
+            Returns a hash-code, which is a constant number for this specific value type
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Fonts.TtfFont">
+      <summary>
+            Represents one font in the TTF (TrueType Font) format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.TtfFont.RequiredHeaderSize">
+      <summary>
+            TTF header size (in bytes), which is required for its validation
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.TtfFont.IsValid(System.IO.Stream)">
+      <summary>
+            Checks whether specified stream is a valid TTF font
+            </summary>
+      <param name="binaryContent">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.TtfFont.IsValid(System.String)">
+      <summary>
+            Checks whether specified base64-encoded string is a valid TTF font
+            </summary>
+      <param name="contentInBase64">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.TtfFont.#ctor(System.String,System.String)">
+      <summary>
+            Creates new TtfFont class from content, represented as base64-encoded string, and with specified name
+            </summary>
+      <param name="name">Name of the TTF font. Cannot be null, empty or whitespaces.</param>
+      <param name="contentInBase64">Content as base64-encoded string. Cannot be null, empty or whitespaces. 
+            If it is not a TTF content, exception will be thrown.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.TtfFont.#ctor(System.String,System.IO.Stream)">
+      <summary>
+            Creates new TtfFont class from content, represented as byte stream, and with specified name
+            </summary>
+      <param name="name">Name of the TTF font. Cannot be null, empty or whitespaces.</param>
+      <param name="binaryContent">Content as byte stream. Reading begins from original position. Cannot be null. 
+            Should be readable and seakable. If this instance will be disposed, this stream will be disposed too.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.TtfFont.Type">
+      <summary>
+            Returns FontType.Ttf
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Fonts.Woff2Font">
+      <summary>
+            Represents one font in the WOFF2 (Web Open Font Format) format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.Woff2Font.RequiredHeaderSize">
+      <summary>
+            WOFF2 header size (in bytes), which is required for its validation
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.Woff2Font.IsValid(System.IO.Stream)">
+      <summary>
+            Checks whether specified stream is a valid WOFF2 font
+            </summary>
+      <param name="binaryContent">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.Woff2Font.IsValid(System.String)">
+      <summary>
+            Checks whether specified base64-encoded string is a valid WOFF2 font
+            </summary>
+      <param name="contentInBase64">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.Woff2Font.#ctor(System.String,System.String)">
+      <summary>
+            Creates new Woff2Font class from content, represented as base64-encoded string, and with specified name
+            </summary>
+      <param name="name">Name of the WOFF2 font. Cannot be null, empty or whitespaces.</param>
+      <param name="contentInBase64">Content as base64-encoded string. Cannot be null, empty or whitespaces. 
+            If it is not a WOFF2 content, exception will be thrown.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.Woff2Font.#ctor(System.String,System.IO.Stream)">
+      <summary>
+            Creates new Woff2Font class from content, represented as byte stream, and with specified name
+            </summary>
+      <param name="name">Name of the WOFF2 font. Cannot be null, empty or whitespaces.</param>
+      <param name="binaryContent">Content as byte stream. Reading begins from original position. Cannot be null. 
+            Should be readable and seakable. If this instance will be disposed, this stream will be disposed too.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.Woff2Font.Type">
+      <summary>
+            Returns FontType.Woff2
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Fonts.WoffFont">
+      <summary>
+            Represents one font in the WOFF (Web Open Font Format) format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Resources.Fonts.WoffFont.RequiredHeaderSize">
+      <summary>
+            WOFF header size (in bytes), which is required for its validation
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.WoffFont.IsValid(System.IO.Stream)">
+      <summary>
+            Checks whether specified stream is a valid WOFF font
+            </summary>
+      <param name="binaryContent">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.WoffFont.IsValid(System.String)">
+      <summary>
+            Checks whether specified base64-encoded string is a valid WOFF font
+            </summary>
+      <param name="contentInBase64">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.WoffFont.#ctor(System.String,System.String)">
+      <summary>
+            Creates new WoffFont class from content, represented as base64-encoded string, and with specified name
+            </summary>
+      <param name="name">Name of the WOFF font. Cannot be null, empty or whitespaces.</param>
+      <param name="contentInBase64">Content as base64-encoded string. Cannot be null, empty or whitespaces. 
+            If it is not a WOFF content, exception will be thrown.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Resources.Fonts.WoffFont.#ctor(System.String,System.IO.Stream)">
+      <summary>
+            Creates new WoffFont class from content, represented as byte stream, and with specified name
+            </summary>
+      <param name="name">Name of the WOFF font. Cannot be null, empty or whitespaces.</param>
+      <param name="binaryContent">Content as byte stream. Reading begins from original position. Cannot be null. 
+            Should be readable and seakable. If this instance will be disposed, this stream will be disposed too.</param>
+      <exception cref="T:System.ArgumentException">
+      </exception>
+      <exception cref="T:GroupDocs.Editor.HtmlCss.Exceptions.InvalidImageFormatException">
+      </exception>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Resources.Fonts.WoffFont.Type">
+      <summary>
+            Returns FontType.Woff
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Resources.Fonts.NamespaceDoc">
+      <summary>
+            The <b>GroupDocs.Editor.HtmlCss.Resources.Fonts</b> namespace provides classes that represent font resources. 
             </summary>
     </member>
     <member name="T:GroupDocs.Editor.HtmlCss.Resources.IAuxDisposable">
@@ -2022,9 +1804,833 @@
             The <b>GroupDocs.Editor.HtmlCss.Resources</b> namespace provides classes that represent all kinds of the HTML resources. 
             </summary>
     </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio">
+      <summary>
+            Represents a "ratio" CSS data type, which is used for describing aspect ratios in media queries and for raster images 
+            by denoting the proportion between two unitless values called "numerator" and "denominator". Immutable struct.
+            </summary>
+      <remarks>https://developer.mozilla.org/en-US/docs/Web/CSS/ratio</remarks>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Numerator">
+      <summary>
+            Returns a numerator of this ratio
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Denominator">
+      <summary>
+            Returns a denominator of this ratio
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Calculate">
+      <summary>
+            Calculates and returns this ratio as a single floating point number
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.GetInverseRatio">
+      <summary>
+            Generates and returns an inversed (reciprocal) ratio for this ratio
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.SerializeDefault">
+      <summary>
+            Serializes this ratio to the string and returns it
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.ToString">
+      <summary>
+            Returns a string representation of this ratio; same as "SerializeDefault()"
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="P:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.IsDefault">
+      <summary>
+            Determines whether this ratio has default value or is a "1/1" (Single)
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Clone">
+      <summary>
+            Returns a full copy of this ratio
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Equals(GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio)">
+      <summary>
+            Determines whether this instance is equal with specified "Ratio" instance
+            </summary>
+      <param name="other">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Equals(System.Object)">
+      <summary>
+            Determines whether this instance is equal with specified uncasted object, which presumably is another "Ratio" instance
+            </summary>
+      <param name="other">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.op_Equality(GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio,GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio)">
+      <summary>
+            Compares two ratios and returns a boolean indicating if the two do match.
+            </summary>
+      <param name="left">The first ratio to use.</param>
+      <param name="right">The second ratio to use.</param>
+      <returns>True if both ratios are equal, otherwise false.</returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.op_Inequality(GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio,GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio)">
+      <summary>
+            Compares two ratios and returns a boolean indicating if the two do not match.
+            </summary>
+      <param name="left">The first ratio to use.</param>
+      <param name="right">The second ratio to use.</param>
+      <returns>True if both ratios are not equal, otherwise false.</returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.GetHashCode">
+      <summary>
+            Returns a hashcode for this instance, which cannot be changed during its lifetime
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Create(System.UInt16,System.UInt16)">
+      <summary>
+            Creates and returns one Ratio instance from specified numerator and denominator
+            </summary>
+      <param name="numerator">Numerator for the ratio. Should be a strictly positive integer number.</param>
+      <param name="denominator">Denominator for the ratio. Should be a strictly positive integer number.</param>
+      <returns>
+      </returns>
+    </member>
+    <member name="F:GroupDocs.Editor.HtmlCss.Css.DataTypes.Ratio.Single">
+      <summary>
+            Single default ratio 1/1
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.HtmlCss.Css.DataTypes.NamespaceDoc">
+      <summary>
+            The <b>GroupDocs.Editor.HtmlCss.Css.DataTypes</b> namespace provides classes that represent CSS data types. 
+            </summary>
+    </member>
     <member name="T:GroupDocs.Editor.HtmlCss.NamespaceGroupDoc">
       <summary>
             The <b>GroupDocs.Editor.HtmlCss</b> namespace provides classes that are responsible for all HTML- and CSS-related work.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.SpreadsheetToHtmlOptions">
+      <summary>
+            Allows to specify custom options for loading documents of all supportable Spreadsheet (Excel-compatible) formats
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.SpreadsheetToHtmlOptions.TextLoadOptions">
+      <summary>
+            Subclass for loading text-based Spreadsheet documents (CSV, Tab-based etc.)
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.Options.SpreadsheetToHtmlOptions.TextLoadOptions.#ctor">
+      <summary>
+            Empty constructor - you also need to specify a separator too
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.Options.SpreadsheetToHtmlOptions.TextLoadOptions.#ctor(System.String)">
+      <summary>
+            Initializes TextLoadOptions with specified separator
+            </summary>
+      <param name="separator">
+      </param>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.SpreadsheetToHtmlOptions.TextLoadOptions.Separator">
+      <summary>
+            Allows to specify a string separator for text-based Spreadsheet documents
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.SpreadsheetToHtmlOptions.TextLoadOptions.ConvertDateTimeData">
+      <summary>
+            Gets or sets a value that indicates whether the string in text-based document is converted to the date data. Default is false.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.SpreadsheetToHtmlOptions.TextLoadOptions.ConvertNumericData">
+      <summary>
+            Gets or sets a value that indicates whether the string in text-based document is converted to numeric data. Default is false.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.SpreadsheetToHtmlOptions.WorksheetIndex">
+      <summary>
+            Allows to specify the 0-based index of the worksheet (tab) of the input Spreadsheet document, which should be converted to the HTML (see remarks).
+            </summary>
+      <remarks>
+            Most of Spreadsheet documents support a concept of tabs, i.e. they can be multitabbed. On the other hand, HTML format doesn't support such structure.
+            Because of this GroupDocs.Editor can convert to the HTML only one specific tab of the input document, and this option allows to specify it.
+            Tab index is 0-based, negative values are prohibited. If specified index exceeds the number of all tabs, the exception will be thrown.
+            If input Spreadsheet document contains only one tab, this option will be ignored. Default value is 0 (first tab).
+            </remarks>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.SpreadsheetToHtmlOptions.Password">
+      <summary>
+            Allows to specify, modify and obtain the password, which will be used for opening the Spreadsheet document, if it is encoded. 
+            Set to NULL or empty string in order to remove the password.
+            Useless for text-based Spreadsheet documents like CSV.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.SpreadsheetToHtmlOptions.TextOptions">
+      <summary>
+            Allows to specify options for loading text-based Spreadsheet documents
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.SpreadsheetToHtmlOptions.OptimizeMemoryUsage">
+      <summary>
+            Enables memory optimization mechanisms during input document processing, which may degrade performance in some special cases, 
+            but on the other hand decrease memory usage. Useful when processing huge documents and facing OutOfMemoryException. 
+            Default is false (memory optimization is disabled for the sake of better performance).
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.SpreadsheetToHtmlOptions.ExcludeHiddenWorksheets">
+      <summary>
+            Allows to exclude hidden worksheets in the input Spreadsheet document, so they will be totally ignored. 
+            Default is false - hidden worksheets are available and processed as normal.
+            </summary>
+      <remarks>
+            Several binary Spreadsheet formats (like XLSX) support hidden worksheets (tabs) concept. 
+            Document of such format, if it has more then one worksheet, may contain additional hidden worksheets. 
+            By default such hidden worksheets are available for processing, but with this option it is able to ignore them, 
+            like these hidden worksheets are absent and don't exist. When this option is enabled, you cannot select hidden workseet with the 
+            '<see cref="P:GroupDocs.Editor.Options.SpreadsheetToHtmlOptions.WorksheetIndex" />' property.
+            </remarks>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.SpreadsheetFormats">
+      <summary>
+            Indicates the format of the Spreadsheet (Excel-compatible) document, in which the workbook, opened from HTML, is saved.
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.SpreadsheetFormats.Xlsx">
+      <summary>
+            XLSX
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.SpreadsheetFormats.Xls">
+      <summary>
+            Excel97-2003 XLS
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.SpreadsheetFormats.Xlsm">
+      <summary>
+            XLSM format which enable macros
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.SpreadsheetFormats.Xltx">
+      <summary>
+            XLTX
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.SpreadsheetFormats.Xltm">
+      <summary>
+            XLTM format which enable macros
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.SpreadsheetFormats.Csv">
+      <summary>
+            CSV (Comma Separated Value) format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.SpreadsheetFormats.TabDelimited">
+      <summary>
+            Tab delimited text file
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.SpreadsheetFormats.Ods">
+      <summary>
+            ODS (OpenDocument Spreadsheet)
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.SpreadsheetFormats.SpreadsheetML">
+      <summary>
+            Excel 2003 XML format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.SpreadsheetFormats.Xlsb">
+      <summary>
+            XLSB (binary)
+            </summary>
+      <remarks>XLSB format differs from standard Open XML format (.XLSX) spreadsheets since it stores the spreadsheet using a binary format (BIFF12).</remarks>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.SpreadsheetSaveOptions">
+      <summary>
+            Allows to specify custom options for generating and saving Spreadsheet (Excel-compliant) documents
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.SpreadsheetSaveOptions.Password">
+      <summary>
+            Allows to specify, modify, obtain, or remove a password, which will be used to encode the generated Spreadsheet document, 
+            if tis document fornat supports password protection. 
+            Specify NULL or empty string for removing (cleaning) the password.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.SpreadsheetSaveOptions.OutputFormat">
+      <summary>
+            Allows to specify a Spreadsheet format, which will be used for saving the document
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.SpreadsheetSaveOptions.WorksheetProtection">
+      <summary>
+            Allows to enable a worksheet protection for the output Spreadsheet document. By default is NULL - protection is not applied.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.WorksheetProtection">
+      <summary>
+            Encapsulates worksheet protection options, which allow to protect a worksheet in the output Spreadsheet document from modification of specified type 
+            with a specified password.
+            </summary>
+      <remarks>Most of Spreadsheet formats like XLSX allows to protect a worksheet from editing with password. 
+            This class allows to enable such protection and specify its options.</remarks>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.WorksheetProtection.ProtectionType">
+      <summary>
+            Allows to specify a type of worksheet protection. By default is 'None' - protection is not applied.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.WorksheetProtection.Password">
+      <summary>
+            Password, which is used for protecting a worksheet. If NULL or empty string, the protection will not be applied.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.WorksheetProtectionType">
+      <summary>
+            Represents Spreadsheet worksheet (tab) protection types
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.WorksheetProtectionType.None">
+      <summary>
+            Protection is not applied (default value)
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.WorksheetProtectionType.All">
+      <summary>
+            User cannot modify anything on the worksheet
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.WorksheetProtectionType.Contents">
+      <summary>
+            User cannot enter data in the worksheet
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.WorksheetProtectionType.Objects">
+      <summary>
+            User cannot modify drawing objects
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.WorksheetProtectionType.Scenarios">
+      <summary>
+            User cannot modify saved scenarios
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.WorksheetProtectionType.Structure">
+      <summary>
+            User cannot modify the structure
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.WorksheetProtectionType.Window">
+      <summary>
+            User cannot modify the window
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.FontExtractionOptions">
+      <summary>
+            Font extraction options control which fonts should be extracted and from where
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.FontExtractionOptions.NotExtract">
+      <summary>
+            Does not extract any font resource neither from document not from the system. Default value.
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.FontExtractionOptions.ExtractAllEmbedded">
+      <summary>
+            Extracts all font resources, which are embedded into the input Word document, regardless of what they are: custom or system.
+            </summary>
+      <remarks>Converter finds and extracts all 100% font resources, which are embedded into the input Word document, 
+            but it doesn't determine whether they are system or custom; it doesn't touch Windows Registry or system folders at all.</remarks>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.FontExtractionOptions.ExtractEmbeddedWithoutSystem">
+      <summary>
+            Extracts only those embedded font resources, which are custom (not system)
+            </summary>
+      <remarks>Converter finds and extracts all embedded font resources, and then tries to determine which of these fonts are system, 
+            and which - not. In order to achieve this, converter tries to obtain a list of all system fonts by using Windows Registry and system folders, 
+            and then compares this list with a set of embedded fonts. As a result, only subset of those embedded fonts, 
+            which were not found in system, will be returned.</remarks>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.FontExtractionOptions.ExtractAll">
+      <summary>
+            Tries to extract all fonts, which are used in the input WordProcessing document, inclusing system fonts.
+            </summary>
+      <remarks>Converter analysis an input Word document and finds all fonts, which are used there. 
+            If all of these fonts are embedded into the input document, converter extracts and returns them. 
+            Otherwise, if a collection of embedded fonts doesn't cover all used fonts in the document, or is empty, 
+            converter tries to extract these font resources from system, by using Windows Registry and system folders.</remarks>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.IDocumentLoadOptions">
+      <summary>
+            Common interface for all options, which are responsible for document-to-HTML convertations.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.IDocumentSaveOptions">
+      <summary>
+            Interface for all saving options for all documents types
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.IDocumentSaveOptions.Password">
+      <summary>
+            Should allow to specify or obtain a saving password, which will be used for protecting the resultant document. 
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.PdfCompliance">
+      <summary>
+            Specifies the PDF standards compliance level
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.PdfCompliance.Pdf15">
+      <summary>
+            PDF 1.5 standard
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.PdfCompliance.PdfA1a">
+      <summary>
+            PDF/A-1a standard. This level includes all the requirements of PDF/A-1b and additionally requires that document structure be included 
+            (also known as being "tagged"), with the objective of ensuring that document content can be searched and repurposed.
+            </summary>
+      <remarks>Note that exporting the document structure significantly increases the memory consumption, especially for the large documents.</remarks>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.PdfCompliance.PdfA1b">
+      <summary>
+            PDF/A-1b standard. PDF/A-1b has the objective of ensuring reliable reproduction of the visual appearance of the document.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.PdfSaveOptions">
+      <summary>
+            Allows to specify custom options for generating and saving PDF (Portable Document Format) documents
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.PdfSaveOptions.Password">
+      <summary>
+            Password, which will be applied to the generated PDF document as user password, required for opening. 
+            If NULL or empty, no password will be applied to the document. Otherwise, document will be encrypted with RC4 (key length of 128 bit).
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.PdfSaveOptions.Compliance">
+      <summary>
+            Specifies the PDF standards compliance level for output documents. Default is PdfCompliance.Pdf15.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.TextToHtmlOptions">
+      <summary>
+            Allows to specify custom options for loading plain text (TXT) documents
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.TextToHtmlOptions.Encoding">
+      <summary>
+            Character encoding of the text document, which will be applied for its opening
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.TextToHtmlOptions.DetectNumberingWithWhitespaces">
+      <summary>
+            Allows to specify how numbered list items are recognized when document is imported from plain text format. The default value is true.
+            </summary>
+      <remarks>
+            If this option is set to false, lists recognition algorithm detects list paragraphs, when list numbers ends with either dot, right bracket or bullet symbols (such as "•", "*", "-" or "o").
+            If this option is set to true, whitespaces are also used as list number delimeters: list recognition algorithm for Arabic style numbering (1., 1.1.2.) uses both whitespaces and dot (".") symbols.
+            </remarks>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.TextToHtmlOptions.LeadingSpacesOptions">
+      <summary>
+            Gets or sets preferred option of a leading space handling. By default converts leading spaces to the left indent.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.TextToHtmlOptions.TrailingSpacesOptions">
+      <summary>
+            Gets or sets preferred option of a trailing space handling. By default truncates all trailing spaces.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.TextLeadingSpacesOptions">
+      <summary>
+            Contains available options for leading space handling during opening plain text document (TXT)
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.TextLeadingSpacesOptions.ConvertToIndent">
+      <summary>
+            Convert one or more consecutive spaces to the left indent. Default value.
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.TextLeadingSpacesOptions.Preserve">
+      <summary>
+            Pass all leading spaces to the output HTML "as is", without touching them
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.TextLeadingSpacesOptions.Trim">
+      <summary>
+            Trim (truncate) all leading spaces completely
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.TextTrailingSpacesOptions">
+      <summary>
+            Contains available options for trailing space handling during opening plain text document (TXT)
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.TextTrailingSpacesOptions.Trim">
+      <summary>
+            Trim (truncate) all trailing spaces completely. Default value.
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.TextTrailingSpacesOptions.Preserve">
+      <summary>
+            Pass all trailing spaces to the output HTML "as is", without touching them
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.XmlToHtmlOptions">
+      <summary>
+            Allows to specify custom options for loading XML (eXtensible Markup Language) documents
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.XmlToHtmlOptions.Encoding">
+      <summary>
+            Character encoding of the text document, which will be applied for its opening. By default is null - internal document encoding will be applied.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.XmlToHtmlOptions.TrimTrailingWhitespaces">
+      <summary>
+            Allows to enable the truncation of trailing whitespaces in the inner-tag text. 
+            By default is disabled (false) - trailing whitespaces will be preserved.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.XmlToHtmlOptions.XmlTagsFontSettings">
+      <summary>
+            Responsible for representing the font of XML tags (angle brackets with tag names)
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.XmlToHtmlOptions.XmlTagsFontColor">
+      <summary>
+            Defines color for the font of XML tags (angle brackets with tag names)
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.XmlToHtmlOptions.AttributeNamesFontSettings">
+      <summary>
+            Responsible for representing the font of attribute names
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.XmlToHtmlOptions.AttributeNamesFontColor">
+      <summary>
+            Defines color for the font of attribute names
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.XmlToHtmlOptions.AttributeValuesFontSettings">
+      <summary>
+            Responsible for representing the font of attribute values
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.XmlToHtmlOptions.AttributeValuesFontColor">
+      <summary>
+            Defines color for the font of attribute values
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.XmlToHtmlOptions.InnerTextFontSettings">
+      <summary>
+            Responsible for representing the font of inner-tag text
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.XmlToHtmlOptions.InnerTextFontColor">
+      <summary>
+            Defines color for the font of inner-tag text
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.XmlToHtmlOptions.HtmlCommentsFontSettings">
+      <summary>
+            Responsible for representing the font of HTML comments (including pair of opening and closing tags)
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.XmlToHtmlOptions.HtmlCommentsFontColor">
+      <summary>
+            Defines color for the font of HTML comments (including pair of opening and closing tags)
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.XmlToHtmlOptions.CDataFontSettings">
+      <summary>
+            Responsible for representing the font of CDATA sections (including pair of opening and closing tags)
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.XmlToHtmlOptions.CDataFontColor">
+      <summary>
+            Defines color for the font of CDATA sections (including pair of opening and closing tags)
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.DocumentProtectionOptions">
+      <summary>
+            Encapsulates document protection options for the WordProcessing document, which is generated from HTML
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.Options.DocumentProtectionOptions.#ctor">
+      <summary>
+            Parameterless constructor - all parameters have default values
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.Options.DocumentProtectionOptions.#ctor(GroupDocs.Editor.Options.DocumentProtectionType,System.String)">
+      <summary>
+            Allows to set all parameters during class instantiation
+            </summary>
+      <param name="protectionType">Set the protection type of the document</param>
+      <param name="password">Set the protection password</param>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.DocumentProtectionOptions.ProtectionType">
+      <summary>
+            Allows to set a protection type of the document. By default is set to not protect the document at all.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.DocumentProtectionOptions.Password">
+      <summary>
+            The password to protect the document with. If null or empty string - the protection will not be applied to the document.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.DocumentProtectionType">
+      <summary>
+            Represents all available protection typers of the WordProcessing document
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.DocumentProtectionType.NoProtection">
+      <summary>
+            The document is not protected. Default value.
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.DocumentProtectionType.AllowOnlyRevisions">
+      <summary>
+            User can only add revision marks to the document
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.DocumentProtectionType.AllowOnlyComments">
+      <summary>
+            User can only modify comments in the document
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.DocumentProtectionType.AllowOnlyFormFields">
+      <summary>
+            User can only enter data in the form fields in the document
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.DocumentProtectionType.ReadOnly">
+      <summary>
+            No changes are allowed to the document
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.WordProcessingFormats">
+      <summary>
+            Indicates the format of the WordProcessing-compatible document that is to be loaded.
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.WordProcessingFormats.Auto">
+      <summary>
+            Represents any of the supported (but not exactly known) WordProcessing format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.WordProcessingFormats.Doc">
+      <summary>
+            Microsoft Word 97 - 2007 Document
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.WordProcessingFormats.Dot">
+      <summary>
+            Microsoft Word 97 - 2007 Template format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.WordProcessingFormats.Docx">
+      <summary>
+            Office Open XML WordprocessingML Document (macro-free)
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.WordProcessingFormats.Docm">
+      <summary>
+            Office Open XML WordprocessingML Macro-Enabled Document
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.WordProcessingFormats.Dotx">
+      <summary>
+            Office Open XML WordprocessingML Template (macro-free)
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.WordProcessingFormats.Dotm">
+      <summary>
+            Office Open XML WordprocessingML Macro-Enabled Template
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.WordProcessingFormats.FlatOpc">
+      <summary>
+             Office Open XML WordprocessingML stored in a flat XML file instead of a ZIP package
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.WordProcessingFormats.Rtf">
+      <summary>
+            Rich Text Format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.WordProcessingFormats.Odt">
+      <summary>
+            Open Document Format Text Document
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.WordProcessingFormats.Ott">
+      <summary>
+            Open Document Format Text Document Template
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.WordProcessingFormats.Text">
+      <summary>
+            Text Format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.WordProcessingFormats.Html">
+      <summary>
+            HTML format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.WordProcessingFormats.Mhtml">
+      <summary>
+            MHTML (Web archive) format
+            </summary>
+    </member>
+    <member name="F:GroupDocs.Editor.Options.WordProcessingFormats.WordML">
+      <summary>
+            Microsoft Word 2003 WordprocessingML format.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.WordProcessingSaveOptions">
+      <summary>
+            Allows to specify custom options for generating and saving WordProcessing-compliant documents
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.Options.WordProcessingSaveOptions.#ctor">
+      <summary>
+            Creates a new instance of WordProcessingSaveOptions with default WordProcessing format and absence password
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.Options.WordProcessingSaveOptions.#ctor(GroupDocs.Editor.Options.WordProcessingFormats)">
+      <summary>
+            Creates a new instance of WordProcessingSaveOptions with specified WordProcessing format and absence password
+            </summary>
+      <param name="outputFormat">
+      </param>
+    </member>
+    <member name="M:GroupDocs.Editor.Options.WordProcessingSaveOptions.#ctor(GroupDocs.Editor.Options.WordProcessingFormats,System.String)">
+      <summary>
+            Creates a new instance of WordProcessingSaveOptions with specified WordProcessing format and encryption password
+            </summary>
+      <param name="outputFormat">Output format of the Word document</param>
+      <param name="password">
+      </param>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.WordProcessingSaveOptions.Password">
+      <summary>
+            Allows to specify, modify, obtain, or remove a password, which will be used to encode the generated WordProcessing document. 
+            Specify NULL or empty string for removing (cleaning) the password.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.WordProcessingSaveOptions.OutputFormat">
+      <summary>
+            Allows to specify a WordProcessing format, which will be used for saving the document. The default 'Auto' value implies DOCX.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.WordProcessingSaveOptions.Locale">
+      <summary>
+            Allows to set override default locale (language) for the WordProcessing document, which will be applied during its creation. 
+            When is not specified (default value), MS Word (or other program) will detect (or choose) the document locale 
+            according to its own settings or other factors.
+            </summary>
+      <remarks>This option forcibly applies the specified locale to overall text in the document. 
+            Do not use it, if document contains different parts of text, which are written on different languages.</remarks>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.WordProcessingSaveOptions.LocaleBi">
+      <summary>
+            Allows to set override locale (language) for the WordProcessing document for the RTL (right-to-left) text, which will be applied during its creation. 
+            When is not specified (default value), MS Word (or other program) will detect (or choose) the document RTL locale 
+            according to its own settings or other factors.
+            </summary>
+      <remarks>This option forcibly applies the specified locale to overall RTL text in the document. 
+            Do not use it, if document contains different parts of text, which are written on different languages.</remarks>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.WordProcessingSaveOptions.LocaleFarEast">
+      <summary>
+            Allows to override the locale (language) for the WordProcessing document for the East-Asian text, which will be applied during its creation. 
+            When is not specified (default value), MS Word (or other program) will detect (or choose) the document East-Asian locale 
+            according to its own settings or other factors.
+            </summary>
+      <remarks>This option forcibly applies the specified locale to overall East-Asian text in the document. 
+            Do not use it, if document contains different parts of text, which are written on different languages.</remarks>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.WordProcessingSaveOptions.OptimizeMemoryUsage">
+      <summary>
+            Enables memory optimization mechanisms during document generation from HTML, which degrades performance in as a cost of decreasing memory usage. 
+            Setting this option to true can significantly decrease memory consumption while generating large documents at the cost of slower saving time.
+            Default is false (memory optimization is disabled for the sake of better performance).
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.WordProcessingSaveOptions.Protection">
+      <summary>
+            Allows to control and apply the document protection options for the WordProcessing document of any format, which supports document protection. 
+            By default is NULL - document protection will not be used.
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.WordProcessingToHtmlOptions">
+      <inheritdoc />
+      <summary>
+            Allows to specify custom options for loading WordProcessing-compliant documents
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.Options.WordProcessingToHtmlOptions.#ctor">
+      <summary>
+            Creates and returns a new instance of the WordProcessingToHtmlOptions class, where all options are set to their default values
+            </summary>
+    </member>
+    <member name="M:GroupDocs.Editor.Options.WordProcessingToHtmlOptions.#ctor(System.String)">
+      <summary>
+            Creates and returns a new instance of the WordProcessingToHtmlOptions class with specified password and <see cref="T:GroupDocs.Editor.Options.FontExtractionOptions" /> is default
+            </summary>
+      <param name="openingPassword">Password, which will be applied for opening the document in case it is encrypted</param>
+    </member>
+    <member name="M:GroupDocs.Editor.Options.WordProcessingToHtmlOptions.#ctor(GroupDocs.Editor.Options.FontExtractionOptions)">
+      <summary>
+            Creates and returns a new instance of the WordProcessingToHtmlOptions class with <see cref="T:GroupDocs.Editor.Options.FontExtractionOptions" /></summary>
+      <param name="option">Options, which defines font extraction policy</param>
+    </member>
+    <member name="M:GroupDocs.Editor.Options.WordProcessingToHtmlOptions.#ctor(System.String,GroupDocs.Editor.Options.FontExtractionOptions)">
+      <summary>
+            Creates and returns a new instance of the WordProcessingToHtmlOptions class with password and <see cref="T:GroupDocs.Editor.Options.FontExtractionOptions" /></summary>
+      <param name="openingPassword">Password, which will be applied for opening the document in case it is encrypted</param>
+      <param name="option">Options, which defines font extraction policy</param>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.WordProcessingToHtmlOptions.ExportLanguageInformation">
+      <summary>
+            Specifies whether language information is exported to the HTML markup in a form of 'lang' HTML attributes. 
+            This option may be useful for roundtrip conversion of the multi-language documents. By default it is disabled (false).
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.WordProcessingToHtmlOptions.Password">
+      <summary>
+            Allows to specify, modify and obtain the password, which will be used for opening WordProcessing document, if it is encoded. 
+            Set to NULL or empty string in order to remove the password.
+            </summary>
+    </member>
+    <member name="P:GroupDocs.Editor.Options.WordProcessingToHtmlOptions.ExtractFontOption">
+      <summary>
+            Enables or disables ability to extract font resources, which are used in the input WordProcessing document. By default doesn't extract any fonts (NotExtract).
+            </summary>
+    </member>
+    <member name="T:GroupDocs.Editor.Options.NamespaceDoc">
+      <summary>
+            The <b>GroupDocs.Editor.Options</b> namespace provides interfaces for load and save options. 
             </summary>
     </member>
     <member name="T:GroupDocs.Editor.Metered">
@@ -2166,6 +2772,17 @@
             Accompanying resource folder will be created in the same folder, where HTML file exist.</param>
       <param name="saveStylesheets">Boolean flag, which determines whether it is required to save all external stylesheets to files or not</param>
     </member>
+    <member name="M:GroupDocs.Editor.InputHtmlDocument.Save(System.String,System.String,System.Boolean)">
+      <summary>
+            Saves this HTML document to the file on specified path, where HTML markup will be stored, and to the accompanying folder with resources.
+            It is allowed to disable saving of stylesheets.
+            </summary>
+      <param name="htmlFilePath">Full path to the file, where HTML markup will be stored. File will be created or overwritten, if exists. 
+            Accompanying resource folder will be created in the same folder, where HTML file exist.</param>
+      <param name="cssResourcePrefix">Through this parameter used can specify a prefix, which will be added to the css declaration 
+            to all external resources, which will be present in the resultant CSS strings. If NULL or empty, prefixes will not be added.</param>
+      <param name="saveStylesheets">Boolean flag, which determines whether it is required to save all external stylesheets to files or not</param>
+    </member>
     <member name="M:GroupDocs.Editor.InputHtmlDocument.Save(System.String,System.String)">
       <summary>
             Saves this HTML document to the file on specified path, where HTML markup will be stored, and to the accompanying folder with resources, 
@@ -2176,7 +2793,7 @@
       <param name="resourcesFolderPath">Full path to the accompanying folder, where all related resources will be stored. Cannot be NULL or empty. 
             Folder will be created, if not exists.</param>
     </member>
-    <member name="M:GroupDocs.Editor.InputHtmlDocument.Save(System.String,System.String,System.Boolean)">
+    <member name="M:GroupDocs.Editor.InputHtmlDocument.Save(System.String,System.String,System.String,System.Boolean)">
       <summary>
             Saves this HTML document to the file on specified path, where HTML markup will be stored, and to the accompanying folder with resources, 
             which is located on specified path. It is allowed to disable saving of stylesheets.
@@ -2185,6 +2802,8 @@
             File will be created or overwritten, if exists.</param>
       <param name="resourcesFolderPath">Full path to the accompanying folder, where all related resources will be stored. Cannot be NULL or empty. 
             Folder will be created, if not exists.</param>
+      <param name="cssResourcePrefix">Through this parameter used can specify a prefix, which will be added to the css declaration 
+            to all external resources, which will be present in the resultant CSS strings. If NULL or empty, prefixes will not be added.</param>
       <param name="saveStylesheets">Boolean flag, which determines whether it is required to save all external stylesheets to files or not</param>
     </member>
     <member name="M:GroupDocs.Editor.InputHtmlDocument.Dispose">
@@ -2200,109 +2819,6 @@
     <member name="E:GroupDocs.Editor.InputHtmlDocument.Disposed">
       <summary>
             Event, which occurs when this HTML document is disposed, right after finishing the disposing process
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.Options.FontExtractionOptions">
-      <summary>
-            Font extraction options control which fonts should be extracted and from where
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Options.FontExtractionOptions.NotExtract">
-      <summary>
-            Does not extract any font resource neither from document not from the system. Default value.
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Options.FontExtractionOptions.ExtractAllEmbedded">
-      <summary>
-            Extracts all font resources, which are embedded into the input Word document, regardless of what they are: custom or system.
-            </summary>
-      <remarks>Converter finds and extracts all 100% font resources, which are embedded into the input Word document, 
-            but it doesn't determine whether they are system or custom; it doesn't touch Windows Registry or system folders at all.</remarks>
-    </member>
-    <member name="F:GroupDocs.Editor.Options.FontExtractionOptions.ExtractEmbeddedWithoutSystem">
-      <summary>
-            Extracts only those embedded font resources, which are custom (not system)
-            </summary>
-      <remarks>Converter finds and extracts all embedded font resources, and then tries to determine which of these fonts are system, 
-            and which - not. In order to achieve this, converter tries to obtain a list of all system fonts by using Windows Registry and system folders, 
-            and then compares this list with a set of embedded fonts. As a result, only subset of those embedded fonts, 
-            which were not found in system, will be returned.</remarks>
-    </member>
-    <member name="F:GroupDocs.Editor.Options.FontExtractionOptions.ExtractAll">
-      <summary>
-            Tries to extract all fonts, which are used in the input Words document, inclusing system fonts.
-            </summary>
-      <remarks>Converter analysis an input Word document and finds all fonts, which are used there. 
-            If all of these fonts are embedded into the input document, converter extracts and returns them. 
-            Otherwise, if a collection of embedded fonts doesn't cover all used fonts in the document, or is empty, 
-            converter tries to extract these font resources from system, by using Windows Registry and system folders.</remarks>
-    </member>
-    <member name="T:GroupDocs.Editor.Options.IDocumentLoadOptions">
-      <summary>
-            Common interface for all options, which are responsible for document-to-HTML convertations.
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.Options.IDocumentSaveOptions">
-      <summary>
-            Interface for all saving options for all documents types
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.Options.IDocumentSaveOptions.Password">
-      <summary>
-            Should allow to specify or obtain a saving password, which will be used for protecting the resultant document. 
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.Options.PdfCompliance">
-      <summary>
-            Specifies the PDF standards compliance level
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Options.PdfCompliance.Pdf15">
-      <summary>
-            PDF 1.5 standard
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Options.PdfCompliance.PdfA1a">
-      <summary>
-            PDF/A-1a standard. This level includes all the requirements of PDF/A-1b and additionally requires that document structure be included 
-            (also known as being "tagged"), with the objective of ensuring that document content can be searched and repurposed.
-            </summary>
-      <remarks>Note that exporting the document structure significantly increases the memory consumption, especially for the large documents.</remarks>
-    </member>
-    <member name="F:GroupDocs.Editor.Options.PdfCompliance.PdfA1b">
-      <summary>
-            PDF/A-1b standard. PDF/A-1b has the objective of ensuring reliable reproduction of the visual appearance of the document.
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.Options.PdfSaveOptions">
-      <summary>
-            Allows to specify custom options for generating and saving PDF (Portable Document Format) documents
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.Options.PdfSaveOptions.Password">
-      <summary>
-            Password, which will be applied to the generated PDF document as user password, required for opening. 
-            If NULL or empty, no password will be applied to the document. Otherwise, document will be encrypted with RC4 (key length of 128 bit).
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.Options.PdfSaveOptions.Compliance">
-      <summary>
-            Specifies the PDF standards compliance level for output documents. Default is PdfCompliance.Pdf15.
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.Options.TextToHtmlOptions">
-      <summary>
-            Allows to specify custom options for loading plain text (TXT) documents
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.Options.TextToHtmlOptions.Encoding">
-      <summary>
-            Character encoding of the text document, which will be applied for its opening
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.Options.NamespaceDoc">
-      <summary>
-            The <b>GroupDocs.Editor.Options</b> namespace provides interfaces for load and save options. 
             </summary>
     </member>
     <member name="T:GroupDocs.Editor.EditorHandler">
@@ -2440,279 +2956,6 @@
             Exception for informing about the situations, when user tries to open a password-protected encrypted document of some format and doesn't provide a password for this document.
             </summary>
     </member>
-    <member name="T:GroupDocs.Editor.Words.HtmlToWords.DocumentProtection">
-      <summary>
-            Encapsulates document protection options for the Words document, which is generated from HTML
-            </summary>
-    </member>
-    <member name="M:GroupDocs.Editor.Words.HtmlToWords.DocumentProtection.#ctor">
-      <summary>
-            Parameterless constructor - all parameters have default values
-            </summary>
-    </member>
-    <member name="M:GroupDocs.Editor.Words.HtmlToWords.DocumentProtection.#ctor(GroupDocs.Editor.Words.HtmlToWords.DocumentProtectionType,System.String)">
-      <summary>
-            Allows to set all parameters during class instantiation
-            </summary>
-      <param name="protectionType">Set the protection type of the document</param>
-      <param name="password">Set the protection password</param>
-    </member>
-    <member name="P:GroupDocs.Editor.Words.HtmlToWords.DocumentProtection.ProtectionType">
-      <summary>
-            Allows to set a protection type of the document. By default is set to not protect the document at all.
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.Words.HtmlToWords.DocumentProtection.Password">
-      <summary>
-            The password to protect the document with. If null or empty string - the protection will not be applied to the document.
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.Words.HtmlToWords.DocumentProtectionType">
-      <summary>
-            Represents all available protection typers of the Words document
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Words.HtmlToWords.DocumentProtectionType.NoProtection">
-      <summary>
-            The document is not protected. Default value.
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Words.HtmlToWords.DocumentProtectionType.AllowOnlyRevisions">
-      <summary>
-            User can only add revision marks to the document
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Words.HtmlToWords.DocumentProtectionType.AllowOnlyComments">
-      <summary>
-            User can only modify comments in the document
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Words.HtmlToWords.DocumentProtectionType.AllowOnlyFormFields">
-      <summary>
-            User can only enter data in the form fields in the document
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Words.HtmlToWords.DocumentProtectionType.ReadOnly">
-      <summary>
-            No changes are allowed to the document
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.Words.HtmlToWords.WordFormats">
-      <summary>
-            Indicates the format of the Word-compatible document that is to be loaded.
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Auto">
-      <summary>
-            Represents any of the supported (but not exactly known) Word format
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Doc">
-      <summary>
-            Microsoft Word 97 - 2007 Document
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Dot">
-      <summary>
-            Microsoft Word 97 - 2007 Template format
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Docx">
-      <summary>
-            Office Open XML WordprocessingML Document (macro-free)
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Docm">
-      <summary>
-            Office Open XML WordprocessingML Macro-Enabled Document
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Dotx">
-      <summary>
-            Office Open XML WordprocessingML Template (macro-free)
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Dotm">
-      <summary>
-            Office Open XML WordprocessingML Macro-Enabled Template
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.FlatOpc">
-      <summary>
-             Office Open XML WordprocessingML stored in a flat XML file instead of a ZIP package
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Rtf">
-      <summary>
-            Rich Text Format
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Odt">
-      <summary>
-            Open Document Format Text Document
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Ott">
-      <summary>
-            Open Document Format Text Document Template
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Text">
-      <summary>
-            Text Format
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Html">
-      <summary>
-            HTML format
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.Mhtml">
-      <summary>
-            MHTML (Web archive) format
-            </summary>
-    </member>
-    <member name="F:GroupDocs.Editor.Words.HtmlToWords.WordFormats.WordML">
-      <summary>
-            Microsoft Word 2003 WordprocessingML format.
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.Words.HtmlToWords.WordsSaveOptions">
-      <summary>
-            Allows to specify custom options for generating and saving MS Word-compliant documents
-            </summary>
-    </member>
-    <member name="M:GroupDocs.Editor.Words.HtmlToWords.WordsSaveOptions.#ctor">
-      <summary>
-            Creates a new instance of WordsSaveOptions with default Word format and absence password
-            </summary>
-    </member>
-    <member name="M:GroupDocs.Editor.Words.HtmlToWords.WordsSaveOptions.#ctor(GroupDocs.Editor.Words.HtmlToWords.WordFormats)">
-      <summary>
-            Creates a new instance of WordsSaveOptions with specified Word format and absence password
-            </summary>
-      <param name="outputFormat">
-      </param>
-    </member>
-    <member name="M:GroupDocs.Editor.Words.HtmlToWords.WordsSaveOptions.#ctor(GroupDocs.Editor.Words.HtmlToWords.WordFormats,System.String)">
-      <summary>
-            Creates a new instance of WordsSaveOptions with specified Word format and encryption password
-            </summary>
-      <param name="outputFormat">Output format of the Word document</param>
-      <param name="password">
-      </param>
-    </member>
-    <member name="P:GroupDocs.Editor.Words.HtmlToWords.WordsSaveOptions.Password">
-      <summary>
-            Allows to specify, modify, obtain, or remove a password, which will be used to encode the generated Words document. 
-            Specify NULL or empty string for removing (cleaning) the password.
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.Words.HtmlToWords.WordsSaveOptions.OutputFormat">
-      <summary>
-            Allows to specify a Word format, which will be used for saving the document. The default 'Auto' value implies DOCX.
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.Words.HtmlToWords.WordsSaveOptions.Locale">
-      <summary>
-            Allows to set override default locale (language) for the Word document, which will be applied during its creation. 
-            When is not specified (default value), MS Word (or other program) will detect (or choose) the document locale 
-            according to its own settings or other factors.
-            </summary>
-      <remarks>This option forcibly applies the specified locale to overall text in the document. 
-            Do not use it, if document contains different parts of text, which are written on different languages.</remarks>
-    </member>
-    <member name="P:GroupDocs.Editor.Words.HtmlToWords.WordsSaveOptions.LocaleBi">
-      <summary>
-            Allows to set override locale (language) for the Word document for the RTL (right-to-left) text, which will be applied during its creation. 
-            When is not specified (default value), MS Word (or other program) will detect (or choose) the document RTL locale 
-            according to its own settings or other factors.
-            </summary>
-      <remarks>This option forcibly applies the specified locale to overall RTL text in the document. 
-            Do not use it, if document contains different parts of text, which are written on different languages.</remarks>
-    </member>
-    <member name="P:GroupDocs.Editor.Words.HtmlToWords.WordsSaveOptions.LocaleFarEast">
-      <summary>
-            Allows to override the locale (language) for the Word document for the East-Asian text, which will be applied during its creation. 
-            When is not specified (default value), MS Word (or other program) will detect (or choose) the document East-Asian locale 
-            according to its own settings or other factors.
-            </summary>
-      <remarks>This option forcibly applies the specified locale to overall East-Asian text in the document. 
-            Do not use it, if document contains different parts of text, which are written on different languages.</remarks>
-    </member>
-    <member name="P:GroupDocs.Editor.Words.HtmlToWords.WordsSaveOptions.OptimizeMemoryUsage">
-      <summary>
-            Enables memory optimization mechanisms during document generation from HTML, which degrades performance in as a cost of decreasing memory usage. 
-            Setting this option to true can significantly decrease memory consumption while generating large documents at the cost of slower saving time.
-            Default is false (memory optimization is disabled for the sake of better performance).
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.Words.HtmlToWords.WordsSaveOptions.Protection">
-      <summary>
-            Allows to control and apply the document protection options for the Words document of any format, which supports document protection. 
-            By default is NULL - document protection will not be used.
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.Words.HtmlToWords.NamespaceDoc">
-      <summary>
-            The <b>GroupDocs.Words.HtmlToWords</b> namespace provides classes for HTML to Words document processing. 
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.Words.WordsToHtml.WordToHtmlOptions">
-      <inheritdoc />
-      <summary>
-            Allows to specify custom options for loading Words-compliant documents
-            </summary>
-    </member>
-    <member name="M:GroupDocs.Editor.Words.WordsToHtml.WordToHtmlOptions.#ctor">
-      <summary>
-            Creates and returns a new instance of the WordToHtmlOptions class, where all options are set to their default values
-            </summary>
-    </member>
-    <member name="M:GroupDocs.Editor.Words.WordsToHtml.WordToHtmlOptions.#ctor(System.String)">
-      <summary>
-            Creates and returns a new instance of the WordToHtmlOptions class with specified password and <see cref="T:GroupDocs.Editor.Options.FontExtractionOptions" /> is default
-            </summary>
-      <param name="openingPassword">Password, which will be applied for opening the document in case it is encrypted</param>
-    </member>
-    <member name="M:GroupDocs.Editor.Words.WordsToHtml.WordToHtmlOptions.#ctor(GroupDocs.Editor.Options.FontExtractionOptions)">
-      <summary>
-            Creates and returns a new instance of the WordToHtmlOptions class with <see cref="T:GroupDocs.Editor.Options.FontExtractionOptions" /></summary>
-      <param name="option">Options, which defines font extraction policy</param>
-    </member>
-    <member name="M:GroupDocs.Editor.Words.WordsToHtml.WordToHtmlOptions.#ctor(System.String,GroupDocs.Editor.Options.FontExtractionOptions)">
-      <summary>
-            Creates and returns a new instance of the WordToHtmlOptions class with password and <see cref="T:GroupDocs.Editor.Options.FontExtractionOptions" /></summary>
-      <param name="openingPassword">Password, which will be applied for opening the document in case it is encrypted</param>
-      <param name="option">Options, which defines font extraction policy</param>
-    </member>
-    <member name="P:GroupDocs.Editor.Words.WordsToHtml.WordToHtmlOptions.ExportLanguageInformation">
-      <summary>
-            Specifies whether language information is exported to the HTML markup in a form of 'lang' HTML attributes. 
-            This option may be useful for roundtrip conversion of the multi-language documents. By default it is disabled (false).
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.Words.WordsToHtml.WordToHtmlOptions.Password">
-      <summary>
-            Allows to specify, modify and obtain the password, which will be used for opening Words document, if it is encoded. 
-            Set to NULL or empty string in order to remove the password.
-            </summary>
-    </member>
-    <member name="P:GroupDocs.Editor.Words.WordsToHtml.WordToHtmlOptions.ExtractFontOption">
-      <summary>
-            Enables or disables ability to extract font resources, which are used in the input Words document. By default doesn't extract any fonts (NotExtract).
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.Words.WordsToHtml.NamespaceDoc">
-      <summary>
-            The <b>GroupDocs.Words.WordsToHtml</b> namespace provides classes for Words to HTML document processing.
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.Words.NamespaceGroupDoc">
-      <summary>
-            The <b>GroupDocs.Editor.Words</b> namespace provides classes for Words to HTML (forward) and HTML to Words (backward) document processing.
-            </summary>
-    </member>
     <member name="T:GroupDocs.Editor.License">
       <summary>
             Provides methods to license the component.
@@ -2751,16 +2994,6 @@
     <member name="T:GroupDocs.Editor.NamespaceDoc">
       <summary>
             The <b>GroupDocs.Editor</b> namespace is a root namespace, which provides classes for editing multiple document formats in your .NET applications. 
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.Pdf.NamespaceGroupDoc">
-      <summary>
-            The <b>GroupDocs.Pdf</b> namespace provides classes for PDF to HTML (forward) and HTML to PDF (backward) document processing.
-            </summary>
-    </member>
-    <member name="T:GroupDocs.Editor.Pdf.PdfToHtml.NamespaceDoc">
-      <summary>
-            The <b>GroupDocs.Pdf.PdfToHtml</b> namespace provides classes for PDF to HTML document processing.
             </summary>
     </member>
   </members>
