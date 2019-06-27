@@ -78,7 +78,16 @@ namespace GroupDocs.Editor.Examples.CSharp
             GroupDocs.Editor.Metered metered = new GroupDocs.Editor.Metered();
             metered.SetMeteredKey(PublicKey, PrivateKey);
         }
-        //ExEnd:SetMeteredLicense
+
+        //ExEnd:SetMeteredLicense        
+        /// <summary>
+        /// Number of already used credits
+        /// </summary>
+        public static decimal GetAlreadyUsedCredit()
+        {
+            //Retrieves amount of already used credits
+            return Metered.GetConsumptionCredit();
+        }
     }
 }
 //ExEnd:CommonClass
