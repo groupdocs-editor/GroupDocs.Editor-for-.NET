@@ -1,0 +1,48 @@
+This is a sample plain text file
+
+There is one empty line above this text.  Two spaces.   Three spaces.
+     New line, which is preceded by 5 consecutive spaces. External link: https://rozetka.com.ua/final_pm_2d_black/p34087151/#tab=characteristics
+	 New line again, but at this time 1 tab char and 1 space char.
+	One tab.
+		Two tabs.
+			Three tabs.
+
+
+Two empty lines above.
+  Two spaces. In fact, in text document we can use only characters for the formatting. There are two spaces at the end of this sentence.  
+There are some sort of lists below. Unordered list:
+* Unordered item1.
+* Unordered item 2.
+** Unordered item 2.1.
+** Unordered item 2.2.
+** Unordered item 2.3.
+* Unordered item 3.
+
+Ordered list:
+1. First item.
+2. Second item.
+2.1. Sub-second item 1.
+2.2. Sub-second item 2.
+3. Third item.
+4. Fourth item.
+
+   Three spaces before the text. 		Space and two tabs. CAPS ONLY. <html> tags, which should <b>not</b> <i>work</u> here.</html>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
+
+	Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло. Его многочисленные, убого тонкие по сравнению с остальным телом ножки беспомощно копошились у него перед глазами. «Что со мной случилось?» – подумал он. Это не было сном. Его комната, настоящая, разве что слишком маленькая, но обычная комната, мирно покоилась в своих четырех хорошо знакомых стенах. Над столом, где были разложены распакованные образцы сукон – Замза был коммивояжером, – висел портрет, который он недавно вырезал из иллюстрированного журнала и вставил в красивую золоченую рамку. На портрете была изображена дама в меховой шляпе и боа, она сидела очень прямо и протягивала зрителю тяжелую меховую муфту, в которой целиком исчезала ее рука. Затем взгляд Грегора устремился в окно, и пасмурная погода – слышно было, как по жести подоконника стучат капли дождя – привела его и вовсе в грустное настроение. «Хорошо бы еще немного поспать и забыть всю эту чепуху», – подумал он, но это было совершенно неосуществимо, он привык спать на правом боку, а в теперешнем своем
+
+
+
+Three empty lines above. And another form of an unordered list below:
+ - First item.
+ - Second item.
+	- Second sub-item 1.
+	- Second sub-item 2.
+ - Third item (there are two empty lines after this third final list item).
+
+Some sort of table:
+----------------------------------
+| cell 1.1 | cell 1.2 | cell 1.3 |
+| cell 2.1 | cell 2.2 | cell 2.3 |
+| cell 3.1 | cell 3.2 | cell 3.3 |
+| cell 4.1 | cell 4.2 | cell 4.3 |
+----------------------------------
