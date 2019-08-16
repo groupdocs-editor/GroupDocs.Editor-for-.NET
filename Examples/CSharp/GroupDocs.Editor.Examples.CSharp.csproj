@@ -33,8 +33,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GroupDocs.Editor, Version=19.5.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\packages\GroupDocs.Editor.19.5.0\lib\GroupDocs.Editor.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\GroupDocs.Editor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,9 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicUsage\BasicRoundtrip.cs" />
+    <Compile Include="BasicUsage\MeteredLicenseSetter.cs" />
+    <Compile Include="BasicUsage\PasswordProtectedSpreadsheetRoundtrip.cs" />
+    <Compile Include="BasicUsage\StandardWordProcessingRoundtrip.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="ConvertHTMLDOMToDocument.cs" />
     <Compile Include="ConvertDocumentToHTMLDOM.cs" />
+    <Compile Include="FilesHelper.cs" />
+    <Compile Include="BasicUsage\LicenseSetter.cs" />
     <Compile Include="WorkingWithWordDocuments.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

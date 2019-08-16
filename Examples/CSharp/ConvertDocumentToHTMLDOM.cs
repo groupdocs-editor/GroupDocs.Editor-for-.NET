@@ -10,6 +10,7 @@ using GroupDocs.Editor.HtmlCss.Resources.Fonts;
 using GroupDocs.Editor.HtmlCss.Resources.Images.Raster;
 using GroupDocs.Editor.HtmlCss.Resources.Images.Vector;
 using GroupDocs.Editor.HtmlCss.Resources.Textual;
+using GroupDocs.Editor.Legacy;
 
 namespace GroupDocs.Editor.Examples.CSharp
 {

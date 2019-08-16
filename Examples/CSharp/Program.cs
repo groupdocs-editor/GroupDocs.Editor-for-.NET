@@ -11,7 +11,32 @@ namespace GroupDocs.Editor.Examples.CSharp
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Open Program.cs. \nIn Main() method uncomment the example that you want to run.");
+            Console.WriteLine("=====================================================");
+
+            #region Set license
+            BasicUsage.LicenseSetter.Run();
+            //BasicUsage.MeteredLicenseSetter.Run();
+            #endregion Set license
+
+            #region Roundtrip conversion - basic example
+            BasicUsage.BasicRoundtrip.Run();
+            #endregion Roundtrip conversion - basic example
+
+            #region Standard WordProcessing roundtrip
+            BasicUsage.StandardWordProcessingRoundtrip.Run();
+            #endregion Standard WordProcessing roundtrip
+
+            #region Password Protected Spreadsheet roundtrip
+            BasicUsage.PasswordProtectedSpreadsheetRoundtrip.Run();
+            #endregion Password Protected Spreadsheet roundtrip
+
+            Console.WriteLine("\r\nAll done. Press any key to exit.");
+            Console.ReadKey();
+            return;
             #region Common properties
+
+
 
             /// you can set source and resources file/folder paths and output and resources file/folders paths
             Common.sourcePath = Path.Combine(Environment.CurrentDirectory, @"../../../Data/SourceFiles");

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<root>
+<firstChild attribute1="value1" attribute2 = 'value2'  attribute3='value3'>
+0
+	1
+		2
+			3
+				4
+Zero, one, two, three, four tabs above and one after this	
+   three leading whitespaces and four trailing whitespaces    
+</firstChild>
+<secondChild >there are trailing spaces inside tags</secondChild >
+	<thirdChild>
+	text inside and 3 trailing spaces in closing tag
+	</thirdChild   >
+	<fourthChild>
+		Another text inside with three trailing spaces   
+	</fourthChild >
+	<fifthChild>
+		    Four leading spaces, 5 inner spaces (     ), and 2 trailing spaces  
+	</fifthChild>
+<Person>
+	<Forename locale = "en-US">
+		John
+	</Forename>
+	<Surname locale = "ru-RU">
+		Иванов
+	</Surname>
+	<Email>john.doe@gmail.com</Email>
+	<Address>
+	https://docs.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders
+	</Address>
+</Person>
+<![CDATA[<sender>John Smith</sender>]]>
+<selfClosed1/>
+<selfClodes2 attribute="value"/>
+<![CDATA[<sender>URL:https://habr.com/ru/post/444096/ (end of url)</sender>]]>
+<recipe name="хлеб" preptime="5min" cooktime="180min">
+   <title>
+      Простой хлеб https://en.wikipedia.org/wiki/Well-formed_document
+   </title>
+   <composition>
+      <ingredient amount="3" unit="стакан">Мука</ingredient>
+      <ingredient amount="0.25" unit="грамм">Дрожжи</ingredient>
+      <ingredient amount="1.5" unit="стакан">Тёплая вода</ingredient>
+   </composition>
+   <instructions>
+     <step>
+        Смешать все ингредиенты и тщательно замесить. 
+     </step>
+     <step>
+        Закрыть тканью и оставить на один час в тёплом помещении. 
+     </step>
+     <!-- 
+        <step>
+           Почитать вчерашнюю газету и послушать музыку (https://soundcloud.com/gai-barone/patterns-321). 
+        </step>
+         - это сомнительный шаг...
+      -->
+     <step>
+        Замесить ещё раз, положить на противень и поставить в духовку.
+     </step>
+   </instructions>
+</recipe>
+</root>

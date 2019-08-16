@@ -6,7 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GroupDocs.Editor;
-using GroupDocs.Editor.Options;
+using GroupDocs.Editor.Legacy;
+using GroupDocs.Editor.Legacy.Options;
 
 namespace GroupDocs.Editor.Examples.CSharp
 {
