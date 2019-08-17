@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="BasicUsage\BasicRoundtrip.cs" />
     <Compile Include="BasicUsage\MeteredLicenseSetter.cs" />
+    <Compile Include="BasicUsage\MultiTabSpreadsheetRoundtrip.cs" />
     <Compile Include="BasicUsage\PasswordProtectedSpreadsheetRoundtrip.cs" />
     <Compile Include="BasicUsage\StandardWordProcessingRoundtrip.cs" />
     <Compile Include="Common.cs" />

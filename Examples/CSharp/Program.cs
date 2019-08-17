@@ -31,7 +31,13 @@ namespace GroupDocs.Editor.Examples.CSharp
             BasicUsage.PasswordProtectedSpreadsheetRoundtrip.Run();
             #endregion Password Protected Spreadsheet roundtrip
 
-            Console.WriteLine("\r\nAll done. Press any key to exit.");
+            #region Multi-tab Spreadsheet roundtrip
+            BasicUsage.MultiTabSpreadsheetRoundtrip.Run();
+            #endregion Multi-tab Spreadsheet roundtrip
+
+
+
+            Console.WriteLine("\r\n\r\n__________________________\r\nAll done. Press any key to exit.");
             Console.ReadKey();
             return;
             #region Common properties

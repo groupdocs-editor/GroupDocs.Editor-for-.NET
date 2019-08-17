@@ -18,27 +18,30 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
             string inputFilePath = FilesHelper.XlsProtected;
 
             //1.1. First of all let's try to open document without password at all
-            Editor editor;
+            Editor editor = new Editor(inputFilePath);
             try
             {
-                editor = new Editor(inputFilePath);
+                editor.Edit();
             }
             catch (GroupDocs.Editor.PasswordRequiredException)
             {
-                Console.WriteLine("This document is password protected, so the password is required");
+                Console.WriteLine("Cannot edit a document, because it is password-protected, so the password is required");
             }
+            editor.Dispose();
 
             //1.2. Now let's try to specify incorrect password
             Options.SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
             loadOptions.Password = "incorrect_password";
+            editor = new Editor(inputFilePath, delegate { return loadOptions; });
             try
             {
-                editor = new Editor(inputFilePath, delegate { return loadOptions;});
+                editor.Edit();
             }
             catch (GroupDocs.Editor.IncorrectPasswordException)
             {
-                Console.WriteLine("This document is password protected, and password was specified, but it is incorrect");
+                Console.WriteLine("Cannot edit a document, because it is password-protected, and password was specified, but it is incorrect");
             }
+            editor.Dispose();
 
             //1.3. Finally, let's open file with valid password
             loadOptions.Password = "excel_password";
@@ -47,7 +50,7 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
             loadOptions.OptimizeMemoryUsage = true;
 
             editor = new Editor(inputFilePath, delegate { return loadOptions; });
-
+            
             //2. Create and adjust editing options
             Options.SpreadsheetEditOptions editOptions = new SpreadsheetEditOptions();
 
