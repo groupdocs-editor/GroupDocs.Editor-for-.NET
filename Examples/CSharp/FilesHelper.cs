@@ -39,7 +39,7 @@ namespace GroupDocs.Editor.Examples.CSharp
 
         internal static string Csv
         {
-            get { return Path.Combine(DataFolderPath, "CanyonStats.csv"); }
+            get { return Path.Combine(DataFolderPath, "CarsComma.csv"); }
         }
 
         internal static string Xlsx2Tabs
