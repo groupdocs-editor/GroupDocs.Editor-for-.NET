@@ -70,7 +70,7 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
                 //5. Save document without modification
                 //5.1. Prepare output filename and path
                 string outputFilename = Path.GetFileNameWithoutExtension(inputFilePath) + "." + xlsmFormat.Extension;
-                string outputPath = Path.Combine(System.Environment.CurrentDirectory, outputFilename);
+                string outputPath = Path.Combine(FilesHelper.OutputFolder, outputFilename);
                 
                 //5.2. Create output stream
                 using (FileStream outputStream = File.Create(outputPath))

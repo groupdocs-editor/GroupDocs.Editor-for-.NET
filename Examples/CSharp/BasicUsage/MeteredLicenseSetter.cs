@@ -12,13 +12,19 @@
             string privateKey = "*****";
 
             Metered metered = new Metered();
-            metered.SetMeteredKey(publicKey, privateKey);
-
-            System.Console.WriteLine("Metered license was set successfully.");
-
-            decimal consumedQuantity = Metered.GetConsumptionQuantity();
-            decimal consumedCredits =  Metered.GetConsumptionCredit();
-            System.Console.WriteLine(string.Format("Consumed quantity is {0} bytes, and {1} credits are consumed", consumedQuantity, consumedCredits));
+            try
+            {
+                metered.SetMeteredKey(publicKey, privateKey);
+                System.Console.WriteLine("Metered license was set successfully.");
+                decimal consumedQuantity = Metered.GetConsumptionQuantity();
+                System.Console.WriteLine("Consumed bytes quantity is {0}.", consumedQuantity);
+                decimal consumedCredits = Metered.GetConsumptionCredit();
+                System.Console.WriteLine("Consumed credits count is {0}.", consumedCredits);
+            }
+            catch
+            {
+                System.Console.WriteLine("Authentication failed with specified credentials.");
+            }
         }
     }
 }

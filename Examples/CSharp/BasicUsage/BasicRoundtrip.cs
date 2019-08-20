@@ -37,7 +37,7 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
 
                 //6. Save edited document to the output format
                 //6.1. In order to do that, prepare stream or path for saving (writing) output document...
-                string outputPath = Path.Combine(Environment.CurrentDirectory, Path.GetFileNameWithoutExtension(inputFilePath)+".rtf");
+                string outputPath = Path.Combine(FilesHelper.OutputFolder, Path.GetFileNameWithoutExtension(inputFilePath)+".rtf");
                 //6.2. ...and prepare saving options
                 Options.WordProcessingSaveOptions saveOptions = new WordProcessingSaveOptions(WordProcessingFormats.Rtf);
                 //6.3. Finally, save to path

@@ -34,13 +34,13 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
                     //5. Save first tab from EditableDocument #1 to separate document
                     SpreadsheetSaveOptions saveOptions1 = new SpreadsheetSaveOptions(SpreadsheetFormats.Xlsm);
                     string outputFilename1 = Path.GetFileNameWithoutExtension(inputFilePath) + "_tab1.xlsm";
-                    string outputPath1 = Path.Combine(System.Environment.CurrentDirectory, outputFilename1);
+                    string outputPath1 = Path.Combine(FilesHelper.OutputFolder, outputFilename1);
                     editor.Save(firstTabBeforeEdit, outputPath1, saveOptions1);
 
                     //6. Save second tab from EditableDocument #2 to separate document
                     SpreadsheetSaveOptions saveOptions2 = new SpreadsheetSaveOptions(SpreadsheetFormats.Xlsb);
                     string outputFilename2 = Path.GetFileNameWithoutExtension(inputFilePath) + "_tab2.xlsb";
-                    string outputPath2 = Path.Combine(System.Environment.CurrentDirectory, outputFilename2);
+                    string outputPath2 = Path.Combine(FilesHelper.OutputFolder, outputFilename2);
                     editor.Save(secondTabBeforeEdit, outputPath2, saveOptions2);
 
                     //7. Dispose both EditableDocument instances

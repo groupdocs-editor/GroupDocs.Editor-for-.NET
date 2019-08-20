@@ -45,7 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdvancedUsage\EditableDocumentAdvancedUsage.cs" />
     <Compile Include="AdvancedUsage\GetDocumentInfoUsage.cs" />
+    <Compile Include="AdvancedUsage\WorkingWithResources.cs" />
     <Compile Include="BasicUsage\BasicRoundtrip.cs" />
     <Compile Include="BasicUsage\DsvRoundtrip.cs" />
     <Compile Include="BasicUsage\MeteredLicenseSetter.cs" />

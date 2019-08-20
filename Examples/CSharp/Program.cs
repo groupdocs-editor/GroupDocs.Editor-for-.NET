@@ -10,10 +10,11 @@ namespace GroupDocs.Editor.Examples.CSharp
         static void Main(string[] args)
         {
             Console.WriteLine("Open Program.cs. \nIn Main() method uncomment the example that you want to run.");
+            Console.WriteLine("Output folder is '{0}'", FilesHelper.OutputFolder);
             Console.WriteLine("=====================================================");
 
             #region Set license
-            BasicUsage.LicenseSetter.Run();
+            //BasicUsage.LicenseSetter.Run();
             //BasicUsage.MeteredLicenseSetter.Run();
             #endregion Set license
 
@@ -46,12 +47,19 @@ namespace GroupDocs.Editor.Examples.CSharp
             #endregion Dsv Roundtrip
 
             #region Get Document Info
-            AdvancedUsage.GetDocumentInfoUsage.Run();
+            //AdvancedUsage.GetDocumentInfoUsage.Run();
             #endregion Get Document Info
+
+            #region EditableDocument advanced usage
+            //AdvancedUsage.EditableDocumentAdvancedUsage.Run();
+            #endregion EditableDocument advanced usage
+
+            #region Working with resources
+            //AdvancedUsage.WorkingWithResources.Run();
+            #endregion Working with resources
 
             Console.WriteLine("\r\n\r\n__________________________\r\nAll done. Press any key to exit.");
             Console.ReadKey();
-            return;
         }
     }
 }

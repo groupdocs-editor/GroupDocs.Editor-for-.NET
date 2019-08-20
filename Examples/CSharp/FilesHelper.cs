@@ -61,5 +61,10 @@ namespace GroupDocs.Editor.Examples.CSharp
         {
             get { return Path.Combine(DataFolderPath, "SamplePlainText1.txt"); }
         }
+
+        internal static string OutputFolder
+        {
+            get { return System.Environment.CurrentDirectory; }
+        }
     }
 }
