@@ -45,28 +45,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdvancedUsage\EditableDocumentAdvancedUsage.cs" />
-    <Compile Include="AdvancedUsage\GetDocumentInfoUsage.cs" />
-    <Compile Include="AdvancedUsage\WorkingWithResources.cs" />
-    <Compile Include="BasicUsage\BasicRoundtrip.cs" />
-    <Compile Include="BasicUsage\DsvRoundtrip.cs" />
-    <Compile Include="BasicUsage\MeteredLicenseSetter.cs" />
-    <Compile Include="BasicUsage\MultiTabSpreadsheetRoundtrip.cs" />
-    <Compile Include="BasicUsage\PasswordProtectedSpreadsheetRoundtrip.cs" />
-    <Compile Include="BasicUsage\PlainTextRoundtrip.cs" />
-    <Compile Include="BasicUsage\StandardWordProcessingRoundtrip.cs" />
-    <Compile Include="BasicUsage\XmlConversion.cs" />
+    <Compile Include="BasicUsage\CreateEditableDocumentFromHtmlFile.cs" />
+    <Compile Include="BasicUsage\GetAllEmbeddedHtmlContent.cs" />
+    <Compile Include="BasicUsage\GetBodyContentWithPrefix.cs" />
+    <Compile Include="BasicUsage\GetExternalCssContent.cs" />
+    <Compile Include="BasicUsage\GetExternalCssContentWithPrefix.cs" />
+    <Compile Include="BasicUsage\GetHtmlBodyContent.cs" />
+    <Compile Include="BasicUsage\GetHtmlContent.cs" />
+    <Compile Include="BasicUsage\GetHtmlContentWithPrefix.cs" />
+    <Compile Include="BasicUsage\SaveHtmlResourcesToFolder.cs" />
+    <Compile Include="BasicUsage\SaveHtmlToFolder.cs" />
+    <Compile Include="BasicUsage\SaveToWordsDocument.cs" />
+    <Compile Include="BasicUsage\SaveToWordsDocumentWithOptions.cs" />
     <Compile Include="FilesHelper.cs" />
-    <Compile Include="BasicUsage\LicenseSetter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuickStart\SetLicenseFromFile.cs" />
+    <Compile Include="QuickStart\SetLicenseFromStream.cs" />
+    <Compile Include="QuickStart\SetMeteredLicense.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="ReadMe.md" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="AdvancedUsage\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,4 +1,5 @@
 ﻿using System;
+using GroupDocs.Editor.Examples.CSharp.QuickStart;
 
 namespace GroupDocs.Editor.Examples.CSharp
 {
@@ -13,50 +14,61 @@ namespace GroupDocs.Editor.Examples.CSharp
             Console.WriteLine("Output folder is '{0}'", FilesHelper.OutputFolder);
             Console.WriteLine("=====================================================");
 
-            #region Set license
-            //BasicUsage.LicenseSetter.Run();
-            //BasicUsage.MeteredLicenseSetter.Run();
-            #endregion Set license
+            #region Quick Start
 
-            #region Roundtrip conversion - basic example
-            //BasicUsage.BasicRoundtrip.Run();
-            #endregion Roundtrip conversion - basic example
+            SetLicenseFromFile.Run();
+            //SetLicenseFromStream.Run();
+            //SetMeteredLicense.Run();
 
-            #region Standard WordProcessing roundtrip
-            //BasicUsage.StandardWordProcessingRoundtrip.Run();
-            #endregion Standard WordProcessing roundtrip
+            #endregion
 
-            #region Password Protected Spreadsheet roundtrip
-            //BasicUsage.PasswordProtectedSpreadsheetRoundtrip.Run();
-            #endregion Password Protected Spreadsheet roundtrip
+            ////// *** Documents Editor Examples (Un-Comment to run each example demo methods) ***
 
-            #region Multi-tab Spreadsheet roundtrip
-            //BasicUsage.MultiTabSpreadsheetRoundtrip.Run();
-            #endregion Multi-tab Spreadsheet roundtrip
+            #region Here are the sample methods call, how to convert document to EditableDocument.
 
-            #region XML conversion
-            //BasicUsage.XmlConversion.Run();
-            #endregion XML conversion
+            // Get HTML document content.
+            //BasicUsage.GetHtmlContent.Run();
 
-            #region Plain text roundtrip
-            //BasicUsage.PlainTextRoundtrip.Run();
-            #endregion Plain text roundtrip
+            // Get HTML document content with external resource prefix.
+            //BasicUsage.GetHtmlContentWithPrefix.Run();
 
-            #region Dsv Roundtrip
-            //BasicUsage.DsvRoundtrip.Run();
-            #endregion Dsv Roundtrip
+            // Get HTML document with embedded resources.
+            //BasicUsage.GetAllEmbeddedHtmlContent.Run();
 
-            #region Get Document Info
-            //AdvancedUsage.GetDocumentInfoUsage.Run();
-            #endregion Get Document Info
+            // Get HTML document BODY tag content.
+            //BasicUsage.GetHtmlBodyContent.Run();
 
-            #region EditableDocument advanced usage
-            //AdvancedUsage.EditableDocumentAdvancedUsage.Run();
-            #endregion EditableDocument advanced usage
+            // Get HTML document BODY tag content with external resource prefix.
+            //BasicUsage.GetBodyContentWithPrefix.Run();
 
-            #region Working with resources
-            //AdvancedUsage.WorkingWithResources.Run();
-            #endregion Working with resources
+            // Get HTML document external CSS content.
+            //BasicUsage.GetExternalCssContent.Run();
+
+            // Get HTML document external CSS content with external resource prefix.
+            //BasicUsage.GetExternalCssContentWithPrefix.Run();
+
+            // Save HTML document with resources to specified folder.
+            //BasicUsage.SaveHtmlToFolder.Run();
+
+            // Iterate over all HTML resources and save them to specified folder.
+            //BasicUsage.SaveHtmlResourcesToFolder.Run();
+
+            #endregion
+
+            #region Here are the sample methods call, how to create EditableDocument instance from HTML document, saved on disk.
+
+            //BasicUsage.CreateEditableDocumentFromHtmlFile.Run();
+
+            #endregion
+
+            #region Here are the sample methods call, how to convert EditableDocument to Word document.
+
+            //BasicUsage.SaveToWordsDocument.Run();
+
+            // Save to Words document with options.
+            //BasicUsage.SaveToWordsDocumentWithOptions.Run();
+
+            #endregion
 
             Console.WriteLine("\r\n\r\n__________________________\r\nAll done. Press any key to exit.");
             Console.ReadKey();
