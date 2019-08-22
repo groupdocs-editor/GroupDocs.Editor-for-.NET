@@ -3,7 +3,7 @@ using System.IO;
 using GroupDocs.Editor.Formats;
 using GroupDocs.Editor.Options;
 
-namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
+namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
 {
     /// <summary>
     /// This example demonstrates the most basic usage of GroupDocs.Editor for editing documents: opening a document from file path, editing, and saving with complete minimum of options and settings

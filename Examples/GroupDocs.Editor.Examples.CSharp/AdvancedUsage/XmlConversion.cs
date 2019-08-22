@@ -5,7 +5,7 @@ using GroupDocs.Editor.HtmlCss.Resources;
 using GroupDocs.Editor.HtmlCss.Serialization;
 using GroupDocs.Editor.Options;
 
-namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
+namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
 {
     /// <summary>
     /// This example demonstrates, how to convert input XML document to intermediate, edit it, and save to WordProcessing and to TXT

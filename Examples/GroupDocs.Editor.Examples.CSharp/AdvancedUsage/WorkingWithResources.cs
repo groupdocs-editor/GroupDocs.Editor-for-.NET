@@ -82,9 +82,9 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
 
             //4. For every resource it is possible to get its content:
             //4.1. As a byte stream...
-            Stream ms = images[1].ByteContent;//do with this stream something
+            Stream ms = images[0].ByteContent;//do with this stream something
             //4.2. ...and as a base64-encoded string
-            string base64EncodedResource = images[1].TextContent;
+            string base64EncodedResource = images[0].TextContent;
             
             //Don't forget to dispose all resources
             beforeEdit.Dispose();

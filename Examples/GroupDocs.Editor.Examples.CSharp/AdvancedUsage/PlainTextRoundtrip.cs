@@ -4,7 +4,7 @@ using GroupDocs.Editor.Formats;
 using GroupDocs.Editor.HtmlCss.Resources;
 using GroupDocs.Editor.Options;
 
-namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
+namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
 {
     /// <summary>
     /// This example demonstrates, how to convert input Plain Text document (TXT) to intermediate document, edit,

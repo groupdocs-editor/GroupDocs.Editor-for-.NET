@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
+namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
 {
     /// <summary>
     /// This example demonstrates how to set license from file and stream.
@@ -36,9 +36,7 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
                 Console.WriteLine("Cannot find license file '{0}'", licensePath);
             }
 
-            //TODO: remove this line
-            licensePath =
-                @"D:\Aspose\Editor\pdf-processing_branch\net\test\GroupDocs.Editor.Tests\Resources\Licenses\Conholdate\Valid\Conholdate.Total.Product.Family.lic";
+            
             //For setting license from stream
             try
             {

@@ -5,6 +5,8 @@ namespace GroupDocs.Editor.Examples.CSharp
 {
     internal static class FilesHelper
     {
+        private const string ProjectFolderName = "GroupDocs.Editor.Examples.CSharp";
+        private const string ResourcesFolderName = "Resources";
         private static readonly string DataFolderFullPath;
 
         static FilesHelper()
@@ -12,18 +14,17 @@ namespace GroupDocs.Editor.Examples.CSharp
             string exeFolderPath = Environment.CurrentDirectory;
             DirectoryInfo iterableFolder = new DirectoryInfo(exeFolderPath);
             byte safeCounter = 0;
-            const string projectFolderName = "CSharp";
             do
             {
                 safeCounter++;
                 string currentName = iterableFolder.Name;
                 iterableFolder = iterableFolder.Parent;
-                if (currentName.Equals(projectFolderName, StringComparison.OrdinalIgnoreCase) == true)
+                if (currentName.Equals(ProjectFolderName, StringComparison.OrdinalIgnoreCase) == true)
                 {
                     break;
                 }
             } while (iterableFolder != null || safeCounter == 255);
-            DirectoryInfo dataFolderPath = iterableFolder.GetDirectories("Data", SearchOption.TopDirectoryOnly)[0];
+            DirectoryInfo dataFolderPath = iterableFolder.GetDirectories(ResourcesFolderName, SearchOption.TopDirectoryOnly)[0];
             DataFolderFullPath = dataFolderPath.FullName;
         }
 

@@ -3,7 +3,7 @@ using System.IO;
 using GroupDocs.Editor.Formats;
 using GroupDocs.Editor.Options;
 
-namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
+namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
 {
     /// <summary>
     /// This example demonstrates loading, editing and saving a password-protected encoded Spreadsheet document,
