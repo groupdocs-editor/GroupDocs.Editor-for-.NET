@@ -1,4 +1,5 @@
 ﻿using System;
+using GroupDocs.Editor.Examples.CSharp.BasicUsage;
 using GroupDocs.Editor.Examples.CSharp.QuickStart;
 
 namespace GroupDocs.Editor.Examples.CSharp
@@ -6,7 +7,7 @@ namespace GroupDocs.Editor.Examples.CSharp
     /// <summary>
     /// Root class and entry point
     /// </summary>
-    static class Program
+    static class RunExamples
     {
         static void Main(string[] args)
         {
@@ -81,7 +82,7 @@ namespace GroupDocs.Editor.Examples.CSharp
         private static void AdvancedRoutines()
         {
             #region Roundtrip conversion - basic example
-            AdvancedUsage.BasicRoundtrip.Run();
+            Introduction.Run();
             #endregion Roundtrip conversion - basic example
 
             #region Standard WordProcessing roundtrip

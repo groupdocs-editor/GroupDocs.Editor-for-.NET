@@ -1,7 +1,7 @@
 ﻿using System;
 using GroupDocs.Editor.Options;
 
-namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
+namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
 {
     class GetAllEmbeddedHtmlContent
     {

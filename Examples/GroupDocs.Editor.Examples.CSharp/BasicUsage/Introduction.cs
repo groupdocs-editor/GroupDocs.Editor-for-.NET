@@ -3,12 +3,12 @@ using System.IO;
 using GroupDocs.Editor.Formats;
 using GroupDocs.Editor.Options;
 
-namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
+namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
 {
     /// <summary>
-    /// This example demonstrates the most basic usage of GroupDocs.Editor for editing documents: opening a document from file path, editing, and saving with complete minimum of options and settings
+    /// This example demonstrates the most basic usage of GroupDocs.Editor for editing documents: loading a document from file path, editing, and saving with complete minimum of options and settings
     /// </summary>
-    internal static class BasicRoundtrip
+    internal static class Introduction
     {
         internal static void Run()
         {

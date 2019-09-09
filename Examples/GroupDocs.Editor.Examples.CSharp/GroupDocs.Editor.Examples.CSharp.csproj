@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdvancedUsage\BasicRoundtrip.cs" />
+    <Compile Include="BasicUsage\Introduction.cs" />
     <Compile Include="AdvancedUsage\DsvRoundtrip.cs" />
     <Compile Include="AdvancedUsage\EditableDocumentAdvancedUsage.cs" />
     <Compile Include="AdvancedUsage\GetDocumentInfoUsage.cs" />
@@ -57,9 +57,9 @@
     <Compile Include="AdvancedUsage\StandardWordProcessingRoundtrip.cs" />
     <Compile Include="AdvancedUsage\WorkingWithResources.cs" />
     <Compile Include="AdvancedUsage\XmlConversion.cs" />
-    <Compile Include="BasicUsage\CreateEditableDocumentFromHtmlFile.cs" />
-    <Compile Include="BasicUsage\GetAllEmbeddedHtmlContent.cs" />
-    <Compile Include="BasicUsage\GetBodyContentWithPrefix.cs" />
+    <Compile Include="AdvancedUsage\CreateEditableDocumentFromHtmlFile.cs" />
+    <Compile Include="AdvancedUsage\GetAllEmbeddedHtmlContent.cs" />
+    <Compile Include="AdvancedUsage\GetBodyContentWithPrefix.cs" />
     <Compile Include="BasicUsage\GetExternalCssContent.cs" />
     <Compile Include="BasicUsage\GetExternalCssContentWithPrefix.cs" />
     <Compile Include="BasicUsage\GetHtmlBodyContent.cs" />
@@ -70,7 +70,7 @@
     <Compile Include="BasicUsage\SaveToWordsDocument.cs" />
     <Compile Include="BasicUsage\SaveToWordsDocumentWithOptions.cs" />
     <Compile Include="FilesHelper.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="RunExamples.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuickStart\SetLicenseFromFile.cs" />
     <Compile Include="QuickStart\SetLicenseFromStream.cs" />

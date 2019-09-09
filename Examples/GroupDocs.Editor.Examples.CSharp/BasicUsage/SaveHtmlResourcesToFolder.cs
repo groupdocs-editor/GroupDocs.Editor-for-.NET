@@ -28,7 +28,7 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
                             oneImage.FilenameWithExtension, oneImage.Type.FormalName, oneImage.LinearDimensions);
                         oneImage.Save(Path.Combine(outputFolder, oneImage.FilenameWithExtension));
                     }
-
+                    
                     foreach (FontResourceBase oneFont in fonts)
                     {
                         Console.WriteLine("Saving {0} of {1} type",
