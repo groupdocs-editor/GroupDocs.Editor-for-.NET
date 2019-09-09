@@ -6,12 +6,12 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
     /// <summary>
     /// This example demonstrates a usage of Editor.GetDocumentInfo method, that allows to extract metadata from file of unknown type (format)
     /// </summary>
-    internal static class GetDocumentInfoUsage
+    internal static class ExtractingDocumentInfo
     {
         internal static void Run()
         {
             Console.WriteLine("****************************************");
-            Console.WriteLine("Starting 'GetDocumentInfoUsage' routine");
+            Console.WriteLine("Starting 'ExtractingDocumentInfo' routine");
 
             //1. Let's check some WordProcessing document. Get its path or stream
             string docxInputFilePath = FilesHelper.Docx;
@@ -136,7 +136,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
             editorXml.Dispose();
             editorTxt.Dispose();
 
-            System.Console.WriteLine("GetDocumentInfoUsage routine has successfully finished");
+            System.Console.WriteLine("ExtractingDocumentInfo routine has successfully finished");
         }
     }
 }

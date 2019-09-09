@@ -10,7 +10,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
     /// <summary>
     /// This example demonstrates, how to convert input XML document to intermediate, edit it, and save to WordProcessing and to TXT
     /// </summary>
-    internal static class XmlConversion
+    internal static class WorkingWithXml
     {
         internal static void Run()
         {
@@ -56,7 +56,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
                     }
                 }
             }
-            System.Console.WriteLine("XmlConversion routine has successfully finished");
+            System.Console.WriteLine("WorkingWithXml routine has successfully finished");
         }
     }
 }

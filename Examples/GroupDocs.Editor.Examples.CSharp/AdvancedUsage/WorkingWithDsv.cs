@@ -7,10 +7,10 @@ using GroupDocs.Editor.Options;
 namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
 {
     /// <summary>
-    /// This example demonstrate how to open and edit DSV (Delimiter Separated Value) table document (Spreadsheet)
-    /// and how to save it back to DSV with different separators, or binary Spreadsheet (like OOXML)
+    /// This example demonstrate how to load and edit DSV (Delimiter Separated Value) table document (Spreadsheet)
+    /// and how to save it back to DSV with different separators, or to binary Spreadsheet (like OOXML)
     /// </summary>
-    internal static class DsvRoundtrip
+    internal static class WorkingWithDsv
     {
         internal static void Run()
         {
@@ -64,7 +64,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
                 beforeEdit.Dispose();
                 afterEdit.Dispose();
             }
-            System.Console.WriteLine("DsvRoundtrip routine has successfully finished");
+            System.Console.WriteLine("WorkingWithDsv routine has successfully finished");
         }
     }
 }

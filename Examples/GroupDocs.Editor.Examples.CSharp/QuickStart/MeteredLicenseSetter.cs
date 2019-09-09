@@ -1,4 +1,4 @@
-﻿namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
+﻿namespace GroupDocs.Editor.Examples.CSharp.QuickStart
 {
     /// <summary>
     /// This example demonstrates how to set Metered license.

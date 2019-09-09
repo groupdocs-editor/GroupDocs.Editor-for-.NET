@@ -1,4 +1,5 @@
 ﻿using System;
+using GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExamples;
 using GroupDocs.Editor.Examples.CSharp.BasicUsage;
 using GroupDocs.Editor.Examples.CSharp.QuickStart;
 
@@ -25,101 +26,64 @@ namespace GroupDocs.Editor.Examples.CSharp
 
             ////// *** Documents Editor Examples (Un-Comment to run each example demo methods) ***
 
-            #region Here are the sample methods call, how to convert document to EditableDocument.
+            #region Here are basic examples
 
-            // Get HTML document content.
-            //BasicUsage.GetHtmlContent.Run();
+            BasicUsage.Introduction.Run();
 
-            // Get HTML document content with external resource prefix.
-            //BasicUsage.GetHtmlContentWithPrefix.Run();
+            BasicUsage.LoadDocument.Run();
 
-            // Get HTML document with embedded resources.
-            //BasicUsage.GetAllEmbeddedHtmlContent.Run();
+            BasicUsage.EditDocument.Run();
 
-            // Get HTML document BODY tag content.
-            //BasicUsage.GetHtmlBodyContent.Run();
-
-            // Get HTML document BODY tag content with external resource prefix.
-            //BasicUsage.GetBodyContentWithPrefix.Run();
-
-            // Get HTML document external CSS content.
-            //BasicUsage.GetExternalCssContent.Run();
-
-            // Get HTML document external CSS content with external resource prefix.
-            //BasicUsage.GetExternalCssContentWithPrefix.Run();
-
-            // Save HTML document with resources to specified folder.
-            //BasicUsage.SaveHtmlToFolder.Run();
-
-            // Iterate over all HTML resources and save them to specified folder.
-            //BasicUsage.SaveHtmlResourcesToFolder.Run();
-
-            #endregion
-
-            #region Here are the sample methods call, how to create EditableDocument instance from HTML document, saved on disk.
-
-            //BasicUsage.CreateEditableDocumentFromHtmlFile.Run();
-
-            #endregion
-
-            #region Here are the sample methods call, how to convert EditableDocument to Word document.
-
-            //BasicUsage.SaveToWordsDocument.Run();
-
-            // Save to Words document with options.
-            //BasicUsage.SaveToWordsDocumentWithOptions.Run();
+            BasicUsage.SaveDocument.Run();
 
             #endregion
 
             #region Advanced usage
-            //For advanced samples uncomment the next method
-            //AdvancedRoutines();
+
+            AdvancedUsage.WorkingWithWordProcessing.Run();
+
+            AdvancedUsage.WorkingWithSpreadsheetPasswordProtected.Run();
+
+            AdvancedUsage.WorkingWithSpreadsheetMultiTab.Run();
+
+            AdvancedUsage.WorkingWithDsv.Run();
+
+            AdvancedUsage.WorkingWithPlainTextDocuments.Run();
+
+            AdvancedUsage.WorkingWithXml.Run();
+
+            AdvancedUsage.ExtractingDocumentInfo.Run();
+
             #endregion
+
+            #region Working with EditableDocument
+
+            AdvancedUsage.EditableDocumentExamples.GetHtmlContent.Run();
+
+            AdvancedUsage.EditableDocumentExamples.GetHtmlContentWithPrefix.Run();
+
+            AdvancedUsage.EditableDocumentExamples.GetHtmlBodyContent.Run();
+
+            AdvancedUsage.EditableDocumentExamples.GetHtmlBodyContentWithPrefix.Run();
+
+            AdvancedUsage.EditableDocumentExamples.GetAllEmbeddedHtmlContent.Run();
+
+            AdvancedUsage.EditableDocumentExamples.GetExternalCssContent.Run();
+
+            AdvancedUsage.EditableDocumentExamples.GetExternalCssContentWithPrefix.Run();
+
+            AdvancedUsage.EditableDocumentExamples.SaveHtmlToFolder.Run();
+
+            AdvancedUsage.EditableDocumentExamples.SaveHtmlResourcesToFolder.Run();
+
+            AdvancedUsage.EditableDocumentExamples.WorkingWithResources.Run();
+
+            AdvancedUsage.EditableDocumentExamples.EditableDocumentAdvancedUsage.Run();
+
+            #endregion
+
             Console.WriteLine("\r\n\r\n__________________________\r\nAll done. Press any key to exit.");
             Console.ReadKey();
-        }
-
-        private static void AdvancedRoutines()
-        {
-            #region Roundtrip conversion - basic example
-            Introduction.Run();
-            #endregion Roundtrip conversion - basic example
-
-            #region Standard WordProcessing roundtrip
-            AdvancedUsage.StandardWordProcessingRoundtrip.Run();
-            #endregion Standard WordProcessing roundtrip
-
-            #region Password Protected Spreadsheet roundtrip
-            AdvancedUsage.PasswordProtectedSpreadsheetRoundtrip.Run();
-            #endregion Password Protected Spreadsheet roundtrip
-
-            #region Multi-tab Spreadsheet roundtrip
-            AdvancedUsage.MultiTabSpreadsheetRoundtrip.Run();
-            #endregion Multi-tab Spreadsheet roundtrip
-
-            #region XML conversion
-            AdvancedUsage.XmlConversion.Run();
-            #endregion XML conversion
-
-            #region Plain text roundtrip
-            AdvancedUsage.PlainTextRoundtrip.Run();
-            #endregion Plain text roundtrip
-
-            #region Dsv Roundtrip
-            AdvancedUsage.DsvRoundtrip.Run();
-            #endregion Dsv Roundtrip
-
-            #region Get Document Info
-            AdvancedUsage.GetDocumentInfoUsage.Run();
-            #endregion Get Document Info
-
-            #region EditableDocument advanced usage
-            AdvancedUsage.EditableDocumentAdvancedUsage.Run();
-            #endregion EditableDocument advanced usage
-
-            #region Working with resources
-            AdvancedUsage.WorkingWithResources.Run();
-            #endregion Working with resources
         }
     }
 }

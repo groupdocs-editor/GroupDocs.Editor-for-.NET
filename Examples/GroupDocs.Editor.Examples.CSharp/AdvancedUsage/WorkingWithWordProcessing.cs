@@ -9,7 +9,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
     /// <summary>
     /// This example demonstrates standard operations with WordProcessing document, including options for its loading, opening, editing and saving
     /// </summary>
-    internal static class StandardWordProcessingRoundtrip
+    internal static class WorkingWithWordProcessing
     {
         internal static void Run()
         {
@@ -89,7 +89,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
                     }
                 }
             }
-            System.Console.WriteLine("StandardWordProcessingRoundtrip routine has successfully finished");
+            System.Console.WriteLine("WorkingWithWordProcessing routine has successfully finished");
         }
     }
 }

@@ -6,7 +6,7 @@ using GroupDocs.Editor.HtmlCss.Resources.Images;
 using GroupDocs.Editor.HtmlCss.Resources.Textual;
 using GroupDocs.Editor.Options;
 
-namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
+namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExamples
 {
     /// <summary>
     /// This example demonstrates working and operating with resources (GroupDocs.Editor.HtmlCss.Resources namespace)

@@ -7,7 +7,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
     /// <summary>
     /// This example demonstrates loading, editing and saving multi-tab Spreadsheet documents
     /// </summary>
-    internal static class MultiTabSpreadsheetRoundtrip
+    internal static class WorkingWithSpreadsheetMultiTab
     {
         internal static void Run()
         {
@@ -48,7 +48,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
                     secondTabBeforeEdit.Dispose();
                 }
             }
-            System.Console.WriteLine("MultiTabSpreadsheetRoundtrip routine has successfully finished");
+            System.Console.WriteLine("WorkingWithSpreadsheetMultiTab routine has successfully finished");
         }
     }
 }

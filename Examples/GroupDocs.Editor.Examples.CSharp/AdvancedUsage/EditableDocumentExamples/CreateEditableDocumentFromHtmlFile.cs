@@ -2,7 +2,7 @@
 using GroupDocs.Editor.Formats;
 using GroupDocs.Editor.Options;
 
-namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
+namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExamples
 {
     /// <summary>
     /// This example demonstrates, how to open EditableDocument from HTML file with resource folder from disk and save it as DOCX

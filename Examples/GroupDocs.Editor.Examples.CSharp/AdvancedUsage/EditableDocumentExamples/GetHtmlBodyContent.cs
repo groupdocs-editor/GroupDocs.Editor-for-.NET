@@ -1,10 +1,9 @@
 ﻿using System;
-using System.IO;
 using GroupDocs.Editor.Options;
 
-namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
+namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExamples
 {
-    class SaveHtmlToFolder
+    class GetHtmlBodyContent
     {
         internal static void Run()
         {
@@ -12,9 +11,8 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
             {
                 using (EditableDocument document = editor.Edit(new WordProcessingEditOptions()))
                 {
-                    string outputFolder = FilesHelper.OutputFolder;
-                    string outputHtml = Path.Combine(outputFolder, Path.GetFileNameWithoutExtension(FilesHelper.Docx)+".html");
-                    document.Save(outputHtml);
+                    string bodyContent = document.GetBodyContent();
+                    Console.WriteLine("Inner content of the HTML->BODY element: {0}", bodyContent);
                 }
             }
         }

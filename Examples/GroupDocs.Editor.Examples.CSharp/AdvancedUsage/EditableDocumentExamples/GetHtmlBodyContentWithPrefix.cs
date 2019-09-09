@@ -1,9 +1,9 @@
 ﻿using System;
 using GroupDocs.Editor.Options;
 
-namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
+namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExamples
 {
-    class GetBodyContentWithPrefix
+    class GetHtmlBodyContentWithPrefix
     {
         internal static void Run()
         {

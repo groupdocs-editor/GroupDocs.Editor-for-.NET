@@ -10,7 +10,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
     /// This example demonstrates, how to convert input Plain Text document (TXT) to intermediate document, edit,
     /// and then save back to TXT, and simultaneously to WordProcessing and HTML
     /// </summary>
-    internal static class PlainTextRoundtrip
+    internal static class WorkingWithPlainTextDocuments
     {
         internal static void Run()
         {
@@ -56,7 +56,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
                 editor.Save(afterEdit, outputWordPath, wordSaveOptions);
                 editor.Save(afterEdit, outputTxtPath, txtSaveOptions);
             }
-            System.Console.WriteLine("PlainTextRoundtrip routine has successfully finished");
+            System.Console.WriteLine("WorkingWithPlainTextDocuments routine has successfully finished");
         }
     }
 }

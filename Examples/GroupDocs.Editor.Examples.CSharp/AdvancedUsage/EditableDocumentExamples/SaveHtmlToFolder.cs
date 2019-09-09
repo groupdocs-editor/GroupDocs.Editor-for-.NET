@@ -1,9 +1,9 @@
-﻿using System;
+﻿using System.IO;
 using GroupDocs.Editor.Options;
 
-namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
+namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExamples
 {
-    class GetAllEmbeddedHtmlContent
+    class SaveHtmlToFolder
     {
         internal static void Run()
         {
@@ -11,8 +11,9 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
             {
                 using (EditableDocument document = editor.Edit(new WordProcessingEditOptions()))
                 {
-                    string embeddedHtmlContent = document.GetEmbeddedHtml();
-                    Console.WriteLine("HTML content of the input document, where all resources are embedded in base64 encoding: {0}", embeddedHtmlContent);
+                    string outputFolder = FilesHelper.OutputFolder;
+                    string outputHtml = Path.Combine(outputFolder, Path.GetFileNameWithoutExtension(FilesHelper.Docx)+".html");
+                    document.Save(outputHtml);
                 }
             }
         }

@@ -15,10 +15,10 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
             //1. Get a path to the input file (or stream with file content). In this case it is sample DOCX with complex content and formatting
             string inputFilePath = FilesHelper.Docx;
 
-            //2. Instantiate Editor object with input file
+            //2. Instantiate Editor object by loading the input file
             using (GroupDocs.Editor.Editor editor = new Editor(inputFilePath))
             {
-                //3. Obtain an intermediate document, that can be edited
+                //3. Open input document for edit — obtain an intermediate document, that can be edited
                 EditableDocument beforeEdit = editor.Edit();
 
                 //4. Grab document content and associated resources from editable document
@@ -53,7 +53,7 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
                 afterEdit.Dispose();
                 editor.Dispose();
             }
-            Console.WriteLine("BasicRoundtrip routine has successfully finished");
+            Console.WriteLine("Introduction routine has successfully finished");
         }
     }
 }

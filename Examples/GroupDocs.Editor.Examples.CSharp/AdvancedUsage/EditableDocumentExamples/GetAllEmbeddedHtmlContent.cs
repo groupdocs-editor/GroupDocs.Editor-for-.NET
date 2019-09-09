@@ -1,9 +1,9 @@
 ﻿using System;
 using GroupDocs.Editor.Options;
 
-namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
+namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExamples
 {
-    class GetHtmlBodyContent
+    class GetAllEmbeddedHtmlContent
     {
         internal static void Run()
         {
@@ -11,8 +11,8 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
             {
                 using (EditableDocument document = editor.Edit(new WordProcessingEditOptions()))
                 {
-                    string bodyContent = document.GetBodyContent();
-                    Console.WriteLine("Inner content of the HTML->BODY element: {0}", bodyContent);
+                    string embeddedHtmlContent = document.GetEmbeddedHtml();
+                    Console.WriteLine("HTML content of the input document, where all resources are embedded in base64 encoding: {0}", embeddedHtmlContent);
                 }
             }
         }

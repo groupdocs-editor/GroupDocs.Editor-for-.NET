@@ -7,7 +7,7 @@ using GroupDocs.Editor.HtmlCss.Resources.Images;
 using GroupDocs.Editor.HtmlCss.Resources.Textual;
 using GroupDocs.Editor.Options;
 
-namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
+namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExamples
 {
     /// <summary>
     /// This example demonstrates advanced work with EditableDocument class, that represents intermediate document before and after editing
@@ -18,7 +18,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
         {
             /*
              * Instance of EditableDocument class can be produced by the Editor.Edit method or created by the user himself.
-             * EditableDocument internally stores document in its own closed format,
+             * EditableDocument internally stores document in its own internal closed format,
              * which is compatible (convertible) with all import and export formats, that GroupDocs.Editor supports.
              * In order to make document editable in any WYSIWYG client-side editor (like CKEditor or TinyMCE), EditableDocument provides methods for generating HTML markup and producing resources, that can be accepted by the user.
              */

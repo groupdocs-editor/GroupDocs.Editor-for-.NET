@@ -9,7 +9,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
     /// This example demonstrates loading, editing and saving a password-protected encoded Spreadsheet document,
     /// including setting opening and write protection on output document
     /// </summary>
-    internal static class PasswordProtectedSpreadsheetRoundtrip
+    internal static class WorkingWithSpreadsheetPasswordProtected
     {
         internal static void Run()
         {
@@ -82,7 +82,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
             //6. Dispose Editor instance
             editor.Dispose();
 
-            Console.WriteLine("PasswordProtectedSpreadsheetRoundtrip routine has successfully finished. Editor instance was manually {0}", 
+            Console.WriteLine("WorkingWithSpreadsheetPasswordProtected routine has successfully finished. Editor instance was manually {0}", 
                 editor.IsDisposed ? "disposed" : "NOT disposed");
         }
     }
