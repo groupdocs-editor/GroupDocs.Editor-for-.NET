@@ -50,8 +50,6 @@
     <Compile Include="AdvancedUsage\WorkingWithDsv.cs" />
     <Compile Include="AdvancedUsage\EditableDocumentExamples\EditableDocumentAdvancedUsage.cs" />
     <Compile Include="AdvancedUsage\ExtractingDocumentInfo.cs" />
-    <Compile Include="QuickStart\LicenseSetter.cs" />
-    <Compile Include="QuickStart\MeteredLicenseSetter.cs" />
     <Compile Include="AdvancedUsage\WorkingWithSpreadsheetMultiTab.cs" />
     <Compile Include="AdvancedUsage\WorkingWithSpreadsheetPasswordProtected.cs" />
     <Compile Include="AdvancedUsage\WorkingWithPlainTextDocuments.cs" />
@@ -71,6 +69,7 @@
     <Compile Include="BasicUsage\LoadDocument.cs" />
     <Compile Include="BasicUsage\SaveDocument.cs" />
     <Compile Include="FilesHelper.cs" />
+    <Compile Include="QuickStart\HelloWorld.cs" />
     <Compile Include="RunExamples.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuickStart\SetLicenseFromFile.cs" />
