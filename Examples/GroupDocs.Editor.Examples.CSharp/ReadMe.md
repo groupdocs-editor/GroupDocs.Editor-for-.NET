@@ -6,5 +6,5 @@ This folder contains the source code for GroupDocs.Editor for .NET CSharp (C#) E
 
 + Visual Studio 2012 or later.
 
-+ GroupDocs.Editor 19.8.0
++ GroupDocs.Editor 19.9.0
 

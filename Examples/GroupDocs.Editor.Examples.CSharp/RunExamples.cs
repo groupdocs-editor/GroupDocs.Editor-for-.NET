@@ -1,7 +1,4 @@
 ﻿using System;
-using GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExamples;
-using GroupDocs.Editor.Examples.CSharp.BasicUsage;
-using GroupDocs.Editor.Examples.CSharp.QuickStart;
 
 namespace GroupDocs.Editor.Examples.CSharp
 {
@@ -18,9 +15,9 @@ namespace GroupDocs.Editor.Examples.CSharp
 
             #region Quick Start
 
-            SetLicenseFromFile.Run();
-            //SetLicenseFromStream.Run();
-            //SetMeteredLicense.Run();
+            QuickStart.SetLicenseFromFile.Run();
+            //QuickStart.SetLicenseFromStream.Run();
+            //QuickStart.SetMeteredLicense.Run();
 
             QuickStart.HelloWorld.Run();
 
