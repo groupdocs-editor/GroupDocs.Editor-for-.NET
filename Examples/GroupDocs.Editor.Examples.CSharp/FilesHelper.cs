@@ -77,6 +77,11 @@ namespace GroupDocs.Editor.Examples.CSharp
             get { return Path.Combine(DataFolderPath, "SampleDoc1.html"); }
         }
 
+        internal static string Pptx
+        {
+            get { return Path.Combine(DataFolderPath, "ComplexTest.pptx"); }
+        }
+
         internal static string OutputFolder
         {
             get { return System.Environment.CurrentDirectory; }

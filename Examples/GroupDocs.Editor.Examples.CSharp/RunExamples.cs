@@ -9,6 +9,7 @@ namespace GroupDocs.Editor.Examples.CSharp
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Using GroupDocs.Editor for .NET version {0}", typeof(GroupDocs.Editor.Editor).Assembly.GetName().Version.ToString());
             Console.WriteLine("Open Program.cs. \nIn Main() method uncomment the example that you want to run.");
             Console.WriteLine("Output folder is '{0}'", FilesHelper.OutputFolder);
             Console.WriteLine("=====================================================");
@@ -46,6 +47,8 @@ namespace GroupDocs.Editor.Examples.CSharp
             //AdvancedUsage.WorkingWithSpreadsheetMultiTab.Run();
 
             //AdvancedUsage.WorkingWithDsv.Run();
+
+            //AdvancedUsage.WorkingWithPresentations.Run();
 
             //AdvancedUsage.WorkingWithPlainTextDocuments.Run();
 

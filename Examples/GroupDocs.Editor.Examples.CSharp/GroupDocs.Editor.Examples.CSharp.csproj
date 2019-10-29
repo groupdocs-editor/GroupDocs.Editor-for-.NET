@@ -32,8 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GroupDocs.Editor, Version=19.9.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>packages\GroupDocs.Editor.19.9.0\lib\GroupDocs.Editor.dll</HintPath>
+    <Reference Include="GroupDocs.Editor, Version=19.10.1.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>packages\GroupDocs.Editor.19.10.1\lib\GroupDocs.Editor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdvancedUsage\WorkingWithPresentations.cs" />
     <Compile Include="BasicUsage\EditDocument.cs" />
     <Compile Include="BasicUsage\Introduction.cs" />
     <Compile Include="AdvancedUsage\WorkingWithDsv.cs" />
