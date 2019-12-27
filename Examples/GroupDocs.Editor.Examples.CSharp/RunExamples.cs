@@ -56,6 +56,8 @@ namespace GroupDocs.Editor.Examples.CSharp
 
             //AdvancedUsage.ExtractingDocumentInfo.Run();
 
+            //AdvancedUsage.SavingEditedDocumentToAllFormats.Run();
+
             #endregion
 
             #region Working with EditableDocument
@@ -81,6 +83,8 @@ namespace GroupDocs.Editor.Examples.CSharp
             //AdvancedUsage.EditableDocumentExamples.WorkingWithResources.Run();
 
             //AdvancedUsage.EditableDocumentExamples.EditableDocumentAdvancedUsage.Run();
+
+            //AdvancedUsage.EditableDocumentExamples.CreateEditableDocumentFromInnerBody.Run();
 
             #endregion
 

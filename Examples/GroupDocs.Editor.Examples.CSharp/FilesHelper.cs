@@ -77,6 +77,16 @@ namespace GroupDocs.Editor.Examples.CSharp
             get { return Path.Combine(DataFolderPath, "SampleDoc1.html"); }
         }
 
+        internal static string InnerBodyHtmlFile
+        {
+            get { return Path.Combine(DataFolderPath, "PureContentSample.html"); }
+        }
+
+        internal static string InnerBodyResourceFolder
+        {
+            get { return Path.Combine(DataFolderPath, "PureContentSample_resources"); }
+        }
+
         internal static string Pptx
         {
             get { return Path.Combine(DataFolderPath, "ComplexTest.pptx"); }
