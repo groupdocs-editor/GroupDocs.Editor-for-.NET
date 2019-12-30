@@ -58,6 +58,8 @@ namespace GroupDocs.Editor.Examples.CSharp
 
             //AdvancedUsage.SavingEditedDocumentToAllFormats.Run();
 
+            //AdvancedUsage.WorkingWithFormats.Run();
+
             #endregion
 
             #region Working with EditableDocument

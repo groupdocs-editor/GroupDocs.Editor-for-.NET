@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="AdvancedUsage\EditableDocumentExamples\CreateEditableDocumentFromInnerBody.cs" />
     <Compile Include="AdvancedUsage\SavingEditedDocumentToAllFormats.cs" />
+    <Compile Include="AdvancedUsage\WorkingWithFormats.cs" />
     <Compile Include="AdvancedUsage\WorkingWithPresentations.cs" />
     <Compile Include="BasicUsage\EditDocument.cs" />
     <Compile Include="BasicUsage\Introduction.cs" />
