@@ -10,9 +10,9 @@ namespace GroupDocs.Editor.Examples.CSharp.QuickStart
     {
         public static void Run()
         {
-            if (File.Exists(FilesHelper.LicensePath))
+            if (File.Exists(Constants.LicensePath))
             {
-                using (FileStream stream = File.OpenRead(FilesHelper.LicensePath))
+                using (FileStream stream = File.OpenRead(Constants.LicensePath))
                 {
                     License license = new License();
                     license.SetLicense(stream);

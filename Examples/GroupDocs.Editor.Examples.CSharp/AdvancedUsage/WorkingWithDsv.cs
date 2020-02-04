@@ -15,7 +15,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
         internal static void Run()
         {
             //1. Get a path to the input DSV file. In our case it is CSV
-            string inputFilePath = FilesHelper.Csv;
+            string inputFilePath = Constants.SAMPLE_CSV;
 
             //2. Create Editor instance (not load options required)
             using (Editor editor = new Editor(inputFilePath))
@@ -51,9 +51,9 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
                 Options.SpreadsheetSaveOptions cellsSaveOptions = new SpreadsheetSaveOptions(SpreadsheetFormats.Xlsm);
                 
                 //10. Prepare 3 different save paths
-                string outputCsvPath = Path.Combine(FilesHelper.OutputFolder, Path.GetFileNameWithoutExtension(inputFilePath) + ".csv");
-                string outputTsvPath = Path.Combine(FilesHelper.OutputFolder, Path.GetFileNameWithoutExtension(inputFilePath) + ".tsv");
-                string outputCellsPath = Path.Combine(FilesHelper.OutputFolder, Path.GetFileNameWithoutExtension(inputFilePath) + ".xlsm");
+                string outputCsvPath = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileNameWithoutExtension(inputFilePath) + ".csv");
+                string outputTsvPath = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileNameWithoutExtension(inputFilePath) + ".tsv");
+                string outputCellsPath = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileNameWithoutExtension(inputFilePath) + ".xlsm");
 
                 //11. Save edited document to 3 files of different formats
                 editor.Save(afterEdit, outputCsvPath, csvSaveOptions);

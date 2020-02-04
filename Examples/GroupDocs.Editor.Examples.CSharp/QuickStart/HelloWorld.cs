@@ -6,7 +6,9 @@ namespace GroupDocs.Editor.Examples.CSharp.QuickStart
     {
         internal static void Run()
         {
-            string documentPath = FilesHelper.Docx;
+            string documentPath = Constants.SAMPLE_DOCX;
+
+            System.Console.WriteLine(documentPath);
             using (Editor editor = new Editor(documentPath))//Load document into the Editor instance
             {
                 // Obtain editable document from original DOCX document
@@ -17,7 +19,7 @@ namespace GroupDocs.Editor.Examples.CSharp.QuickStart
                 // ...
                 
                 //Prepare saving path
-                string savePath = System.IO.Path.Combine(FilesHelper.OutputFolder, "HelloWorldOutput.doc");
+                string savePath = System.IO.Path.Combine(Constants.GetOutputDirectoryPath(), "HelloWorldOutput.doc");
                 //Prepare save options for some WordProcessing format - DOC for example
                 WordProcessingSaveOptions saveOptions = new WordProcessingSaveOptions(Formats.WordProcessingFormats.Doc);
                 // Save edited EditableDocument object to specified path with specified options

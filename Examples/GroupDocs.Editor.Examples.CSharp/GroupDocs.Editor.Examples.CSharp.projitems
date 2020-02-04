@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>fcbc0b55-0a67-465e-893c-5d1b367d8e91</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>GroupDocs.Editor.Examples.CSharp</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\EditableDocumentExamples\CreateEditableDocumentFromHtmlFile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\EditableDocumentExamples\CreateEditableDocumentFromInnerBody.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\EditableDocumentExamples\EditableDocumentAdvancedUsage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\EditableDocumentExamples\GetAllEmbeddedHtmlContent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\EditableDocumentExamples\GetExternalCssContent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\EditableDocumentExamples\GetExternalCssContentWithPrefix.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\EditableDocumentExamples\GetHtmlBodyContent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\EditableDocumentExamples\GetHtmlBodyContentWithPrefix.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\EditableDocumentExamples\GetHtmlContent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\EditableDocumentExamples\GetHtmlContentWithPrefix.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\EditableDocumentExamples\SaveHtmlResourcesToFolder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\EditableDocumentExamples\SaveHtmlToFolder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\EditableDocumentExamples\WorkingWithResources.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\ExtractingDocumentInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\SavingEditedDocumentToAllFormats.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\WorkingWithDsv.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\WorkingWithFormats.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\WorkingWithPlainTextDocuments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\WorkingWithPresentations.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\WorkingWithSpreadsheetMultiTab.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\WorkingWithSpreadsheetPasswordProtected.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\WorkingWithWordProcessing.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\WorkingWithXml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\EditDocument.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Introduction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\LoadDocument.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\SaveDocument.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)QuickStart\HelloWorld.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)QuickStart\SetLicenseFromFile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)QuickStart\SetLicenseFromStream.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)QuickStart\SetMeteredLicense.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Resources\CarsComma.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\ComplexTest.pptx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleDoc1.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\Sample_2SpreadSheet.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\Timesheet - excel_password.xls">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\PureContentSample.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\PureContentSample_resources\img1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\PureContentSample_resources\lizard.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\PureContentSample_resources\style1.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\PureContentSample_resources\style2.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleDoc1.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleDoc1_resources\Arial.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleDoc1_resources\Calibri.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleDoc1_resources\Courier New.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleDoc1_resources\image1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleDoc1_resources\image2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleDoc1_resources\image3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleDoc1_resources\style.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleDoc1_resources\Symbol.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleDoc1_resources\Tahoma.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleDoc1_resources\Times New Roman.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleDoc1_resources\Wingdings.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleDoc1_resources\Рисунок 1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SamplePlainText1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SampleXmlCorrect.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

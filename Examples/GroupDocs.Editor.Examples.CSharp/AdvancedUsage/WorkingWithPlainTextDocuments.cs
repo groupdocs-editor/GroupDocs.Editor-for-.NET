@@ -15,7 +15,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
         internal static void Run()
         {
             //1. Get a path to the input TXT file (or stream with file content)
-            string inputFilePath = FilesHelper.Txt;
+            string inputFilePath = Constants.SAMPLE_TXT;
 
             //2. Create Editor instance (not load options required)
             using (Editor editor = new Editor(inputFilePath))
@@ -49,8 +49,8 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
                 txtSaveOptions.PreserveTableLayout = true;
 
                 //9. Prepare paths for saving resultant DOCX and TXT files
-                string outputWordPath = Path.Combine(FilesHelper.OutputFolder, Path.GetFileNameWithoutExtension(inputFilePath) + ".docm");
-                string outputTxtPath = Path.Combine(FilesHelper.OutputFolder, Path.GetFileNameWithoutExtension(inputFilePath) + ".txt");
+                string outputWordPath = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileNameWithoutExtension(inputFilePath) + ".docm");
+                string outputTxtPath = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileNameWithoutExtension(inputFilePath) + ".txt");
 
                 //10. Save
                 editor.Save(afterEdit, outputWordPath, wordSaveOptions);

@@ -12,7 +12,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExample
     {
         internal static void Run()
         {
-            using (Editor editor = new Editor(FilesHelper.Docx, delegate { return new WordProcessingLoadOptions(); }))
+            using (Editor editor = new Editor(Constants.SAMPLE_DOCX, delegate { return new WordProcessingLoadOptions(); }))
             {
                 using (EditableDocument document = editor.Edit(new WordProcessingEditOptions()))
                 {
@@ -20,7 +20,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExample
                     List<FontResourceBase> fonts = document.Fonts;
                     List<CssText> stylesheets = document.Css;
 
-                    string outputFolder = FilesHelper.OutputFolder;
+                    string outputFolder = Constants.GetOutputDirectoryPath();
 
                     foreach (IImageResource oneImage in images)
                     {

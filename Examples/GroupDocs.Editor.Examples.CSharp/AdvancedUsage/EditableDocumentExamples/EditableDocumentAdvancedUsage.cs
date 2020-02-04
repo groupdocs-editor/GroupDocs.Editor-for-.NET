@@ -24,7 +24,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExample
              */
 
             //1. Lets create a EditableDocument instance in usual way, by loading and editing input document of some supportable format
-            string inputFilePath = FilesHelper.Docx;
+            string inputFilePath = Constants.SAMPLE_DOCX;
             Editor editor = new Editor(inputFilePath, delegate { return new WordProcessingLoadOptions();});
             EditableDocument beforeEdit = editor.Edit(new WordProcessingEditOptions());
 
@@ -80,7 +80,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExample
             //4. It is possible to save the document from EditableDocument as a simple HTML-file with resources to the disk
             // In the example below a separate directory for resources (stylesheets, images, and fonts) will be created automatically.
             // However, by using a 2-parameter overload of a "Save" method you can create it manually.
-            string htmlFilePath = Path.Combine(FilesHelper.OutputFolder, Path.GetFileNameWithoutExtension(inputFilePath) + ".html");
+            string htmlFilePath = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileNameWithoutExtension(inputFilePath) + ".html");
             beforeEdit.Save(htmlFilePath);
 
             //5. Along with implementing IDisposable, EditableDocument provides ability to check whether current instance is disposed

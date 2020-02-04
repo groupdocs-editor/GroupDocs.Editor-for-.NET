@@ -11,7 +11,7 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
         internal static void Run()
         {
             
-            string inputPath = FilesHelper.Docx;
+            string inputPath = Constants.SAMPLE_DOCX;
             
             //Load document as file via path and without load options
             Editor editor1 = new Editor(inputPath);
@@ -21,7 +21,7 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
             wordLoadOptions.Password = "some password";
             Editor editor2 = new Editor(inputPath, delegate { return wordLoadOptions;});
 
-            FileStream inputStream = File.OpenRead(FilesHelper.Xlsx2Tabs);
+			FileStream inputStream = File.OpenRead(Constants.SAMPLE_XLSX);
 
             //Load document as content from byte stream and without load options
             Editor editor3 = new Editor(delegate { return inputStream;});

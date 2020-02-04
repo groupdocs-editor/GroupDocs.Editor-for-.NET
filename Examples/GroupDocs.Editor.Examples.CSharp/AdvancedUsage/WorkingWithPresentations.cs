@@ -15,7 +15,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
         {
             //1. Get a path to the input file (or stream with file content).
             //In this case it is sample PPTX (OOXML) with three slides.
-            string inputFilePath = FilesHelper.Pptx;
+            string inputFilePath = Constants.SAMPLE_PPTX;
 
             //2. Create stream from this path
             using (FileStream fs = File.OpenRead(inputFilePath))
@@ -62,7 +62,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
                             //11. Save it
                             //11.1. Prepare saving filename and path
                             string outputFilename = Path.GetFileNameWithoutExtension(inputFilePath) + "." + saveOptions.OutputFormat.Extension;
-                            string outputPath = Path.Combine(FilesHelper.OutputFolder, outputFilename);
+                            string outputPath = Path.Combine(Constants.GetOutputDirectoryPath(), outputFilename);
 
                             //11.2. Prepare stream for saving
                             using (FileStream outputStream = File.Create(outputPath))

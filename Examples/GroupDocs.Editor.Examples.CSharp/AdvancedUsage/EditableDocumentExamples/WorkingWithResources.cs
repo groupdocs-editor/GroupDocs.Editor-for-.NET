@@ -25,7 +25,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExample
             Console.WriteLine("Investigating resources of DOCX document");
 
             //1. Lets create a EditableDocument instance in usual way, by loading and editing input document of some supportable format
-            string inputFilePath = FilesHelper.Docx;
+            string inputFilePath = Constants.SAMPLE_DOCX;
             Editor editor = new Editor(inputFilePath, delegate { return new WordProcessingLoadOptions(); });
 
             WordProcessingEditOptions editOptions = new WordProcessingEditOptions();
@@ -41,7 +41,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExample
             List<CssText> stylesheets = beforeEdit.Css;
 
             //3. Print detailed info about every used resource and save every resource to the file
-            string outputFolderPath = Path.Combine(FilesHelper.OutputFolder, "Resources");
+            string outputFolderPath = Path.Combine(Constants.GetOutputDirectoryPath(), "Resources");
             if (!Directory.Exists(outputFolderPath))
             {
                 Directory.CreateDirectory(outputFolderPath);

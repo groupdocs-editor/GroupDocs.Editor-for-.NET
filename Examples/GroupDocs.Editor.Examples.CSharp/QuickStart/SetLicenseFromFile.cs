@@ -15,10 +15,10 @@ namespace GroupDocs.Editor.Examples.CSharp.QuickStart
     {
         public static void Run()
         {
-            if (File.Exists(FilesHelper.LicensePath))
+            if (File.Exists(Constants.LicensePath))
             {
                 License license = new License();
-                license.SetLicense(FilesHelper.LicensePath);
+                license.SetLicense(Constants.LicensePath);
 
                 Console.WriteLine("License set successfully.");
             }

@@ -7,12 +7,12 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExample
     {
         internal static void Run()
         {
-            using (Editor editor = new Editor(FilesHelper.Docx, delegate { return new WordProcessingLoadOptions(); }))
+            using (Editor editor = new Editor(Constants.SAMPLE_DOCX, delegate { return new WordProcessingLoadOptions(); }))
             {
                 using (EditableDocument document = editor.Edit(new WordProcessingEditOptions()))
                 {
-                    string outputFolder = FilesHelper.OutputFolder;
-                    string outputHtml = Path.Combine(outputFolder, Path.GetFileNameWithoutExtension(FilesHelper.Docx)+".html");
+                    string outputFolder = Constants.GetOutputDirectoryPath();
+                    string outputHtml = Path.Combine(outputFolder, Path.GetFileNameWithoutExtension(Constants.SAMPLE_DOCX)+".html");
                     document.Save(outputHtml);
                 }
             }

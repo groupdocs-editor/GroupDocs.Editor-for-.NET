@@ -15,7 +15,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
         {
             //1. Get a path to the input file (or stream with file content).
             //In this case it is sample XLS (pre-OOXML) with one tab, and it is encoded with password. Let's try to open it.
-            string inputFilePath = FilesHelper.XlsProtected;
+            string inputFilePath = Constants.SAMPLE_XLS_PROTECTED;
 
             //1.1. First of all let's try to open document without password at all
             Editor editor = new Editor(inputFilePath);
@@ -70,7 +70,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
                 //5. Save document without modification
                 //5.1. Prepare output filename and path
                 string outputFilename = Path.GetFileNameWithoutExtension(inputFilePath) + "." + xlsmFormat.Extension;
-                string outputPath = Path.Combine(FilesHelper.OutputFolder, outputFilename);
+                string outputPath = Path.Combine(Constants.GetOutputDirectoryPath(), outputFilename);
                 
                 //5.2. Create output stream
                 using (FileStream outputStream = File.Create(outputPath))

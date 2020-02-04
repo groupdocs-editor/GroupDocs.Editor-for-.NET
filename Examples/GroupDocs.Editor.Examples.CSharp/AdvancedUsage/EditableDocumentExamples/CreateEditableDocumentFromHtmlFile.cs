@@ -11,13 +11,13 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExample
     {
         internal static void Run()
         {
-            string htmlFilePath = FilesHelper.HtmlFile;
+            string htmlFilePath = Constants.SAMPLE_HTML;
             using (EditableDocument document = EditableDocument.FromFile(htmlFilePath, null))
             {
                 using (Editor editor = new Editor(htmlFilePath))
                 {
                     Options.WordProcessingSaveOptions saveOptions = new WordProcessingSaveOptions(WordProcessingFormats.Docx);
-                    string savePath = Path.Combine(FilesHelper.OutputFolder, Path.GetFileNameWithoutExtension(htmlFilePath) + ".docx");
+                    string savePath = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileNameWithoutExtension(htmlFilePath) + ".docx");
                     editor.Save(document, savePath, saveOptions);
                 }
             }

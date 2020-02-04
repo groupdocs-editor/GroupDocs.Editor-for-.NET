@@ -14,7 +14,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
             Console.WriteLine("Starting 'ExtractingDocumentInfo' routine");
 
             //1. Let's check some WordProcessing document. Get its path or stream
-            string docxInputFilePath = FilesHelper.Docx;
+            string docxInputFilePath = Constants.SAMPLE_DOCX;
 
             //2. Instantiate Editor class, LoadOptions are not necessary, as we suppose that we know nothing about this file, especially don't know its format
             Editor editorDocx = new Editor(docxInputFilePath);
@@ -37,13 +37,13 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
             //7. If yes - get detailed info about it
             if (isWordProcessing)
             {
-                WordProcessingDocumentInfo casted = (WordProcessingDocumentInfo) infoDocx;
-                Console.WriteLine(string.Format("Format is: {0}; extension is: {1}; Page count: {2}; Size: {3} bytes; Is encrypted: {4}", 
+                WordProcessingDocumentInfo casted = (WordProcessingDocumentInfo)infoDocx;
+                Console.WriteLine(string.Format("Format is: {0}; extension is: {1}; Page count: {2}; Size: {3} bytes; Is encrypted: {4}",
                     casted.Format.Name, casted.Format.Extension, casted.PageCount, casted.Size, casted.IsEncrypted));
             }
 
             //8. Now let's check 2-tab Spreadsheet
-            string xlsxInputFilePath = FilesHelper.Xlsx2Tabs;
+            string xlsxInputFilePath = Constants.SAMPLE_XLSX;
             Editor editorXlsx = new Editor(xlsxInputFilePath);
             IDocumentInfo infoXlsx = editorXlsx.GetDocumentInfo(null);
 
@@ -53,17 +53,17 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
 
             //10. Print detailed info
             {
-                SpreadsheetDocumentInfo casted = (SpreadsheetDocumentInfo) infoXlsx;
+                SpreadsheetDocumentInfo casted = (SpreadsheetDocumentInfo)infoXlsx;
                 Console.WriteLine(string.Format("Format is: {0}; extension is: {1}; Tabs count: {2}; Size: {3} bytes; Is encrypted: {4}",
                     casted.Format.Name, casted.Format.Extension, casted.PageCount, casted.Size, casted.IsEncrypted));
             }
 
             //11. Now let's try to open a password-protected document
-            string xlsInputFilePath = FilesHelper.XlsProtected;
+            string xlsInputFilePath = Constants.SAMPLE_XLS_PROTECTED;
             Editor editorXls = new Editor(xlsInputFilePath);
 
-            //12. First of all, try to check it without password
-            IDocumentInfo infoXls;
+           // 12.First of all, try to check it without password
+           IDocumentInfo infoXls;
             try
             {
                 infoXls = editorXls.GetDocumentInfo(null);
@@ -98,7 +98,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
             }
 
             //17. Now let's try to play with text-based documents
-            string xmlInputFilePath = FilesHelper.Xml;
+            string xmlInputFilePath = Constants.SAMPLE_XML;
             Editor editorXml = new Editor(xmlInputFilePath);
 
             //18. Grab data and check it
@@ -114,7 +114,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
             }
 
             //20. Plain text at this time
-            string txtInputFilePath = FilesHelper.Txt;
+            string txtInputFilePath = Constants.SAMPLE_TXT;
             Editor editorTxt = new Editor(txtInputFilePath);
 
             //21. Grab data and check it

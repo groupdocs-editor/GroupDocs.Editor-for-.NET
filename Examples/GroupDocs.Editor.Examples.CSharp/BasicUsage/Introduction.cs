@@ -12,9 +12,9 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
     {
         internal static void Run()
         {
-            //1. Get a path to the input file (or stream with file content). In this case it is sample DOCX with complex content and formatting
-            string inputFilePath = FilesHelper.Docx;
-
+			//1. Get a path to the input file (or stream with file content). In this case it is sample DOCX with complex content and formatting
+            string inputFilePath = Constants.SAMPLE_DOCX;
+						
             //2. Instantiate Editor object by loading the input file
             using (GroupDocs.Editor.Editor editor = new Editor(inputFilePath))
             {
@@ -37,7 +37,7 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
 
                 //6. Save edited document to the output format
                 //6.1. In order to do that, prepare stream or path for saving (writing) output document...
-                string outputPath = Path.Combine(FilesHelper.OutputFolder, Path.GetFileNameWithoutExtension(inputFilePath)+".rtf");
+                string outputPath = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileNameWithoutExtension(inputFilePath)+".rtf");
                 //6.2. ...and prepare saving options
                 Options.WordProcessingSaveOptions saveOptions = new WordProcessingSaveOptions(WordProcessingFormats.Rtf);
                 //6.3. Finally, save to path

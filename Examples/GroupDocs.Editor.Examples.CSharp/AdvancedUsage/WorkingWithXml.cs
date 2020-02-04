@@ -15,7 +15,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
         internal static void Run()
         {
             //1. Get a path to the input XML file (or stream with file content)
-            string inputFilePath = FilesHelper.Xml;
+            string inputFilePath = Constants.SAMPLE_XML;
 
             //2. Create Editor instance (not load options required)
             using (Editor editor = new Editor(inputFilePath))
@@ -47,8 +47,8 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
                         txtSaveOptions.Encoding = System.Text.Encoding.UTF8;
 
                         //9. Prepare paths for saving resultant DOCX and TXT files
-                        string outputWordPath = Path.Combine(FilesHelper.OutputFolder, Path.GetFileNameWithoutExtension(inputFilePath) + ".docx");
-                        string outputTxtPath = Path.Combine(FilesHelper.OutputFolder, Path.GetFileNameWithoutExtension(inputFilePath) + ".txt");
+                        string outputWordPath = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileNameWithoutExtension(inputFilePath) + ".docx");
+                        string outputTxtPath = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileNameWithoutExtension(inputFilePath) + ".txt");
 
                         //10. Save
                         editor.Save(afterEdit, outputWordPath, wordSaveOptions);
