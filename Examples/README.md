@@ -10,9 +10,9 @@ This package contains C# Example Projects for [GroupDocs.Editor for .NET](https:
 
 # Prerequisite
 
-+ Visual Studio 2012 or later.
++ Visual Studio 2017 or later.
 
-+ GroupDocs.Editor 19.12
++ GroupDocs.Editor 20.3
 
 
 # How to Run the Examples?
