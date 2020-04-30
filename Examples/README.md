@@ -12,7 +12,7 @@ This package contains C# Example Projects for [GroupDocs.Editor for .NET](https:
 
 + Visual Studio 2017 or later.
 
-+ GroupDocs.Editor 20.3
++ GroupDocs.Editor 20.4
 
 
 # How to Run the Examples?
