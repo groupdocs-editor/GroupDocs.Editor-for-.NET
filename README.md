@@ -1,9 +1,6 @@
 ## GroupDocs.Editor for .NET
 
-GroupDocs.Editor for .NET is a lightweight component that allows to edit multiple document formats in form of HTML. The editor can both translate source document into html and save edited html into source document format. Supported file formats include: Microsoft Word, Microsoft Excel, Microsoft PowerPoint, PDFs and more.
-
-## GroupDocs.Editor Structure
-
+[GroupDocs.Editor](https://products.groupdocs.com/editor/net) is an on-premise .NET library that provides the ability to edit Word, Excel, PowerPoint, TXT, HTML, XML & other popular document formats using front-end WYSIWYG editor - all without any additional applications.
 
 This package contains [Examples](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Examples) for [GroupDocs.Editor for .NET](https://products.groupdocs.com/editor/net) that will help you understand API's working and write your own applications.
 
@@ -16,32 +13,81 @@ This package contains [Examples](https://github.com/groupdocs-editor/GroupDocs.E
 
 Directory | Description
 --------- | -----------
-[Examples](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Examples)  | Contains the package of all .NET examples (C#) and sample files that will help you learn how to use product features.
-[Showcases](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Showcases)  | Contains the Frontend Examples to help you learn how to Implement product features in a Web-UI based application.
-[Plugins](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Plugins)  | Contains the Visual Studio Plugins which will download examples and GroupDocs.Editor Library without any efforts.
+[Docs](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Docs)  | Product documentation containing Developer's Guide, Release Notes & more.
+[Examples](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Examples)  | Package contains C# example projects and sample files used in the examples.
+[Showcases](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Showcases)  | Frontend examples to help you learn how to Implement product features in a Web-UI based application.
+[Plugins](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Plugins)  | Visual Studio Plugins related to GroupDocs.Editor.
 
-## How to Run the Examples
+## Document Editing Features
 
-+ You can either clone the repository using your favorite GitHub client or download the ZIP file from the above button.
-+ Extract the contents of the ZIP file to any folder on your computer.
-+ In the extracted files and folders, you can see solution file for C# Project.
-+ The project is created in Visual Studio 2012.
-+ Open the solution file in Visual Studio and build the project.
-+ On the first run, the dependencies will automatically be downloaded via NuGet.
-+ Open Program.cs file, all the examples are called from here.
-+ Uncomment the examples you want to run from within the project.
+- Support for [40+ document formats](https://docs.groupdocs.com/editor/net/supported-document-formats/).
+- [Edit word processing documents](https://docs.groupdocs.com/editor/net/working-with-wordprocessing-documents/) in a flow or paged mode.
+- Fetch language information for multi-lingual document editing.
+- Extract font information to provide consistent editing and appearance behavior.
+- [Edit multi-tabbed Excel files](https://docs.groupdocs.com/editor/net/working-with-spreadsheets/).
+- Specify separator, flexible numeric and data conversion for CSV & TSV files.
+- Fix incorrect XML document structure.
+- Recognize URIs and email addresses in XML files.
+- Extract basic information about the edited document.
+- Set character encoding of the input text document.
+- [Grab document metadata information](https://docs.groupdocs.com/editor/net/extracting-document-metainfo/).
+- Get HTML document along with all its resources (stylesheets, images).
+- Open any supported format file in HTML format and save to disk.
+- Fetch HTML markup from DB or remote storage.
 
-Please find more details for how to run the examples [here](https://docs.groupdocs.com/display/editornet/How+to+Run+Examples).
+## Editable File Formats
 
-## Resources
+**Word Processing:** DOC, DOCX, DOCM, DOT, DOTM, DOTX, FlatOPC, ODT, OTT, RTF, WordML/
+**Spreadsheet:** XLS, XLT, XLSX, XLSM, XLTX, XLTM, XLSB, XLAM, SXC, SpreadsheetML, ODS, FODS, DIF, DSV, CSV, TSV/
+**Presentation:** PPT, PPTX, PPTM, PPS, PPSX, PPSM, POT, POTX, ODP, OTP/
+**Other:** TXT, HTML, XML/
 
-+ **Website:** [www.groupdocs.com](https://www.groupdocs.com/)
-+ **Product Home:** [GroupDocs.Editor for .NET](https://products.groupdocs.com/editor) 
-+ **API Reference:** [GroupDocs.Editor for .NET API Reference](https://apireference.groupdocs.com/net/editor)
-+ **Documentation:** [GroupDocs.Editor for .NET Documentation](https://docs.groupdocs.com/display/editornet/Home)
-+ **Installation:** [GroupDocs.Editor for .NET NuGet Package](https://www.nuget.org/packages/GroupDocs.Editor/)
-+ **Free Support:** [GroupDocs.Editor for .NET Free Support Forum](https://forum.groupdocs.com/c/editor)
-+ **Paid Support:** [GroupDocs.Editor for .NET Paid Support Helpdesk](https://helpdesk.groupdocs.com/)
-+ **Blog:** [GroupDocs.Editor for .NET Blog](https://blog.groupdocs.com/category/groupdocs-editor-product-family/)
+## Develop & Deploy GroupDocs.Editor Anywhere
 
+**Microsoft Windows:** Windows Desktop & Server (x86, x64), Windows Azure/
+**macOS:** Mac OS X/
+**Linux:** Ubuntu, OpenSUSE, CentOS, and others/
+**Development Environments:** Microsoft Visual Studio, Xamarin.Android, Xamarin.IOS, Xamarin.Mac, MonoDevelop 2.4 or later/
+**Supported Frameworks:** .NET Framework 2.0 & above, Mono Framework 1.2 & above
 
+## Getting Started with GroupDocs.Editor for .NET
+
+Are you ready to give GroupDocs.Editor for .NET a try? Simply execute `Install-Package GroupDocs.Editor` from Package Manager Console in Visual Studio to fetch & reference GroupDocs.Editor assembly in your project. If you already have GroupDocs.Editor for .NET and want to upgrade it, please execute `Update-Package GroupDocs.Editor` to get the latest version.
+
+## Load, Edit & Save Excel Spreadsheet as HTML
+
+```csharp
+using (FileStream inputStream = File.OpenRead(inputFilePath))
+{
+    using (Editor editor = new Editor(delegate { return inputStream;}, delegate { return new SpreadsheetLoadOptions();}))
+    {
+        //3. Let's create an intermediate EditableDocument from 1st tab
+        SpreadsheetEditOptions editOptions1 = new SpreadsheetEditOptions();
+        editOptions1.WorksheetIndex = 0;//index is 0-based
+        EditableDocument firstTabBeforeEdit = editor.Edit(editOptions1);
+
+        //4. Let's create an intermediate EditableDocument from 2nd tab
+        SpreadsheetEditOptions editOptions2 = new SpreadsheetEditOptions();
+        editOptions2.WorksheetIndex = 1;//index is 0-based
+        EditableDocument secondTabBeforeEdit = editor.Edit(editOptions2);
+
+        //5. Save first tab from EditableDocument #1 to separate document
+        SpreadsheetSaveOptions saveOptions1 = new SpreadsheetSaveOptions(SpreadsheetFormats.Xlsm);
+        string outputFilename1 = Path.GetFileNameWithoutExtension(inputFilePath) + "_tab1.xlsm";
+        string outputPath1 = Path.Combine(Constants.GetOutputDirectoryPath(), outputFilename1);
+        editor.Save(firstTabBeforeEdit, outputPath1, saveOptions1);
+
+        //6. Save second tab from EditableDocument #2 to separate document
+        SpreadsheetSaveOptions saveOptions2 = new SpreadsheetSaveOptions(SpreadsheetFormats.Xlsb);
+        string outputFilename2 = Path.GetFileNameWithoutExtension(inputFilePath) + "_tab2.xlsb";
+        string outputPath2 = Path.Combine(Constants.GetOutputDirectoryPath(), outputFilename2);
+        editor.Save(secondTabBeforeEdit, outputPath2, saveOptions2);
+
+        //7. Dispose both EditableDocument instances
+        firstTabBeforeEdit.Dispose();
+        secondTabBeforeEdit.Dispose();
+    }
+}
+```
+
+[Product Page](https://products.groupdocs.com/editor/net) | [Documentation](https://docs.groupdocs.com/editor/net/) | [Demo](https://products.groupdocs.app/editor/family) | [API Reference](https://apireference.groupdocs.com/net/editor) | [Examples](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET) | [Blog](https://blog.groupdocs.com/category/editor/) | [Free Support](https://blog.groupdocs.com/category/editor/) | [Temporary License](https://purchase.groupdocs.com/temporary-license)
