@@ -37,17 +37,17 @@ Directory | Description
 
 ## Editable File Formats
 
-**Word Processing:** DOC, DOCX, DOCM, DOT, DOTM, DOTX, FlatOPC, ODT, OTT, RTF, WordML/
-**Spreadsheet:** XLS, XLT, XLSX, XLSM, XLTX, XLTM, XLSB, XLAM, SXC, SpreadsheetML, ODS, FODS, DIF, DSV, CSV, TSV/
-**Presentation:** PPT, PPTX, PPTM, PPS, PPSX, PPSM, POT, POTX, ODP, OTP/
-**Other:** TXT, HTML, XML/
+**Word Processing:** DOC, DOCX, DOCM, DOT, DOTM, DOTX, FlatOPC, ODT, OTT, RTF, WordML\
+**Spreadsheet:** XLS, XLT, XLSX, XLSM, XLTX, XLTM, XLSB, XLAM, SXC, SpreadsheetML, ODS, FODS, DIF, DSV, CSV, TSV\
+**Presentation:** PPT, PPTX, PPTM, PPS, PPSX, PPSM, POT, POTX, ODP, OTP\
+**Other:** TXT, HTML, XML
 
 ## Develop & Deploy GroupDocs.Editor Anywhere
 
-**Microsoft Windows:** Windows Desktop & Server (x86, x64), Windows Azure/
-**macOS:** Mac OS X/
-**Linux:** Ubuntu, OpenSUSE, CentOS, and others/
-**Development Environments:** Microsoft Visual Studio, Xamarin.Android, Xamarin.IOS, Xamarin.Mac, MonoDevelop 2.4 or later/
+**Microsoft Windows:** Windows Desktop & Server (x86, x64), Windows Azure\
+**macOS:** Mac OS X\
+**Linux:** Ubuntu, OpenSUSE, CentOS, and others\
+**Development Environments:** Microsoft Visual Studio, Xamarin.Android, Xamarin.IOS, Xamarin.Mac, MonoDevelop 2.4 or later\
 **Supported Frameworks:** .NET Framework 2.0 & above, Mono Framework 1.2 & above
 
 ## Getting Started with GroupDocs.Editor for .NET
