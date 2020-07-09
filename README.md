@@ -1,4 +1,4 @@
-## GroupDocs.Editor for .NET
+# Document Editor API for .NET
 
 [GroupDocs.Editor](https://products.groupdocs.com/editor/net) is an on-premise .NET library that provides the ability to edit Word, Excel, PowerPoint, TXT, HTML, XML & other popular document formats using front-end WYSIWYG editor - all without any additional applications.
 
