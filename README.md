@@ -2,8 +2,6 @@
 
 [GroupDocs.Editor](https://products.groupdocs.com/editor/net) is an on-premise .NET library that provides the ability to edit Word, Excel, PowerPoint, TXT, HTML, XML & other popular document formats using front-end WYSIWYG editor - all without any additional applications.
 
-This package contains [Examples](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Examples) for [GroupDocs.Editor for .NET](https://products.groupdocs.com/editor/net) that will help you understand API's working and write your own applications.
-
 <p align="center">
 
   <a title="Download complete GroupDocs.Editor for .NET source code" href="https://codeload.github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/zip/master">
@@ -26,7 +24,6 @@ Directory | Description
 - Extract font information to provide consistent editing and appearance behavior.
 - [Edit multi-tabbed Excel files](https://docs.groupdocs.com/editor/net/working-with-spreadsheets/).
 - Specify separator, flexible numeric and data conversion for CSV & TSV files.
-- Fix incorrect XML document structure.
 - Recognize URIs and email addresses in XML files.
 - Extract basic information about the edited document.
 - Set character encoding of the input text document.
@@ -50,7 +47,7 @@ Directory | Description
 **Development Environments:** Microsoft Visual Studio, Xamarin.Android, Xamarin.IOS, Xamarin.Mac, MonoDevelop 2.4 or later\
 **Supported Frameworks:** .NET Framework 2.0 & above, Mono Framework 1.2 & above
 
-## Getting Started with GroupDocs.Editor for .NET
+## Get Started with GroupDocs.Editor for .NET
 
 Are you ready to give GroupDocs.Editor for .NET a try? Simply execute `Install-Package GroupDocs.Editor` from Package Manager Console in Visual Studio to fetch & reference GroupDocs.Editor assembly in your project. If you already have GroupDocs.Editor for .NET and want to upgrade it, please execute `Update-Package GroupDocs.Editor` to get the latest version.
 
