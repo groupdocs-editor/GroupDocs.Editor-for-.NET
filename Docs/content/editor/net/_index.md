@@ -8,12 +8,12 @@ keywords:
 productName: GroupDocs.Editor for .NET
 hideChildren: True
 ---
-{{< alert style="info" >}}Welcome to the GroupDocs.Editor for .NETGroupDocs.Editor for .NET is a powerful document editing API using HTML. API can be used with any external, opensource or paid HTML editor. Editor API will process to load documents, convert it to HTML, provide HTML to external UI and then save HTML to original document after manipulation. It can also be used to generate different Microsoft Word documents, XML, OpenDocument Formats and TXT files.{{< /alert >}}
-
+#  Home 
+{{< alert style="info" >}}![](editor/net/images/home.png)**Welcome to the GroupDocs.Editor for .NET**  
+GroupDocs.Editor for .NET is a powerful document editing API using HTML. API can be used with any external, opensource or paid HTML editor. Editor API will process to load documents, convert it to HTML, provide HTML to external UI and then save HTML to original document after manipulation. It can also be used to generate different Microsoft Word documents, XML, OpenDocument Formats and TXT files. 
+{{< /alert >}}
 ## GroupDocs.Editor for .NET Resources
-
 Following are the links to some useful resources you may need to accomplish your tasks.
-
 *   [GroupDocs.Editor for .NET Online Documentation]({{< ref "editor/net" >}})
 *   [GroupDocs.Editor for .NET Features]({{< ref "editor/net/getting-started/features-overview.md" >}})
 *   [GroupDocs.Editor for .NET Limitations]({{< ref "editor/net/getting-started/evaluation-limitations-and-licensing-of-groupdocs.editor.md" >}})
