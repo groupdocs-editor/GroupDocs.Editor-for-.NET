@@ -2,7 +2,7 @@
 id: memory-optimization-option
 url: editor/net/memory-optimization-option
 title: Memory optimization option
-weight: 7
+weight: 9
 description: "This article explains how to optimize memory utilization when editing large Word documents using GroupDocs.Editor for .NET API."
 keywords: large document edit performance, memory optimization when edit document
 productName: GroupDocs.Editor for .NET
