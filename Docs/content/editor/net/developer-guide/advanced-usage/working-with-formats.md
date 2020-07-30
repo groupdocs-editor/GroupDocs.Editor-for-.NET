@@ -33,7 +33,7 @@ Example below demonstrates all main features for the [WordProcessingFormats](ht
 ```csharp
 //fetching one format
 WordProcessingFormats dotm = Formats.WordProcessingFormats.Dotm;
-Console.WriteLine("DOT MAcro-enabled: Name is {0}, extension is {1}", dotm.Name, dotm.Extension);
+Console.WriteLine("DOT Macro-enabled: Name is {0}, extension is {1}", dotm.Name, dotm.Extension);
 //iterating over all formats within WordProcessing family
 foreach (WordProcessingFormats oneFormat in Formats.WordProcessingFormats.All)
 {
