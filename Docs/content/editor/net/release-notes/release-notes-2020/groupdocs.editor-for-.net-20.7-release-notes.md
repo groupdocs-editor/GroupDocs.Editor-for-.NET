@@ -16,7 +16,7 @@ GroupDocs.Editor for .NET version 20.7 provides several completely new features 
 
 ### Support of Mobi format
 
-Starting from version 20.7, the GroupDocs.Editor for .NET started to support a Mobi E-book format. However, at this time only loading, detecting and editing operations are supported, but not saving. We've prepared a special article, that described working especially with Mobi format: "[Working with Mobi documents]({{< ref "editor/net/developer-guide/advanced-usage/working-with-mobi-documents.md" >}})". Along with this format, we've introduced new public types: `Options.MobiEditOptions`, `Metadata.MobiDocumentInfo`, and `Formats.EBookFormats`. All of them are introduced in the article.
+Starting from version 20.7, the GroupDocs.Editor for .NET started to support a Mobi E-book format. However, at this time only loading, detecting and editing operations are supported, but not saving. We've prepared a special article, that described working especially with Mobi format: "[Working with Mobi documents]({{< ref "editor/net/developer-guide/advanced-usage/working-with-mobi-documents.md" >}})". Along with this format, we've introduced new public types: [`MobiEditOptions`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/mobieditoptions), [`Metadata.MobiDocumentInfo`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.metadata/mobidocumentinfo), and [`Formats.EBookFormats`](https://apireference.groupdocs.com/editor/net/groupdocs.editor.formats/ebookformats). All of them are introduced in the article.
 
 ### Ability to embed fonts in resultant WordProcessing document during saving
 

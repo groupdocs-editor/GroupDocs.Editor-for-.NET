@@ -7,11 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupDocs.Editor.Examples.C
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "GroupDocs.Editor.Examples.CSharp", "GroupDocs.Editor.Examples.CSharp\GroupDocs.Editor.Examples.CSharp.shproj", "{FCBC0B55-0A67-465E-893C-5D1B367D8E91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupDocs.Editor.Examples.CSharp.Core", "GroupDocs.Editor.Examples.CSharp.Core\GroupDocs.Editor.Examples.CSharp.Core.csproj", "{F9F1BDBF-4688-4390-ABE7-1D003195EF85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupDocs.Editor.Examples.CSharp.Core", "GroupDocs.Editor.Examples.CSharp.Core\GroupDocs.Editor.Examples.CSharp.Core.csproj", "{F9F1BDBF-4688-4390-ABE7-1D003195EF85}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		GroupDocs.Editor.Examples.CSharp\GroupDocs.Editor.Examples.CSharp.projitems*{4ff1dbeb-25de-4e8b-9464-0ba63dd860ac}*SharedItemsImports = 4
+		GroupDocs.Editor.Examples.CSharp\GroupDocs.Editor.Examples.CSharp.projitems*{f9f1bdbf-4688-4390-abe7-1d003195ef85}*SharedItemsImports = 5
 		GroupDocs.Editor.Examples.CSharp\GroupDocs.Editor.Examples.CSharp.projitems*{fcbc0b55-0a67-465e-893c-5d1b367d8e91}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

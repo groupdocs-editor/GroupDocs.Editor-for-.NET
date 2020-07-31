@@ -92,6 +92,7 @@ All document formats, which GroupDocs.Editor supports, are grouped into family f
 | XML | Any XML document | ![(tick)](editor/net/images/check.png) | ![(error)](editor/net/images/error.png) | N/A | [XmlEditOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/xmleditoptions) | N/A | [TextualDocumentInfo](https://apireference.groupdocs.com/net/editor/groupdocs.editor.metadata/textualdocumentinfo) |
 | TXT | Any text document | ![(tick)](editor/net/images/check.png) | ![(tick)](editor/net/images/check.png) | N/A | [TextEditOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/texteditoptions) | [TextSaveOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/textsaveoptions) | [TextualDocumentInfo](https://apireference.groupdocs.com/net/editor/groupdocs.editor.metadata/textualdocumentinfo) |
 | Fixed-layout format | PDF | ![(error)](editor/net/images/error.png) | ![(tick)](editor/net/images/check.png) | N/A | N/A | [PdfSaveOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/pdfsaveoptions) | N/A |
+| Mobi | Any Mobi E-book | ![(tick)](editor/net/images/check.png) | ![(error)](editor/net/images/error.png) | N/A | [MobiEditOptions](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/mobieditoptions) | N/A | [MobiDocumentInfo](https://apireference.groupdocs.com/editor/net/groupdocs.editor.metadata/mobidocumentinfo) |
 
 ### Additional materials
 

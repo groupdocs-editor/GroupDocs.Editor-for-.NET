@@ -21,6 +21,7 @@ Each format family has its own implementation of [IEditOptions](https://apirefe
 | Presentation | PPT, PPTX, PPS, POT | [PresentationEditOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/presentationeditoptions) |
 | Plain Text documents | TXT | [TextEditOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/texteditoptions) |
 | XML | Any XML-based format like CSPROJ, SVG, and so on | [XmlEditOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/xmleditoptions) |
+| Mobi | Any Mobi E-book | [MobiEditOptions](https://apireference.groupdocs.com/editor/net/groupdocs.editor.options/mobieditoptions) |
 
 Second overload is parameterless — it chooses the most appropriate default edit options based on input document format.
 
