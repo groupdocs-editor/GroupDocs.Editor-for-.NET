@@ -11,6 +11,7 @@
 
 Directory | Description
 --------- | -----------
+[Demos](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Demos)  | Source code of demos hosted at https://products.groupdocs.app/editor/family.
 [Docs](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Docs)  | Product documentation containing Developer's Guide, Release Notes & more.
 [Examples](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Examples)  | Package contains C# example projects and sample files used in the examples.
 [Showcases](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Showcases)  | Frontend examples to help you learn how to Implement product features in a Web-UI based application.
@@ -87,4 +88,4 @@ using (FileStream inputStream = File.OpenRead(inputFilePath))
 }
 ```
 
-[Product Page](https://products.groupdocs.com/editor/net) | [Documentation](https://docs.groupdocs.com/editor/net/) | [Demo](https://products.groupdocs.app/editor/family) | [API Reference](https://apireference.groupdocs.com/net/editor) | [Examples](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET) | [Blog](https://blog.groupdocs.com/category/editor/) | [Free Support](https://blog.groupdocs.com/category/editor/) | [Temporary License](https://purchase.groupdocs.com/temporary-license)
+[Home](https://www.groupdocs.com/) | [Product Page](https://products.groupdocs.com/editor/net) | [Documentation](https://docs.groupdocs.com/editor/net/) | [Demo](https://products.groupdocs.app/editor/family) | [API Reference](https://apireference.groupdocs.com/editor/net) | [Examples](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET) | [Blog](https://blog.groupdocs.com/category/editor/) | [Free Support](https://blog.groupdocs.com/category/editor/) | [Temporary License](https://purchase.groupdocs.com/temporary-license)
