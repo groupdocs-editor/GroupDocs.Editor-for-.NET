@@ -113,7 +113,7 @@ Complete description of [EditableDocument](https://apireference.groupdocs.com/n
 Detailed review of all supported family formats together with explaining their load/edit/save options, illustrated with source code, can be found in the next articles:
 
 *   [Working with WordProcessing documents]({{< ref "editor/net/developer-guide/advanced-usage/working-with-wordprocessing-documents/_index.md" >}})
-*   [Working with Spreadsheets]({{< ref "editor/net/developer-guide/advanced-usage/working-with-spreadsheets.md" >}})
+*   [Working with Spreadsheets]({{< ref "editor/net/developer-guide/advanced-usage/working-with-spreadsheets/_index.md" >}})
 *   [Working with DSV]({{< ref "editor/net/developer-guide/advanced-usage/working-with-dsv.md" >}})
 *   [Working with Presentations]({{< ref "editor/net/developer-guide/advanced-usage/working-with-presentations/_index.md" >}})
 *   [Working with text documents]({{< ref "editor/net/developer-guide/advanced-usage/working-with-text-documents.md" >}})
