@@ -2,7 +2,7 @@
 id: working-with-spreadsheets
 url: editor/net/working-with-spreadsheets
 title: Working with Spreadsheets
-weight: 1
+weight: 2
 description: "This guide demonstrates how to edit XLS, XLSX, XLSM, XLSB, ODS, SXC spreadsheets with hidden worksheets, protect edited spreadsheet with password and many other powerful features of GroupDocs.Editor for .NET."
 keywords: Edit Excel, Edit spreadsheet, Edit XLS, Edit XLSX, Edit XLSM, Edit XLSB, Edit ODS, Edit SXC
 productName: GroupDocs.Editor for .NET
@@ -70,7 +70,7 @@ editor.Save(secondTab, outputStream, saveOptions);
 
 As it can be seen from the fragment of the source code above, a secondTab variable contains a reference to the [EditableDocument](https://apireference.groupdocs.com/net/editor/groupdocs.editor/editabledocument) instance, which represents a second tab. This means that the output XLSM document will have only one tab, which was initially opened for edit, passed to the WYSIWYG-editor, edited there by the user, then passed back and saved. This is a default and initial behavior, which was introduced at the very beginning of the GroupDocs.Editor, at the same time, when Spreadsheets module was released.
 
-However, starting from version 20.10 a new possibility was introduced — now GroupDocs.Editor can make a full copy of the initial Spreadsheet document and inject the edited tab into it, instead of the original tab or along with it. In order to achieve this the two new parameters were introduced in the [SpreadsheetSaveOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/spreadsheetsaveoptions) class: integer [WorksheetNumber](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/spreadsheetsaveoptions/properties/WorksheetNumber) and boolean [InsertAsNewWorksheet](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/spreadsheetsaveoptions/properties/InsertAsNewWorksheet). This feature is explained in detail in separate article[separate article]({{< ref "editor/net/developer-guide/advanced-usage/working-with-spreadsheets/inserting-edited-worksheet-into-existing-spreadsheet.md" >}}).
+However, starting from version 20.10 a new possibility was introduced — now GroupDocs.Editor can make a full copy of the initial Spreadsheet document and inject the edited tab into it, instead of the original tab or along with it. In order to achieve this the two new parameters were introduced in the [SpreadsheetSaveOptions](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/spreadsheetsaveoptions) class: integer [WorksheetNumber](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/spreadsheetsaveoptions/properties/WorksheetNumber) and boolean [InsertAsNewWorksheet](https://apireference.groupdocs.com/net/editor/groupdocs.editor.options/spreadsheetsaveoptions/properties/InsertAsNewWorksheet). This feature is explained in detail in [separate article]({{< ref "editor/net/developer-guide/advanced-usage/working-with-spreadsheets/inserting-edited-worksheet-into-existing-spreadsheet.md" >}}).
 
 ## More resources
 ### GitHub Examples
