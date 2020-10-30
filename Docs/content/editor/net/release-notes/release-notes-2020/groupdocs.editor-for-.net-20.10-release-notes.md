@@ -2,7 +2,7 @@
 id: groupdocs-editor-for-net-20-10-release-notes
 url: editor/net/groupdocs-editor-for-net-20-10-release-notes
 title: GroupDocs.Editor for .NET 20.10 Release Notes
-weight: 56
+weight: 54
 description: ""
 keywords: 
 productName: GroupDocs.Editor for .NET
