@@ -8,7 +8,7 @@
   <Import Project="..\GroupDocs.Editor.Examples.CSharp\GroupDocs.Editor.Examples.CSharp.projitems" Label="Shared" />
 
   <ItemGroup>
-    <PackageReference Include="GroupDocs.Editor" Version="21.1.0" />
+    <PackageReference Include="GroupDocs.Editor" Version="21.1.1" />
   </ItemGroup>
 
 </Project>
