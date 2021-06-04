@@ -11,10 +11,9 @@
 
 Directory | Description
 --------- | -----------
-[Demos](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Demos)  | Source code of demos hosted at https://products.groupdocs.app/editor/family.
-[Docs](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Docs)  | Product documentation containing Developer's Guide, Release Notes & more.
+[Demos](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Demos)  | Frontend examples to help you learn how to Implement product features in a Web-UI based application. Source code of demos hosted at https://products.groupdocs.app/editor/family.
+[Docs](https://github.com/groupdocs-editor/GroupDocs.Editor-Docs)  | Product documentation containing Developer's Guide, Release Notes & more.
 [Examples](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Examples)  | Package contains C# example projects and sample files used in the examples.
-[Showcases](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Showcases)  | Frontend examples to help you learn how to Implement product features in a Web-UI based application.
 [Plugins](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Plugins)  | Visual Studio Plugins related to GroupDocs.Editor.
 
 ## Document Editing Features
