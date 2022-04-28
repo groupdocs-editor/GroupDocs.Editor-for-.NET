@@ -58,7 +58,7 @@ namespace GroupDocs.Editor.WebForms.AppDomainGenerator
             // Initiate class from the loaded assembly
             Type type = assembly.GetType(className);
             return type;
-        }       
+        }
 
         /// <summary>
         /// Set GroupDocs.Editor license
@@ -72,10 +72,12 @@ namespace GroupDocs.Editor.WebForms.AppDomainGenerator
             SetLicense(obj);
         }
 
-        private void SetLicense(dynamic obj) {
-            if (!String.IsNullOrEmpty(globalConfiguration.GetApplicationConfiguration().GetLicensePath()))
+        private void SetLicense(dynamic obj)
+        {
+            var licensePath = globalConfiguration.GetApplicationConfiguration().GetLicensePath();
+            if (!String.IsNullOrEmpty(licensePath))
             {
-                obj.SetLicense(globalConfiguration.GetApplicationConfiguration().GetLicensePath());
+                obj.SetLicense(licensePath);
             }
         }
     }

@@ -8,7 +8,6 @@ using GroupDocs.Editor.WebForms.Products.Editor.Config;
 using GroupDocs.Editor.WebForms.Products.Editor.Entity.Web.Request;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -26,10 +25,13 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class EditorApiController : ApiController
     {
-        private static readonly Common.Config.GlobalConfiguration globalConfiguration = new Common.Config.GlobalConfiguration();
+        private static readonly Common.Config.GlobalConfiguration globalConfiguration =
+            new Common.Config.GlobalConfiguration();
+
+        private const string _postfixEdited = "_edited";
 
         /// <summary>
-        /// Load Viewr configuration
+        /// Load configuration
         /// </summary>
         /// <returns>Editor configuration</returns>
         [HttpGet]
@@ -55,14 +57,9 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
             try
             {
                 // get all the files from a directory
-                if (string.IsNullOrEmpty(relDirPath))
-                {
-                    relDirPath = globalConfiguration.GetEditorConfiguration().GetFilesDirectory();
-                }
-                else
-                {
-                    relDirPath = Path.Combine(globalConfiguration.GetEditorConfiguration().GetFilesDirectory(), relDirPath);
-                }
+                relDirPath = string.IsNullOrEmpty(relDirPath)
+                    ? globalConfiguration.GetEditorConfiguration().GetFilesDirectory()
+                    : Path.Combine(globalConfiguration.GetEditorConfiguration().GetFilesDirectory(), relDirPath);
 
                 List<FileDescriptionEntity> fileList = new List<FileDescriptionEntity>();
                 List<string> allFiles = new List<string>(Directory.GetFiles(relDirPath));
@@ -77,7 +74,9 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
 
                     // check if current file/folder is hidden
                     if (!fileInfo.Attributes.HasFlag(FileAttributes.Hidden) &&
-                        !Path.GetFileName(file).Equals(Path.GetFileName(globalConfiguration.GetEditorConfiguration().GetFilesDirectory())) &&
+                        !Path.GetFileName(file)
+                            .Equals(Path.GetFileName(globalConfiguration.GetEditorConfiguration()
+                                .GetFilesDirectory())) &&
                         !Path.GetFileName(file).StartsWith("."))
                     {
                         FileDescriptionEntity fileDescription = new FileDescriptionEntity();
@@ -102,7 +101,8 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, new Resources().GenerateException(ex));
+                return Request.CreateResponse(HttpStatusCode.InternalServerError,
+                    new Resources().GenerateException(ex));
             }
         }
 
@@ -135,12 +135,14 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
             catch (PasswordRequiredException ex)
             {
                 // set exception message
-                return Request.CreateResponse(HttpStatusCode.Forbidden, new Resources().GenerateException(ex, postedData.password));
+                return Request.CreateResponse(HttpStatusCode.Forbidden,
+                    new Resources().GenerateException(ex, postedData.password));
             }
             catch (Exception ex)
             {
                 // set exception message
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, new Resources().GenerateException(ex, postedData.password));
+                return Request.CreateResponse(HttpStatusCode.InternalServerError,
+                    new Resources().GenerateException(ex, postedData.password));
             }
         }
 
@@ -173,7 +175,6 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
         /// <summary>
         /// Upload document
         /// </summary>
-        /// <param name="postedData">Post data</param>
         /// <returns>Uploaded document object</returns>
         [HttpPost]
         [Route("uploadDocument")]
@@ -190,25 +191,16 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
 
                 if (string.IsNullOrEmpty(url))
                 {
-                    if (HttpContext.Current.Request.Files.AllKeys != null)
+                    // Get the uploaded document from the Files collection
+                    var httpPostedFile = HttpContext.Current.Request.Files["file"];
+                    if (httpPostedFile != null)
                     {
-                        // Get the uploaded document from the Files collection
-                        var httpPostedFile = HttpContext.Current.Request.Files["file"];
-                        if (httpPostedFile != null)
-                        {
-                            if (rewrite)
-                            {
-                                // Get the complete file path
-                                fileSavePath = Path.Combine(documentStoragePath, httpPostedFile.FileName);
-                            }
-                            else
-                            {
-                                fileSavePath = Resources.GetFreeFileName(documentStoragePath, httpPostedFile.FileName);
-                            }
+                        fileSavePath = rewrite
+                            ? Path.Combine(documentStoragePath, httpPostedFile.FileName)
+                            : Resources.GetFreeFileName(documentStoragePath, httpPostedFile.FileName);
 
-                            // Save the uploaded file to "UploadedFiles" folder
-                            httpPostedFile.SaveAs(fileSavePath);
-                        }
+                        // Save the uploaded file to "UploadedFiles" folder
+                        httpPostedFile.SaveAs(fileSavePath);
                     }
                 }
                 else
@@ -219,15 +211,9 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
                         Uri uri = new Uri(url);
                         string fileName = Path.GetFileName(uri.LocalPath);
 
-                        if (rewrite)
-                        {
-                            // Get the complete file path
-                            fileSavePath = Path.Combine(documentStoragePath, fileName);
-                        }
-                        else
-                        {
-                            fileSavePath = Resources.GetFreeFileName(documentStoragePath, fileName);
-                        }
+                        fileSavePath = rewrite
+                            ? Path.Combine(documentStoragePath, fileName)
+                            : Resources.GetFreeFileName(documentStoragePath, fileName);
 
                         // Download the Web resource and save it into the current filesystem folder.
                         client.DownloadFile(url, fileSavePath);
@@ -241,7 +227,8 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
             catch (Exception ex)
             {
                 // set exception message
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, new Resources().GenerateException(ex));
+                return Request.CreateResponse(HttpStatusCode.InternalServerError,
+                    new Resources().GenerateException(ex));
             }
         }
 
@@ -259,9 +246,26 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
                 string htmlContent = postedData.getContent(); // Initialize with HTML markup of the edited document
                 string guid = postedData.GetGuid();
                 string password = postedData.getPassword();
-                string saveFilePath = Path.Combine(globalConfiguration.GetEditorConfiguration().GetFilesDirectory(), guid);
-                string tempFilename = Path.GetFileNameWithoutExtension(saveFilePath) + "_tmp";
-                string tempPath = Path.Combine(Path.GetDirectoryName(saveFilePath), tempFilename + Path.GetExtension(saveFilePath));
+                string saveFilePath =
+                    Path.Combine(globalConfiguration.GetEditorConfiguration().GetFilesDirectory(), guid);
+
+                string tempFilename = Path.GetFileNameWithoutExtension(saveFilePath);
+                string original = guid;
+
+                if (!tempFilename
+                        .EndsWith(_postfixEdited, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    tempFilename = Path.GetFileNameWithoutExtension(saveFilePath) + _postfixEdited;
+                }
+                else
+                {
+                    original = Path.Combine(Path.GetDirectoryName(saveFilePath) ?? string.Empty,
+                        tempFilename.Substring(0, tempFilename.Length - _postfixEdited.Length) +
+                        Path.GetExtension(saveFilePath));
+                }
+
+                string tempPath = Path.Combine(Path.GetDirectoryName(saveFilePath) ?? string.Empty,
+                    tempFilename + Path.GetExtension(saveFilePath));
 
                 ILoadOptions loadOptions = GetLoadOptions(guid);
                 if (loadOptions != null)
@@ -270,35 +274,15 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
                 }
 
                 // Instantiate Editor object by loading the input file
-                using (GroupDocs.Editor.Editor editor = new GroupDocs.Editor.Editor(guid, delegate { return loadOptions; }))
+                using (GroupDocs.Editor.Editor editor =
+                       new GroupDocs.Editor.Editor(original, delegate { return loadOptions; }))
                 {
                     EditableDocument htmlContentDoc = EditableDocument.FromMarkup(htmlContent, null);
-                    dynamic saveOptions = GetSaveOptions(guid);
-
-                    if (!(saveOptions is TextSaveOptions))
-                    {
-                        saveOptions.Password = password;
-                    }
-
-                    if (saveOptions is WordProcessingSaveOptions)
-                    {
-                        saveOptions.EnablePagination = true;
-                    }
-
-                    using (FileStream outputStream = File.Create(tempPath))
-                    {
-                        editor.Save(htmlContentDoc, outputStream, saveOptions);
-                    }
+                    var saveOptions = GetSaveOptions(guid, password);
+                    editor.Save(htmlContentDoc, tempPath, saveOptions);
                 }
 
-                if (File.Exists(saveFilePath))
-                {
-                    File.Delete(saveFilePath);
-                }
-
-                File.Move(tempPath, saveFilePath);
-
-                LoadDocumentEntity loadDocumentEntity = LoadDocument(saveFilePath, password);
+                LoadDocumentEntity loadDocumentEntity = LoadDocument(tempPath, password);
 
                 // return document description
                 return Request.CreateResponse(HttpStatusCode.OK, loadDocumentEntity);
@@ -306,7 +290,8 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
             catch (Exception ex)
             {
                 // set exception message
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, new Resources().GenerateException(ex, postedData.getPassword()));
+                return Request.CreateResponse(HttpStatusCode.InternalServerError,
+                    new Resources().GenerateException(ex, postedData.getPassword()));
             }
         }
 
@@ -323,9 +308,11 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
             {
                 string htmlContent = postedData.getContent();
                 string guid = postedData.GetGuid();
-                string saveFilePath = Path.Combine(globalConfiguration.GetEditorConfiguration().GetFilesDirectory(), guid);
+                string saveFilePath =
+                    Path.Combine(globalConfiguration.GetEditorConfiguration().GetFilesDirectory(), guid);
                 string tempFilename = Path.GetFileNameWithoutExtension(saveFilePath) + "_tmp";
-                string tempPath = Path.Combine(Path.GetDirectoryName(saveFilePath), tempFilename + Path.GetExtension(saveFilePath));
+                string tempPath = Path.Combine(Path.GetDirectoryName(saveFilePath) ?? string.Empty,
+                    tempFilename + Path.GetExtension(saveFilePath));
 
                 File.Create(saveFilePath).Dispose();
 
@@ -333,11 +320,7 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
                 {
                     using (GroupDocs.Editor.Editor editor = new GroupDocs.Editor.Editor(saveFilePath))
                     {
-                        dynamic saveOptions = this.GetSaveOptions(saveFilePath);
-                        if (saveOptions is WordProcessingSaveOptions)
-                        {
-                            // TODO: saveOptions.EnablePagination = true here leads to exception
-                        }
+                        var saveOptions = GetSaveOptions(saveFilePath, string.Empty);
 
                         using (FileStream outputStream = File.Create(tempPath))
                         {
@@ -361,7 +344,8 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
             catch (Exception ex)
             {
                 // set exception message
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, new Resources().GenerateException(ex, postedData.getPassword()));
+                return Request.CreateResponse(HttpStatusCode.InternalServerError,
+                    new Resources().GenerateException(ex, postedData.getPassword()));
             }
         }
 
@@ -418,11 +402,10 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
         private static IEditOptions GetEditOptions(string guid)
         {
             string extension = Path.GetExtension(guid).Replace(".", "").ToLowerInvariant();
-            IEditOptions options = null;
 
             if (extension.ToLowerInvariant().Equals("txt"))
             {
-                options = new TextEditOptions();
+                return new TextEditOptions();
             }
             else
             {
@@ -435,8 +418,7 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
 
                     if (item.Name.ToLowerInvariant().Equals(extension))
                     {
-                        options = new WordProcessingEditOptions();
-                        break;
+                        return new WordProcessingEditOptions(true);
                     }
                 }
 
@@ -449,28 +431,20 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
 
                     if (item.Name.ToLowerInvariant().Equals(extension))
                     {
-                        options = new PresentationEditOptions();
-                        break;
+                        return new PresentationEditOptions();
                     }
                 }
 
-                if (options == null)
-                {
-                    options = new SpreadsheetEditOptions();
-                }
+                return new SpreadsheetEditOptions();
             }
-
-            return options;
         }
 
-        private ISaveOptions GetSaveOptions(string guid)
+        private static ISaveOptions GetSaveOptions(string guid, string password)
         {
             string extension = Path.GetExtension(guid).Replace(".", "").ToLowerInvariant();
-            ISaveOptions options = null;
-
             if (extension.ToLowerInvariant().Equals("txt"))
             {
-                options = new TextSaveOptions();
+                return new TextSaveOptions();
             }
             else
             {
@@ -480,12 +454,17 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
                     {
                         continue;
                     }
-                    if (item.Name.ToLowerInvariant().Equals(extension))
+
+                    if (!item.Name.ToLowerInvariant().Equals(extension))
                     {
-                        WordProcessingFormats format = WordProcessingFormats.FromExtension(extension);
-                        options = new WordProcessingSaveOptions(format);
-                        break;
+                        continue;
                     }
+
+                    WordProcessingSaveOptions wordProcessingSaveOptions =
+                        new WordProcessingSaveOptions(WordProcessingFormats.FromExtension(extension));
+                    wordProcessingSaveOptions.EnablePagination = true;
+                    wordProcessingSaveOptions.Password = password;
+                    return wordProcessingSaveOptions;
                 }
 
                 foreach (var item in typeof(PresentationFormats).GetFields())
@@ -495,92 +474,23 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
                         continue;
                     }
 
-                    if (item.Name.ToLowerInvariant().Equals(extension))
+                    if (!item.Name.ToLowerInvariant().Equals(extension))
                     {
-                        PresentationFormats format = PresentationFormats.FromExtension(extension);
-                        options = new PresentationSaveOptions(format);
-                        break;
+                        continue;
                     }
+
+                    PresentationSaveOptions presentationSaveOptions =
+                        new PresentationSaveOptions(PresentationFormats.FromExtension(extension));
+                    presentationSaveOptions.Password = password;
+                    return presentationSaveOptions;
                 }
 
-                if (options == null)
-                {
-                    SpreadsheetFormats format = SpreadsheetFormats.FromExtension(extension);
-                    options = new SpreadsheetSaveOptions(format);
-                }
+                SpreadsheetSaveOptions spreadsheetSaveOptions =
+                    new SpreadsheetSaveOptions(SpreadsheetFormats.FromExtension(extension));
+                spreadsheetSaveOptions.Password = password;
+                return spreadsheetSaveOptions;
+
             }
-
-            return options;
-        }
-
-        private dynamic GetSaveFormat(string saveFilePath)
-        {
-            string extension = Path.GetExtension(saveFilePath).Replace(".", "");
-            extension = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(extension);
-            dynamic format;
-
-            switch (extension)
-            {
-                case "Doc":
-                    format = WordProcessingFormats.Doc;
-                    break;
-                case "Dot":
-                    format = WordProcessingFormats.Dot;
-                    break;
-                case "Docm":
-                    format = WordProcessingFormats.Docm;
-                    break;
-                case "Dotx":
-                    format = WordProcessingFormats.Dotx;
-                    break;
-                case "Dotm":
-                    format = WordProcessingFormats.Dotm;
-                    break;
-                case "FlatOpc":
-                    format = WordProcessingFormats.FlatOpc;
-                    break;
-                case "Rtf":
-                    format = WordProcessingFormats.Rtf;
-                    break;
-                case "Odt":
-                    format = WordProcessingFormats.Odt;
-                    break;
-                case "Ott":
-                    format = WordProcessingFormats.Ott;
-                    break;
-                case "WordML":
-                    format = WordProcessingFormats.WordML;
-                    break;
-                case "Ods":
-                    format = SpreadsheetFormats.Ods;
-                    break;
-                case "SpreadsheetML":
-                    format = SpreadsheetFormats.SpreadsheetML;
-                    break;
-                case "Xls":
-                    format = SpreadsheetFormats.Xls;
-                    break;
-                case "Xlsb":
-                    format = SpreadsheetFormats.Xlsb;
-                    break;
-                case "Xlsm":
-                    format = SpreadsheetFormats.Xlsm;
-                    break;
-                case "Xlsx":
-                    format = SpreadsheetFormats.Xlsx;
-                    break;
-                case "Xltm":
-                    format = SpreadsheetFormats.Xltm;
-                    break;
-                case "Xltx":
-                    format = SpreadsheetFormats.Xltx;
-                    break;
-                default:
-                    format = WordProcessingFormats.Docx;
-                    break;
-            }
-
-            return format;
         }
 
         private static List<string> PrepareFormats()
@@ -614,7 +524,7 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
             return outputListItems.Distinct().ToList();
         }
 
-        private LoadDocumentEntity LoadDocument(string guid, string password)
+        private static LoadDocumentEntity LoadDocument(string guid, string password)
         {
             LoadDocumentEntity loadDocumentEntity = new LoadDocumentEntity();
             loadDocumentEntity.SetGuid(guid);
@@ -625,22 +535,22 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
             }
 
             // Instantiate Editor object by loading the input file
-            using (GroupDocs.Editor.Editor editor = new GroupDocs.Editor.Editor(guid, delegate { return loadOptions; }))
+            using (GroupDocs.Editor.Editor editor =
+                   new GroupDocs.Editor.Editor(guid, delegate { return loadOptions; }))
             {
                 IDocumentInfo documentInfo = editor.GetDocumentInfo(password);
 
-                dynamic editOptions = GetEditOptions(guid);
+                var editOptions = GetEditOptions(guid);
                 if (editOptions is WordProcessingEditOptions)
                 {
-                    editOptions.EnablePagination = true;
-
                     // Open input document for edit — obtain an intermediate document, that can be edited
-                    EditableDocument beforeEdit = editor.Edit(editOptions);
-                    string allEmbeddedInsideString = beforeEdit.GetEmbeddedHtml();
-                    PageDescriptionEntity page = new PageDescriptionEntity();
-                    page.SetData(allEmbeddedInsideString);
-                    loadDocumentEntity.SetPages(page);
-                    beforeEdit.Dispose();
+                    using (EditableDocument beforeEdit = editor.Edit(editOptions))
+                    {
+                        string allEmbeddedInsideString = beforeEdit.GetEmbeddedHtml();
+                        PageDescriptionEntity page = new PageDescriptionEntity();
+                        page.SetData(allEmbeddedInsideString);
+                        loadDocumentEntity.SetPages(page);
+                    }
                 }
                 else if (editOptions is SpreadsheetEditOptions)
                 {
@@ -649,16 +559,16 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
                         // Let's create an intermediate EditableDocument from the i tab
                         SpreadsheetEditOptions sheetEditOptions = new SpreadsheetEditOptions();
                         sheetEditOptions.WorksheetIndex = i; // index is 0-based
-                        EditableDocument tabBeforeEdit = editor.Edit(sheetEditOptions);
-
-                        // Get document as a single base64-encoded string, where all resources (images, fonts, etc) 
-                        // are embedded inside this string along with main textual content
-                        string allEmbeddedInsideString = tabBeforeEdit.GetEmbeddedHtml();
-                        PageDescriptionEntity page = new PageDescriptionEntity();
-                        page.SetData(allEmbeddedInsideString);
-                        page.number = i + 1;
-                        loadDocumentEntity.SetPages(page);
-                        tabBeforeEdit.Dispose();
+                        using (EditableDocument tabBeforeEdit = editor.Edit(sheetEditOptions))
+                        {
+                            // Get document as a single base64-encoded string, where all resources (images, fonts, etc) 
+                            // are embedded inside this string along with main textual content
+                            string allEmbeddedInsideString = tabBeforeEdit.GetEmbeddedHtml();
+                            PageDescriptionEntity page = new PageDescriptionEntity();
+                            page.SetData(allEmbeddedInsideString);
+                            page.number = i + 1;
+                            loadDocumentEntity.SetPages(page);
+                        }
                     }
                 }
                 else if (editOptions is PresentationEditOptions)
@@ -668,17 +578,17 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
                         // Create editing options
                         PresentationEditOptions presentationEditOptions = new PresentationEditOptions();
                         // Specify slide index from original document.
-                        editOptions.SlideNumber = i; // Because index is 0-based, it is 1st slide
-                        EditableDocument slideBeforeEdit = editor.Edit(presentationEditOptions);
-
-                        // Get document as a single base64-encoded string, where all resources (images, fonts, etc) 
-                        // are embedded inside this string along with main textual content
-                        string allEmbeddedInsideString = slideBeforeEdit.GetEmbeddedHtml();
-                        PageDescriptionEntity page = new PageDescriptionEntity();
-                        page.SetData(allEmbeddedInsideString);
-                        page.number = i + 1;
-                        loadDocumentEntity.SetPages(page);
-                        slideBeforeEdit.Dispose();
+                        (editOptions as PresentationEditOptions).SlideNumber = i; // Because index is 0-based, it is 1st slide
+                        using (EditableDocument slideBeforeEdit = editor.Edit(presentationEditOptions))
+                        {
+                            // Get document as a single base64-encoded string, where all resources (images, fonts, etc) 
+                            // are embedded inside this string along with main textual content
+                            string allEmbeddedInsideString = slideBeforeEdit.GetEmbeddedHtml();
+                            PageDescriptionEntity page = new PageDescriptionEntity();
+                            page.SetData(allEmbeddedInsideString);
+                            page.number = i + 1;
+                            loadDocumentEntity.SetPages(page);
+                        }
                     }
                 }
             }
@@ -687,3 +597,4 @@ namespace GroupDocs.Editor.WebForms.Products.Editor.Controllers
         }
     }
 }
+
