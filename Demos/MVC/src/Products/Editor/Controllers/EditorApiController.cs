@@ -15,6 +15,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.Cors;
@@ -284,6 +285,11 @@ namespace GroupDocs.Editor.MVC.Products.Editor.Controllers
                     if (saveOptions is WordProcessingSaveOptions)
                     {
                         saveOptions.EnablePagination = true;
+                    }
+
+                    if (saveOptions is PresentationSaveOptions)
+                    {
+                        saveOptions.SlideNumber = postedData.getPageNumber() + 1;
                     }
 
                     using (FileStream outputStream = File.Create(tempPath))
@@ -670,16 +676,43 @@ namespace GroupDocs.Editor.MVC.Products.Editor.Controllers
                         PresentationEditOptions presentationEditOptions = new PresentationEditOptions();
                         // Specify slide index from original document.
                         editOptions.SlideNumber = i; // Because index is 0-based, it is 1st slide
-                        EditableDocument slideBeforeEdit = editor.Edit(presentationEditOptions);
+                        using (EditableDocument slideBeforeEdit = editor.Edit(editOptions))
+                        {
+                            // Get document as a single base64-encoded string, where all resources (images, fonts, etc) 
+                            // are embedded inside this string along with main textual content
+                            string allEmbeddedInsideString = slideBeforeEdit.GetEmbeddedHtml();
+                            PageDescriptionEntity page = new PageDescriptionEntity();
+                            if (allEmbeddedInsideString.IndexOf(".slide", StringComparison.Ordinal) > -1)
+                            {
+                                // TODO: extract from controller
+                                string regex = @"\.slide.{(.*?)}";
+                                Match match = Regex.Match(allEmbeddedInsideString, regex, RegexOptions.IgnoreCase);
+                                if (match.Success)
+                                {
+                                    string rules = match.Groups[1].Value.Trim().TrimEnd(';');
+                                    Dictionary<string, string> keyValuePairs = rules.Split(';')
+                                      .Select(value => value.Split(':'))
+                                      .ToDictionary(pair => pair[0].Trim(), pair => pair[1].Trim());
 
-                        // Get document as a single base64-encoded string, where all resources (images, fonts, etc) 
-                        // are embedded inside this string along with main textual content
-                        string allEmbeddedInsideString = slideBeforeEdit.GetEmbeddedHtml();
-                        PageDescriptionEntity page = new PageDescriptionEntity();
-                        page.SetData(allEmbeddedInsideString);
-                        page.number = i + 1;
-                        loadDocumentEntity.SetPages(page);
-                        slideBeforeEdit.Dispose();
+                                    if (keyValuePairs.ContainsKey("height"))
+                                    {
+                                        string height = string.Empty;
+                                        keyValuePairs.TryGetValue("height", out height);
+                                        page.height = Convert.ToDouble(height.Replace("pt", "").Replace("px", ""));
+                                    }
+
+                                    if (keyValuePairs.ContainsKey("width"))
+                                    {
+                                        string width = string.Empty;
+                                        keyValuePairs.TryGetValue("width", out width);
+                                        page.width = Convert.ToDouble(width.Replace("pt", "").Replace("px", ""));
+                                    }
+                                }
+                            }
+                            page.SetData(allEmbeddedInsideString);
+                            page.number = i + 1;
+                            loadDocumentEntity.SetPages(page);
+                        }
                     }
                 }
             }

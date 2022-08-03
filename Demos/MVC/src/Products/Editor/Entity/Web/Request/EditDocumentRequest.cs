@@ -15,6 +15,9 @@ namespace GroupDocs.Editor.MVC.Products.Editor.Entity.Web.Request
         [JsonProperty]
         private String password;
 
+        [JsonProperty]
+        private int pageNumber;
+
         public String getContent()
         {
             return content;
@@ -33,6 +36,16 @@ namespace GroupDocs.Editor.MVC.Products.Editor.Entity.Web.Request
         public void setPassword(String password)
         {
             this.password = password;
+        }
+
+        public int getPageNumber()
+        {
+            return pageNumber;
+        }
+
+        public void setPageNumber(int pageNumber)
+        {
+            this.pageNumber = pageNumber;
         }
     }
 }
