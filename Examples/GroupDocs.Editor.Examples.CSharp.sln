@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29102.190
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupDocs.Editor.Examples.CSharp.Framework", "GroupDocs.Editor.Examples.CSharp.Framework\GroupDocs.Editor.Examples.CSharp.Framework.csproj", "{4FF1DBEB-25DE-4E8B-9464-0BA63DD860AC}"
 EndProject
@@ -9,12 +9,9 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "GroupDocs.Editor.Examples.C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupDocs.Editor.Examples.CSharp.Core", "GroupDocs.Editor.Examples.CSharp.Core\GroupDocs.Editor.Examples.CSharp.Core.csproj", "{F9F1BDBF-4688-4390-ABE7-1D003195EF85}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupDocs.Editor.Examples.CSharp.NET6", "GroupDocs.Editor.Examples.CSharp.NET6\GroupDocs.Editor.Examples.CSharp.NET6.csproj", "{C8ED7AF5-7CEF-4BB7-B9AF-B719C6145CB9}"
+EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		GroupDocs.Editor.Examples.CSharp\GroupDocs.Editor.Examples.CSharp.projitems*{4ff1dbeb-25de-4e8b-9464-0ba63dd860ac}*SharedItemsImports = 4
-		GroupDocs.Editor.Examples.CSharp\GroupDocs.Editor.Examples.CSharp.projitems*{f9f1bdbf-4688-4390-abe7-1d003195ef85}*SharedItemsImports = 5
-		GroupDocs.Editor.Examples.CSharp\GroupDocs.Editor.Examples.CSharp.projitems*{fcbc0b55-0a67-465e-893c-5d1b367d8e91}*SharedItemsImports = 13
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -28,11 +25,21 @@ Global
 		{F9F1BDBF-4688-4390-ABE7-1D003195EF85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9F1BDBF-4688-4390-ABE7-1D003195EF85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9F1BDBF-4688-4390-ABE7-1D003195EF85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8ED7AF5-7CEF-4BB7-B9AF-B719C6145CB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8ED7AF5-7CEF-4BB7-B9AF-B719C6145CB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8ED7AF5-7CEF-4BB7-B9AF-B719C6145CB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8ED7AF5-7CEF-4BB7-B9AF-B719C6145CB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0017363A-0BAC-4D2B-9CFF-45DB28B796F5}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		GroupDocs.Editor.Examples.CSharp\GroupDocs.Editor.Examples.CSharp.projitems*{4ff1dbeb-25de-4e8b-9464-0ba63dd860ac}*SharedItemsImports = 4
+		GroupDocs.Editor.Examples.CSharp\GroupDocs.Editor.Examples.CSharp.projitems*{c8ed7af5-7cef-4bb7-b9af-b719c6145cb9}*SharedItemsImports = 5
+		GroupDocs.Editor.Examples.CSharp\GroupDocs.Editor.Examples.CSharp.projitems*{f9f1bdbf-4688-4390-abe7-1d003195ef85}*SharedItemsImports = 5
+		GroupDocs.Editor.Examples.CSharp\GroupDocs.Editor.Examples.CSharp.projitems*{fcbc0b55-0a67-465e-893c-5d1b367d8e91}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal
