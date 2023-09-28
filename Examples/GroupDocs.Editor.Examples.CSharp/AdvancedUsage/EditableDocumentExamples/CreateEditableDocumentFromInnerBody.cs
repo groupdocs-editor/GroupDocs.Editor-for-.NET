@@ -20,7 +20,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExample
             string pathToResourceFolder = Constants.SAMPLE_HTML_BODY_RESOURCES;
 
             //4. Initialize EditableDocument
-            using (EditableDocument inputDoc = EditableDocument.FromBodyMarkupAndResourceFolder(content, pathToResourceFolder))
+            using (EditableDocument inputDoc = EditableDocument.FromMarkupAndResourceFolder(content, pathToResourceFolder))
             {
                 //5. Check obtained document
                 Console.WriteLine("There should be 2 stylesheets, and actually is {0}", inputDoc.Css.Count);
