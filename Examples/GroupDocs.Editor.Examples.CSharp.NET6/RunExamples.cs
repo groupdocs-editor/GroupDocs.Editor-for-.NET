@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GroupDocs.Editor.Examples.CSharp
+﻿namespace GroupDocs.Editor.Examples.CSharp
 {
     /// <summary>
     /// Root class and entry point
@@ -19,7 +17,7 @@ namespace GroupDocs.Editor.Examples.CSharp
             QuickStart.SetLicenseFromFile.Run();
             //QuickStart.SetLicenseFromStream.Run();
             //QuickStart.SetMeteredLicense.Run();
-            
+
             QuickStart.HelloWorld.Run();
 
             #endregion
@@ -35,6 +33,8 @@ namespace GroupDocs.Editor.Examples.CSharp
             BasicUsage.EditDocument.Run();
 
             BasicUsage.SaveDocument.Run();
+
+            BasicUsage.CreateDocument.Run();
 
             #endregion
 

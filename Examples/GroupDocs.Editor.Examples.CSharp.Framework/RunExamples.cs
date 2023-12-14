@@ -36,6 +36,8 @@ namespace GroupDocs.Editor.Examples.CSharp
 
             BasicUsage.SaveDocument.Run();
 
+            BasicUsage.CreateDocument.Run();
+
             #endregion
 
             #region Advanced usage

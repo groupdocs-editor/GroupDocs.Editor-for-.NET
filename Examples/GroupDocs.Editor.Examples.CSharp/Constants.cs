@@ -6,13 +6,13 @@ namespace GroupDocs.Editor.Examples.CSharp
 {
     internal static class Constants
     {
-		private const string ProjectFolderName = "GroupDocs.Editor.Examples.CSharp";
+        private const string ProjectFolderName = "GroupDocs.Editor.Examples.CSharp";
         private const string ResourcesFolderName = "Resources";
         private static readonly string ResourceFolderFullPath;
-		
-		static Constants()
-		{
-			string exeFolderPath = Environment.CurrentDirectory;
+
+        static Constants()
+        {
+            string exeFolderPath = Environment.CurrentDirectory;
             DirectoryInfo iterableFolder = new DirectoryInfo(exeFolderPath);
             byte safeCounter = 0;
             do
@@ -35,7 +35,7 @@ namespace GroupDocs.Editor.Examples.CSharp
             DirectoryInfo resourcesFolder = codebaseProject.GetDirectories(ResourcesFolderName, SearchOption.TopDirectoryOnly)[0];
             ResourceFolderFullPath = resourcesFolder.FullName;
         }
-        
+
         public const string LicensePath = @"D:\GroupDocs\licenses\2019\Conholdate.Total.Product.Family.lic";
 
         public const string OutputPath = @"./Results/Output";
@@ -59,12 +59,12 @@ namespace GroupDocs.Editor.Examples.CSharp
         public static string SAMPLE_TXT => GetSampleFilePath("SamplePlainText1.txt");
 
         public static string SAMPLE_PPTX => GetSampleFilePath("ComplexTest.pptx");
-        
+
         private static string GetSampleFilePath(string filePath)
         {
             return Path.Combine(ResourceFolderFullPath, filePath);
         }
-            
+
 
         public static string GetOutputDirectoryPath([CallerFilePath] string callerFilePath = null)
         {

@@ -34,6 +34,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\WorkingWithXml.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\EditDocument.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\Introduction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\CreateDocument.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\LoadDocument.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\SaveDocument.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />

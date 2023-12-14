@@ -19,7 +19,7 @@ namespace GroupDocs.Editor.Examples.CSharp
             QuickStart.SetLicenseFromFile.Run();
             //QuickStart.SetLicenseFromStream.Run();
             //QuickStart.SetMeteredLicense.Run();
-            
+
             QuickStart.HelloWorld.Run();
 
             #endregion
@@ -35,6 +35,8 @@ namespace GroupDocs.Editor.Examples.CSharp
             BasicUsage.EditDocument.Run();
 
             BasicUsage.SaveDocument.Run();
+
+            BasicUsage.CreateDocument.Run();
 
             #endregion
 
