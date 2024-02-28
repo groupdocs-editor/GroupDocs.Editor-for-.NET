@@ -45,12 +45,12 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
 
             //1.3. Finally, let's open file with valid password
             loadOptions.Password = "excel_password";
-            
+
             //1.4. Also let's specify memory optimization option
             loadOptions.OptimizeMemoryUsage = true;
 
             editor = new Editor(inputFilePath, delegate { return loadOptions; });
-            
+
             //2. Create and adjust editing options
             Options.SpreadsheetEditOptions editOptions = new SpreadsheetEditOptions();
 
@@ -60,7 +60,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
                 //4. Create save options
                 SpreadsheetFormats xlsmFormat = SpreadsheetFormats.Xlsm;
                 Options.SpreadsheetSaveOptions saveOptions = new SpreadsheetSaveOptions(SpreadsheetFormats.Xlsm);
-                
+
                 //4.1. Set new opening password
                 saveOptions.Password = "new password";
 
@@ -70,8 +70,8 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
                 //5. Save document without modification
                 //5.1. Prepare output filename and path
                 string outputFilename = Path.GetFileNameWithoutExtension(inputFilePath) + "." + xlsmFormat.Extension;
-                string outputPath = Path.Combine(Constants.GetOutputDirectoryPath(), outputFilename);
-                
+                string outputPath = Path.Combine(Constants.GetOutputDirectoryPath(inputFilePath), outputFilename);
+
                 //5.2. Create output stream
                 using (FileStream outputStream = File.Create(outputPath))
                 {//5.3. Save
@@ -82,7 +82,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
             //6. Dispose Editor instance
             editor.Dispose();
 
-            Console.WriteLine("WorkingWithSpreadsheetPasswordProtected routine has successfully finished. Editor instance was manually {0}", 
+            Console.WriteLine("WorkingWithSpreadsheetPasswordProtected routine has successfully finished. Editor instance was manually {0}",
                 editor.IsDisposed ? "disposed" : "NOT disposed");
         }
     }

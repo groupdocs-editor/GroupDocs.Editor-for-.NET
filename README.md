@@ -15,6 +15,7 @@ Directory | Description
 [Docs](https://github.com/groupdocs-editor/GroupDocs.Editor-Docs)  | Product documentation containing Developer's Guide, Release Notes & more.
 [Examples](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Examples)  | Package contains C# example projects and sample files used in the examples.
 [Plugins](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET/tree/master/Plugins)  | Visual Studio Plugins related to GroupDocs.Editor.
+[GroupDocs.Editor.UI for .NET](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-UI)  | Exploring GroupDocs.Editor.UI for .NET: A Rich UI Interface for Document Editing.
 
 ## Document Editing Features
 
@@ -47,44 +48,21 @@ Directory | Description
 **Development Environments:** Microsoft Visual Studio, Xamarin.Android, Xamarin.IOS, Xamarin.Mac, MonoDevelop 2.4 or later\
 **Supported Frameworks:** .NET Framework 2.0 & above, Mono Framework 1.2 & above
 
-## Get Started with GroupDocs.Editor for .NET
+##Certainly! Here's an introduction-style text for the main page of GroupDocs.Editor for .NET based on the provided information:
 
-Are you ready to give GroupDocs.Editor for .NET a try? Simply execute `Install-Package GroupDocs.Editor` from Package Manager Console in Visual Studio to fetch & reference GroupDocs.Editor assembly in your project. If you already have GroupDocs.Editor for .NET and want to upgrade it, please execute `Update-Package GroupDocs.Editor` to get the latest version.
+## Welcome to GroupDocs.Editor for .NET
 
-## Load, Edit & Save Excel Spreadsheet as HTML
+Document editing is at the heart of many applications, and GroupDocs.Editor for .NET offers a robust solution for effortlessly handling popular word-processing document formats such as DOC, DOCX, RTF, ODT, and more. As we aim to provide a comprehensive document processing experience, our .NET library is accompanied by GroupDocs.Editor.UI for .NET, a feature-rich user interface that enables users to view and edit documents directly within their web browsers.
 
-```csharp
-using (FileStream inputStream = File.OpenRead(inputFilePath))
-{
-    using (Editor editor = new Editor(delegate { return inputStream;}, delegate { return new SpreadsheetLoadOptions();}))
-    {
-        //3. Let's create an intermediate EditableDocument from 1st tab
-        SpreadsheetEditOptions editOptions1 = new SpreadsheetEditOptions();
-        editOptions1.WorksheetIndex = 0;//index is 0-based
-        EditableDocument firstTabBeforeEdit = editor.Edit(editOptions1);
+### Unveiling GroupDocs.Editor.UI for .NET
 
-        //4. Let's create an intermediate EditableDocument from 2nd tab
-        SpreadsheetEditOptions editOptions2 = new SpreadsheetEditOptions();
-        editOptions2.WorksheetIndex = 1;//index is 0-based
-        EditableDocument secondTabBeforeEdit = editor.Edit(editOptions2);
+In this exploration, we invite you to discover the powerful features and abundant resources that GroupDocs.Editor.UI for .NET brings to the table. This user interface seamlessly integrates with the GroupDocs.Editor for .NET library, enhancing the document processing capabilities of .NET applications. Whether you are building desktop, web, or cloud-based solutions, our UI interface delivers an interactive and intuitive platform for displaying, viewing, and editing word-processing documents.
 
-        //5. Save first tab from EditableDocument #1 to separate document
-        SpreadsheetSaveOptions saveOptions1 = new SpreadsheetSaveOptions(SpreadsheetFormats.Xlsm);
-        string outputFilename1 = Path.GetFileNameWithoutExtension(inputFilePath) + "_tab1.xlsm";
-        string outputPath1 = Path.Combine(Constants.GetOutputDirectoryPath(), outputFilename1);
-        editor.Save(firstTabBeforeEdit, outputPath1, saveOptions1);
+### The Hub of Interaction
 
-        //6. Save second tab from EditableDocument #2 to separate document
-        SpreadsheetSaveOptions saveOptions2 = new SpreadsheetSaveOptions(SpreadsheetFormats.Xlsb);
-        string outputFilename2 = Path.GetFileNameWithoutExtension(inputFilePath) + "_tab2.xlsb";
-        string outputPath2 = Path.Combine(Constants.GetOutputDirectoryPath(), outputFilename2);
-        editor.Save(secondTabBeforeEdit, outputPath2, saveOptions2);
+Located at [GroupDocs.Editor-for-.NET-UI](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET-UI/tree/master/src/GroupDocs.Editor.UI.Api), our UI interface acts as the hub where innovation meets usability. It is meticulously crafted to provide a fluid and engaging experience for users, offering a direct avenue to interact with and modify documents without leaving the convenience of their web browsers.
 
-        //7. Dispose both EditableDocument instances
-        firstTabBeforeEdit.Dispose();
-        secondTabBeforeEdit.Dispose();
-    }
-}
-```
+Empower your applications with GroupDocs.Editor for .NET and UI – your gateway to seamless document editing in the world of .NET development.
+
 
 [Home](https://www.groupdocs.com/) | [Product Page](https://products.groupdocs.com/editor/net) | [Documentation](https://docs.groupdocs.com/editor/net/) | [Demo](https://products.groupdocs.app/editor/family) | [API Reference](https://apireference.groupdocs.com/editor/net) | [Examples](https://github.com/groupdocs-editor/GroupDocs.Editor-for-.NET) | [Blog](https://blog.groupdocs.com/category/editor/) | [Search](https://search.groupdocs.com/) | [Free Support](https://blog.groupdocs.com/category/editor/) | [Temporary License](https://purchase.groupdocs.com/temporary-license)

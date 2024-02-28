@@ -41,7 +41,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExample
             List<CssText> stylesheets = beforeEdit.Css;
 
             //3. Print detailed info about every used resource and save every resource to the file
-            string outputFolderPath = Path.Combine(Constants.GetOutputDirectoryPath(), "Resources");
+            string outputFolderPath = Path.Combine(Constants.GetOutputDirectoryPath(Constants.SAMPLE_DOCX), "Resources");
             if (!Directory.Exists(outputFolderPath))
             {
                 Directory.CreateDirectory(outputFolderPath);
@@ -85,7 +85,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExample
             Stream ms = images[0].ByteContent;//do with this stream something
             //4.2. ...and as a base64-encoded string
             string base64EncodedResource = images[0].TextContent;
-            
+
             //Don't forget to dispose all resources
             beforeEdit.Dispose();
             editor.Dispose();

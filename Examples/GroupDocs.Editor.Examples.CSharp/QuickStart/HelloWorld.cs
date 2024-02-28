@@ -17,9 +17,9 @@ namespace GroupDocs.Editor.Examples.CSharp.QuickStart
 
                 // Pass EditableDocument object to WYSIWYG editor and edit there...
                 // ...
-                
+
                 //Prepare saving path
-                string savePath = System.IO.Path.Combine(Constants.GetOutputDirectoryPath(), "HelloWorldOutput.doc");
+                string savePath = System.IO.Path.Combine(Constants.GetOutputDirectoryPath(documentPath), "HelloWorldOutput.doc");
                 //Prepare save options for some WordProcessing format - DOC for example
                 WordProcessingSaveOptions saveOptions = new WordProcessingSaveOptions(Formats.WordProcessingFormats.Doc);
                 // Save edited EditableDocument object to specified path with specified options

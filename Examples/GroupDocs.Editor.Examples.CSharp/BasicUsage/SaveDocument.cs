@@ -24,12 +24,12 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
             EditableDocument editedDoc = EditableDocument.FromMarkup(allEmbeddedInsideStringEdited, null);
 
             //Save edited document as RTF, specified through file path
-            string outputRtfPath = Path.Combine(Constants.GetOutputDirectoryPath(), "editedDoc.rtf");
+            string outputRtfPath = Path.Combine(Constants.GetOutputDirectoryPath(inputFilePath), "editedDoc.rtf");
             WordProcessingSaveOptions rtfSaveOptions = new WordProcessingSaveOptions(WordProcessingFormats.Rtf);
             editor.Save(editedDoc, outputRtfPath, rtfSaveOptions);
 
             //Save edited document as DOCM, specified through stream
-            string outputDocmPath = Path.Combine(Constants.GetOutputDirectoryPath(), "editedDoc.docm");
+            string outputDocmPath = Path.Combine(Constants.GetOutputDirectoryPath(inputFilePath), "editedDoc.docm");
             WordProcessingSaveOptions docmSaveOptions = new WordProcessingSaveOptions(WordProcessingFormats.Docm);
             using (FileStream outputStream = File.Create(outputDocmPath))
             {
@@ -38,7 +38,7 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
 
             //Save edited document as plain text, specified through file path.
             //Note that all complex content and resources (like images and fonts) will be missed in output TXT
-            string outputTxtPath = Path.Combine(Constants.GetOutputDirectoryPath(), "editedDoc.txt");
+            string outputTxtPath = Path.Combine(Constants.GetOutputDirectoryPath(inputFilePath), "editedDoc.txt");
             TextSaveOptions textSaveOptions = new TextSaveOptions();
             textSaveOptions.Encoding = System.Text.Encoding.UTF8;
             textSaveOptions.PreserveTableLayout = true;

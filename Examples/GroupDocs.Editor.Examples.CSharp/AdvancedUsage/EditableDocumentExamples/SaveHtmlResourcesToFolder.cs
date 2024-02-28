@@ -20,15 +20,15 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExample
                     List<FontResourceBase> fonts = document.Fonts;
                     List<CssText> stylesheets = document.Css;
 
-                    string outputFolder = Constants.GetOutputDirectoryPath();
+                    string outputFolder = Constants.GetOutputDirectoryPath(Constants.SAMPLE_DOCX);
 
                     foreach (IImageResource oneImage in images)
                     {
-                        Console.WriteLine("Saving {0} of {1} type and {2} dimensions", 
+                        Console.WriteLine("Saving {0} of {1} type and {2} dimensions",
                             oneImage.FilenameWithExtension, oneImage.Type.FormalName, oneImage.LinearDimensions);
                         oneImage.Save(Path.Combine(outputFolder, oneImage.FilenameWithExtension));
                     }
-                    
+
                     foreach (FontResourceBase oneFont in fonts)
                     {
                         Console.WriteLine("Saving {0} of {1} type",

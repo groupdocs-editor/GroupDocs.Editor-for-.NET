@@ -30,6 +30,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\WorkingWithPresentations.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\WorkingWithSpreadsheetMultiTab.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\WorkingWithSpreadsheetPasswordProtected.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\WorkingWithPdf.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\WorkingWithWordProcessing.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\WorkingWithXml.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BasicUsage\EditDocument.cs" />
@@ -50,7 +51,13 @@
     <None Include="$(MSBuildThisFileDirectory)Resources\ComplexTest.pptx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\GroupDocs.Editor.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleDoc1.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleDoc1.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\Sample_2SpreadSheet.xlsx">

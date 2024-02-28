@@ -17,7 +17,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExample
                 using (Editor editor = new Editor(htmlFilePath))
                 {
                     Options.WordProcessingSaveOptions saveOptions = new WordProcessingSaveOptions(WordProcessingFormats.Docx);
-                    string savePath = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileNameWithoutExtension(htmlFilePath) + ".docx");
+                    string savePath = Path.Combine(Constants.GetOutputDirectoryPath(htmlFilePath), Path.GetFileNameWithoutExtension(htmlFilePath) + ".docx");
                     editor.Save(document, savePath, saveOptions);
                 }
             }

@@ -15,6 +15,11 @@ namespace GroupDocs.Editor.Examples.CSharp
             string exeFolderPath = Environment.CurrentDirectory;
             DirectoryInfo iterableFolder = new DirectoryInfo(exeFolderPath);
             byte safeCounter = 0;
+            if (exeFolderPath.Equals("/app", StringComparison.CurrentCultureIgnoreCase))
+            {
+                ResourceFolderFullPath = "/src/GroupDocs.Editor.Examples.CSharp/Resources";
+                return;
+            }
             do
             {
                 safeCounter++;
@@ -36,11 +41,12 @@ namespace GroupDocs.Editor.Examples.CSharp
             ResourceFolderFullPath = resourcesFolder.FullName;
         }
 
-        public const string LicensePath = @"D:\GroupDocs\licenses\2019\Conholdate.Total.Product.Family.lic";
+        public const string LicensePath = @"C:\GroupDocs\Licenses\Conholdate.Total.Product.Family.lic";
 
         public const string OutputPath = @"./Results/Output";
 
         public static string SAMPLE_DOCX => GetSampleFilePath("SampleDoc1.docx");
+        public static string SAMPLE_PDF => GetSampleFilePath("SampleDoc1.pdf");
 
         public static string SAMPLE_HTML => GetSampleFilePath("SampleDoc1.html");
 
@@ -66,12 +72,19 @@ namespace GroupDocs.Editor.Examples.CSharp
         }
 
 
-        public static string GetOutputDirectoryPath([CallerFilePath] string callerFilePath = null)
+        public static string GetOutputDirectoryPath(string callerFilePath)
         {
             string outputDirectory = Path.Combine(OutputPath, Path.GetFileNameWithoutExtension(callerFilePath));
 
             if (!Directory.Exists(outputDirectory))
+            {
                 Directory.CreateDirectory(outputDirectory);
+            }
+            else
+            {
+                Directory.Delete(outputDirectory, true);
+                Directory.CreateDirectory(outputDirectory);
+            }
 
             string path = Path.GetFullPath(outputDirectory);
             return path;

@@ -1,4 +1,6 @@
-﻿namespace GroupDocs.Editor.Examples.CSharp
+﻿using System.Reflection;
+
+namespace GroupDocs.Editor.Examples.CSharp
 {
     /// <summary>
     /// Root class and entry point
@@ -11,13 +13,11 @@
             Console.WriteLine("Open Program.cs. \nIn Main() method uncomment the example that you want to run.");
             Console.WriteLine("Output folder is '{0}'", Constants.OutputPath);
             Console.WriteLine("=====================================================");
-
             #region Quick Start
 
             QuickStart.SetLicenseFromFile.Run();
             //QuickStart.SetLicenseFromStream.Run();
             //QuickStart.SetMeteredLicense.Run();
-
             QuickStart.HelloWorld.Run();
 
             #endregion
@@ -41,6 +41,8 @@
             #region Advanced usage
 
             AdvancedUsage.WorkingWithWordProcessing.Run();
+
+            AdvancedUsage.WorkingWithPdf.Run();
 
             AdvancedUsage.WorkingWithSpreadsheetPasswordProtected.Run();
 

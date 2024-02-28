@@ -38,7 +38,7 @@
                             Options.WordProcessingSaveOptions saveOptions = new Options.WordProcessingSaveOptions(oneFormat);
 
                             //8.2. Prepare save path
-                            string savePath = System.IO.Path.Combine(Constants.GetOutputDirectoryPath(), "MultipleOutFormats." + saveOptions.OutputFormat.Extension);
+                            string savePath = System.IO.Path.Combine(Constants.GetOutputDirectoryPath(Constants.SAMPLE_DOCX), "MultipleOutFormats." + saveOptions.OutputFormat.Extension);
 
                             //8.3. Save to this path using save options
                             editor.Save(afterEdit, savePath, saveOptions);

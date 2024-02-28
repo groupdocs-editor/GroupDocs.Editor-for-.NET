@@ -27,7 +27,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExample
                 Console.WriteLine("There should be 2 images, and actually is {0}", inputDoc.Images.Count);
 
                 //6. Save it to the file
-                string outputHtmlFilePath = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileNameWithoutExtension(pathToHtmlFile) + "_output.html");
+                string outputHtmlFilePath = Path.Combine(Constants.GetOutputDirectoryPath(pathToHtmlFile), Path.GetFileNameWithoutExtension(pathToHtmlFile) + "_output.html");
                 inputDoc.Save(outputHtmlFilePath);
 
                 //7. Save it to the document
@@ -39,7 +39,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExample
                 using (Editor editor = new Editor(pathToHtmlFile))
                 {
                     //7.4. Prepare output path for the DOCM document
-                    string outputDocmFilePath = Path.Combine(Constants.GetOutputDirectoryPath(),
+                    string outputDocmFilePath = Path.Combine(Constants.GetOutputDirectoryPath(pathToHtmlFile),
                         Path.GetFileNameWithoutExtension(pathToHtmlFile) + "_output." + saveFormat.Extension);
                     //7.5. Save it
                     editor.Save(inputDoc, outputDocmFilePath, saveOptions);

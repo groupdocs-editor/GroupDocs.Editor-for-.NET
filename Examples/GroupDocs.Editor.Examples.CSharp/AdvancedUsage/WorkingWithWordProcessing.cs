@@ -77,7 +77,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
                             //11. Save it
                             //11.1. Prepare saving filename and path
                             string outputFilename = Path.GetFileNameWithoutExtension(inputFilePath) + "." + docmFormat.Extension;
-                            string outputPath = Path.Combine(Constants.GetOutputDirectoryPath(), outputFilename);
+                            string outputPath = Path.Combine(Constants.GetOutputDirectoryPath(inputFilePath), outputFilename);
 
                             //11.2. Prepare stream for saving
                             using (FileStream outputStream = File.Create(outputPath))

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "GroupDocs.Editor.Examples.CSharp.LinuxNET6": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

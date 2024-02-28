@@ -49,8 +49,8 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
                 txtSaveOptions.PreserveTableLayout = true;
 
                 //9. Prepare paths for saving resultant DOCX and TXT files
-                string outputWordPath = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileNameWithoutExtension(inputFilePath) + ".docm");
-                string outputTxtPath = Path.Combine(Constants.GetOutputDirectoryPath(), Path.GetFileNameWithoutExtension(inputFilePath) + ".txt");
+                string outputWordPath = Path.Combine(Constants.GetOutputDirectoryPath(inputFilePath), Path.GetFileNameWithoutExtension(inputFilePath) + ".docm");
+                string outputTxtPath = Path.Combine(Constants.GetOutputDirectoryPath(inputFilePath), Path.GetFileNameWithoutExtension(inputFilePath) + ".txt");
 
                 //10. Save
                 editor.Save(afterEdit, outputWordPath, wordSaveOptions);
