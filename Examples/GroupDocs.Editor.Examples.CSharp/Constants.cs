@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Runtime.CompilerServices;
 
 namespace GroupDocs.Editor.Examples.CSharp
 {
@@ -65,6 +64,7 @@ namespace GroupDocs.Editor.Examples.CSharp
         public static string SAMPLE_TXT => GetSampleFilePath("SamplePlainText1.txt");
 
         public static string SAMPLE_PPTX => GetSampleFilePath("ComplexTest.pptx");
+        public static string SampleLegacyFormFields_docx => GetSampleFilePath("SampleLegacyFormFields.docx");
 
         private static string GetSampleFilePath(string filePath)
         {

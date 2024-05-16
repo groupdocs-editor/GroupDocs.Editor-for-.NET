@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GroupDocs.Editor.Examples.CSharp.AdvancedUsage;
+using System;
 
 namespace GroupDocs.Editor.Examples.CSharp
 {
@@ -93,6 +94,15 @@ namespace GroupDocs.Editor.Examples.CSharp
             AdvancedUsage.EditableDocumentExamples.WorkingWithResources.Run();
 
             AdvancedUsage.EditableDocumentExamples.EditableDocumentAdvancedUsage.Run();
+
+            #endregion
+
+            #region Working with FormFieldManager
+
+            LegacyFormFieldCollection.Run();
+            FixInvalidFormFieldCollectionAndSave.Run();
+            EditFormFieldCollection.Run();
+            RemoveFormFieldCollection.Run();
 
             #endregion
 

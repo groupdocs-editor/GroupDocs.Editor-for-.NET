@@ -1,9 +1,0 @@
-**/.git
-**/bin
-**/obj
-**/out
-**/.vscode
-**/.vs
-**/packages
-**/tools
-.dotnet

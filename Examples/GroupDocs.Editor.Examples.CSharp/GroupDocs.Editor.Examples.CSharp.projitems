@@ -23,6 +23,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\EditableDocumentExamples\SaveHtmlToFolder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\EditableDocumentExamples\WorkingWithResources.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\ExtractingDocumentInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\FormFieldManagerExamples\RemoveFormFieldCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\FormFieldManagerExamples\EditFormFieldCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\FormFieldManagerExamples\FixInvalidFormFieldCollectionAndSave.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\FormFieldManagerExamples\LegacyFormFieldCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\SavingEditedDocumentToAllFormats.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\WorkingWithDsv.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\WorkingWithFormats.cs" />
@@ -58,6 +62,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleDoc1.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\SampleLegacyFormFields.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="$(MSBuildThisFileDirectory)Resources\Sample_2SpreadSheet.xlsx">

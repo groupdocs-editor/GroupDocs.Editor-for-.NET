@@ -8,8 +8,7 @@
   <Import Project="..\GroupDocs.Editor.Examples.CSharp\GroupDocs.Editor.Examples.CSharp.projitems" Label="Shared" />
 
   <ItemGroup>
-    <PackageReference Include="GroupDocs.Editor" Version="24.2.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
+    <PackageReference Include="GroupDocs.Editor" Version="24.5.0" />
   </ItemGroup>
 
 </Project>
