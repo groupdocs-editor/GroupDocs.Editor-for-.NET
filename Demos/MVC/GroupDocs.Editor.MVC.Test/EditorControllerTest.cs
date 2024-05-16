@@ -1,19 +1,20 @@
 ﻿using GroupDocs.Editor.MVC.Controllers;
-using NUnit.Framework;
-using System.Web.Routing;
-using MvcContrib.TestHelper;
+using GroupDocs.Editor.MVC.Products.Common.Entity.Web;
 using Huygens;
+using MvcContrib.TestHelper;
+using Newtonsoft.Json;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Newtonsoft.Json;
-using GroupDocs.Editor.MVC.Products.Common.Entity.Web;
+using System.Web.Routing;
 
 namespace GroupDocs.Editor.MVC.Test
 {
     [TestFixture]
-    public static class EditorControllerTest {
-       
+    public static class EditorControllerTest
+    {
+
 
         [SetUp]
         public static void TestInitialize()
@@ -75,6 +76,6 @@ namespace GroupDocs.Editor.MVC.Test
                 var result = server.DirectCall(request);
                 Assert.That(result.StatusCode, Is.EqualTo(200));
             }
-        }        
+        }
     }
 }
