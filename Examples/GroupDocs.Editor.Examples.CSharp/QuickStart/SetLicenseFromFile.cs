@@ -8,8 +8,8 @@ namespace GroupDocs.Editor.Examples.CSharp.QuickStart
     /// </summary>
     /// <remarks>
     /// The SetLicense method attempts to set a license from several locations relative to the executable and GroupDocs.Editor.dll.
-    /// You can also use the additional overload to load a license from a stream, this is useful for instance when the 
-    /// License is stored as an embedded resource. 
+    /// You can also use the additional overload to load a license from a stream, this is useful for instance when the
+    /// License is stored as an embedded resource.
     /// </remarks>
     class SetLicenseFromFile
     {

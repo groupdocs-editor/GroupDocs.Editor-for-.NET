@@ -12,16 +12,10 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
     {
         internal static void Run()
         {
-            Stream memoryStream = Stream.Null;
+            Stream memoryStream = new MemoryStream();
 
-            // Callback function to save the new document stream
-            void SaveNewDocument(Stream resultStream)
-            {
-                memoryStream = resultStream;
-            }
-
-            // Create a new WordProcessing document and save it using a callback Action<Stream>.
-            using (Editor editor = new Editor(SaveNewDocument, WordProcessingFormats.Docx))
+            // Create a new WordProcessing document and save it.
+            using (Editor editor = new Editor(WordProcessingFormats.Docx))
             {
                 // Edit the WordProcessing document with default options.
                 EditableDocument defaultWordProcessingDoc = editor.Edit();
@@ -33,10 +27,11 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
                 wordProcessingEditOptions.FontExtraction = FontExtractionOptions.ExtractAllEmbedded;  // Extract all embedded fonts.
 
                 EditableDocument editableWordProcessingDocument = editor.Edit(wordProcessingEditOptions);
+                editor.Save(memoryStream);
             }
 
-            // Create a new Spreadsheet document and save it via callback Action<Stream>.
-            using (Editor editor = new Editor(SaveNewDocument, SpreadsheetFormats.Xlsx))
+            // Create a new Spreadsheet document and save it.
+            using (Editor editor = new Editor(SpreadsheetFormats.Xlsx))
             {
                 // Edit the Spreadsheet document with default options.
                 EditableDocument defaultEditableSpreadsheetDocument = editor.Edit();
@@ -47,10 +42,11 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
                 spreadsheetEditOptions.ExcludeHiddenWorksheets = true;
 
                 EditableDocument editableSpreadsheetDocument = editor.Edit(spreadsheetEditOptions);
+                editor.Save(memoryStream);
             }
 
-            // Create a new Presentation document and save it via callback Action<Stream>.
-            using (Editor editor = new Editor(SaveNewDocument, PresentationFormats.Pptx))
+            // Create a new Presentation document and save it.
+            using (Editor editor = new Editor(PresentationFormats.Pptx))
             {
                 // Edit the Presentation document with default options.
                 EditableDocument defaultEditablePresentationDocument = editor.Edit();
@@ -61,10 +57,11 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
                 presentationEditOptions.SlideNumber = 0;
 
                 EditableDocument editablePresentationDocument = editor.Edit(presentationEditOptions);
+                editor.Save(memoryStream);
             }
 
-            // Create a new Ebook document and save it via callback Action<Stream>.
-            using (Editor editor = new Editor(SaveNewDocument, EBookFormats.Epub))
+            // Create a new Ebook document and save it.
+            using (Editor editor = new Editor(EBookFormats.Epub))
             {
                 // Edit the Ebook document with default options.
                 EditableDocument defaultEditableEbookDocument = editor.Edit();
@@ -75,10 +72,11 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
                 ebookEditOptions.EnableLanguageInformation = true;
 
                 EditableDocument editableEbookDocument = editor.Edit(ebookEditOptions);
+                editor.Save(memoryStream);
             }
 
-            // Create a new Email document and save it via callback Action<Stream>.
-            using (Editor editor = new Editor(SaveNewDocument, EmailFormats.Eml))
+            // Create a new Email document and save it.
+            using (Editor editor = new Editor(EmailFormats.Eml))
             {
                 // Edit the Email document with default options.
                 EditableDocument defaultEditableEmailDocument = editor.Edit();
@@ -88,6 +86,7 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
                 emailEditOptions.MailMessageOutput = MailMessageOutput.All;
 
                 EditableDocument editableEmailDocument = editor.Edit(emailEditOptions);
+                editor.Save(memoryStream);
             }
 
             // Dispose of the memory stream
