@@ -9,19 +9,19 @@ namespace GroupDocs.Editor.MVC.Products.Common.Config
     {
         private readonly ServerConfiguration Server;
         private readonly ApplicationConfiguration Application;
-        private readonly CommonConfiguration Common;        
+        private readonly CommonConfiguration Common;
         private readonly EditorConfiguration Editor;
 
         /// <summary>
         /// Get all configurations
         /// </summary>
         public GlobalConfiguration()
-        {            
+        {
             Server = new ServerConfiguration();
-            Application = new ApplicationConfiguration();         
-            Common = new CommonConfiguration();        
+            Application = new ApplicationConfiguration();
+            Common = new CommonConfiguration();
             Editor = new EditorConfiguration();
-        }       
+        }
 
         public EditorConfiguration GetEditorConfiguration()
         {
