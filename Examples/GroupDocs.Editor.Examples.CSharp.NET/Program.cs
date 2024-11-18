@@ -35,6 +35,8 @@ CreateDocument.Run();
 WorkingWithWordProcessing.Run();
 
 //WorkingWithPdf.Run();
+EditPdf.Run(true);
+EditPdf.Run(false);
 
 WorkingWithSpreadsheetPasswordProtected.Run();
 

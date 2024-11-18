@@ -46,6 +46,8 @@ namespace GroupDocs.Editor.Examples.CSharp
             AdvancedUsage.WorkingWithWordProcessing.Run();
 
             AdvancedUsage.WorkingWithPdf.Run();
+            AdvancedUsage.EditPdf.Run(true);
+            AdvancedUsage.EditPdf.Run(false);
 
             AdvancedUsage.WorkingWithSpreadsheetPasswordProtected.Run();
 

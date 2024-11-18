@@ -40,7 +40,7 @@ namespace GroupDocs.Editor.Examples.CSharp
             ResourceFolderFullPath = resourcesFolder.FullName;
         }
 
-        public const string LicensePath = @"C:\GroupDocs\Licenses\Conholdate.Total.Product.Family.lic";
+        public const string LicensePath = @"C:\Licenses\Conholdate.Total.Product.Family.lic";
 
         public const string OutputPath = @"./Results/Output";
 

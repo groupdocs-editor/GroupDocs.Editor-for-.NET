@@ -30,6 +30,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\SavingEditedDocumentToAllFormats.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\WorkingWithDsv.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\WorkingWithFormats.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\EditPdf.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\WorkingWithPlainTextDocuments.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\WorkingWithPresentations.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\WorkingWithSpreadsheetMultiTab.cs" />
