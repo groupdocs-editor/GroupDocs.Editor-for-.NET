@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using GroupDocs.Editor.Formats;
+﻿using GroupDocs.Editor.Formats;
 using GroupDocs.Editor.HtmlCss.Resources;
 using GroupDocs.Editor.Options;
+using System.Collections.Generic;
+using System.IO;
 
 namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
 {
@@ -21,20 +21,20 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
             {
                 //3. Create load options for this document
                 Options.WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
-                
+
                 //3.1. In case if input document is password-protected, we can specify password for its opening...
                 loadOptions.Password = "some_password_to_open_a_document";
                 //3.2. ...but, because document is unprotected, this password will be ignored
 
                 //4. Load document with options to the Editor instance
-                using (Editor editor = new Editor(delegate { return fs; }, delegate { return loadOptions; }))
+                using (Editor editor = new Editor(fs, loadOptions))
                 {
                     //5. Create editing options
                     Options.WordProcessingEditOptions editOptions = new WordProcessingEditOptions();
-                    
+
                     //5.1. Enable font extraction from original document to intermediate EditableDocument
                     editOptions.FontExtraction = FontExtractionOptions.ExtractEmbeddedWithoutSystem;
-                    
+
                     //5.2. Enable extracting language information for better subsequent spell-checking on client side
                     editOptions.EnableLanguageInformation = true;
 
@@ -57,7 +57,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
                             //10. Create document save options
                             WordProcessingFormats docmFormat = WordProcessingFormats.Docm;
                             Options.WordProcessingSaveOptions saveOptions = new WordProcessingSaveOptions(docmFormat);
-                            
+
                             //10.1 Encrypt output document by setting non-null and non-empty opening password
                             saveOptions.Password = "password";
 

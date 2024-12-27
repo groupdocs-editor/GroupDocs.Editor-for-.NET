@@ -1,6 +1,6 @@
-﻿using System.IO;
-using GroupDocs.Editor.Formats;
+﻿using GroupDocs.Editor.Formats;
 using GroupDocs.Editor.Options;
+using System.IO;
 
 namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
 {
@@ -19,7 +19,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
             //2. Load it into Editor instance from stream
             using (FileStream inputStream = File.OpenRead(inputFilePath))
             {
-                using (Editor editor = new Editor(delegate { return inputStream;}, delegate { return new SpreadsheetLoadOptions();}))
+                using (Editor editor = new Editor(inputStream, new SpreadsheetLoadOptions()))
                 {
                     //3. Let's create an intermediate EditableDocument from 1st tab
                     SpreadsheetEditOptions editOptions1 = new SpreadsheetEditOptions();

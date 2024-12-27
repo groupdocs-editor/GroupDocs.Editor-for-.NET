@@ -1,6 +1,6 @@
-﻿using System.IO;
-using GroupDocs.Editor.Formats;
+﻿using GroupDocs.Editor.Formats;
 using GroupDocs.Editor.Options;
+using System.IO;
 
 namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
 {
@@ -13,7 +13,7 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
         {
             //Load and edit some document, like it was shown in LoadDocument.cs and EditDocument.cs
             string inputFilePath = Constants.SAMPLE_DOCX;
-            Editor editor = new Editor(inputFilePath, delegate { return new Options.WordProcessingLoadOptions(); });
+            Editor editor = new Editor(inputFilePath, new Options.WordProcessingLoadOptions());
             EditableDocument defaultWordProcessingDoc = editor.Edit();
 
             //Modify its content somehow. Because there is no attached WYSIWYG-editor, this code simulates document editing

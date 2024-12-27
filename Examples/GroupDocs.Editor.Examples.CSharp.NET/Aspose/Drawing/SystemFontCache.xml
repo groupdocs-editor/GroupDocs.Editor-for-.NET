@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FontFamilies>
-    <changed>2024-06-10T13:39:51.689586Z</changed>
-    <Family name="DejaVu Serif">
-        <Font style="Book" type="TTF" name="DejaVu Serif" localizedFamilyNames="" path="/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf" offset="0" />
-        <Font style="Bold" type="TTF" name="DejaVu Serif Bold" localizedFamilyNames="" path="/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf" offset="0" />
+    <changed>2024-12-27T09:43:04Z</changed>
+    <Family name="DejaVu Sans Mono">
+        <Font style="Book" type="TTF" name="DejaVu Sans Mono" localizedFamilyNames="" path="/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf" offset="0" />
+        <Font style="Bold" type="TTF" name="DejaVu Sans Mono Bold" localizedFamilyNames="" path="/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf" offset="0" />
     </Family>
     <Family name="DejaVu Sans">
         <Font style="Book" type="TTF" name="DejaVu Sans" localizedFamilyNames="" path="/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf" offset="0" />
         <Font style="Bold" type="TTF" name="DejaVu Sans Bold" localizedFamilyNames="" path="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" offset="0" />
     </Family>
-    <Family name="DejaVu Sans Mono">
-        <Font style="Book" type="TTF" name="DejaVu Sans Mono" localizedFamilyNames="" path="/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf" offset="0" />
-        <Font style="Bold" type="TTF" name="DejaVu Sans Mono Bold" localizedFamilyNames="" path="/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf" offset="0" />
+    <Family name="DejaVu Serif">
+        <Font style="Book" type="TTF" name="DejaVu Serif" localizedFamilyNames="" path="/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf" offset="0" />
+        <Font style="Bold" type="TTF" name="DejaVu Serif Bold" localizedFamilyNames="" path="/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf" offset="0" />
     </Family>
 </FontFamilies>

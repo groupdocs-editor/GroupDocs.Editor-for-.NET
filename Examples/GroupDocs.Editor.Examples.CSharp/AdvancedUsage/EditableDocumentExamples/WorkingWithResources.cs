@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using GroupDocs.Editor.HtmlCss.Resources.Fonts;
+﻿using GroupDocs.Editor.HtmlCss.Resources.Fonts;
 using GroupDocs.Editor.HtmlCss.Resources.Images;
 using GroupDocs.Editor.HtmlCss.Resources.Textual;
 using GroupDocs.Editor.Options;
+using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExamples
 {
@@ -26,7 +26,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExample
 
             //1. Lets create a EditableDocument instance in usual way, by loading and editing input document of some supportable format
             string inputFilePath = Constants.SAMPLE_DOCX;
-            Editor editor = new Editor(inputFilePath, delegate { return new WordProcessingLoadOptions(); });
+            Editor editor = new Editor(inputFilePath, new WordProcessingLoadOptions());
 
             WordProcessingEditOptions editOptions = new WordProcessingEditOptions();
             //1.1. Enable max font extraction - ExtractAll

@@ -19,17 +19,18 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
             //Load document as file via path and with load options
             Options.WordProcessingLoadOptions wordLoadOptions = new WordProcessingLoadOptions();
             wordLoadOptions.Password = "some password";
-            Editor editor2 = new Editor(inputPath, delegate { return wordLoadOptions; });
+            Editor editor2 = new Editor(inputPath, wordLoadOptions);
 
             FileStream inputStream = File.OpenRead(Constants.SAMPLE_XLSX);
 
             //Load document as content from byte stream and without load options
-            Editor editor3 = new Editor(delegate { return inputStream; });
+            Editor editor3 = new Editor(inputStream);
 
             //Load document as content from byte stream and with load options
+            inputStream.Seek(0, SeekOrigin.Begin);
             Options.SpreadsheetLoadOptions sheetLoadOptions = new SpreadsheetLoadOptions();
             sheetLoadOptions.OptimizeMemoryUsage = true;
-            Editor editor4 = new Editor(delegate { return inputStream; }, delegate { return sheetLoadOptions; });
+            Editor editor4 = new Editor(inputStream, sheetLoadOptions);
 
             //Dispose all resources
             editor1.Dispose();

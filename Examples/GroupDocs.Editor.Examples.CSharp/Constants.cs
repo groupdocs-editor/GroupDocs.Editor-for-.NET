@@ -46,6 +46,7 @@ namespace GroupDocs.Editor.Examples.CSharp
 
         public static string SAMPLE_DOCX => GetSampleFilePath("SampleDoc1.docx");
         public static string SAMPLE_PDF => GetSampleFilePath("SampleDoc1.pdf");
+        public static string GroupDocsEditor_PDF => GetSampleFilePath("GroupDocs.Editor.pdf");
 
         public static string SAMPLE_HTML => GetSampleFilePath("SampleDoc1.html");
 

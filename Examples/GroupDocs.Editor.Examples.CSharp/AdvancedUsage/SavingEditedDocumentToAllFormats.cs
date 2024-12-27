@@ -14,7 +14,7 @@
             Options.WordProcessingLoadOptions loadOptions = new Options.WordProcessingLoadOptions();
 
             //3. Load document with options to the Editor instance
-            using (Editor editor = new Editor(inputFilePath, delegate { return loadOptions; }))
+            using (Editor editor = new Editor(inputFilePath, loadOptions))
             {
                 //4. Create editing options
                 Options.WordProcessingEditOptions editOptions = new Options.WordProcessingEditOptions();

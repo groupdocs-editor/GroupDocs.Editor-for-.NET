@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using GroupDocs.Editor.Formats;
+﻿using GroupDocs.Editor.Formats;
 using GroupDocs.Editor.HtmlCss.Resources;
 using GroupDocs.Editor.Options;
+using System.Collections.Generic;
+using System.IO;
 
 namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
 {
@@ -28,7 +28,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
                 //3.2. ...but, because document is unprotected, this password will be ignored
 
                 //4. Load document with options to the Editor instance
-                using (Editor editor = new Editor(delegate { return fs; }, delegate { return loadOptions; }))
+                using (Editor editor = new Editor(fs, loadOptions))
                 {
                     //5. Create editing options
                     Options.PresentationEditOptions editOptions = new PresentationEditOptions();

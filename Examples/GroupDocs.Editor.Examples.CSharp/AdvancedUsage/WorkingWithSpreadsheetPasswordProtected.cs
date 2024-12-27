@@ -1,7 +1,7 @@
-﻿using System;
-using System.IO;
-using GroupDocs.Editor.Formats;
+﻿using GroupDocs.Editor.Formats;
 using GroupDocs.Editor.Options;
+using System;
+using System.IO;
 
 namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
 {
@@ -32,7 +32,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
             //1.2. Now let's try to specify incorrect password
             Options.SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
             loadOptions.Password = "incorrect_password";
-            editor = new Editor(inputFilePath, delegate { return loadOptions; });
+            editor = new Editor(inputFilePath, loadOptions);
             try
             {
                 editor.Edit();
@@ -49,7 +49,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage
             //1.4. Also let's specify memory optimization option
             loadOptions.OptimizeMemoryUsage = true;
 
-            editor = new Editor(inputFilePath, delegate { return loadOptions; });
+            editor = new Editor(inputFilePath, loadOptions);
 
             //2. Create and adjust editing options
             Options.SpreadsheetEditOptions editOptions = new SpreadsheetEditOptions();

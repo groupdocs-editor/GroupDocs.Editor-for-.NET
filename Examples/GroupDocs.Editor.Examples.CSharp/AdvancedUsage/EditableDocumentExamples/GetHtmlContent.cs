@@ -1,6 +1,6 @@
-﻿using System;
+﻿using GroupDocs.Editor.Options;
+using System;
 using System.IO;
-using GroupDocs.Editor.Options;
 
 namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExamples
 {
@@ -10,7 +10,7 @@ namespace GroupDocs.Editor.Examples.CSharp.AdvancedUsage.EditableDocumentExample
         {
             using (FileStream fs = File.OpenRead(Constants.SAMPLE_DOCX))
             {
-                using (Editor editor = new Editor(delegate { return fs; }, delegate { return new WordProcessingLoadOptions(); }))
+                using (Editor editor = new Editor(fs, new WordProcessingLoadOptions()))
                 {
                     using (EditableDocument document = editor.Edit(new WordProcessingEditOptions()))
                     {

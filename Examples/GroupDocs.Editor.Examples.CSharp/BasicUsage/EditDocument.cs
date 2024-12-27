@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using GroupDocs.Editor.HtmlCss.Resources;
+﻿using GroupDocs.Editor.HtmlCss.Resources;
 using GroupDocs.Editor.HtmlCss.Resources.Images;
 using GroupDocs.Editor.Options;
+using System.Collections.Generic;
 
 namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
 {
@@ -14,7 +14,7 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
         {
             //Load some WordProcessing document somehow, as it is shown in LoadDocument.cs
             string inputFilePath = Constants.SAMPLE_DOCX; //path to some document
-            Editor editor1 = new Editor(inputFilePath, delegate { return new Options.WordProcessingLoadOptions(); });
+            Editor editor1 = new Editor(inputFilePath, new Options.WordProcessingLoadOptions());
 
             //Edit WordProcessing document with default options
             EditableDocument defaultWordProcessingDoc = editor1.Edit();
@@ -36,7 +36,7 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
 
 
             //Load another document, Spreadsheet at this time
-            Editor editor2 = new Editor(Constants.SAMPLE_XLSX, delegate { return new SpreadsheetLoadOptions();});
+            Editor editor2 = new Editor(Constants.SAMPLE_XLSX, new SpreadsheetLoadOptions());
 
             //Edit 1st tab of this Spreadsheet
             SpreadsheetEditOptions sheetTab1EditOptions = new SpreadsheetEditOptions();
