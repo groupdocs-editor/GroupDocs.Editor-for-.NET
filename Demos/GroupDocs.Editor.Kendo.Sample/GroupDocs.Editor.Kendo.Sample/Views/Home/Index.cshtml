@@ -1,0 +1,98 @@
+﻿@model GroupDocs.Editor.Kendo.Sample.Controllers.HtmlResponse
+
+@{
+    ViewBag.Title = Model.FileName;
+}
+<!-- CSS -->
+<link href="https://kendo.cdn.telerik.com/2019.2.514/styles/kendo.default-v2.min.css" rel="stylesheet" />
+
+<!-- JavaScript -->
+<script src="https://kendo.cdn.telerik.com/2019.2.514/js/jquery.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2019.2.514/js/kendo.all.min.js"></script>
+<h2>@Html.DisplayFor(a=>a.FileName)</h2>
+
+<form id="WordCreatorForm">
+    <div id="dv_Editor">
+        <textarea id="editor" rows="4" cols="32" style="width:100%;height:600px">
+            @Html.Raw(Model.Content)
+</textarea><br />
+    </div>
+</form>
+<script>
+
+    $("#editor").kendoEditor({
+        tools: [
+            "bold",
+            "italic",
+            "bold",
+            "italic",
+            "underline",
+            "strikethrough",
+            "justifyLeft",
+            "justifyCenter",
+            "justifyRight",
+            "justifyFull",
+            "insertUnorderedList",
+            "insertOrderedList",
+            "indent",
+            "outdent",
+            "createLink",
+            "unlink",
+            "insertImage",
+            "subscript",
+            "superscript",
+            "tableWizard",
+            "createTable",
+            "addRowAbove",
+            "addRowBelow",
+            "addColumnLeft",
+            "addColumnRight",
+            "deleteRow",
+            "deleteColumn",
+            "mergeCellsHorizontally",
+            "mergeCellsVertically",
+            "splitCellHorizontally",
+            "splitCellVertically",
+            "viewHtml",
+            "formatting",
+            "cleanFormatting",
+            "copyFormat",
+            "applyFormat",
+            /*"fontName",*/
+            "fontSize",
+            "foreColor",
+            "backColor",
+            "pdf",
+            {
+                name: "fontName",
+                items: [
+                    { text: "Andale Mono", value: "Andale Mono" },
+                    { text: "Arial", value: "Arial" },
+                ]
+            },
+            {
+                name: "custom",
+                tooltip: "Add page break",
+                exec: function (e) {
+                    var editor = $(this).data("kendoEditor");
+                    editor.exec("inserthtml", { value: "<p STYLE='page-break-before: always'>Page break here!</p>" });
+                }
+            }
+        ],
+    });
+
+    kendo.pdf.defineFont({
+        "TSCu_SaiIndira": "../../Content/kendo/2019.2.514/fonts/TSCu_SaiIndira.ttf",
+        "Padasalai-TAU-Marutham": "../../Content/kendo/2019.2.514/fonts/Padasalai-TAU-Marutham.ttf",
+    });
+
+    $('.k-fontName').change(function (e) {
+        $("#editor").css({ " font-family": e.currentTarget.value });
+    });
+
+    $("#templateTool").kendoDropDownList({
+        change: function (e) {
+            $("#editor").data("kendoEditor").body.style.backgroundColor = e.sender.value();
+        }
+    });
+</script>
