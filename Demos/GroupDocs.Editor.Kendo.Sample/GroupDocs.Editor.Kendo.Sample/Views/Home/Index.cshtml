@@ -17,6 +17,7 @@
             @Html.Raw(Model.Content)
 </textarea><br />
     </div>
+    <button id="btnSave">Save</button>
 </form>
 <script>
 
@@ -74,13 +75,17 @@
                 name: "custom",
                 tooltip: "Add page break",
                 exec: function (e) {
-                    var editor = $(this).data("kendoEditor");
                     editor.exec("inserthtml", { value: "<p STYLE='page-break-before: always'>Page break here!</p>" });
                 }
-            }
+            },
+            {
+                name: "customSave",
+                tooltip: "Groupdocs.Editor Save",
+                template: '<button id="btnSave" class="k-button k-button-icontext"><span class="k-icon k-i-save"></span>Save</button>',
+            },
         ],
     });
-
+    var editor = $("#editor").data("kendoEditor");
     kendo.pdf.defineFont({
         "TSCu_SaiIndira": "../../Content/kendo/2019.2.514/fonts/TSCu_SaiIndira.ttf",
         "Padasalai-TAU-Marutham": "../../Content/kendo/2019.2.514/fonts/Padasalai-TAU-Marutham.ttf",
@@ -90,9 +95,32 @@
         $("#editor").css({ " font-family": e.currentTarget.value });
     });
 
-    $("#templateTool").kendoDropDownList({
-        change: function (e) {
-            $("#editor").data("kendoEditor").body.style.backgroundColor = e.sender.value();
+        $('#btnSave').click(function (e) {
+        e.preventDefault();
+        var rawHtmlContent = editor.body.innerHTML; // Get the editor content
+        console.log(rawHtmlContent);
+        let SaveDetails = {
+            FileId: $('#FileId').val(),
+            GUID: $('#FileServerId').val(),
+            EditorData: rawHtmlContent,
         }
+        $.ajax({
+            type: "POST",
+            url: "/Home/SaveWordFile",
+            data: JSON.stringify(SaveDetails),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                if (response.Success) {
+                    alert(response.Message);
+                    window.close();
+                } else {
+                    alert("Error: " + response.Message);
+                }
+            },
+            error: function (xhr, status, error) {
+                alert("An error occurred: " + error);
+            }
+        });
     });
 </script>
