@@ -1,0 +1,133 @@
+﻿@model GroupDocs.Editor.Kendo.Sample.Controllers.PresentationHtmlResponse
+
+@{
+    ViewBag.Title = Model.FileName;
+}
+<!-- CSS -->
+<link href="https://kendo.cdn.telerik.com/2019.2.514/styles/kendo.default-v2.min.css" rel="stylesheet" />
+
+<!-- JavaScript -->
+<script src="https://kendo.cdn.telerik.com/2019.2.514/js/jquery.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2019.2.514/js/kendo.all.min.js"></script>
+<h2>@Html.DisplayFor(a => a.FileName)</h2>
+<h2>@Html.HiddenFor(a => a.SlideIndex)</h2>
+
+<form id="WordCreatorForm">
+    <div id="dv_Editor">
+        <textarea id="editor" rows="4" cols="32" style="width: 990pt; height: 600pt; ">
+            @Html.Raw(Model.Content)
+</textarea><br />
+    </div>
+    @if (Model.SlideIndex > 0)
+    {
+        @Html.ActionLink("Previously Slide", "Presentation", "Home", new { area = "", slideIndex = Model.SlideIndex - 1 }, new { @class = " btn" })
+
+    }
+    @Html.ActionLink("Next Slide", "Presentation", "Home", new { area = "", slideIndex = Model.SlideIndex + 1 }, new { @class = " btn" })
+</form>
+<script>
+
+    $("#editor").kendoEditor({
+        tools: [
+            "bold",
+            "italic",
+            "bold",
+            "italic",
+            "underline",
+            "strikethrough",
+            "justifyLeft",
+            "justifyCenter",
+            "justifyRight",
+            "justifyFull",
+            "insertUnorderedList",
+            "insertOrderedList",
+            "indent",
+            "outdent",
+            "createLink",
+            "unlink",
+            "insertImage",
+            "subscript",
+            "superscript",
+            "tableWizard",
+            "createTable",
+            "addRowAbove",
+            "addRowBelow",
+            "addColumnLeft",
+            "addColumnRight",
+            "deleteRow",
+            "deleteColumn",
+            "mergeCellsHorizontally",
+            "mergeCellsVertically",
+            "splitCellHorizontally",
+            "splitCellVertically",
+            "viewHtml",
+            "formatting",
+            "cleanFormatting",
+            "copyFormat",
+            "applyFormat",
+            /*"fontName",*/
+            "fontSize",
+            "foreColor",
+            "backColor",
+            "pdf",
+            {
+                name: "fontName",
+                items: [
+                    { text: "Andale Mono", value: "Andale Mono" },
+                    { text: "Arial", value: "Arial" },
+                ]
+            },
+            {
+                name: "custom",
+                tooltip: "Add page break",
+                exec: function (e) {
+                    editor.exec("inserthtml", { value: "<p STYLE='page-break-before: always'>Page break here!</p>" });
+                }
+            },
+            {
+                name: "customSave",
+                tooltip: "Groupdocs.Editor Save",
+                template: '<button id="btnSave" class="k-button k-button-icontext"><span class="k-icon k-i-save"></span>Save</button>',
+            },
+        ],
+    });
+    var editor = $("#editor").data("kendoEditor");
+    kendo.pdf.defineFont({
+        "TSCu_SaiIndira": "../../Content/kendo/2019.2.514/fonts/TSCu_SaiIndira.ttf",
+        "Padasalai-TAU-Marutham": "../../Content/kendo/2019.2.514/fonts/Padasalai-TAU-Marutham.ttf",
+    });
+
+    $('.k-fontName').change(function (e) {
+        $("#editor").css({ " font-family": e.currentTarget.value });
+    });
+
+        $('#btnSave').click(function (e) {
+        e.preventDefault();
+        var rawHtmlContent = editor.body.innerHTML; // Get the editor content
+        console.log(rawHtmlContent);
+        let SaveDetails = {
+            FileId: $('#FileId').val(),
+            GUID: $('#FileServerId').val(),
+            SlideIndex: $('#SlideIndex').val(),
+            EditorData: rawHtmlContent,
+        }
+        $.ajax({
+            type: "POST",
+            url: "/Home/SavePresentation",
+            data: JSON.stringify(SaveDetails),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                if (response.Success) {
+                    alert(response.Message);
+                    window.close();
+                } else {
+                    alert("Error: " + response.Message);
+                }
+            },
+            error: function (xhr, status, error) {
+                alert("An error occurred: " + error);
+            }
+        });
+    });
+</script>

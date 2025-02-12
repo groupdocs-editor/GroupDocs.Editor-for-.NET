@@ -28,6 +28,26 @@ namespace GroupDocs.Editor.Kendo.Sample.Controllers
 
             }
         }
+        public ActionResult Presentation(int slideIndex)
+        {
+            var filePath = Server.MapPath("~/Content/basic-presentation.pptx");
+            using (Editor editor = new Editor(filePath))
+            {
+                PresentationEditOptions options = new PresentationEditOptions();
+                options.SlideNumber = slideIndex;
+                EditableDocument editableDocument = editor.Edit(options);
+
+                // Get the HTML with embedded styles
+                var resp = new PresentationHtmlResponse
+                {
+                    FileName = "basic-presentation.pptx",
+                    Content = editableDocument.GetEmbeddedHtml(),
+                    SlideIndex = slideIndex
+                };
+                return View(resp);
+
+            }
+        }
 
         [HttpPost]
         public JsonResult SaveWordFile(SaveDetailsModel saveDetails)
@@ -41,7 +61,7 @@ namespace GroupDocs.Editor.Kendo.Sample.Controllers
             {
                 var filePath = Server.MapPath("~/Content/DocumentSample_edited.docx");
                 var filePathOriginal = Server.MapPath("~/Content/DocumentSample.docx");
-                EditableDocument afterEdit = EditableDocument.FromMarkup($"<body>{saveDetails.EditorData}</body>", new List<IHtmlResource>());
+                EditableDocument afterEdit = EditableDocument.FromMarkup(saveDetails.EditorData, new List<IHtmlResource>());
                 WordProcessingSaveOptions saveOptions = new WordProcessingSaveOptions(WordProcessingFormats.Docx)
                 {
                     EnablePagination = true
@@ -61,18 +81,37 @@ namespace GroupDocs.Editor.Kendo.Sample.Controllers
             }
         }
 
-        public ActionResult About()
+
+        [HttpPost]
+        public JsonResult SavePresentation(SavePresentationDetailsModel saveDetails)
         {
-            ViewBag.Message = "Your application description page.";
+            if (saveDetails == null)
+            {
+                return Json(new { Success = false, Message = "Invalid data received." });
+            }
 
-            return View();
-        }
+            try
+            {
+                var filePath = Server.MapPath("~/Content/presentation_edited.pptx");
+                var filePathOriginal = Server.MapPath("~/Content/basic-presentation.pptx");
+                EditableDocument afterEdit = EditableDocument.FromMarkup(saveDetails.EditorData, new List<IHtmlResource>());
+                PresentationSaveOptions saveOptions = new PresentationSaveOptions(PresentationFormats.Pptx)
+                {
+                    SlideNumber = saveDetails.SlideIndex + 1
+                };
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+                using (Editor editor = new Editor(filePathOriginal))
+                {
+                    editor.Save(afterEdit, filePath, saveOptions);
+                }
+                // Return success response
+                return Json(new { Success = true, Message = $"File details saved successfully to {filePath}" });
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions and return error response
+                return Json(new { Success = false, ex.Message });
+            }
         }
     }
 
@@ -82,10 +121,26 @@ namespace GroupDocs.Editor.Kendo.Sample.Controllers
         public string Content { get; set; }
     }
 
+    public class PresentationHtmlResponse
+    {
+        public string FileName { get; set; }
+        public string Content { get; set; }
+        public int SlideIndex { get; set; }
+
+    }
+
     public class SaveDetailsModel
     {
         public string FileId { get; set; }
         public string GUID { get; set; }
         public string EditorData { get; set; }
+    }
+
+    public class SavePresentationDetailsModel
+    {
+        public string FileId { get; set; }
+        public string GUID { get; set; }
+        public string EditorData { get; set; }
+        public int SlideIndex { get; set; }
     }
 }
