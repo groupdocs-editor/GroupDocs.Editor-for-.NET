@@ -9,10 +9,7 @@ export class DocumentEditor extends Component {
     constructor(props) {
         super(props);
         this.state = {currentCount: 0, editor: null, content: "", documentCode: props.documentCode, content_css: null};
-        axios.post("https://localhost:7147/WordProcessing/Stylesheets", {
-            "documentCode": props.documentCode,
-            "subIndex": "0"
-        })
+        axios.post(`https://localhost:7147/WordProcessing/stylesheets/${props.documentCode}`)
             .then(response => {
                 const styles = response.data.map(a => a.fileLink);
                 console.log(styles);
@@ -22,9 +19,11 @@ export class DocumentEditor extends Component {
             .catch(error => {
                 console.error(error);
             });
-        axios.post("https://localhost:7147/WordProcessing/ConvertedContent", {
+        axios.post("https://localhost:7147/WordProcessing/edit", {
             "documentCode": props.documentCode,
-            "subIndex": "0"
+            "editOptions": {
+                "enablePagination": true,
+            }
         })
             .then(response => {
                 console.log(response);

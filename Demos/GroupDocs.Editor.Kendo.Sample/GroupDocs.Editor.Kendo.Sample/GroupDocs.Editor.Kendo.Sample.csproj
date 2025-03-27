@@ -45,8 +45,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GroupDocs.Editor, Version=24.12.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\packages\GroupDocs.Editor.24.12.0\lib\net462\GroupDocs.Editor.dll</HintPath>
+    <Reference Include="GroupDocs.Editor, Version=25.3.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\GroupDocs.Editor.25.3.0\lib\net462\GroupDocs.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -157,6 +157,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\DocumentSample.docx" />
     <Content Include="Content\basic-presentation.pptx" />
+    <Content Include="Content\Automation -  PPT %28Docpro%29 Template.pptx" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />

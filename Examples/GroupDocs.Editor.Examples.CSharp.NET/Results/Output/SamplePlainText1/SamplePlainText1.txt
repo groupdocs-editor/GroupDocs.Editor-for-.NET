@@ -1,4 +1,4 @@
-﻿Created with evaluation version of GroupDocs.Editor � Aspose Pty Ltd 2001-2024. All Rights Reserved.https://products.aspose.com/words/temporary-license/
+﻿Created with evaluation version of GroupDocs.Editor � Aspose Pty Ltd 2001-2025. All Rights Reserved.
 This is a sample plain EDITED text file
  
 There is one empty line above this EDITED text.  Two spaces.   Three spaces.

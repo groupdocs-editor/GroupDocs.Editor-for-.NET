@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FontFamilies>
-    <changed>2024-12-27T09:43:04Z</changed>
+    <changed>2025-03-26T06:28:43Z</changed>
     <Family name="DejaVu Sans Mono">
         <Font style="Book" type="TTF" name="DejaVu Sans Mono" localizedFamilyNames="" path="/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf" offset="0" />
         <Font style="Bold" type="TTF" name="DejaVu Sans Mono Bold" localizedFamilyNames="" path="/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf" offset="0" />

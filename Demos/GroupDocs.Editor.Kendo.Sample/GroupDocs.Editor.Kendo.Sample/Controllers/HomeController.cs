@@ -30,7 +30,7 @@ namespace GroupDocs.Editor.Kendo.Sample.Controllers
         }
         public ActionResult Presentation(int slideIndex)
         {
-            var filePath = Server.MapPath("~/Content/basic-presentation.pptx");
+            var filePath = Server.MapPath("~/Content/Automation -  PPT (Docpro) Template.pptx");
             using (Editor editor = new Editor(filePath))
             {
                 PresentationEditOptions options = new PresentationEditOptions();
@@ -92,8 +92,8 @@ namespace GroupDocs.Editor.Kendo.Sample.Controllers
 
             try
             {
-                var filePath = Server.MapPath("~/Content/presentation_edited.pptx");
-                var filePathOriginal = Server.MapPath("~/Content/basic-presentation.pptx");
+                var filePath = Server.MapPath("~/Content/Automation -  PPT (Docpro) Template_edited.pptx");
+                var filePathOriginal = Server.MapPath("~/Content/Automation -  PPT (Docpro) Template.pptx");
                 EditableDocument afterEdit = EditableDocument.FromMarkup(saveDetails.EditorData, new List<IHtmlResource>());
                 PresentationSaveOptions saveOptions = new PresentationSaveOptions(PresentationFormats.Pptx)
                 {

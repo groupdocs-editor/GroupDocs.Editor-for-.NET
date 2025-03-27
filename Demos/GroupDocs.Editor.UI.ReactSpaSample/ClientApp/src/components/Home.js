@@ -24,12 +24,6 @@ export class Home extends Component {
         const formData = new FormData();
         formData.append('File', file);
         formData.append("LoadOptions.Password", "");
-        formData.append("EditOptions.EnablePagination", "true");
-        formData.append("EditOptions.EnableLanguageInformation", "false");
-        formData.append("EditOptions.ExtractOnlyUsedFont", "false");
-        formData.append("EditOptions.FontExtraction", "0");
-        formData.append("EditOptions.InputControlsClassName", "");
-        formData.append("EditOptions.UseInlineStyles", "false");
         this.setState({uploadProgress: true});
 
         axios.post("https://localhost:7147/WordProcessing/Upload", formData)

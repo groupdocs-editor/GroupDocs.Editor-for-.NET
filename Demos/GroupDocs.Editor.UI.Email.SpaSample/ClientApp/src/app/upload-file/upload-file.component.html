@@ -1,0 +1,14 @@
+
+
+<div class="mat-typography">
+  <label for="formFile" class="form-label">Upload file example</label>
+  <input (change)="this.onFileChange($event)" class="form-control" type="file" id="formFile">
+
+  <button mat-button (click)="this.upload()" type="button" class="btn btn-primary mt-3"><span *ngIf="!fileUploading">Upload Email</span>
+    <span *ngIf="fileUploading">Uploading </span>
+    <mat-icon *ngIf="fileUploading"><mat-progress-spinner color="accent" mode="indeterminate"  diameter="20">
+    </mat-progress-spinner></mat-icon>
+    </button>
+  <button mat-button [disabled]="!allowAccept" type="button" class="btn mt-3" (click)="goToLink()" [matTooltip]="'Accept'" [matTooltipPosition]="'below'">Accept</button>
+</div>
+

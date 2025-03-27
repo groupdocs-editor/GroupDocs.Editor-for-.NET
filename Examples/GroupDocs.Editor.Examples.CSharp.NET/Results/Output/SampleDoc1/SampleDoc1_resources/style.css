@@ -1,0 +1,1390 @@
+@page Section1 { 
+	margin-top: 42.5pt; 
+	margin-right: 42.5pt; 
+	margin-bottom: 42.5pt; 
+	margin-left: 70.85pt; 
+	size: 595.3pt 841.9pt; 
+}
+a { 
+	text-decoration: none; 
+}
+.Balloon_Text, .BuiltIn-style, .Paragraph-style { 
+	-aw-style-name: balloontext; 
+	-gd-style-name: 'Balloon Text'; 
+	font-family: Tahoma; 
+	font-size: 8pt; 
+	font-weight: normal; 
+	font-style: normal; 
+	text-align: left; 
+	margin-top: 0pt; 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+.Caption, .Quick-style, .BuiltIn-style, .Paragraph-style { 
+	-aw-style-name: caption; 
+	-gd-style-name: 'Caption'; 
+	font-family: Calibri; 
+	font-size: 9pt; 
+	font-weight: bold; 
+	font-style: normal; 
+	color: rgb(79, 129, 189); 
+	text-align: left; 
+	margin-top: 0pt; 
+	margin-bottom: 10pt; 
+	line-height: normal; 
+}
+.Default_Paragraph_Font, .BuiltIn-style, .Character-style { 
+	-aw-style-name: defaultparagraphfont; 
+	-gd-style-name: 'Default Paragraph Font'; 
+	font-family: Calibri; 
+	font-size: 11pt; 
+	font-weight: normal; 
+	font-style: normal; 
+}
+.Endnote_Reference, .BuiltIn-style, .Character-style { 
+	-aw-style-name: endnotereference; 
+	-gd-style-name: 'Endnote Reference'; 
+	font-family: Calibri; 
+	font-size: 7.33pt; 
+	vertical-align: super; 
+	font-weight: normal; 
+	font-style: normal; 
+}
+.Endnote_Text, .BuiltIn-style, .Paragraph-style { 
+	-aw-style-name: endnotetext; 
+	-gd-style-name: 'Endnote Text'; 
+	font-family: Calibri; 
+	font-size: 10pt; 
+	font-weight: normal; 
+	font-style: normal; 
+	text-align: left; 
+	margin-top: 0pt; 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+.FollowedHyperlink, .BuiltIn-style, .Character-style { 
+	-aw-style-name: followedhyperlink; 
+	-gd-style-name: 'FollowedHyperlink'; 
+	font-family: Calibri; 
+	font-size: 11pt; 
+	font-weight: normal; 
+	font-style: normal; 
+	color: rgb(128, 0, 128); 
+	text-decoration: underline; 
+}
+.Footnote_Reference, .BuiltIn-style, .Character-style { 
+	-aw-style-name: footnotereference; 
+	-gd-style-name: 'Footnote Reference'; 
+	font-family: Calibri; 
+	font-size: 7.33pt; 
+	vertical-align: super; 
+	font-weight: normal; 
+	font-style: normal; 
+}
+.Footnote_Text, .BuiltIn-style, .Paragraph-style { 
+	-aw-style-name: footnotetext; 
+	-gd-style-name: 'Footnote Text'; 
+	font-family: Calibri; 
+	font-size: 10pt; 
+	font-weight: normal; 
+	font-style: normal; 
+	text-align: left; 
+	margin-top: 0pt; 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+.Heading_1, .Quick-style, .BuiltIn-style, .Heading-style, .Paragraph-style { 
+	-aw-style-name: heading1; 
+	-gd-style-name: 'Heading 1'; 
+	font-family: Cambria; 
+	font-size: 18pt; 
+	font-weight: bold; 
+	font-style: normal; 
+	color: rgb(54, 95, 145); 
+	text-align: center; 
+	margin-top: 24pt; 
+	margin-bottom: 0pt; 
+	line-height: 134.16667%; 
+}
+.Heading_2, .Quick-style, .BuiltIn-style, .Heading-style, .Paragraph-style { 
+	-aw-style-name: heading2; 
+	-gd-style-name: 'Heading 2'; 
+	font-family: Cambria; 
+	font-size: 14pt; 
+	font-weight: bold; 
+	font-style: normal; 
+	color: rgb(79, 129, 189); 
+	text-align: center; 
+	margin-top: 16pt; 
+	margin-bottom: 6pt; 
+	line-height: normal; 
+}
+.Hyperlink, .BuiltIn-style, .Character-style { 
+	-aw-style-name: hyperlink; 
+	-gd-style-name: 'Hyperlink'; 
+	font-family: Calibri; 
+	font-size: 11pt; 
+	font-weight: normal; 
+	font-style: normal; 
+	color: rgb(0, 0, 255); 
+	text-decoration: underline; 
+}
+.List_Paragraph, .Quick-style, .BuiltIn-style, .Paragraph-style { 
+	-aw-style-name: listparagraph; 
+	-gd-style-name: 'List Paragraph'; 
+	font-family: Calibri; 
+	font-size: 11pt; 
+	font-weight: normal; 
+	font-style: normal; 
+	text-align: left; 
+	margin-top: 0pt; 
+	margin-bottom: 10pt; 
+	margin-left: 36pt; 
+	line-height: 134.16667%; 
+}
+.Medium_Grid_1_Accent_1, .BuiltIn-style, .Table-style { 
+	-aw-style-name: mediumgrid1accent1; 
+	-gd-style-name: 'Medium Grid 1 Accent 1'; 
+	font-family: Calibri; 
+	font-size: 11pt; 
+	font-weight: normal; 
+	font-style: normal; 
+	text-align: left; 
+	margin-top: 0pt; 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+.No_List, .BuiltIn-style, .List-style { 
+	-aw-style-name: nolist; 
+	-gd-style-name: 'No List'; 
+}
+.Normal, .Quick-style, .BuiltIn-style, .Paragraph-style { 
+	-gd-style-name: 'Normal'; 
+	font-family: Calibri; 
+	font-size: 11pt; 
+	font-weight: normal; 
+	font-style: normal; 
+	text-align: left; 
+	margin-top: 0pt; 
+	margin-bottom: 10pt; 
+	line-height: 134.16667%; 
+}
+.Placeholder_Text, .BuiltIn-style, .Character-style { 
+	-aw-style-name: placeholdertext; 
+	-gd-style-name: 'Placeholder Text'; 
+	font-family: Calibri; 
+	font-size: 11pt; 
+	font-weight: normal; 
+	font-style: normal; 
+	color: rgb(128, 128, 128); 
+}
+.TOC_1, .Quick-style, .BuiltIn-style, .Paragraph-style { 
+	-aw-style-name: toc1; 
+	-gd-style-name: 'TOC 1'; 
+	font-family: Calibri; 
+	font-size: 11pt; 
+	font-weight: normal; 
+	font-style: normal; 
+	text-align: left; 
+	margin-top: 0pt; 
+	margin-bottom: 5pt; 
+	line-height: 134.16667%; 
+}
+.TOC_2, .Quick-style, .BuiltIn-style, .Paragraph-style { 
+	-aw-style-name: toc2; 
+	-gd-style-name: 'TOC 2'; 
+	font-family: Calibri; 
+	font-size: 11pt; 
+	font-weight: normal; 
+	font-style: normal; 
+	text-align: left; 
+	margin-top: 0pt; 
+	margin-bottom: 5pt; 
+	margin-left: 11pt; 
+	line-height: 134.16667%; 
+}
+.TOC_3, .Quick-style, .BuiltIn-style, .Paragraph-style { 
+	-aw-style-name: toc3; 
+	-gd-style-name: 'TOC 3'; 
+	font-family: Calibri; 
+	font-size: 11pt; 
+	font-weight: normal; 
+	font-style: normal; 
+	text-align: left; 
+	margin-top: 0pt; 
+	margin-bottom: 5pt; 
+	margin-left: 22pt; 
+	line-height: 134.16667%; 
+}
+.TOC_Heading, .Quick-style, .BuiltIn-style, .Paragraph-style { 
+	-aw-style-name: tocheading; 
+	-gd-style-name: 'TOC Heading'; 
+	font-family: Cambria; 
+	font-size: 14pt; 
+	font-weight: bold; 
+	font-style: normal; 
+	color: rgb(54, 95, 145); 
+	text-align: left; 
+	margin-top: 24pt; 
+	margin-bottom: 0pt; 
+	line-height: 134.16667%; 
+}
+.Table_Grid, .BuiltIn-style, .Table-style { 
+	-aw-style-name: tablegrid; 
+	-gd-style-name: 'Table Grid'; 
+	font-family: Calibri; 
+	font-size: 11pt; 
+	font-weight: normal; 
+	font-style: normal; 
+	text-align: left; 
+	margin-top: 0pt; 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+.Table_Normal, .BuiltIn-style, .Table-style { 
+	-aw-style-name: tablenormal; 
+	-gd-style-name: 'Table Normal'; 
+	font-family: Calibri; 
+	font-size: 11pt; 
+	font-weight: normal; 
+	font-style: normal; 
+	text-align: left; 
+	margin-top: 0pt; 
+	margin-bottom: 10pt; 
+	line-height: 134.16667%; 
+}
+.Заголовок_1_Знак, .User-style, .Character-style { 
+	-gd-style-name: 'Заголовок 1 Знак'; 
+	font-family: Cambria; 
+	font-size: 18pt; 
+	font-weight: bold; 
+	font-style: normal; 
+	color: rgb(54, 95, 145); 
+}
+.Заголовок_2_Знак, .User-style, .Character-style { 
+	-gd-style-name: 'Заголовок 2 Знак'; 
+	font-family: Cambria; 
+	font-size: 14pt; 
+	font-weight: bold; 
+	font-style: normal; 
+	color: rgb(79, 129, 189); 
+}
+.Текст_выноски_Знак, .User-style, .Character-style { 
+	-gd-style-name: 'Текст выноски Знак'; 
+	font-family: Tahoma; 
+	font-size: 8pt; 
+	font-weight: normal; 
+	font-style: normal; 
+}
+.Текст_концевой_сноски_Знак, .User-style, .Character-style { 
+	-gd-style-name: 'Текст концевой сноски Знак'; 
+	font-family: Calibri; 
+	font-size: 10pt; 
+	font-weight: normal; 
+	font-style: normal; 
+}
+.Текст_сноски_Знак, .User-style, .Character-style { 
+	-gd-style-name: 'Текст сноски Знак'; 
+	font-family: Calibri; 
+	font-size: 10pt; 
+	font-weight: normal; 
+	font-style: normal; 
+}
+div.Section1 { 
+	page: Section1; 
+}
+span.text001 { 
+	font-size: 12pt; 
+	font-weight: bold; 
+	color: rgb(255, 0, 0); 
+}
+span.text002 { 
+	font-family: Cambria; 
+	font-size: 18pt; 
+	font-weight: bold; 
+	color: rgb(54, 95, 145); 
+}
+span.text003 { 
+	font-family: Cambria; 
+	font-size: 14pt; 
+	font-weight: bold; 
+	color: rgb(79, 129, 189); 
+}
+span.text004 { 
+	font-weight: bold; 
+}
+span.text005 { 
+	font-style: italic; 
+}
+span.text006 { 
+	text-decoration: underline; 
+}
+span.text007 { 
+	text-decoration: line-through; 
+}
+span.text008 { 
+	text-decoration: line-through double; 
+}
+span.text009 { 
+	text-decoration: underline dashed; 
+}
+span.text010 { 
+	text-decoration: underline wavy rgb(255, 255, 0); 
+}
+span.text011 { 
+	text-decoration: underline line-through; 
+}
+span.text012 { 
+	font-size: 7.33pt; 
+	vertical-align: super; 
+}
+span.text013 { 
+	font-size: 7.33pt; 
+	vertical-align: sub; 
+}
+span.text014 { 
+	background-color: rgb(255, 0, 0); 
+}
+span.text015 { 
+	text-shadow: 1px 1px 2px rgb(0, 0, 0); 
+}
+span.text016 { 
+	text-shadow: 1px 1px 2px rgb(0, 0, 0); 
+}
+span.text017 { 
+	text-shadow: 1px 1px 2px rgb(0, 0, 0); 
+}
+span.text018 { 
+	text-shadow: 1px 1px 2px rgb(0, 0, 0); 
+}
+span.text019 { 
+	text-shadow: 1px 1px 2px rgb(0, 0, 0); 
+}
+span.text020 { 
+	-webkit-text-stroke: 1px black; 
+}
+span.text021 { 
+	-webkit-text-stroke: 1px black; 
+}
+sup.FootnoteReference { 
+	font-family: Calibri; 
+	font-size: 7.33pt; 
+	vertical-align: super; 
+	font-weight: normal; 
+	font-style: normal; 
+}
+#sup001 { 
+	font-size: 6.67pt; 
+}
+#_ftn1 { 
+	-aw-footnote-isauto: 1; 
+}
+span.text022 { 
+	font-size: 10pt; 
+	white-space: pre; 
+}
+span.text023 { 
+	font-size: 10pt; 
+}
+#sup002 { 
+	font-size: 6.67pt; 
+}
+#sup003 { 
+	font-size: 6.67pt; 
+}
+#_ftn2 { 
+	-aw-footnote-isauto: 1; 
+}
+span.text024 { 
+	font-size: 10pt; 
+	white-space: pre; 
+}
+span.text025 { 
+	font-size: 10pt; 
+}
+span.text026 { 
+	font-size: 10pt; 
+}
+span.text027 { 
+	font-size: 10pt; 
+	white-space: pre; 
+}
+#sup004 { 
+	font-size: 6.67pt; 
+}
+p.para001 { 
+	text-align: right; 
+}
+span.text028 { 
+	font-family: Arial; 
+}
+span.text029 { 
+	font-family: Arial; 
+}
+span.text030 { 
+	font-family: Arial; 
+}
+span.text031 { 
+	color: rgb(255, 0, 0); 
+}
+span.text032 { 
+	color: rgb(146, 208, 80); 
+}
+span.text033 { 
+	font-size: 9pt; 
+	font-weight: bold; 
+	color: rgb(79, 129, 189); 
+}
+span.text034 { 
+	font-size: 9pt; 
+	font-weight: bold; 
+	color: rgb(79, 129, 189); 
+	white-space: pre; 
+}
+span.text035 { 
+	font-size: 9pt; 
+	font-weight: bold; 
+	color: rgb(79, 129, 189); 
+}
+span.text036 { 
+	font-size: 9pt; 
+	font-weight: bold; 
+	color: rgb(79, 129, 189); 
+	white-space: pre; 
+}
+span.text037 { 
+	font-size: 9pt; 
+	font-weight: bold; 
+	color: rgb(79, 129, 189); 
+}
+#table001 { 
+	border-collapse: collapse; 
+}
+#cell001 { 
+	border-width: 0.5pt; 
+	border-style: solid dotted solid solid; 
+	border-color: rgb(0, 0, 0); 
+	max-width: 112.35pt; 
+	width: 112.35pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: top; 
+}
+p.para002 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+span.text038 { 
+	font-style: italic; 
+}
+span.text039 { 
+	font-style: italic; 
+}
+#cell002 { 
+	border: 0.5pt dotted rgb(0, 0, 0); 
+	max-width: 112.4pt; 
+	width: 112.4pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: top; 
+}
+p.para003 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell003 { 
+	border-width: 0.5pt; 
+	border-style: solid solid solid dotted; 
+	border-color: rgb(0, 0, 0); 
+	max-width: 112.4pt; 
+	width: 112.4pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: top; 
+}
+p.para004 { 
+	text-align: right; 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell004 { 
+	border: 0.5pt solid rgb(0, 0, 0); 
+	max-width: 112.4pt; 
+	width: 112.4pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: top; 
+}
+p.para005 { 
+	text-align: center; 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell005 { 
+	border: 0.5pt solid rgb(0, 0, 0); 
+	max-width: 112.35pt; 
+	width: 112.35pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: top; 
+}
+p.para006 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+span.text040 { 
+	font-weight: bold; 
+}
+span.text041 { 
+	font-weight: bold; 
+}
+#cell006 { 
+	border-width: 0.5pt; 
+	border-style: dotted solid dashed; 
+	border-color: rgb(0, 0, 0); 
+	-aw-border-bottom: 0.5pt dash-large-gap; 
+	max-width: 112.4pt; 
+	width: 112.4pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: top; 
+}
+p.para007 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+span.text042 { 
+	-aw-import: ignore; 
+}
+#cell007 { 
+	border: 0.5pt solid rgb(0, 0, 0); 
+	max-width: 112.4pt; 
+	width: 112.4pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: bottom; 
+}
+p.para008 { 
+	text-align: center; 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+span.text043 { 
+	text-decoration: underline dotted; 
+}
+#cell008 { 
+	border: 0.5pt solid rgb(0, 0, 0); 
+	max-width: 112.4pt; 
+	width: 112.4pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: top; 
+}
+p.para009 { 
+	text-align: justify; 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell009 { 
+	border-width: 0.5pt; 
+	border-style: solid dashed solid solid; 
+	border-color: rgb(0, 0, 0); 
+	-aw-border-right: 0.5pt dash-large-gap; 
+	max-width: 112.35pt; 
+	width: 112.35pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: top; 
+}
+p.para010 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell010 { 
+	border: 0.5pt dashed rgb(0, 0, 0); 
+	-aw-border: 0.5pt dash-large-gap; 
+	max-width: 112.4pt; 
+	width: 112.4pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: top; 
+}
+p.para011 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell011 { 
+	border-width: 0.5pt; 
+	border-style: solid solid solid dashed; 
+	border-color: rgb(0, 0, 0); 
+	-aw-border-left: 0.5pt dash-large-gap; 
+	max-width: 112.4pt; 
+	width: 112.4pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: top; 
+}
+p.para012 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+span.text044 { 
+	-aw-import: ignore; 
+}
+#cell012 { 
+	background-color: rgb(219, 229, 241); 
+	border: 0.5pt solid rgb(0, 0, 0); 
+	max-width: 112.4pt; 
+	width: 112.4pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: top; 
+}
+p.para013 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell013 { 
+	border: 0.5pt solid rgb(0, 0, 0); 
+	max-width: 235.55pt; 
+	width: 235.55pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: top; 
+}
+p.para014 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+span.text045 { 
+	text-decoration: underline double; 
+}
+#cell014 { 
+	border: 0.5pt solid rgb(0, 0, 0); 
+	max-width: 112.4pt; 
+	width: 112.4pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: top; 
+}
+p.para015 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell015 { 
+	border: 0.5pt solid rgb(0, 0, 0); 
+	max-width: 112.4pt; 
+	width: 112.4pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: top; 
+}
+p.para016 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell016 { 
+	border: 0.5pt solid rgb(0, 0, 0); 
+	max-width: 112.35pt; 
+	width: 112.35pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: middle; 
+}
+p.para017 { 
+	text-align: center; 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell017 { 
+	border: 0.5pt solid rgb(0, 0, 0); 
+	max-width: 358.8pt; 
+	width: 358.8pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: bottom; 
+}
+p.para018 { 
+	text-align: right; 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+span.text046 { 
+	text-decoration: underline dotted; 
+}
+#cell018 { 
+	border: 0.5pt solid rgb(0, 0, 0); 
+	max-width: 112.35pt; 
+	width: 112.35pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: top; 
+}
+p.para019 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell019 { 
+	border: 0.5pt solid rgb(0, 0, 0); 
+	max-width: 358.8pt; 
+	width: 358.8pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: top; 
+}
+p.para020 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+span.text047 { 
+	-aw-import: ignore; 
+}
+#cell020 { 
+	border: 0.5pt solid rgb(0, 0, 0); 
+	max-width: 112.35pt; 
+	width: 112.35pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: top; 
+}
+p.para021 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell021 { 
+	border: 0.5pt solid rgb(0, 0, 0); 
+	max-width: 358.8pt; 
+	width: 358.8pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: top; 
+}
+p.para022 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+span.text048 { 
+	-aw-import: ignore; 
+}
+#cell022 { 
+	border: 0.5pt solid rgb(0, 0, 0); 
+	max-width: 112.35pt; 
+	width: 112.35pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: middle; 
+}
+p.para023 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell023 { 
+	border: 0.5pt solid rgb(0, 0, 0); 
+	background: linear-gradient(to right top, #ffffff 0%,#ffffff 49.9%,#000000 50%,#000000 51%,#ffffff 51.1%,#ffffff 100%); 
+	max-width: 112.4pt; 
+	width: 112.4pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: middle; 
+}
+p.para024 { 
+	text-align: right; 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell024 { 
+	border: 0.5pt solid rgb(0, 0, 0); 
+	background: linear-gradient(to right bottom, #ffffff 0%,#ffffff 49.9%,#000000 50%,#000000 51%,#ffffff 51.1%,#ffffff 100%); 
+	max-width: 112.4pt; 
+	width: 112.4pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: top; 
+}
+p.para025 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell025 { 
+	border: 0.5pt solid rgb(0, 0, 0); 
+	background: linear-gradient(to right bottom, transparent 49.5%, black 49.5%, black 50.5%, transparent 50.5%), linear-gradient(to right top, transparent 49.5%, black 49.5%, black 50.5%, transparent 50.5%); 
+	max-width: 112.4pt; 
+	width: 112.4pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: bottom; 
+}
+p.para026 { 
+	text-align: center; 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#row001 { 
+	height: 36.05pt; 
+}
+p.para027 { 
+	text-align: center; 
+}
+span.text049 { 
+	font-size: 12pt; 
+}
+span.text050 { 
+	font-size: 12pt; 
+}
+span.text051 { 
+	font-size: 8pt; 
+	vertical-align: super; 
+}
+span.text052 { 
+	font-size: 12pt; 
+}
+span.text053 { 
+	font-size: 8pt; 
+	vertical-align: sub; 
+}
+span.text054 { 
+	font-size: 12pt; 
+}
+sup.EndnoteReference { 
+	font-family: Calibri; 
+	font-size: 7.33pt; 
+	vertical-align: super; 
+	font-weight: normal; 
+	font-style: normal; 
+}
+#sup005 { 
+	font-size: 6.67pt; 
+}
+#_edn1 { 
+	-aw-footnote-isauto: 1; 
+}
+span.text055 { 
+	font-size: 10pt; 
+	white-space: pre; 
+}
+span.text056 { 
+	font-size: 10pt; 
+}
+#sup006 { 
+	font-size: 6.67pt; 
+}
+#sup007 { 
+	font-size: 6.67pt; 
+}
+#_edn2 { 
+	-aw-footnote-isauto: 1; 
+}
+span.text057 { 
+	font-size: 10pt; 
+	white-space: pre; 
+}
+span.text058 { 
+	font-size: 10pt; 
+}
+span.text059 { 
+	font-size: 10pt; 
+	white-space: pre; 
+}
+span.text060 { 
+	font-size: 10pt; 
+}
+span.text061 { 
+	font-size: 10pt; 
+}
+span.text062 { 
+	font-size: 10pt; 
+}
+#sup008 { 
+	font-size: 6.67pt; 
+}
+#img001 { 
+	-aw-wrap-type: inline; 
+	-aw-left-pos: 0pt; 
+	-aw-top-pos: 0pt; 
+	-aw-rel-hpos: column; 
+	-aw-rel-vpos: paragraph; 
+}
+span.text063 { 
+	text-transform: uppercase; 
+}
+#table002 { 
+	border-collapse: collapse; 
+}
+#cell026 { 
+	background-color: rgb(211, 223, 238); 
+	border-width: 0.5pt 0pt 0.5pt 0.5pt; 
+	border-style: dashed none dashed dashed; 
+	border-color: rgb(0, 0, 0) transparent rgb(0, 0, 0) rgb(0, 0, 0); 
+	max-width: 37.15pt; 
+	width: 37.15pt; 
+	padding: 0pt 5.4pt 0pt 5.15pt; 
+	vertical-align: top; 
+}
+p.para028 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+span.text064 { 
+	font-weight: bold; 
+}
+#cell027 { 
+	background-color: rgb(211, 223, 238); 
+	border-width: 0.5pt 0pt 0.5pt 0pt; 
+	border-style: dashed none; 
+	border-color: rgb(0, 0, 0) transparent rgb(0, 0, 0) transparent; 
+	max-width: 258.5pt; 
+	width: 258.5pt; 
+	padding: 0pt 5.4pt 0pt 5.4pt; 
+	vertical-align: top; 
+}
+p.para029 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+span.text065 { 
+	font-weight: bold; 
+}
+#cell028 { 
+	background-color: rgb(211, 223, 238); 
+	border-width: 0.5pt 0.5pt 0.5pt 0pt; 
+	border-style: dashed dashed dashed none; 
+	border-color: rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0) transparent; 
+	max-width: 164.7pt; 
+	width: 164.7pt; 
+	padding: 0pt 5.15pt 0pt 5.4pt; 
+	vertical-align: top; 
+}
+p.para030 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+span.text066 { 
+	font-weight: bold; 
+}
+#cell029 { 
+	background-color: rgb(167, 191, 222); 
+	border-width: 0.5pt 1pt 1pt 1pt; 
+	border-style: dashed solid solid; 
+	border-color: rgb(0, 0, 0) rgb(123, 160, 205) rgb(123, 160, 205) rgb(123, 160, 205); 
+	max-width: 37.15pt; 
+	width: 37.15pt; 
+	padding: 0pt 4.9pt 0pt 4.9pt; 
+	vertical-align: top; 
+}
+p.para031 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+span.text067 { 
+	font-weight: bold; 
+}
+#cell030 { 
+	background-color: rgb(167, 191, 222); 
+	border-width: 0.5pt 1pt 1pt 1pt; 
+	border-style: dashed solid solid; 
+	border-color: rgb(0, 0, 0) rgb(123, 160, 205) rgb(123, 160, 205) rgb(123, 160, 205); 
+	max-width: 258.5pt; 
+	width: 258.5pt; 
+	padding: 0pt 4.9pt 0pt 4.9pt; 
+	vertical-align: top; 
+}
+p.para032 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell031 { 
+	background-color: rgb(167, 191, 222); 
+	border-width: 0.5pt 1pt 1pt 1pt; 
+	border-style: dashed solid solid; 
+	border-color: rgb(0, 0, 0) rgb(123, 160, 205) rgb(123, 160, 205) rgb(123, 160, 205); 
+	max-width: 164.7pt; 
+	width: 164.7pt; 
+	padding: 0pt 4.9pt 0pt 4.9pt; 
+	vertical-align: top; 
+}
+p.para033 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell032 { 
+	background-color: rgb(211, 223, 238); 
+	border: 1pt solid rgb(123, 160, 205); 
+	max-width: 37.15pt; 
+	width: 37.15pt; 
+	padding: 0pt 4.9pt 0pt 4.9pt; 
+	vertical-align: top; 
+}
+p.para034 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+span.text068 { 
+	font-weight: bold; 
+}
+#cell033 { 
+	background-color: rgb(211, 223, 238); 
+	border: 1pt solid rgb(123, 160, 205); 
+	max-width: 258.5pt; 
+	width: 258.5pt; 
+	padding: 0pt 4.9pt 0pt 4.9pt; 
+	vertical-align: top; 
+}
+p.para035 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell034 { 
+	background-color: rgb(211, 223, 238); 
+	border: 1pt solid rgb(123, 160, 205); 
+	max-width: 164.7pt; 
+	width: 164.7pt; 
+	padding: 0pt 4.9pt 0pt 4.9pt; 
+	vertical-align: top; 
+}
+p.para036 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell035 { 
+	background-color: rgb(167, 191, 222); 
+	border: 1pt solid rgb(123, 160, 205); 
+	max-width: 37.15pt; 
+	width: 37.15pt; 
+	padding: 0pt 4.9pt 0pt 4.9pt; 
+	vertical-align: top; 
+}
+p.para037 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+span.text069 { 
+	font-weight: bold; 
+}
+#cell036 { 
+	background-color: rgb(167, 191, 222); 
+	border: 1pt solid rgb(123, 160, 205); 
+	max-width: 258.5pt; 
+	width: 258.5pt; 
+	padding: 0pt 4.9pt 0pt 4.9pt; 
+	vertical-align: top; 
+}
+p.para038 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell037 { 
+	background-color: rgb(167, 191, 222); 
+	border: 1pt solid rgb(123, 160, 205); 
+	max-width: 164.7pt; 
+	width: 164.7pt; 
+	padding: 0pt 4.9pt 0pt 4.9pt; 
+	vertical-align: top; 
+}
+p.para039 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell038 { 
+	background-color: rgb(211, 223, 238); 
+	border: 1pt solid rgb(123, 160, 205); 
+	max-width: 37.15pt; 
+	width: 37.15pt; 
+	padding: 0pt 4.9pt 0pt 4.9pt; 
+	vertical-align: top; 
+}
+p.para040 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+span.text070 { 
+	font-weight: bold; 
+}
+#cell039 { 
+	background-color: rgb(211, 223, 238); 
+	border: 1pt solid rgb(123, 160, 205); 
+	max-width: 258.5pt; 
+	width: 258.5pt; 
+	padding: 0pt 4.9pt 0pt 4.9pt; 
+	vertical-align: top; 
+}
+p.para041 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell040 { 
+	background-color: rgb(211, 223, 238); 
+	border: 1pt solid rgb(123, 160, 205); 
+	max-width: 164.7pt; 
+	width: 164.7pt; 
+	padding: 0pt 4.9pt 0pt 4.9pt; 
+	vertical-align: top; 
+}
+p.para042 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell041 { 
+	background-color: rgb(167, 191, 222); 
+	border: 1pt solid rgb(123, 160, 205); 
+	max-width: 37.15pt; 
+	width: 37.15pt; 
+	padding: 0pt 4.9pt 0pt 4.9pt; 
+	vertical-align: top; 
+}
+p.para043 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+span.text071 { 
+	font-weight: bold; 
+}
+#cell042 { 
+	background-color: rgb(167, 191, 222); 
+	border: 1pt solid rgb(123, 160, 205); 
+	max-width: 258.5pt; 
+	width: 258.5pt; 
+	padding: 0pt 4.9pt 0pt 4.9pt; 
+	vertical-align: top; 
+}
+p.para044 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+#cell043 { 
+	background-color: rgb(167, 191, 222); 
+	border: 1pt solid rgb(123, 160, 205); 
+	max-width: 164.7pt; 
+	width: 164.7pt; 
+	padding: 0pt 4.9pt 0pt 4.9pt; 
+	vertical-align: top; 
+}
+p.para045 { 
+	margin-bottom: 0pt; 
+	line-height: normal; 
+}
+span.text072 { 
+	font-size: 9pt; 
+	font-weight: bold; 
+	color: rgb(79, 129, 189); 
+}
+span.text073 { 
+	font-size: 9pt; 
+	font-weight: bold; 
+	color: rgb(79, 129, 189); 
+	white-space: pre; 
+}
+span.text074 { 
+	font-size: 9pt; 
+	font-weight: bold; 
+	color: rgb(79, 129, 189); 
+}
+#sup009 { 
+	font-size: 6.67pt; 
+}
+#_ftn3 { 
+	-aw-footnote-isauto: 1; 
+}
+span.text075 { 
+	font-size: 10pt; 
+	white-space: pre; 
+}
+span.text076 { 
+	font-size: 10pt; 
+}
+span.text077 { 
+	font-size: 10pt; 
+}
+#sup010 { 
+	font-size: 6.67pt; 
+}
+#sup011 { 
+	font-size: 6.67pt; 
+}
+#_edn3 { 
+	-aw-footnote-isauto: 1; 
+}
+span.text078 { 
+	font-size: 10pt; 
+	white-space: pre; 
+}
+span.text079 { 
+	font-size: 10pt; 
+}
+#sup012 { 
+	font-size: 6.67pt; 
+}
+#sup013 { 
+	font-size: 6.67pt; 
+}
+#_ftn4 { 
+	-aw-footnote-isauto: 1; 
+}
+span.text080 { 
+	font-size: 10pt; 
+	white-space: pre; 
+}
+span.text081 { 
+	font-size: 10pt; 
+}
+#sup014 { 
+	font-size: 6.67pt; 
+}
+span.text082 { 
+	-aw-import: ignore; 
+}
+span.text083 { 
+	font-family: Cambria; 
+	font-size: 14pt; 
+	font-weight: bold; 
+	color: rgb(79, 129, 189); 
+}
+span.text084 { 
+	font-family: Cambria; 
+	font-size: 14pt; 
+	font-weight: bold; 
+	color: rgb(79, 129, 189); 
+}
+span.text085 { 
+	font-family: Cambria; 
+	font-size: 14pt; 
+	font-weight: bold; 
+	color: rgb(79, 129, 189); 
+}
+#table003 { 
+	border-collapse: collapse; 
+	float: right; 
+	margin-left: 9pt; 
+	margin-right: 9pt; 
+}
+#cell044 { 
+	border: 0.5pt dotted rgb(0, 0, 0); 
+	max-width: 74.25pt; 
+	width: 74.25pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: middle; 
+}
+p.para046 { 
+	text-align: center; 
+	margin-bottom: 0pt; 
+	line-height: 175%; 
+}
+#cell045 { 
+	border: 0.5pt dotted rgb(0, 0, 0); 
+	max-width: 24.65pt; 
+	width: 24.65pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: middle; 
+}
+p.para047 { 
+	text-align: center; 
+	margin-bottom: 0pt; 
+	line-height: 175%; 
+}
+span.text086 { 
+	-aw-import: ignore; 
+}
+#cell046 { 
+	border: 0.5pt dotted rgb(0, 0, 0); 
+	max-width: 17.55pt; 
+	width: 17.55pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: top; 
+	writing-mode: sideways-lr; 
+}
+p.para048 { 
+	text-align: center; 
+	margin-bottom: 0pt; 
+	margin-left: 5.65pt; 
+	margin-right: 5.65pt; 
+	line-height: 175%; 
+}
+#cell047 { 
+	border: 0.5pt dotted rgb(0, 0, 0); 
+	max-width: 49.2pt; 
+	width: 49.2pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: top; 
+	writing-mode: vertical-rl; 
+}
+p.para049 { 
+	text-align: center; 
+	margin-bottom: 0pt; 
+	margin-left: 5.65pt; 
+	margin-right: 5.65pt; 
+	line-height: 175%; 
+}
+#cell048 { 
+	border: 0.5pt dotted rgb(0, 0, 0); 
+	max-width: 17.55pt; 
+	width: 17.55pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: middle; 
+}
+p.para050 { 
+	text-align: center; 
+	margin-bottom: 0pt; 
+	line-height: 175%; 
+}
+span.text087 { 
+	-aw-import: ignore; 
+}
+#cell049 { 
+	border: 0.5pt dotted rgb(0, 0, 0); 
+	max-width: 81.35pt; 
+	width: 81.35pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: middle; 
+}
+p.para051 { 
+	text-align: center; 
+	margin-bottom: 0pt; 
+	line-height: 175%; 
+}
+#cell050 { 
+	border: 0.5pt dotted rgb(0, 0, 0); 
+	max-width: 17.55pt; 
+	width: 17.55pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: top; 
+}
+p.para052 { 
+	text-align: center; 
+	margin-bottom: 0pt; 
+	line-height: 175%; 
+}
+span.text088 { 
+	-aw-import: ignore; 
+}
+#cell051 { 
+	border: 0.5pt dotted rgb(0, 0, 0); 
+	max-width: 49.2pt; 
+	width: 49.2pt; 
+	padding: 0pt 5.15pt 0pt 5.15pt; 
+	vertical-align: top; 
+}
+p.para053 { 
+	text-align: center; 
+	margin-bottom: 0pt; 
+	line-height: 175%; 
+}
+span.text089 { 
+	-aw-import: ignore; 
+}
+#row002 { 
+	height: 63.6pt; 
+}
+p.para054 { 
+	text-align: justify; 
+	line-height: 175%; 
+}
+#sup015 { 
+	font-size: 6.67pt; 
+}
+#_edn4 { 
+	-aw-footnote-isauto: 1; 
+}
+span.text090 { 
+	font-size: 10pt; 
+	white-space: pre; 
+}
+span.text091 { 
+	font-size: 10pt; 
+}
+#sup016 { 
+	font-size: 6.67pt; 
+}
+#hr001 { 
+	width: 33%; 
+	height: 1px; 
+	text-align: left; 
+	-aw-footnote-type: 0; 
+	-aw-footnote-numberstyle: 0; 
+	-aw-footnote-startnumber: 1; 
+}
+#hr002 { 
+	width: 33%; 
+	height: 1px; 
+	text-align: left; 
+	-aw-footnote-type: 1; 
+	-aw-footnote-numberstyle: 2; 
+	-aw-footnote-startnumber: 1; 
+}
+.footnotesCommon { 
+	text-decoration: none; 
+	color: rgb(0, 0, 0); 
+}

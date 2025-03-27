@@ -7,9 +7,13 @@
 	<UserSecretsId>c5308a3e-3d57-4aea-9011-93006e64ac36</UserSecretsId>
 	<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
 	<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	  <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
   <ItemGroup>
-	<PackageReference Include="GroupDocs.Editor.UI.Api" Version="6.0.2" />
-	<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+	  <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+	  <PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="2.88.8" />
   </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\src\GroupDocs.Editor.UI.Api\GroupDocs.Editor.UI.Api.csproj" />
+	</ItemGroup>
 </Project>

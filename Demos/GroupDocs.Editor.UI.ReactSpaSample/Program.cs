@@ -1,13 +1,16 @@
 using GroupDocs.Editor.UI.Api.Extensions;
 using GroupDocs.Editor.UI.Api.Services.Implementation;
+using GroupDocs.Editor.UI.Api.Services.Licensing;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
-builder.Services.AddEditorControllers(builder.Configuration);
+builder.Services.AddEditorControllers();
 builder.Services.AddEditorSwagger();
+// uncomment for set license
+builder.Services.AddEditorLicense<LocalFileLicenseService>(builder.Configuration);
 builder.Services.AddEditor<LocalStorage>(builder.Configuration);
 builder.Services.AddCors(p => p.AddPolicy("corsApp", policy =>
 {

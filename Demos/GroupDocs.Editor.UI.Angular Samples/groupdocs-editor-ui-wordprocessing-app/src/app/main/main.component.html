@@ -1,0 +1,21 @@
+<h1>GroupDocs Editor WordProcessing Client</h1>
+
+<p>Demonstrates How to edit WordProcessing document with Groupdocs.Editor.UI</p>
+
+<div class="mat-typography">
+  <label for="formFile" class="form-label">Upload file example</label>
+  <input (change)="this.onFileChange($event)" class="form-control" type="file" id="formFile">
+
+  <button mat-button (click)="this.upload()" type="button" class="btn btn-primary mt-3"><span *ngIf="!fileUploading">Upload WordProcessing</span>
+    <span *ngIf="fileUploading">Uploading </span>
+    <mat-icon *ngIf="fileUploading"><mat-progress-spinner color="accent" mode="indeterminate"  diameter="20">
+    </mat-progress-spinner></mat-icon>
+  </button>
+  <button mat-button (click)="this.uploadPdf()" type="button" class="btn btn-primary mt-3"><span *ngIf="!fileUploading">Upload PDF</span>
+    <span *ngIf="fileUploading">Uploading </span>
+    <mat-icon *ngIf="fileUploading"><mat-progress-spinner color="accent" mode="indeterminate"  diameter="20">
+    </mat-progress-spinner></mat-icon>
+  </button>
+  <button mat-button [disabled]="!allowAccept" type="button" class="btn mt-3" (click)="goToLink()" [matTooltip]="'Accept'" [matTooltipPosition]="'below'">Accept</button>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,5 @@
+@import "~angular-notifier/styles";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

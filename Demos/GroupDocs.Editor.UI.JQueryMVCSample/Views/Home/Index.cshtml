@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Edit Document";
+}
+<!-- Place the first <script> tag in your HTML's <head> -->
+<script src="https://cdn.tiny.cloud/1/7yosm2uqey70k4becrpk4ysy94byo30crkd50cobi37mpcvn/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+
+<!-- Place the following <script> and <textarea> tags your HTML's <body> -->
+<script>
+
+</script>
+<div class="text-center">
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" id="fileInput" name="file" />
+        <div id="spinner" style="display:none;">
+            <img src="https://i.gifer.com/ZZ5H.gif" alt="Loading..."/>
+        </div>
+        <input type="button" id="uploadButton" value="Upload" />
+        <input type="button" id="saveButton" value="Save Content" />
+    </form>
+</div>
+
+<div class="text-center">
+    <h1>Quick Start Guide</h1>
+    <form method="post" id="editor_form" style="display:none;">
+        <textarea id="mytextarea"></textarea>
+    </form>
+</div>

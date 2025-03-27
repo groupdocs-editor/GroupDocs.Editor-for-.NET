@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "GroupDocs.Editor.UI.ReactSpaSample": {
+    "ReactSpa.Sample": {
       "commandName": "Project",
       "launchBrowser": true,
       "applicationUrl": "https://localhost:7147;http://localhost:5157",

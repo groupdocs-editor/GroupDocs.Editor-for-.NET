@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupDocs.Editor.UI.WordProcessing.SpaSample", "GroupDocs.Editor.UI.WordProcessing.SpaSample\GroupDocs.Editor.UI.WordProcessing.SpaSample.csproj", "{C6404A73-EFEC-7520-EDE7-DA01A33446B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupDocs.Editor.UI.ApiSample", "..\..\editor.net.ui\samples\GroupDocs.Editor.UI.ApiSample\GroupDocs.Editor.UI.ApiSample.csproj", "{B45E45CB-6934-8EF3-1776-437B0A098000}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupDocs.Editor.UI.Email.SpaSample", "..\..\editor.net.ui\samples\GroupDocs.Editor.UI.Email.SpaSample\GroupDocs.Editor.UI.Email.SpaSample.csproj", "{3518A71C-C066-C095-F2BB-E8394745EDFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupDocs.Editor.UI.JQueryMVCSample", "..\..\editor.net.ui\samples\GroupDocs.Editor.UI.JQueryMVCSample\GroupDocs.Editor.UI.JQueryMVCSample.csproj", "{329161B7-6E66-A75D-C629-BD48E102FA6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupDocs.Editor.UI.Presentation.SpaSample", "..\..\editor.net.ui\samples\GroupDocs.Editor.UI.Presentation.SpaSample\GroupDocs.Editor.UI.Presentation.SpaSample.csproj", "{9894A775-2FDA-028C-6662-208C86A2DC8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupDocs.Editor.UI.ReactSpaSample", "..\..\editor.net.ui\samples\GroupDocs.Editor.UI.ReactSpaSample\GroupDocs.Editor.UI.ReactSpaSample.csproj", "{60E8CF25-7CE9-F2BF-0E3D-240887C25A38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupDocs.Editor.UI.RestFulApi", "..\..\editor.net.ui\samples\GroupDocs.Editor.UI.RestFulApi\GroupDocs.Editor.UI.RestFulApi.csproj", "{9C7A990C-7C52-FB1F-2B88-7E8281736D31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupDocs.Editor.UI.Spreasdsheet.SpaSample", "..\..\editor.net.ui\samples\GroupDocs.Editor.UI.Spreasdsheet.SpaSample\GroupDocs.Editor.UI.Spreasdsheet.SpaSample.csproj", "{764EAC1D-442B-F0FA-7D82-2F757951CF43}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6404A73-EFEC-7520-EDE7-DA01A33446B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6404A73-EFEC-7520-EDE7-DA01A33446B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6404A73-EFEC-7520-EDE7-DA01A33446B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6404A73-EFEC-7520-EDE7-DA01A33446B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B45E45CB-6934-8EF3-1776-437B0A098000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B45E45CB-6934-8EF3-1776-437B0A098000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B45E45CB-6934-8EF3-1776-437B0A098000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B45E45CB-6934-8EF3-1776-437B0A098000}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3518A71C-C066-C095-F2BB-E8394745EDFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3518A71C-C066-C095-F2BB-E8394745EDFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3518A71C-C066-C095-F2BB-E8394745EDFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3518A71C-C066-C095-F2BB-E8394745EDFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{329161B7-6E66-A75D-C629-BD48E102FA6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{329161B7-6E66-A75D-C629-BD48E102FA6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{329161B7-6E66-A75D-C629-BD48E102FA6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{329161B7-6E66-A75D-C629-BD48E102FA6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9894A775-2FDA-028C-6662-208C86A2DC8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9894A775-2FDA-028C-6662-208C86A2DC8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9894A775-2FDA-028C-6662-208C86A2DC8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9894A775-2FDA-028C-6662-208C86A2DC8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60E8CF25-7CE9-F2BF-0E3D-240887C25A38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60E8CF25-7CE9-F2BF-0E3D-240887C25A38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60E8CF25-7CE9-F2BF-0E3D-240887C25A38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60E8CF25-7CE9-F2BF-0E3D-240887C25A38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C7A990C-7C52-FB1F-2B88-7E8281736D31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C7A990C-7C52-FB1F-2B88-7E8281736D31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C7A990C-7C52-FB1F-2B88-7E8281736D31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C7A990C-7C52-FB1F-2B88-7E8281736D31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{764EAC1D-442B-F0FA-7D82-2F757951CF43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{764EAC1D-442B-F0FA-7D82-2F757951CF43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{764EAC1D-442B-F0FA-7D82-2F757951CF43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{764EAC1D-442B-F0FA-7D82-2F757951CF43}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CF68AB43-BCFA-4DDA-8A67-3C32680529AC}
+	EndGlobalSection
+EndGlobal
