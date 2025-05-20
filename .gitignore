@@ -198,3 +198,4 @@ FakesAssemblies/
 deploy_key
 file2/
 .angular/
+Examples/GroupDocs.Editor.Examples.CSharp.NET/Results/Output/**
