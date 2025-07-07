@@ -12,7 +12,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="GroupDocs.Editor.UI.Api" Version="8.0.2" />
+		<PackageReference Include="GroupDocs.Editor.UI.Api" Version="8.0.5" />
 		<PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="6.0.25" />
 	</ItemGroup>
 
