@@ -9,6 +9,7 @@
     <Import_RootNamespace>GroupDocs.Editor.Examples.CSharp</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\EditNewDocument.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\EditableDocumentExamples\CreateEditableDocumentFromHtmlFile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\EditableDocumentExamples\CreateEditableDocumentFromInnerBody.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AdvancedUsage\EditableDocumentExamples\EditableDocumentAdvancedUsage.cs" />

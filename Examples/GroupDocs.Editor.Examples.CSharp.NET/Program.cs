@@ -11,7 +11,6 @@ Console.WriteLine("=====================================================");
 
 GroupDocs.Editor.Examples.CSharp.QuickStart.SetLicenseFromFile.Run();
 GroupDocs.Editor.Examples.CSharp.QuickStart.HelloWorld.Run();
-
 #endregion
 
 //// *** Documents Editor Examples (Un-Comment to run each example demo methods) ***
@@ -33,8 +32,9 @@ CreateDocument.Run();
 #region Advanced usage
 
 WorkingWithWordProcessing.Run();
+EditNewDocument.Run();
 
-//WorkingWithPdf.Run();
+WorkingWithPdf.Run();
 EditPdf.Run(true);
 EditPdf.Run(false);
 

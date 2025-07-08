@@ -1,4 +1,5 @@
 ﻿using GroupDocs.Editor.Examples.CSharp.AdvancedUsage;
+using GroupDocs.Editor.Examples.CSharp.BasicUsage;
 using System;
 
 namespace GroupDocs.Editor.Examples.CSharp
@@ -44,7 +45,7 @@ namespace GroupDocs.Editor.Examples.CSharp
             #region Advanced usage
 
             AdvancedUsage.WorkingWithWordProcessing.Run();
-
+            EditNewDocument.Run();
             AdvancedUsage.WorkingWithPdf.Run();
             AdvancedUsage.EditPdf.Run(true);
             AdvancedUsage.EditPdf.Run(false);
