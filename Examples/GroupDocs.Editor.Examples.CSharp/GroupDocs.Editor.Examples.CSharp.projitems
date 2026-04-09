@@ -57,9 +57,7 @@
     <None Include="$(MSBuildThisFileDirectory)Resources\ComplexTest.pptx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="$(MSBuildThisFileDirectory)Resources\GroupDocs.Editor.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <None Include="$(MSBuildThisFileDirectory)Resources\GroupDocs.Viewer.pdf" />
     <None Include="$(MSBuildThisFileDirectory)Resources\SampleDoc1.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
