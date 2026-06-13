@@ -74,7 +74,7 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
                 EditableDocument editableEbookDocument = editor.Edit(ebookEditOptions);
                 editor.Save(memoryStream);
             }
-
+            
             // Create a new Email document and save it.
             using (Editor editor = new Editor(EmailFormats.Eml))
             {
@@ -88,7 +88,7 @@ namespace GroupDocs.Editor.Examples.CSharp.BasicUsage
                 EditableDocument editableEmailDocument = editor.Edit(emailEditOptions);
                 editor.Save(memoryStream);
             }
-
+            
             // Dispose of the memory stream
             memoryStream.Dispose();
 
